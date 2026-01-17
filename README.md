@@ -6,9 +6,10 @@ The REST API documentation can be found on [docs.straddle.com](https://docs.stra
 
 ## Installation
 
+Install the package from [NuGet](https://www.nuget.org/packages/Straddle):
+
 ```bash
-git clone git@github.com:straddleio/straddle-csharp.git
-dotnet add reference straddle-csharp/src/Straddle
+dotnet add package Straddle
 ```
 
 ## Requirements
