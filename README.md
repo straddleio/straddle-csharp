@@ -2,8 +2,6 @@
 
 The Straddle C# SDK provides convenient access to the [Straddle REST API](https://docs.straddle.com) from applications written in C#.
 
-It is generated with [Stainless](https://www.stainless.com/).
-
 The REST API documentation can be found on [docs.straddle.com](https://docs.straddle.com).
 
 ## Installation
