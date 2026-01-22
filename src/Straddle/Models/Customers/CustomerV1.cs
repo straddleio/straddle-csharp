@@ -403,6 +403,8 @@ public enum CustomerV1DataType
 {
     Individual,
     Business,
+    Individual1,
+    Business1,
 }
 
 sealed class CustomerV1DataTypeConverter : JsonConverter<CustomerV1DataType>
@@ -417,6 +419,8 @@ sealed class CustomerV1DataTypeConverter : JsonConverter<CustomerV1DataType>
         {
             "individual" => CustomerV1DataType.Individual,
             "business" => CustomerV1DataType.Business,
+            "Individual" => CustomerV1DataType.Individual1,
+            "Business" => CustomerV1DataType.Business1,
             _ => (CustomerV1DataType)(-1),
         };
     }
@@ -433,6 +437,8 @@ sealed class CustomerV1DataTypeConverter : JsonConverter<CustomerV1DataType>
             {
                 CustomerV1DataType.Individual => "individual",
                 CustomerV1DataType.Business => "business",
+                CustomerV1DataType.Individual1 => "Individual",
+                CustomerV1DataType.Business1 => "Business",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1280,6 +1286,10 @@ public enum CustomerV1ResponseType
     Array,
     Error,
     None,
+    Object1,
+    Array1,
+    Error1,
+    None1,
 }
 
 sealed class CustomerV1ResponseTypeConverter : JsonConverter<CustomerV1ResponseType>
@@ -1296,6 +1306,10 @@ sealed class CustomerV1ResponseTypeConverter : JsonConverter<CustomerV1ResponseT
             "array" => CustomerV1ResponseType.Array,
             "error" => CustomerV1ResponseType.Error,
             "none" => CustomerV1ResponseType.None,
+            "Object" => CustomerV1ResponseType.Object1,
+            "Array" => CustomerV1ResponseType.Array1,
+            "Error" => CustomerV1ResponseType.Error1,
+            "None" => CustomerV1ResponseType.None1,
             _ => (CustomerV1ResponseType)(-1),
         };
     }
@@ -1314,6 +1328,10 @@ sealed class CustomerV1ResponseTypeConverter : JsonConverter<CustomerV1ResponseT
                 CustomerV1ResponseType.Array => "array",
                 CustomerV1ResponseType.Error => "error",
                 CustomerV1ResponseType.None => "none",
+                CustomerV1ResponseType.Object1 => "Object",
+                CustomerV1ResponseType.Array1 => "Array",
+                CustomerV1ResponseType.Error1 => "Error",
+                CustomerV1ResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

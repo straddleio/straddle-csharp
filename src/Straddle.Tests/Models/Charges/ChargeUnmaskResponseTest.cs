@@ -1612,6 +1612,9 @@ public class ChargeUnmaskResponseDataConfigBalanceCheckTest : TestBase
     [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Required)]
     [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Enabled)]
     [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Disabled)]
+    [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Required1)]
+    [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Enabled1)]
+    [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Disabled1)]
     public void Validation_Works(ChargeUnmaskResponseDataConfigBalanceCheck rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1634,6 +1637,9 @@ public class ChargeUnmaskResponseDataConfigBalanceCheckTest : TestBase
     [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Required)]
     [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Enabled)]
     [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Disabled)]
+    [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Required1)]
+    [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Enabled1)]
+    [InlineData(ChargeUnmaskResponseDataConfigBalanceCheck.Disabled1)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataConfigBalanceCheck rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1676,6 +1682,17 @@ public class ChargeUnmaskResponseDataConfigSandboxOutcomeTest : TestBase
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute)]
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount)]
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.Standard1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.Paid1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.OnHoldDailyLimit1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.CancelledForFraudRisk1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.CancelledForBalanceCheck1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedInsufficientFunds1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedInsufficientFunds1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedCustomerDispute1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount1)]
     public void Validation_Works(ChargeUnmaskResponseDataConfigSandboxOutcome rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1706,6 +1723,17 @@ public class ChargeUnmaskResponseDataConfigSandboxOutcomeTest : TestBase
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute)]
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount)]
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.Standard1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.Paid1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.OnHoldDailyLimit1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.CancelledForFraudRisk1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.CancelledForBalanceCheck1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedInsufficientFunds1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedInsufficientFunds1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedCustomerDispute1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount1)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount1)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataConfigSandboxOutcome rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1739,6 +1767,8 @@ public class ChargeUnmaskResponseDataConsentTypeTest : TestBase
     [Theory]
     [InlineData(ChargeUnmaskResponseDataConsentType.Internet)]
     [InlineData(ChargeUnmaskResponseDataConsentType.Signed)]
+    [InlineData(ChargeUnmaskResponseDataConsentType.Internet1)]
+    [InlineData(ChargeUnmaskResponseDataConsentType.Signed1)]
     public void Validation_Works(ChargeUnmaskResponseDataConsentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1760,6 +1790,8 @@ public class ChargeUnmaskResponseDataConsentTypeTest : TestBase
     [Theory]
     [InlineData(ChargeUnmaskResponseDataConsentType.Internet)]
     [InlineData(ChargeUnmaskResponseDataConsentType.Signed)]
+    [InlineData(ChargeUnmaskResponseDataConsentType.Internet1)]
+    [InlineData(ChargeUnmaskResponseDataConsentType.Signed1)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataConsentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1845,6 +1877,14 @@ public class ChargeUnmaskResponseDataStatusTest : TestBase
     [InlineData(ChargeUnmaskResponseDataStatus.Pending)]
     [InlineData(ChargeUnmaskResponseDataStatus.Paid)]
     [InlineData(ChargeUnmaskResponseDataStatus.Reversed)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Created1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Scheduled1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Failed1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Cancelled1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.OnHold1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Pending1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Paid1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Reversed1)]
     public void Validation_Works(ChargeUnmaskResponseDataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1873,6 +1913,14 @@ public class ChargeUnmaskResponseDataStatusTest : TestBase
     [InlineData(ChargeUnmaskResponseDataStatus.Pending)]
     [InlineData(ChargeUnmaskResponseDataStatus.Paid)]
     [InlineData(ChargeUnmaskResponseDataStatus.Reversed)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Created1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Scheduled1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Failed1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Cancelled1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.OnHold1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Pending1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Paid1)]
+    [InlineData(ChargeUnmaskResponseDataStatus.Reversed1)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2104,6 +2152,26 @@ public class ChargeUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.RequireReview)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.InsufficientFunds1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.ClosedBankAccount1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.InvalidBankAccount1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.InvalidRouting1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.Disputed1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.PaymentStopped1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.OwnerDeceased1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.FrozenBankAccount1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.RiskReview1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.Fraudulent1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.DuplicateEntry1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.InvalidPaykey1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.PaymentBlocked1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.AmountTooLarge1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.TooManyAttempts1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.InternalSystemError1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.UserRequest1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.Ok1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.OtherNetworkReturn1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.PayoutRefused1)]
     public void Validation_Works(ChargeUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2148,6 +2216,26 @@ public class ChargeUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.RequireReview)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.InsufficientFunds1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.ClosedBankAccount1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.InvalidBankAccount1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.InvalidRouting1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.Disputed1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.PaymentStopped1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.OwnerDeceased1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.FrozenBankAccount1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.RiskReview1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.Fraudulent1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.DuplicateEntry1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.InvalidPaykey1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.PaymentBlocked1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.AmountTooLarge1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.TooManyAttempts1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.InternalSystemError1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.UserRequest1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.Ok1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.OtherNetworkReturn1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.PayoutRefused1)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2184,6 +2272,11 @@ public class ChargeUnmaskResponseDataStatusHistorySourceTest : TestBase
     [InlineData(ChargeUnmaskResponseDataStatusHistorySource.CustomerDispute)]
     [InlineData(ChargeUnmaskResponseDataStatusHistorySource.UserAction)]
     [InlineData(ChargeUnmaskResponseDataStatusHistorySource.System)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistorySource.Watchtower1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistorySource.BankDecline1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistorySource.CustomerDispute1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistorySource.UserAction1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistorySource.System1)]
     public void Validation_Works(ChargeUnmaskResponseDataStatusHistorySource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2208,6 +2301,11 @@ public class ChargeUnmaskResponseDataStatusHistorySourceTest : TestBase
     [InlineData(ChargeUnmaskResponseDataStatusHistorySource.CustomerDispute)]
     [InlineData(ChargeUnmaskResponseDataStatusHistorySource.UserAction)]
     [InlineData(ChargeUnmaskResponseDataStatusHistorySource.System)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistorySource.Watchtower1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistorySource.BankDecline1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistorySource.CustomerDispute1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistorySource.UserAction1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistorySource.System1)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataStatusHistorySource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2247,6 +2345,14 @@ public class ChargeUnmaskResponseDataStatusHistoryStatusTest : TestBase
     [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Pending)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Paid)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Reversed)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Created1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Scheduled1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Failed1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Cancelled1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.OnHold1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Pending1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Paid1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Reversed1)]
     public void Validation_Works(ChargeUnmaskResponseDataStatusHistoryStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2274,6 +2380,14 @@ public class ChargeUnmaskResponseDataStatusHistoryStatusTest : TestBase
     [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Pending)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Paid)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Reversed)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Created1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Scheduled1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Failed1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Cancelled1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.OnHold1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Pending1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Paid1)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryStatus.Reversed1)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataStatusHistoryStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2306,6 +2420,7 @@ public class ChargeUnmaskResponseDataPaymentRailTest : TestBase
 {
     [Theory]
     [InlineData(ChargeUnmaskResponseDataPaymentRail.Ach)]
+    [InlineData(ChargeUnmaskResponseDataPaymentRail.Ach1)]
     public void Validation_Works(ChargeUnmaskResponseDataPaymentRail rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2326,6 +2441,7 @@ public class ChargeUnmaskResponseDataPaymentRailTest : TestBase
 
     [Theory]
     [InlineData(ChargeUnmaskResponseDataPaymentRail.Ach)]
+    [InlineData(ChargeUnmaskResponseDataPaymentRail.Ach1)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataPaymentRail rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2361,6 +2477,10 @@ public class ChargeUnmaskResponseResponseTypeTest : TestBase
     [InlineData(ChargeUnmaskResponseResponseType.Array)]
     [InlineData(ChargeUnmaskResponseResponseType.Error)]
     [InlineData(ChargeUnmaskResponseResponseType.None)]
+    [InlineData(ChargeUnmaskResponseResponseType.Object1)]
+    [InlineData(ChargeUnmaskResponseResponseType.Array1)]
+    [InlineData(ChargeUnmaskResponseResponseType.Error1)]
+    [InlineData(ChargeUnmaskResponseResponseType.None1)]
     public void Validation_Works(ChargeUnmaskResponseResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2385,6 +2505,10 @@ public class ChargeUnmaskResponseResponseTypeTest : TestBase
     [InlineData(ChargeUnmaskResponseResponseType.Array)]
     [InlineData(ChargeUnmaskResponseResponseType.Error)]
     [InlineData(ChargeUnmaskResponseResponseType.None)]
+    [InlineData(ChargeUnmaskResponseResponseType.Object1)]
+    [InlineData(ChargeUnmaskResponseResponseType.Array1)]
+    [InlineData(ChargeUnmaskResponseResponseType.Error1)]
+    [InlineData(ChargeUnmaskResponseResponseType.None1)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

@@ -1124,6 +1124,26 @@ public enum LinkCreateTanResponseDataStatusDetailsReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    InsufficientFunds1,
+    ClosedBankAccount1,
+    InvalidBankAccount1,
+    InvalidRouting1,
+    Disputed1,
+    PaymentStopped1,
+    OwnerDeceased1,
+    FrozenBankAccount1,
+    RiskReview1,
+    Fraudulent1,
+    DuplicateEntry1,
+    InvalidPaykey1,
+    PaymentBlocked1,
+    AmountTooLarge1,
+    TooManyAttempts1,
+    InternalSystemError1,
+    UserRequest1,
+    Ok1,
+    OtherNetworkReturn1,
+    PayoutRefused1,
 }
 
 sealed class LinkCreateTanResponseDataStatusDetailsReasonConverter
@@ -1166,6 +1186,29 @@ sealed class LinkCreateTanResponseDataStatusDetailsReasonConverter
             "require_review" => LinkCreateTanResponseDataStatusDetailsReason.RequireReview,
             "blocked_by_system" => LinkCreateTanResponseDataStatusDetailsReason.BlockedBySystem,
             "watchtower_review" => LinkCreateTanResponseDataStatusDetailsReason.WatchtowerReview,
+            "InsufficientFunds" => LinkCreateTanResponseDataStatusDetailsReason.InsufficientFunds1,
+            "ClosedBankAccount" => LinkCreateTanResponseDataStatusDetailsReason.ClosedBankAccount1,
+            "InvalidBankAccount" =>
+                LinkCreateTanResponseDataStatusDetailsReason.InvalidBankAccount1,
+            "InvalidRouting" => LinkCreateTanResponseDataStatusDetailsReason.InvalidRouting1,
+            "Disputed" => LinkCreateTanResponseDataStatusDetailsReason.Disputed1,
+            "PaymentStopped" => LinkCreateTanResponseDataStatusDetailsReason.PaymentStopped1,
+            "OwnerDeceased" => LinkCreateTanResponseDataStatusDetailsReason.OwnerDeceased1,
+            "FrozenBankAccount" => LinkCreateTanResponseDataStatusDetailsReason.FrozenBankAccount1,
+            "RiskReview" => LinkCreateTanResponseDataStatusDetailsReason.RiskReview1,
+            "Fraudulent" => LinkCreateTanResponseDataStatusDetailsReason.Fraudulent1,
+            "DuplicateEntry" => LinkCreateTanResponseDataStatusDetailsReason.DuplicateEntry1,
+            "InvalidPaykey" => LinkCreateTanResponseDataStatusDetailsReason.InvalidPaykey1,
+            "PaymentBlocked" => LinkCreateTanResponseDataStatusDetailsReason.PaymentBlocked1,
+            "AmountTooLarge" => LinkCreateTanResponseDataStatusDetailsReason.AmountTooLarge1,
+            "TooManyAttempts" => LinkCreateTanResponseDataStatusDetailsReason.TooManyAttempts1,
+            "InternalSystemError" =>
+                LinkCreateTanResponseDataStatusDetailsReason.InternalSystemError1,
+            "UserRequest" => LinkCreateTanResponseDataStatusDetailsReason.UserRequest1,
+            "Ok" => LinkCreateTanResponseDataStatusDetailsReason.Ok1,
+            "OtherNetworkReturn" =>
+                LinkCreateTanResponseDataStatusDetailsReason.OtherNetworkReturn1,
+            "PayoutRefused" => LinkCreateTanResponseDataStatusDetailsReason.PayoutRefused1,
             _ => (LinkCreateTanResponseDataStatusDetailsReason)(-1),
         };
     }
@@ -1213,6 +1256,32 @@ sealed class LinkCreateTanResponseDataStatusDetailsReasonConverter
                 LinkCreateTanResponseDataStatusDetailsReason.BlockedBySystem => "blocked_by_system",
                 LinkCreateTanResponseDataStatusDetailsReason.WatchtowerReview =>
                     "watchtower_review",
+                LinkCreateTanResponseDataStatusDetailsReason.InsufficientFunds1 =>
+                    "InsufficientFunds",
+                LinkCreateTanResponseDataStatusDetailsReason.ClosedBankAccount1 =>
+                    "ClosedBankAccount",
+                LinkCreateTanResponseDataStatusDetailsReason.InvalidBankAccount1 =>
+                    "InvalidBankAccount",
+                LinkCreateTanResponseDataStatusDetailsReason.InvalidRouting1 => "InvalidRouting",
+                LinkCreateTanResponseDataStatusDetailsReason.Disputed1 => "Disputed",
+                LinkCreateTanResponseDataStatusDetailsReason.PaymentStopped1 => "PaymentStopped",
+                LinkCreateTanResponseDataStatusDetailsReason.OwnerDeceased1 => "OwnerDeceased",
+                LinkCreateTanResponseDataStatusDetailsReason.FrozenBankAccount1 =>
+                    "FrozenBankAccount",
+                LinkCreateTanResponseDataStatusDetailsReason.RiskReview1 => "RiskReview",
+                LinkCreateTanResponseDataStatusDetailsReason.Fraudulent1 => "Fraudulent",
+                LinkCreateTanResponseDataStatusDetailsReason.DuplicateEntry1 => "DuplicateEntry",
+                LinkCreateTanResponseDataStatusDetailsReason.InvalidPaykey1 => "InvalidPaykey",
+                LinkCreateTanResponseDataStatusDetailsReason.PaymentBlocked1 => "PaymentBlocked",
+                LinkCreateTanResponseDataStatusDetailsReason.AmountTooLarge1 => "AmountTooLarge",
+                LinkCreateTanResponseDataStatusDetailsReason.TooManyAttempts1 => "TooManyAttempts",
+                LinkCreateTanResponseDataStatusDetailsReason.InternalSystemError1 =>
+                    "InternalSystemError",
+                LinkCreateTanResponseDataStatusDetailsReason.UserRequest1 => "UserRequest",
+                LinkCreateTanResponseDataStatusDetailsReason.Ok1 => "Ok",
+                LinkCreateTanResponseDataStatusDetailsReason.OtherNetworkReturn1 =>
+                    "OtherNetworkReturn",
+                LinkCreateTanResponseDataStatusDetailsReason.PayoutRefused1 => "PayoutRefused",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1230,6 +1299,11 @@ public enum LinkCreateTanResponseDataStatusDetailsSource
     CustomerDispute,
     UserAction,
     System,
+    Watchtower1,
+    BankDecline1,
+    CustomerDispute1,
+    UserAction1,
+    System1,
 }
 
 sealed class LinkCreateTanResponseDataStatusDetailsSourceConverter
@@ -1248,6 +1322,11 @@ sealed class LinkCreateTanResponseDataStatusDetailsSourceConverter
             "customer_dispute" => LinkCreateTanResponseDataStatusDetailsSource.CustomerDispute,
             "user_action" => LinkCreateTanResponseDataStatusDetailsSource.UserAction,
             "system" => LinkCreateTanResponseDataStatusDetailsSource.System,
+            "Watchtower" => LinkCreateTanResponseDataStatusDetailsSource.Watchtower1,
+            "BankDecline" => LinkCreateTanResponseDataStatusDetailsSource.BankDecline1,
+            "CustomerDispute" => LinkCreateTanResponseDataStatusDetailsSource.CustomerDispute1,
+            "UserAction" => LinkCreateTanResponseDataStatusDetailsSource.UserAction1,
+            "System" => LinkCreateTanResponseDataStatusDetailsSource.System1,
             _ => (LinkCreateTanResponseDataStatusDetailsSource)(-1),
         };
     }
@@ -1267,6 +1346,11 @@ sealed class LinkCreateTanResponseDataStatusDetailsSourceConverter
                 LinkCreateTanResponseDataStatusDetailsSource.CustomerDispute => "customer_dispute",
                 LinkCreateTanResponseDataStatusDetailsSource.UserAction => "user_action",
                 LinkCreateTanResponseDataStatusDetailsSource.System => "system",
+                LinkCreateTanResponseDataStatusDetailsSource.Watchtower1 => "Watchtower",
+                LinkCreateTanResponseDataStatusDetailsSource.BankDecline1 => "BankDecline",
+                LinkCreateTanResponseDataStatusDetailsSource.CustomerDispute1 => "CustomerDispute",
+                LinkCreateTanResponseDataStatusDetailsSource.UserAction1 => "UserAction",
+                LinkCreateTanResponseDataStatusDetailsSource.System1 => "System",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1289,6 +1373,10 @@ public enum LinkCreateTanResponseResponseType
     Array,
     Error,
     None,
+    Object1,
+    Array1,
+    Error1,
+    None1,
 }
 
 sealed class LinkCreateTanResponseResponseTypeConverter
@@ -1306,6 +1394,10 @@ sealed class LinkCreateTanResponseResponseTypeConverter
             "array" => LinkCreateTanResponseResponseType.Array,
             "error" => LinkCreateTanResponseResponseType.Error,
             "none" => LinkCreateTanResponseResponseType.None,
+            "Object" => LinkCreateTanResponseResponseType.Object1,
+            "Array" => LinkCreateTanResponseResponseType.Array1,
+            "Error" => LinkCreateTanResponseResponseType.Error1,
+            "None" => LinkCreateTanResponseResponseType.None1,
             _ => (LinkCreateTanResponseResponseType)(-1),
         };
     }
@@ -1324,6 +1416,10 @@ sealed class LinkCreateTanResponseResponseTypeConverter
                 LinkCreateTanResponseResponseType.Array => "array",
                 LinkCreateTanResponseResponseType.Error => "error",
                 LinkCreateTanResponseResponseType.None => "none",
+                LinkCreateTanResponseResponseType.Object1 => "Object",
+                LinkCreateTanResponseResponseType.Array1 => "Array",
+                LinkCreateTanResponseResponseType.Error1 => "Error",
+                LinkCreateTanResponseResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

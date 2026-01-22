@@ -414,6 +414,17 @@ public enum SandboxOutcome
     ReversedCustomerDispute,
     FailedClosedBankAccount,
     ReversedClosedBankAccount,
+    Standard1,
+    Paid1,
+    OnHoldDailyLimit1,
+    CancelledForFraudRisk1,
+    CancelledForBalanceCheck1,
+    FailedInsufficientFunds1,
+    ReversedInsufficientFunds1,
+    FailedCustomerDispute1,
+    ReversedCustomerDispute1,
+    FailedClosedBankAccount1,
+    ReversedClosedBankAccount1,
 }
 
 sealed class SandboxOutcomeConverter : JsonConverter<SandboxOutcome>
@@ -437,6 +448,17 @@ sealed class SandboxOutcomeConverter : JsonConverter<SandboxOutcome>
             "reversed_customer_dispute" => SandboxOutcome.ReversedCustomerDispute,
             "failed_closed_bank_account" => SandboxOutcome.FailedClosedBankAccount,
             "reversed_closed_bank_account" => SandboxOutcome.ReversedClosedBankAccount,
+            "Standard" => SandboxOutcome.Standard1,
+            "Paid" => SandboxOutcome.Paid1,
+            "OnHoldDailyLimit" => SandboxOutcome.OnHoldDailyLimit1,
+            "CancelledForFraudRisk" => SandboxOutcome.CancelledForFraudRisk1,
+            "CancelledForBalanceCheck" => SandboxOutcome.CancelledForBalanceCheck1,
+            "FailedInsufficientFunds" => SandboxOutcome.FailedInsufficientFunds1,
+            "ReversedInsufficientFunds" => SandboxOutcome.ReversedInsufficientFunds1,
+            "FailedCustomerDispute" => SandboxOutcome.FailedCustomerDispute1,
+            "ReversedCustomerDispute" => SandboxOutcome.ReversedCustomerDispute1,
+            "FailedClosedBankAccount" => SandboxOutcome.FailedClosedBankAccount1,
+            "ReversedClosedBankAccount" => SandboxOutcome.ReversedClosedBankAccount1,
             _ => (SandboxOutcome)(-1),
         };
     }
@@ -462,6 +484,17 @@ sealed class SandboxOutcomeConverter : JsonConverter<SandboxOutcome>
                 SandboxOutcome.ReversedCustomerDispute => "reversed_customer_dispute",
                 SandboxOutcome.FailedClosedBankAccount => "failed_closed_bank_account",
                 SandboxOutcome.ReversedClosedBankAccount => "reversed_closed_bank_account",
+                SandboxOutcome.Standard1 => "Standard",
+                SandboxOutcome.Paid1 => "Paid",
+                SandboxOutcome.OnHoldDailyLimit1 => "OnHoldDailyLimit",
+                SandboxOutcome.CancelledForFraudRisk1 => "CancelledForFraudRisk",
+                SandboxOutcome.CancelledForBalanceCheck1 => "CancelledForBalanceCheck",
+                SandboxOutcome.FailedInsufficientFunds1 => "FailedInsufficientFunds",
+                SandboxOutcome.ReversedInsufficientFunds1 => "ReversedInsufficientFunds",
+                SandboxOutcome.FailedCustomerDispute1 => "FailedCustomerDispute",
+                SandboxOutcome.ReversedCustomerDispute1 => "ReversedCustomerDispute",
+                SandboxOutcome.FailedClosedBankAccount1 => "FailedClosedBankAccount",
+                SandboxOutcome.ReversedClosedBankAccount1 => "ReversedClosedBankAccount",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

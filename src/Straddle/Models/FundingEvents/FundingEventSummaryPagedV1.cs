@@ -432,6 +432,10 @@ public enum FundingEventSummaryPagedV1DataEventType
     ChargeReversal,
     PayoutReturn,
     PayoutWithdrawal,
+    ChargeDeposit1,
+    ChargeReversal1,
+    PayoutReturn1,
+    PayoutWithdrawal1,
 }
 
 sealed class FundingEventSummaryPagedV1DataEventTypeConverter
@@ -449,6 +453,10 @@ sealed class FundingEventSummaryPagedV1DataEventTypeConverter
             "charge_reversal" => FundingEventSummaryPagedV1DataEventType.ChargeReversal,
             "payout_return" => FundingEventSummaryPagedV1DataEventType.PayoutReturn,
             "payout_withdrawal" => FundingEventSummaryPagedV1DataEventType.PayoutWithdrawal,
+            "ChargeDeposit" => FundingEventSummaryPagedV1DataEventType.ChargeDeposit1,
+            "ChargeReversal" => FundingEventSummaryPagedV1DataEventType.ChargeReversal1,
+            "PayoutReturn" => FundingEventSummaryPagedV1DataEventType.PayoutReturn1,
+            "PayoutWithdrawal" => FundingEventSummaryPagedV1DataEventType.PayoutWithdrawal1,
             _ => (FundingEventSummaryPagedV1DataEventType)(-1),
         };
     }
@@ -467,6 +475,10 @@ sealed class FundingEventSummaryPagedV1DataEventTypeConverter
                 FundingEventSummaryPagedV1DataEventType.ChargeReversal => "charge_reversal",
                 FundingEventSummaryPagedV1DataEventType.PayoutReturn => "payout_return",
                 FundingEventSummaryPagedV1DataEventType.PayoutWithdrawal => "payout_withdrawal",
+                FundingEventSummaryPagedV1DataEventType.ChargeDeposit1 => "ChargeDeposit",
+                FundingEventSummaryPagedV1DataEventType.ChargeReversal1 => "ChargeReversal",
+                FundingEventSummaryPagedV1DataEventType.PayoutReturn1 => "PayoutReturn",
+                FundingEventSummaryPagedV1DataEventType.PayoutWithdrawal1 => "PayoutWithdrawal",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -490,6 +502,14 @@ public enum FundingEventSummaryPagedV1DataStatus
     Pending,
     Paid,
     Reversed,
+    Created1,
+    Scheduled1,
+    Failed1,
+    Cancelled1,
+    OnHold1,
+    Pending1,
+    Paid1,
+    Reversed1,
 }
 
 sealed class FundingEventSummaryPagedV1DataStatusConverter
@@ -511,6 +531,14 @@ sealed class FundingEventSummaryPagedV1DataStatusConverter
             "pending" => FundingEventSummaryPagedV1DataStatus.Pending,
             "paid" => FundingEventSummaryPagedV1DataStatus.Paid,
             "reversed" => FundingEventSummaryPagedV1DataStatus.Reversed,
+            "Created" => FundingEventSummaryPagedV1DataStatus.Created1,
+            "Scheduled" => FundingEventSummaryPagedV1DataStatus.Scheduled1,
+            "Failed" => FundingEventSummaryPagedV1DataStatus.Failed1,
+            "Cancelled" => FundingEventSummaryPagedV1DataStatus.Cancelled1,
+            "OnHold" => FundingEventSummaryPagedV1DataStatus.OnHold1,
+            "Pending" => FundingEventSummaryPagedV1DataStatus.Pending1,
+            "Paid" => FundingEventSummaryPagedV1DataStatus.Paid1,
+            "Reversed" => FundingEventSummaryPagedV1DataStatus.Reversed1,
             _ => (FundingEventSummaryPagedV1DataStatus)(-1),
         };
     }
@@ -533,6 +561,14 @@ sealed class FundingEventSummaryPagedV1DataStatusConverter
                 FundingEventSummaryPagedV1DataStatus.Pending => "pending",
                 FundingEventSummaryPagedV1DataStatus.Paid => "paid",
                 FundingEventSummaryPagedV1DataStatus.Reversed => "reversed",
+                FundingEventSummaryPagedV1DataStatus.Created1 => "Created",
+                FundingEventSummaryPagedV1DataStatus.Scheduled1 => "Scheduled",
+                FundingEventSummaryPagedV1DataStatus.Failed1 => "Failed",
+                FundingEventSummaryPagedV1DataStatus.Cancelled1 => "Cancelled",
+                FundingEventSummaryPagedV1DataStatus.OnHold1 => "OnHold",
+                FundingEventSummaryPagedV1DataStatus.Pending1 => "Pending",
+                FundingEventSummaryPagedV1DataStatus.Paid1 => "Paid",
+                FundingEventSummaryPagedV1DataStatus.Reversed1 => "Reversed",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -691,6 +727,26 @@ public enum FundingEventSummaryPagedV1DataStatusDetailsReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    InsufficientFunds1,
+    ClosedBankAccount1,
+    InvalidBankAccount1,
+    InvalidRouting1,
+    Disputed1,
+    PaymentStopped1,
+    OwnerDeceased1,
+    FrozenBankAccount1,
+    RiskReview1,
+    Fraudulent1,
+    DuplicateEntry1,
+    InvalidPaykey1,
+    PaymentBlocked1,
+    AmountTooLarge1,
+    TooManyAttempts1,
+    InternalSystemError1,
+    UserRequest1,
+    Ok1,
+    OtherNetworkReturn1,
+    PayoutRefused1,
 }
 
 sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
@@ -739,6 +795,32 @@ sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
                 FundingEventSummaryPagedV1DataStatusDetailsReason.BlockedBySystem,
             "watchtower_review" =>
                 FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview,
+            "InsufficientFunds" =>
+                FundingEventSummaryPagedV1DataStatusDetailsReason.InsufficientFunds1,
+            "ClosedBankAccount" =>
+                FundingEventSummaryPagedV1DataStatusDetailsReason.ClosedBankAccount1,
+            "InvalidBankAccount" =>
+                FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidBankAccount1,
+            "InvalidRouting" => FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidRouting1,
+            "Disputed" => FundingEventSummaryPagedV1DataStatusDetailsReason.Disputed1,
+            "PaymentStopped" => FundingEventSummaryPagedV1DataStatusDetailsReason.PaymentStopped1,
+            "OwnerDeceased" => FundingEventSummaryPagedV1DataStatusDetailsReason.OwnerDeceased1,
+            "FrozenBankAccount" =>
+                FundingEventSummaryPagedV1DataStatusDetailsReason.FrozenBankAccount1,
+            "RiskReview" => FundingEventSummaryPagedV1DataStatusDetailsReason.RiskReview1,
+            "Fraudulent" => FundingEventSummaryPagedV1DataStatusDetailsReason.Fraudulent1,
+            "DuplicateEntry" => FundingEventSummaryPagedV1DataStatusDetailsReason.DuplicateEntry1,
+            "InvalidPaykey" => FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidPaykey1,
+            "PaymentBlocked" => FundingEventSummaryPagedV1DataStatusDetailsReason.PaymentBlocked1,
+            "AmountTooLarge" => FundingEventSummaryPagedV1DataStatusDetailsReason.AmountTooLarge1,
+            "TooManyAttempts" => FundingEventSummaryPagedV1DataStatusDetailsReason.TooManyAttempts1,
+            "InternalSystemError" =>
+                FundingEventSummaryPagedV1DataStatusDetailsReason.InternalSystemError1,
+            "UserRequest" => FundingEventSummaryPagedV1DataStatusDetailsReason.UserRequest1,
+            "Ok" => FundingEventSummaryPagedV1DataStatusDetailsReason.Ok1,
+            "OtherNetworkReturn" =>
+                FundingEventSummaryPagedV1DataStatusDetailsReason.OtherNetworkReturn1,
+            "PayoutRefused" => FundingEventSummaryPagedV1DataStatusDetailsReason.PayoutRefused1,
             _ => (FundingEventSummaryPagedV1DataStatusDetailsReason)(-1),
         };
     }
@@ -793,6 +875,38 @@ sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
                     "blocked_by_system",
                 FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview =>
                     "watchtower_review",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.InsufficientFunds1 =>
+                    "InsufficientFunds",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.ClosedBankAccount1 =>
+                    "ClosedBankAccount",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidBankAccount1 =>
+                    "InvalidBankAccount",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidRouting1 =>
+                    "InvalidRouting",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.Disputed1 => "Disputed",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.PaymentStopped1 =>
+                    "PaymentStopped",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.OwnerDeceased1 => "OwnerDeceased",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.FrozenBankAccount1 =>
+                    "FrozenBankAccount",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.RiskReview1 => "RiskReview",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.Fraudulent1 => "Fraudulent",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.DuplicateEntry1 =>
+                    "DuplicateEntry",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidPaykey1 => "InvalidPaykey",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.PaymentBlocked1 =>
+                    "PaymentBlocked",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.AmountTooLarge1 =>
+                    "AmountTooLarge",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.TooManyAttempts1 =>
+                    "TooManyAttempts",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.InternalSystemError1 =>
+                    "InternalSystemError",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.UserRequest1 => "UserRequest",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.Ok1 => "Ok",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.OtherNetworkReturn1 =>
+                    "OtherNetworkReturn",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.PayoutRefused1 => "PayoutRefused",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -810,6 +924,11 @@ public enum FundingEventSummaryPagedV1DataStatusDetailsSource
     CustomerDispute,
     UserAction,
     System,
+    Watchtower1,
+    BankDecline1,
+    CustomerDispute1,
+    UserAction1,
+    System1,
 }
 
 sealed class FundingEventSummaryPagedV1DataStatusDetailsSourceConverter
@@ -828,6 +947,11 @@ sealed class FundingEventSummaryPagedV1DataStatusDetailsSourceConverter
             "customer_dispute" => FundingEventSummaryPagedV1DataStatusDetailsSource.CustomerDispute,
             "user_action" => FundingEventSummaryPagedV1DataStatusDetailsSource.UserAction,
             "system" => FundingEventSummaryPagedV1DataStatusDetailsSource.System,
+            "Watchtower" => FundingEventSummaryPagedV1DataStatusDetailsSource.Watchtower1,
+            "BankDecline" => FundingEventSummaryPagedV1DataStatusDetailsSource.BankDecline1,
+            "CustomerDispute" => FundingEventSummaryPagedV1DataStatusDetailsSource.CustomerDispute1,
+            "UserAction" => FundingEventSummaryPagedV1DataStatusDetailsSource.UserAction1,
+            "System" => FundingEventSummaryPagedV1DataStatusDetailsSource.System1,
             _ => (FundingEventSummaryPagedV1DataStatusDetailsSource)(-1),
         };
     }
@@ -848,6 +972,12 @@ sealed class FundingEventSummaryPagedV1DataStatusDetailsSourceConverter
                     "customer_dispute",
                 FundingEventSummaryPagedV1DataStatusDetailsSource.UserAction => "user_action",
                 FundingEventSummaryPagedV1DataStatusDetailsSource.System => "system",
+                FundingEventSummaryPagedV1DataStatusDetailsSource.Watchtower1 => "Watchtower",
+                FundingEventSummaryPagedV1DataStatusDetailsSource.BankDecline1 => "BankDecline",
+                FundingEventSummaryPagedV1DataStatusDetailsSource.CustomerDispute1 =>
+                    "CustomerDispute",
+                FundingEventSummaryPagedV1DataStatusDetailsSource.UserAction1 => "UserAction",
+                FundingEventSummaryPagedV1DataStatusDetailsSource.System1 => "System",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1022,6 +1152,8 @@ public enum MetaSortOrder
 {
     Asc,
     Desc,
+    Asc1,
+    Desc1,
 }
 
 sealed class MetaSortOrderConverter : JsonConverter<MetaSortOrder>
@@ -1036,6 +1168,8 @@ sealed class MetaSortOrderConverter : JsonConverter<MetaSortOrder>
         {
             "asc" => MetaSortOrder.Asc,
             "desc" => MetaSortOrder.Desc,
+            "Asc" => MetaSortOrder.Asc1,
+            "Desc" => MetaSortOrder.Desc1,
             _ => (MetaSortOrder)(-1),
         };
     }
@@ -1052,6 +1186,8 @@ sealed class MetaSortOrderConverter : JsonConverter<MetaSortOrder>
             {
                 MetaSortOrder.Asc => "asc",
                 MetaSortOrder.Desc => "desc",
+                MetaSortOrder.Asc1 => "Asc",
+                MetaSortOrder.Desc1 => "Desc",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1074,6 +1210,10 @@ public enum FundingEventSummaryPagedV1ResponseType
     Array,
     Error,
     None,
+    Object1,
+    Array1,
+    Error1,
+    None1,
 }
 
 sealed class FundingEventSummaryPagedV1ResponseTypeConverter
@@ -1091,6 +1231,10 @@ sealed class FundingEventSummaryPagedV1ResponseTypeConverter
             "array" => FundingEventSummaryPagedV1ResponseType.Array,
             "error" => FundingEventSummaryPagedV1ResponseType.Error,
             "none" => FundingEventSummaryPagedV1ResponseType.None,
+            "Object" => FundingEventSummaryPagedV1ResponseType.Object1,
+            "Array" => FundingEventSummaryPagedV1ResponseType.Array1,
+            "Error" => FundingEventSummaryPagedV1ResponseType.Error1,
+            "None" => FundingEventSummaryPagedV1ResponseType.None1,
             _ => (FundingEventSummaryPagedV1ResponseType)(-1),
         };
     }
@@ -1109,6 +1253,10 @@ sealed class FundingEventSummaryPagedV1ResponseTypeConverter
                 FundingEventSummaryPagedV1ResponseType.Array => "array",
                 FundingEventSummaryPagedV1ResponseType.Error => "error",
                 FundingEventSummaryPagedV1ResponseType.None => "none",
+                FundingEventSummaryPagedV1ResponseType.Object1 => "Object",
+                FundingEventSummaryPagedV1ResponseType.Array1 => "Array",
+                FundingEventSummaryPagedV1ResponseType.Error1 => "Error",
+                FundingEventSummaryPagedV1ResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

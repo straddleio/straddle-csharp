@@ -403,6 +403,10 @@ public enum DataEventType
     ChargeReversal,
     PayoutReturn,
     PayoutWithdrawal,
+    ChargeDeposit1,
+    ChargeReversal1,
+    PayoutReturn1,
+    PayoutWithdrawal1,
 }
 
 sealed class DataEventTypeConverter : JsonConverter<DataEventType>
@@ -419,6 +423,10 @@ sealed class DataEventTypeConverter : JsonConverter<DataEventType>
             "charge_reversal" => DataEventType.ChargeReversal,
             "payout_return" => DataEventType.PayoutReturn,
             "payout_withdrawal" => DataEventType.PayoutWithdrawal,
+            "ChargeDeposit" => DataEventType.ChargeDeposit1,
+            "ChargeReversal" => DataEventType.ChargeReversal1,
+            "PayoutReturn" => DataEventType.PayoutReturn1,
+            "PayoutWithdrawal" => DataEventType.PayoutWithdrawal1,
             _ => (DataEventType)(-1),
         };
     }
@@ -437,6 +445,10 @@ sealed class DataEventTypeConverter : JsonConverter<DataEventType>
                 DataEventType.ChargeReversal => "charge_reversal",
                 DataEventType.PayoutReturn => "payout_return",
                 DataEventType.PayoutWithdrawal => "payout_withdrawal",
+                DataEventType.ChargeDeposit1 => "ChargeDeposit",
+                DataEventType.ChargeReversal1 => "ChargeReversal",
+                DataEventType.PayoutReturn1 => "PayoutReturn",
+                DataEventType.PayoutWithdrawal1 => "PayoutWithdrawal",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -460,6 +472,14 @@ public enum DataStatus
     Pending,
     Paid,
     Reversed,
+    Created1,
+    Scheduled1,
+    Failed1,
+    Cancelled1,
+    OnHold1,
+    Pending1,
+    Paid1,
+    Reversed1,
 }
 
 sealed class DataStatusConverter : JsonConverter<DataStatus>
@@ -480,6 +500,14 @@ sealed class DataStatusConverter : JsonConverter<DataStatus>
             "pending" => DataStatus.Pending,
             "paid" => DataStatus.Paid,
             "reversed" => DataStatus.Reversed,
+            "Created" => DataStatus.Created1,
+            "Scheduled" => DataStatus.Scheduled1,
+            "Failed" => DataStatus.Failed1,
+            "Cancelled" => DataStatus.Cancelled1,
+            "OnHold" => DataStatus.OnHold1,
+            "Pending" => DataStatus.Pending1,
+            "Paid" => DataStatus.Paid1,
+            "Reversed" => DataStatus.Reversed1,
             _ => (DataStatus)(-1),
         };
     }
@@ -502,6 +530,14 @@ sealed class DataStatusConverter : JsonConverter<DataStatus>
                 DataStatus.Pending => "pending",
                 DataStatus.Paid => "paid",
                 DataStatus.Reversed => "reversed",
+                DataStatus.Created1 => "Created",
+                DataStatus.Scheduled1 => "Scheduled",
+                DataStatus.Failed1 => "Failed",
+                DataStatus.Cancelled1 => "Cancelled",
+                DataStatus.OnHold1 => "OnHold",
+                DataStatus.Pending1 => "Pending",
+                DataStatus.Paid1 => "Paid",
+                DataStatus.Reversed1 => "Reversed",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -643,6 +679,26 @@ public enum Reason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    InsufficientFunds1,
+    ClosedBankAccount1,
+    InvalidBankAccount1,
+    InvalidRouting1,
+    Disputed1,
+    PaymentStopped1,
+    OwnerDeceased1,
+    FrozenBankAccount1,
+    RiskReview1,
+    Fraudulent1,
+    DuplicateEntry1,
+    InvalidPaykey1,
+    PaymentBlocked1,
+    AmountTooLarge1,
+    TooManyAttempts1,
+    InternalSystemError1,
+    UserRequest1,
+    Ok1,
+    OtherNetworkReturn1,
+    PayoutRefused1,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -680,6 +736,26 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "require_review" => Reason.RequireReview,
             "blocked_by_system" => Reason.BlockedBySystem,
             "watchtower_review" => Reason.WatchtowerReview,
+            "InsufficientFunds" => Reason.InsufficientFunds1,
+            "ClosedBankAccount" => Reason.ClosedBankAccount1,
+            "InvalidBankAccount" => Reason.InvalidBankAccount1,
+            "InvalidRouting" => Reason.InvalidRouting1,
+            "Disputed" => Reason.Disputed1,
+            "PaymentStopped" => Reason.PaymentStopped1,
+            "OwnerDeceased" => Reason.OwnerDeceased1,
+            "FrozenBankAccount" => Reason.FrozenBankAccount1,
+            "RiskReview" => Reason.RiskReview1,
+            "Fraudulent" => Reason.Fraudulent1,
+            "DuplicateEntry" => Reason.DuplicateEntry1,
+            "InvalidPaykey" => Reason.InvalidPaykey1,
+            "PaymentBlocked" => Reason.PaymentBlocked1,
+            "AmountTooLarge" => Reason.AmountTooLarge1,
+            "TooManyAttempts" => Reason.TooManyAttempts1,
+            "InternalSystemError" => Reason.InternalSystemError1,
+            "UserRequest" => Reason.UserRequest1,
+            "Ok" => Reason.Ok1,
+            "OtherNetworkReturn" => Reason.OtherNetworkReturn1,
+            "PayoutRefused" => Reason.PayoutRefused1,
             _ => (Reason)(-1),
         };
     }
@@ -715,6 +791,26 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.RequireReview => "require_review",
                 Reason.BlockedBySystem => "blocked_by_system",
                 Reason.WatchtowerReview => "watchtower_review",
+                Reason.InsufficientFunds1 => "InsufficientFunds",
+                Reason.ClosedBankAccount1 => "ClosedBankAccount",
+                Reason.InvalidBankAccount1 => "InvalidBankAccount",
+                Reason.InvalidRouting1 => "InvalidRouting",
+                Reason.Disputed1 => "Disputed",
+                Reason.PaymentStopped1 => "PaymentStopped",
+                Reason.OwnerDeceased1 => "OwnerDeceased",
+                Reason.FrozenBankAccount1 => "FrozenBankAccount",
+                Reason.RiskReview1 => "RiskReview",
+                Reason.Fraudulent1 => "Fraudulent",
+                Reason.DuplicateEntry1 => "DuplicateEntry",
+                Reason.InvalidPaykey1 => "InvalidPaykey",
+                Reason.PaymentBlocked1 => "PaymentBlocked",
+                Reason.AmountTooLarge1 => "AmountTooLarge",
+                Reason.TooManyAttempts1 => "TooManyAttempts",
+                Reason.InternalSystemError1 => "InternalSystemError",
+                Reason.UserRequest1 => "UserRequest",
+                Reason.Ok1 => "Ok",
+                Reason.OtherNetworkReturn1 => "OtherNetworkReturn",
+                Reason.PayoutRefused1 => "PayoutRefused",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -732,6 +828,11 @@ public enum Source
     CustomerDispute,
     UserAction,
     System,
+    Watchtower1,
+    BankDecline1,
+    CustomerDispute1,
+    UserAction1,
+    System1,
 }
 
 sealed class SourceConverter : JsonConverter<Source>
@@ -749,6 +850,11 @@ sealed class SourceConverter : JsonConverter<Source>
             "customer_dispute" => Source.CustomerDispute,
             "user_action" => Source.UserAction,
             "system" => Source.System,
+            "Watchtower" => Source.Watchtower1,
+            "BankDecline" => Source.BankDecline1,
+            "CustomerDispute" => Source.CustomerDispute1,
+            "UserAction" => Source.UserAction1,
+            "System" => Source.System1,
             _ => (Source)(-1),
         };
     }
@@ -764,6 +870,11 @@ sealed class SourceConverter : JsonConverter<Source>
                 Source.CustomerDispute => "customer_dispute",
                 Source.UserAction => "user_action",
                 Source.System => "system",
+                Source.Watchtower1 => "Watchtower",
+                Source.BankDecline1 => "BankDecline",
+                Source.CustomerDispute1 => "CustomerDispute",
+                Source.UserAction1 => "UserAction",
+                Source.System1 => "System",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -786,6 +897,10 @@ public enum ResponseType
     Array,
     Error,
     None,
+    Object1,
+    Array1,
+    Error1,
+    None1,
 }
 
 sealed class ResponseTypeConverter : JsonConverter<ResponseType>
@@ -802,6 +917,10 @@ sealed class ResponseTypeConverter : JsonConverter<ResponseType>
             "array" => ResponseType.Array,
             "error" => ResponseType.Error,
             "none" => ResponseType.None,
+            "Object" => ResponseType.Object1,
+            "Array" => ResponseType.Array1,
+            "Error" => ResponseType.Error1,
+            "None" => ResponseType.None1,
             _ => (ResponseType)(-1),
         };
     }
@@ -820,6 +939,10 @@ sealed class ResponseTypeConverter : JsonConverter<ResponseType>
                 ResponseType.Array => "array",
                 ResponseType.Error => "error",
                 ResponseType.None => "none",
+                ResponseType.Object1 => "Object",
+                ResponseType.Array1 => "Array",
+                ResponseType.Error1 => "Error",
+                ResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

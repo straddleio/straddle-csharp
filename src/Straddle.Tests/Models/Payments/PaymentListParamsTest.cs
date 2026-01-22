@@ -403,6 +403,11 @@ public class DefaultSortTest : TestBase
     [InlineData(DefaultSort.EffectiveAt)]
     [InlineData(DefaultSort.ID)]
     [InlineData(DefaultSort.Amount)]
+    [InlineData(DefaultSort.CreatedAt1)]
+    [InlineData(DefaultSort.PaymentDate1)]
+    [InlineData(DefaultSort.EffectiveAt1)]
+    [InlineData(DefaultSort.ID1)]
+    [InlineData(DefaultSort.Amount1)]
     public void Validation_Works(DefaultSort rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -428,6 +433,11 @@ public class DefaultSortTest : TestBase
     [InlineData(DefaultSort.EffectiveAt)]
     [InlineData(DefaultSort.ID)]
     [InlineData(DefaultSort.Amount)]
+    [InlineData(DefaultSort.CreatedAt1)]
+    [InlineData(DefaultSort.PaymentDate1)]
+    [InlineData(DefaultSort.EffectiveAt1)]
+    [InlineData(DefaultSort.ID1)]
+    [InlineData(DefaultSort.Amount1)]
     public void SerializationRoundtrip_Works(DefaultSort rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -464,6 +474,8 @@ public class DefaultSortOrderTest : TestBase
     [Theory]
     [InlineData(DefaultSortOrder.Asc)]
     [InlineData(DefaultSortOrder.Desc)]
+    [InlineData(DefaultSortOrder.Asc1)]
+    [InlineData(DefaultSortOrder.Desc1)]
     public void Validation_Works(DefaultSortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -486,6 +498,8 @@ public class DefaultSortOrderTest : TestBase
     [Theory]
     [InlineData(DefaultSortOrder.Asc)]
     [InlineData(DefaultSortOrder.Desc)]
+    [InlineData(DefaultSortOrder.Asc1)]
+    [InlineData(DefaultSortOrder.Desc1)]
     public void SerializationRoundtrip_Works(DefaultSortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -528,6 +542,14 @@ public class PaymentStatusTest : TestBase
     [InlineData(PaymentStatus.Pending)]
     [InlineData(PaymentStatus.Paid)]
     [InlineData(PaymentStatus.Reversed)]
+    [InlineData(PaymentStatus.Created1)]
+    [InlineData(PaymentStatus.Scheduled1)]
+    [InlineData(PaymentStatus.Failed1)]
+    [InlineData(PaymentStatus.Cancelled1)]
+    [InlineData(PaymentStatus.OnHold1)]
+    [InlineData(PaymentStatus.Pending1)]
+    [InlineData(PaymentStatus.Paid1)]
+    [InlineData(PaymentStatus.Reversed1)]
     public void Validation_Works(PaymentStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -556,6 +578,14 @@ public class PaymentStatusTest : TestBase
     [InlineData(PaymentStatus.Pending)]
     [InlineData(PaymentStatus.Paid)]
     [InlineData(PaymentStatus.Reversed)]
+    [InlineData(PaymentStatus.Created1)]
+    [InlineData(PaymentStatus.Scheduled1)]
+    [InlineData(PaymentStatus.Failed1)]
+    [InlineData(PaymentStatus.Cancelled1)]
+    [InlineData(PaymentStatus.OnHold1)]
+    [InlineData(PaymentStatus.Pending1)]
+    [InlineData(PaymentStatus.Paid1)]
+    [InlineData(PaymentStatus.Reversed1)]
     public void SerializationRoundtrip_Works(PaymentStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -592,6 +622,8 @@ public class PaymentTypeTest : TestBase
     [Theory]
     [InlineData(PaymentType.Charge)]
     [InlineData(PaymentType.Payout)]
+    [InlineData(PaymentType.Charge1)]
+    [InlineData(PaymentType.Payout1)]
     public void Validation_Works(PaymentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -614,6 +646,8 @@ public class PaymentTypeTest : TestBase
     [Theory]
     [InlineData(PaymentType.Charge)]
     [InlineData(PaymentType.Payout)]
+    [InlineData(PaymentType.Charge1)]
+    [InlineData(PaymentType.Payout1)]
     public void SerializationRoundtrip_Works(PaymentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -653,6 +687,11 @@ public class SortByTest : TestBase
     [InlineData(SortBy.EffectiveAt)]
     [InlineData(SortBy.ID)]
     [InlineData(SortBy.Amount)]
+    [InlineData(SortBy.CreatedAt1)]
+    [InlineData(SortBy.PaymentDate1)]
+    [InlineData(SortBy.EffectiveAt1)]
+    [InlineData(SortBy.ID1)]
+    [InlineData(SortBy.Amount1)]
     public void Validation_Works(SortBy rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -678,6 +717,11 @@ public class SortByTest : TestBase
     [InlineData(SortBy.EffectiveAt)]
     [InlineData(SortBy.ID)]
     [InlineData(SortBy.Amount)]
+    [InlineData(SortBy.CreatedAt1)]
+    [InlineData(SortBy.PaymentDate1)]
+    [InlineData(SortBy.EffectiveAt1)]
+    [InlineData(SortBy.ID1)]
+    [InlineData(SortBy.Amount1)]
     public void SerializationRoundtrip_Works(SortBy rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -714,6 +758,8 @@ public class SortOrderTest : TestBase
     [Theory]
     [InlineData(SortOrder.Asc)]
     [InlineData(SortOrder.Desc)]
+    [InlineData(SortOrder.Asc1)]
+    [InlineData(SortOrder.Desc1)]
     public void Validation_Works(SortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -736,6 +782,8 @@ public class SortOrderTest : TestBase
     [Theory]
     [InlineData(SortOrder.Asc)]
     [InlineData(SortOrder.Desc)]
+    [InlineData(SortOrder.Asc1)]
+    [InlineData(SortOrder.Desc1)]
     public void SerializationRoundtrip_Works(SortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -795,6 +843,26 @@ public class StatusReasonTest : TestBase
     [InlineData(StatusReason.RequireReview)]
     [InlineData(StatusReason.BlockedBySystem)]
     [InlineData(StatusReason.WatchtowerReview)]
+    [InlineData(StatusReason.InsufficientFunds1)]
+    [InlineData(StatusReason.ClosedBankAccount1)]
+    [InlineData(StatusReason.InvalidBankAccount1)]
+    [InlineData(StatusReason.InvalidRouting1)]
+    [InlineData(StatusReason.Disputed1)]
+    [InlineData(StatusReason.PaymentStopped1)]
+    [InlineData(StatusReason.OwnerDeceased1)]
+    [InlineData(StatusReason.FrozenBankAccount1)]
+    [InlineData(StatusReason.RiskReview1)]
+    [InlineData(StatusReason.Fraudulent1)]
+    [InlineData(StatusReason.DuplicateEntry1)]
+    [InlineData(StatusReason.InvalidPaykey1)]
+    [InlineData(StatusReason.PaymentBlocked1)]
+    [InlineData(StatusReason.AmountTooLarge1)]
+    [InlineData(StatusReason.TooManyAttempts1)]
+    [InlineData(StatusReason.InternalSystemError1)]
+    [InlineData(StatusReason.UserRequest1)]
+    [InlineData(StatusReason.Ok1)]
+    [InlineData(StatusReason.OtherNetworkReturn1)]
+    [InlineData(StatusReason.PayoutRefused1)]
     public void Validation_Works(StatusReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -840,6 +908,26 @@ public class StatusReasonTest : TestBase
     [InlineData(StatusReason.RequireReview)]
     [InlineData(StatusReason.BlockedBySystem)]
     [InlineData(StatusReason.WatchtowerReview)]
+    [InlineData(StatusReason.InsufficientFunds1)]
+    [InlineData(StatusReason.ClosedBankAccount1)]
+    [InlineData(StatusReason.InvalidBankAccount1)]
+    [InlineData(StatusReason.InvalidRouting1)]
+    [InlineData(StatusReason.Disputed1)]
+    [InlineData(StatusReason.PaymentStopped1)]
+    [InlineData(StatusReason.OwnerDeceased1)]
+    [InlineData(StatusReason.FrozenBankAccount1)]
+    [InlineData(StatusReason.RiskReview1)]
+    [InlineData(StatusReason.Fraudulent1)]
+    [InlineData(StatusReason.DuplicateEntry1)]
+    [InlineData(StatusReason.InvalidPaykey1)]
+    [InlineData(StatusReason.PaymentBlocked1)]
+    [InlineData(StatusReason.AmountTooLarge1)]
+    [InlineData(StatusReason.TooManyAttempts1)]
+    [InlineData(StatusReason.InternalSystemError1)]
+    [InlineData(StatusReason.UserRequest1)]
+    [InlineData(StatusReason.Ok1)]
+    [InlineData(StatusReason.OtherNetworkReturn1)]
+    [InlineData(StatusReason.PayoutRefused1)]
     public void SerializationRoundtrip_Works(StatusReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -879,6 +967,11 @@ public class StatusSourceTest : TestBase
     [InlineData(StatusSource.CustomerDispute)]
     [InlineData(StatusSource.UserAction)]
     [InlineData(StatusSource.System)]
+    [InlineData(StatusSource.Watchtower1)]
+    [InlineData(StatusSource.BankDecline1)]
+    [InlineData(StatusSource.CustomerDispute1)]
+    [InlineData(StatusSource.UserAction1)]
+    [InlineData(StatusSource.System1)]
     public void Validation_Works(StatusSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -904,6 +997,11 @@ public class StatusSourceTest : TestBase
     [InlineData(StatusSource.CustomerDispute)]
     [InlineData(StatusSource.UserAction)]
     [InlineData(StatusSource.System)]
+    [InlineData(StatusSource.Watchtower1)]
+    [InlineData(StatusSource.BankDecline1)]
+    [InlineData(StatusSource.CustomerDispute1)]
+    [InlineData(StatusSource.UserAction1)]
+    [InlineData(StatusSource.System1)]
     public void SerializationRoundtrip_Works(StatusSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us

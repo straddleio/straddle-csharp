@@ -412,6 +412,8 @@ public enum CustomerUnmaskedV1DataType
 {
     Individual,
     Business,
+    Individual1,
+    Business1,
 }
 
 sealed class CustomerUnmaskedV1DataTypeConverter : JsonConverter<CustomerUnmaskedV1DataType>
@@ -426,6 +428,8 @@ sealed class CustomerUnmaskedV1DataTypeConverter : JsonConverter<CustomerUnmaske
         {
             "individual" => CustomerUnmaskedV1DataType.Individual,
             "business" => CustomerUnmaskedV1DataType.Business,
+            "Individual" => CustomerUnmaskedV1DataType.Individual1,
+            "Business" => CustomerUnmaskedV1DataType.Business1,
             _ => (CustomerUnmaskedV1DataType)(-1),
         };
     }
@@ -442,6 +446,8 @@ sealed class CustomerUnmaskedV1DataTypeConverter : JsonConverter<CustomerUnmaske
             {
                 CustomerUnmaskedV1DataType.Individual => "individual",
                 CustomerUnmaskedV1DataType.Business => "business",
+                CustomerUnmaskedV1DataType.Individual1 => "Individual",
+                CustomerUnmaskedV1DataType.Business1 => "Business",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1247,6 +1253,10 @@ public enum CustomerUnmaskedV1ResponseType
     Array,
     Error,
     None,
+    Object1,
+    Array1,
+    Error1,
+    None1,
 }
 
 sealed class CustomerUnmaskedV1ResponseTypeConverter : JsonConverter<CustomerUnmaskedV1ResponseType>
@@ -1263,6 +1273,10 @@ sealed class CustomerUnmaskedV1ResponseTypeConverter : JsonConverter<CustomerUnm
             "array" => CustomerUnmaskedV1ResponseType.Array,
             "error" => CustomerUnmaskedV1ResponseType.Error,
             "none" => CustomerUnmaskedV1ResponseType.None,
+            "Object" => CustomerUnmaskedV1ResponseType.Object1,
+            "Array" => CustomerUnmaskedV1ResponseType.Array1,
+            "Error" => CustomerUnmaskedV1ResponseType.Error1,
+            "None" => CustomerUnmaskedV1ResponseType.None1,
             _ => (CustomerUnmaskedV1ResponseType)(-1),
         };
     }
@@ -1281,6 +1295,10 @@ sealed class CustomerUnmaskedV1ResponseTypeConverter : JsonConverter<CustomerUnm
                 CustomerUnmaskedV1ResponseType.Array => "array",
                 CustomerUnmaskedV1ResponseType.Error => "error",
                 CustomerUnmaskedV1ResponseType.None => "none",
+                CustomerUnmaskedV1ResponseType.Object1 => "Object",
+                CustomerUnmaskedV1ResponseType.Array1 => "Array",
+                CustomerUnmaskedV1ResponseType.Error1 => "Error",
+                CustomerUnmaskedV1ResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

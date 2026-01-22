@@ -22,6 +22,7 @@ public class PaykeyListParamsTest : TestBase
             SortOrder = SortOrder.Asc,
             Source = [Source.BankAccount],
             Status = [Status.Pending],
+            UnblockEligible = true,
             CorrelationID = "Correlation-Id",
             RequestID = "Request-Id",
             StraddleAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -34,6 +35,7 @@ public class PaykeyListParamsTest : TestBase
         ApiEnum<string, SortOrder> expectedSortOrder = SortOrder.Asc;
         List<ApiEnum<string, Source>> expectedSource = [Source.BankAccount];
         List<ApiEnum<string, Status>> expectedStatus = [Status.Pending];
+        bool expectedUnblockEligible = true;
         string expectedCorrelationID = "Correlation-Id";
         string expectedRequestID = "Request-Id";
         string expectedStraddleAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
@@ -55,6 +57,7 @@ public class PaykeyListParamsTest : TestBase
         {
             Assert.Equal(expectedStatus[i], parameters.Status[i]);
         }
+        Assert.Equal(expectedUnblockEligible, parameters.UnblockEligible);
         Assert.Equal(expectedCorrelationID, parameters.CorrelationID);
         Assert.Equal(expectedRequestID, parameters.RequestID);
         Assert.Equal(expectedStraddleAccountID, parameters.StraddleAccountID);
@@ -79,6 +82,8 @@ public class PaykeyListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("source"));
         Assert.Null(parameters.Status);
         Assert.False(parameters.RawQueryData.ContainsKey("status"));
+        Assert.Null(parameters.UnblockEligible);
+        Assert.False(parameters.RawQueryData.ContainsKey("unblock_eligible"));
         Assert.Null(parameters.CorrelationID);
         Assert.False(parameters.RawHeaderData.ContainsKey("Correlation-Id"));
         Assert.Null(parameters.RequestID);
@@ -100,6 +105,7 @@ public class PaykeyListParamsTest : TestBase
             SortOrder = null,
             Source = null,
             Status = null,
+            UnblockEligible = null,
             CorrelationID = null,
             RequestID = null,
             StraddleAccountID = null,
@@ -119,6 +125,8 @@ public class PaykeyListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("source"));
         Assert.Null(parameters.Status);
         Assert.False(parameters.RawQueryData.ContainsKey("status"));
+        Assert.Null(parameters.UnblockEligible);
+        Assert.False(parameters.RawQueryData.ContainsKey("unblock_eligible"));
         Assert.Null(parameters.CorrelationID);
         Assert.False(parameters.RawHeaderData.ContainsKey("Correlation-Id"));
         Assert.Null(parameters.RequestID);
@@ -139,13 +147,14 @@ public class PaykeyListParamsTest : TestBase
             SortOrder = SortOrder.Asc,
             Source = [Source.BankAccount],
             Status = [Status.Pending],
+            UnblockEligible = true,
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
         Assert.Equal(
             new Uri(
-                "https://sandbox.straddle.com/v1/paykeys?customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_number=0&page_size=0&sort_by=institution_name&sort_order=asc&source=bank_account&status=pending"
+                "https://sandbox.straddle.com/v1/paykeys?customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_number=0&page_size=0&sort_by=institution_name&sort_order=asc&source=bank_account&status=pending&unblock_eligible=true"
             ),
             url
         );
@@ -184,6 +193,7 @@ public class PaykeyListParamsTest : TestBase
             SortOrder = SortOrder.Asc,
             Source = [Source.BankAccount],
             Status = [Status.Pending],
+            UnblockEligible = true,
             CorrelationID = "Correlation-Id",
             RequestID = "Request-Id",
             StraddleAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -260,6 +270,8 @@ public class SortOrderTest : TestBase
     [Theory]
     [InlineData(SortOrder.Asc)]
     [InlineData(SortOrder.Desc)]
+    [InlineData(SortOrder.Asc1)]
+    [InlineData(SortOrder.Desc1)]
     public void Validation_Works(SortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -282,6 +294,8 @@ public class SortOrderTest : TestBase
     [Theory]
     [InlineData(SortOrder.Asc)]
     [InlineData(SortOrder.Desc)]
+    [InlineData(SortOrder.Asc1)]
+    [InlineData(SortOrder.Desc1)]
     public void SerializationRoundtrip_Works(SortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us

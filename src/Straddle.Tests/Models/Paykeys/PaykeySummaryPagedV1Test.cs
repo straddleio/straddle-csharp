@@ -48,6 +48,7 @@ public class PaykeySummaryPagedV1Test : TestBase
                         Source = StatusDetailsSource.Watchtower,
                         Code = "code",
                     },
+                    UnblockEligible = true,
                 },
             ],
             Meta = new()
@@ -99,6 +100,7 @@ public class PaykeySummaryPagedV1Test : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
         ];
         Meta expectedMeta = new()
@@ -163,6 +165,7 @@ public class PaykeySummaryPagedV1Test : TestBase
                         Source = StatusDetailsSource.Watchtower,
                         Code = "code",
                     },
+                    UnblockEligible = true,
                 },
             ],
             Meta = new()
@@ -228,6 +231,7 @@ public class PaykeySummaryPagedV1Test : TestBase
                         Source = StatusDetailsSource.Watchtower,
                         Code = "code",
                     },
+                    UnblockEligible = true,
                 },
             ],
             Meta = new()
@@ -286,6 +290,7 @@ public class PaykeySummaryPagedV1Test : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
         ];
         Meta expectedMeta = new()
@@ -350,6 +355,7 @@ public class PaykeySummaryPagedV1Test : TestBase
                         Source = StatusDetailsSource.Watchtower,
                         Code = "code",
                     },
+                    UnblockEligible = true,
                 },
             ],
             Meta = new()
@@ -408,6 +414,7 @@ public class DataTest : TestBase
                 Source = StatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
@@ -440,6 +447,7 @@ public class DataTest : TestBase
             Source = StatusDetailsSource.Watchtower,
             Code = "code",
         };
+        bool expectedUnblockEligible = true;
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedConfig, model.Config);
@@ -455,6 +463,7 @@ public class DataTest : TestBase
         Assert.Equal(expectedExternalID, model.ExternalID);
         Assert.Equal(expectedInstitutionName, model.InstitutionName);
         Assert.Equal(expectedStatusDetails, model.StatusDetails);
+        Assert.Equal(expectedUnblockEligible, model.UnblockEligible);
     }
 
     [Fact]
@@ -492,6 +501,7 @@ public class DataTest : TestBase
                 Source = StatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -535,6 +545,7 @@ public class DataTest : TestBase
                 Source = StatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -571,6 +582,7 @@ public class DataTest : TestBase
             Source = StatusDetailsSource.Watchtower,
             Code = "code",
         };
+        bool expectedUnblockEligible = true;
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedConfig, deserialized.Config);
@@ -586,6 +598,7 @@ public class DataTest : TestBase
         Assert.Equal(expectedExternalID, deserialized.ExternalID);
         Assert.Equal(expectedInstitutionName, deserialized.InstitutionName);
         Assert.Equal(expectedStatusDetails, deserialized.StatusDetails);
+        Assert.Equal(expectedUnblockEligible, deserialized.UnblockEligible);
     }
 
     [Fact]
@@ -623,6 +636,7 @@ public class DataTest : TestBase
                 Source = StatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         model.Validate();
@@ -649,6 +663,7 @@ public class DataTest : TestBase
             ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
+            UnblockEligible = true,
         };
 
         Assert.Null(model.BankData);
@@ -678,6 +693,7 @@ public class DataTest : TestBase
             ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
+            UnblockEligible = true,
         };
 
         model.Validate();
@@ -704,6 +720,7 @@ public class DataTest : TestBase
             ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
+            UnblockEligible = true,
 
             // Null should be interpreted as omitted for these properties
             BankData = null,
@@ -737,6 +754,7 @@ public class DataTest : TestBase
             ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
+            UnblockEligible = true,
 
             // Null should be interpreted as omitted for these properties
             BankData = null,
@@ -787,6 +805,8 @@ public class DataTest : TestBase
         Assert.False(model.RawData.ContainsKey("external_id"));
         Assert.Null(model.InstitutionName);
         Assert.False(model.RawData.ContainsKey("institution_name"));
+        Assert.Null(model.UnblockEligible);
+        Assert.False(model.RawData.ContainsKey("unblock_eligible"));
     }
 
     [Fact]
@@ -861,6 +881,7 @@ public class DataTest : TestBase
             ExpiresAt = null,
             ExternalID = null,
             InstitutionName = null,
+            UnblockEligible = null,
         };
 
         Assert.Null(model.CustomerID);
@@ -871,6 +892,8 @@ public class DataTest : TestBase
         Assert.True(model.RawData.ContainsKey("external_id"));
         Assert.Null(model.InstitutionName);
         Assert.True(model.RawData.ContainsKey("institution_name"));
+        Assert.Null(model.UnblockEligible);
+        Assert.True(model.RawData.ContainsKey("unblock_eligible"));
     }
 
     [Fact]
@@ -909,6 +932,7 @@ public class DataTest : TestBase
             ExpiresAt = null,
             ExternalID = null,
             InstitutionName = null,
+            UnblockEligible = null,
         };
 
         model.Validate();
@@ -1604,6 +1628,26 @@ public class ReasonTest : TestBase
     [InlineData(Reason.RequireReview)]
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
+    [InlineData(Reason.InsufficientFunds1)]
+    [InlineData(Reason.ClosedBankAccount1)]
+    [InlineData(Reason.InvalidBankAccount1)]
+    [InlineData(Reason.InvalidRouting1)]
+    [InlineData(Reason.Disputed1)]
+    [InlineData(Reason.PaymentStopped1)]
+    [InlineData(Reason.OwnerDeceased1)]
+    [InlineData(Reason.FrozenBankAccount1)]
+    [InlineData(Reason.RiskReview1)]
+    [InlineData(Reason.Fraudulent1)]
+    [InlineData(Reason.DuplicateEntry1)]
+    [InlineData(Reason.InvalidPaykey1)]
+    [InlineData(Reason.PaymentBlocked1)]
+    [InlineData(Reason.AmountTooLarge1)]
+    [InlineData(Reason.TooManyAttempts1)]
+    [InlineData(Reason.InternalSystemError1)]
+    [InlineData(Reason.UserRequest1)]
+    [InlineData(Reason.Ok1)]
+    [InlineData(Reason.OtherNetworkReturn1)]
+    [InlineData(Reason.PayoutRefused1)]
     public void Validation_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1649,6 +1693,26 @@ public class ReasonTest : TestBase
     [InlineData(Reason.RequireReview)]
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
+    [InlineData(Reason.InsufficientFunds1)]
+    [InlineData(Reason.ClosedBankAccount1)]
+    [InlineData(Reason.InvalidBankAccount1)]
+    [InlineData(Reason.InvalidRouting1)]
+    [InlineData(Reason.Disputed1)]
+    [InlineData(Reason.PaymentStopped1)]
+    [InlineData(Reason.OwnerDeceased1)]
+    [InlineData(Reason.FrozenBankAccount1)]
+    [InlineData(Reason.RiskReview1)]
+    [InlineData(Reason.Fraudulent1)]
+    [InlineData(Reason.DuplicateEntry1)]
+    [InlineData(Reason.InvalidPaykey1)]
+    [InlineData(Reason.PaymentBlocked1)]
+    [InlineData(Reason.AmountTooLarge1)]
+    [InlineData(Reason.TooManyAttempts1)]
+    [InlineData(Reason.InternalSystemError1)]
+    [InlineData(Reason.UserRequest1)]
+    [InlineData(Reason.Ok1)]
+    [InlineData(Reason.OtherNetworkReturn1)]
+    [InlineData(Reason.PayoutRefused1)]
     public void SerializationRoundtrip_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1688,6 +1752,11 @@ public class StatusDetailsSourceTest : TestBase
     [InlineData(StatusDetailsSource.CustomerDispute)]
     [InlineData(StatusDetailsSource.UserAction)]
     [InlineData(StatusDetailsSource.System)]
+    [InlineData(StatusDetailsSource.Watchtower1)]
+    [InlineData(StatusDetailsSource.BankDecline1)]
+    [InlineData(StatusDetailsSource.CustomerDispute1)]
+    [InlineData(StatusDetailsSource.UserAction1)]
+    [InlineData(StatusDetailsSource.System1)]
     public void Validation_Works(StatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1713,6 +1782,11 @@ public class StatusDetailsSourceTest : TestBase
     [InlineData(StatusDetailsSource.CustomerDispute)]
     [InlineData(StatusDetailsSource.UserAction)]
     [InlineData(StatusDetailsSource.System)]
+    [InlineData(StatusDetailsSource.Watchtower1)]
+    [InlineData(StatusDetailsSource.BankDecline1)]
+    [InlineData(StatusDetailsSource.CustomerDispute1)]
+    [InlineData(StatusDetailsSource.UserAction1)]
+    [InlineData(StatusDetailsSource.System1)]
     public void SerializationRoundtrip_Works(StatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1875,6 +1949,8 @@ public class MetaSortOrderTest : TestBase
     [Theory]
     [InlineData(MetaSortOrder.Asc)]
     [InlineData(MetaSortOrder.Desc)]
+    [InlineData(MetaSortOrder.Asc1)]
+    [InlineData(MetaSortOrder.Desc1)]
     public void Validation_Works(MetaSortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1897,6 +1973,8 @@ public class MetaSortOrderTest : TestBase
     [Theory]
     [InlineData(MetaSortOrder.Asc)]
     [InlineData(MetaSortOrder.Desc)]
+    [InlineData(MetaSortOrder.Asc1)]
+    [InlineData(MetaSortOrder.Desc1)]
     public void SerializationRoundtrip_Works(MetaSortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1935,6 +2013,10 @@ public class ResponseTypeTest : TestBase
     [InlineData(ResponseType.Array)]
     [InlineData(ResponseType.Error)]
     [InlineData(ResponseType.None)]
+    [InlineData(ResponseType.Object1)]
+    [InlineData(ResponseType.Array1)]
+    [InlineData(ResponseType.Error1)]
+    [InlineData(ResponseType.None1)]
     public void Validation_Works(ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1959,6 +2041,10 @@ public class ResponseTypeTest : TestBase
     [InlineData(ResponseType.Array)]
     [InlineData(ResponseType.Error)]
     [InlineData(ResponseType.None)]
+    [InlineData(ResponseType.Object1)]
+    [InlineData(ResponseType.Array1)]
+    [InlineData(ResponseType.Error1)]
+    [InlineData(ResponseType.None1)]
     public void SerializationRoundtrip_Works(ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

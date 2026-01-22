@@ -317,6 +317,8 @@ public enum DataType
 {
     Individual,
     Business,
+    Individual1,
+    Business1,
 }
 
 sealed class DataTypeConverter : JsonConverter<DataType>
@@ -331,6 +333,8 @@ sealed class DataTypeConverter : JsonConverter<DataType>
         {
             "individual" => DataType.Individual,
             "business" => DataType.Business,
+            "Individual" => DataType.Individual1,
+            "Business" => DataType.Business1,
             _ => (DataType)(-1),
         };
     }
@@ -343,6 +347,8 @@ sealed class DataTypeConverter : JsonConverter<DataType>
             {
                 DataType.Individual => "individual",
                 DataType.Business => "business",
+                DataType.Individual1 => "Individual",
+                DataType.Business1 => "Business",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -517,6 +523,8 @@ public enum MetaSortOrder
 {
     Asc,
     Desc,
+    Asc1,
+    Desc1,
 }
 
 sealed class MetaSortOrderConverter : JsonConverter<MetaSortOrder>
@@ -531,6 +539,8 @@ sealed class MetaSortOrderConverter : JsonConverter<MetaSortOrder>
         {
             "asc" => MetaSortOrder.Asc,
             "desc" => MetaSortOrder.Desc,
+            "Asc" => MetaSortOrder.Asc1,
+            "Desc" => MetaSortOrder.Desc1,
             _ => (MetaSortOrder)(-1),
         };
     }
@@ -547,6 +557,8 @@ sealed class MetaSortOrderConverter : JsonConverter<MetaSortOrder>
             {
                 MetaSortOrder.Asc => "asc",
                 MetaSortOrder.Desc => "desc",
+                MetaSortOrder.Asc1 => "Asc",
+                MetaSortOrder.Desc1 => "Desc",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -569,6 +581,10 @@ public enum ResponseType
     Array,
     Error,
     None,
+    Object1,
+    Array1,
+    Error1,
+    None1,
 }
 
 sealed class ResponseTypeConverter : JsonConverter<ResponseType>
@@ -585,6 +601,10 @@ sealed class ResponseTypeConverter : JsonConverter<ResponseType>
             "array" => ResponseType.Array,
             "error" => ResponseType.Error,
             "none" => ResponseType.None,
+            "Object" => ResponseType.Object1,
+            "Array" => ResponseType.Array1,
+            "Error" => ResponseType.Error1,
+            "None" => ResponseType.None1,
             _ => (ResponseType)(-1),
         };
     }
@@ -603,6 +623,10 @@ sealed class ResponseTypeConverter : JsonConverter<ResponseType>
                 ResponseType.Array => "array",
                 ResponseType.Error => "error",
                 ResponseType.None => "none",
+                ResponseType.Object1 => "Object",
+                ResponseType.Array1 => "Array",
+                ResponseType.Error1 => "Error",
+                ResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

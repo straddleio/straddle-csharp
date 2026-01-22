@@ -314,6 +314,8 @@ public class SortOrderTest : TestBase
     [Theory]
     [InlineData(SortOrder.Asc)]
     [InlineData(SortOrder.Desc)]
+    [InlineData(SortOrder.Asc1)]
+    [InlineData(SortOrder.Desc1)]
     public void Validation_Works(SortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -336,6 +338,8 @@ public class SortOrderTest : TestBase
     [Theory]
     [InlineData(SortOrder.Asc)]
     [InlineData(SortOrder.Desc)]
+    [InlineData(SortOrder.Asc1)]
+    [InlineData(SortOrder.Desc1)]
     public void SerializationRoundtrip_Works(SortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -436,6 +440,8 @@ public class CustomerListParamsTypeTest : TestBase
     [Theory]
     [InlineData(CustomerListParamsType.Individual)]
     [InlineData(CustomerListParamsType.Business)]
+    [InlineData(CustomerListParamsType.Individual1)]
+    [InlineData(CustomerListParamsType.Business1)]
     public void Validation_Works(CustomerListParamsType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -458,6 +464,8 @@ public class CustomerListParamsTypeTest : TestBase
     [Theory]
     [InlineData(CustomerListParamsType.Individual)]
     [InlineData(CustomerListParamsType.Business)]
+    [InlineData(CustomerListParamsType.Individual1)]
+    [InlineData(CustomerListParamsType.Business1)]
     public void SerializationRoundtrip_Works(CustomerListParamsType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
