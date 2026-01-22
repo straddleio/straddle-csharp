@@ -1885,26 +1885,6 @@ public class PaykeyUnmaskedV1DataStatusDetailsReasonTest : TestBase
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.RequireReview)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.WatchtowerReview)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.InsufficientFunds1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.ClosedBankAccount1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.InvalidBankAccount1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.InvalidRouting1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.Disputed1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.PaymentStopped1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.OwnerDeceased1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.FrozenBankAccount1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.RiskReview1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.Fraudulent1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.DuplicateEntry1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.InvalidPaykey1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.PaymentBlocked1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.AmountTooLarge1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.TooManyAttempts1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.InternalSystemError1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.UserRequest1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.Ok1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.OtherNetworkReturn1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.PayoutRefused1)]
     public void Validation_Works(PaykeyUnmaskedV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1949,26 +1929,6 @@ public class PaykeyUnmaskedV1DataStatusDetailsReasonTest : TestBase
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.RequireReview)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.WatchtowerReview)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.InsufficientFunds1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.ClosedBankAccount1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.InvalidBankAccount1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.InvalidRouting1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.Disputed1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.PaymentStopped1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.OwnerDeceased1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.FrozenBankAccount1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.RiskReview1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.Fraudulent1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.DuplicateEntry1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.InvalidPaykey1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.PaymentBlocked1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.AmountTooLarge1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.TooManyAttempts1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.InternalSystemError1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.UserRequest1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.Ok1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.OtherNetworkReturn1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.PayoutRefused1)]
     public void SerializationRoundtrip_Works(PaykeyUnmaskedV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2005,11 +1965,6 @@ public class PaykeyUnmaskedV1DataStatusDetailsSourceTest : TestBase
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.CustomerDispute)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.UserAction)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.System)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.Watchtower1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.BankDecline1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.CustomerDispute1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.UserAction1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.System1)]
     public void Validation_Works(PaykeyUnmaskedV1DataStatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2034,11 +1989,6 @@ public class PaykeyUnmaskedV1DataStatusDetailsSourceTest : TestBase
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.CustomerDispute)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.UserAction)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.System)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.Watchtower1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.BankDecline1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.CustomerDispute1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.UserAction1)]
-    [InlineData(PaykeyUnmaskedV1DataStatusDetailsSource.System1)]
     public void SerializationRoundtrip_Works(PaykeyUnmaskedV1DataStatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2074,10 +2024,6 @@ public class PaykeyUnmaskedV1ResponseTypeTest : TestBase
     [InlineData(PaykeyUnmaskedV1ResponseType.Array)]
     [InlineData(PaykeyUnmaskedV1ResponseType.Error)]
     [InlineData(PaykeyUnmaskedV1ResponseType.None)]
-    [InlineData(PaykeyUnmaskedV1ResponseType.Object1)]
-    [InlineData(PaykeyUnmaskedV1ResponseType.Array1)]
-    [InlineData(PaykeyUnmaskedV1ResponseType.Error1)]
-    [InlineData(PaykeyUnmaskedV1ResponseType.None1)]
     public void Validation_Works(PaykeyUnmaskedV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2102,10 +2048,6 @@ public class PaykeyUnmaskedV1ResponseTypeTest : TestBase
     [InlineData(PaykeyUnmaskedV1ResponseType.Array)]
     [InlineData(PaykeyUnmaskedV1ResponseType.Error)]
     [InlineData(PaykeyUnmaskedV1ResponseType.None)]
-    [InlineData(PaykeyUnmaskedV1ResponseType.Object1)]
-    [InlineData(PaykeyUnmaskedV1ResponseType.Array1)]
-    [InlineData(PaykeyUnmaskedV1ResponseType.Error1)]
-    [InlineData(PaykeyUnmaskedV1ResponseType.None1)]
     public void SerializationRoundtrip_Works(PaykeyUnmaskedV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

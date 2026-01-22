@@ -826,10 +826,6 @@ public class FundingEventSummaryPagedV1DataEventTypeTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataEventType.ChargeReversal)]
     [InlineData(FundingEventSummaryPagedV1DataEventType.PayoutReturn)]
     [InlineData(FundingEventSummaryPagedV1DataEventType.PayoutWithdrawal)]
-    [InlineData(FundingEventSummaryPagedV1DataEventType.ChargeDeposit1)]
-    [InlineData(FundingEventSummaryPagedV1DataEventType.ChargeReversal1)]
-    [InlineData(FundingEventSummaryPagedV1DataEventType.PayoutReturn1)]
-    [InlineData(FundingEventSummaryPagedV1DataEventType.PayoutWithdrawal1)]
     public void Validation_Works(FundingEventSummaryPagedV1DataEventType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -853,10 +849,6 @@ public class FundingEventSummaryPagedV1DataEventTypeTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataEventType.ChargeReversal)]
     [InlineData(FundingEventSummaryPagedV1DataEventType.PayoutReturn)]
     [InlineData(FundingEventSummaryPagedV1DataEventType.PayoutWithdrawal)]
-    [InlineData(FundingEventSummaryPagedV1DataEventType.ChargeDeposit1)]
-    [InlineData(FundingEventSummaryPagedV1DataEventType.ChargeReversal1)]
-    [InlineData(FundingEventSummaryPagedV1DataEventType.PayoutReturn1)]
-    [InlineData(FundingEventSummaryPagedV1DataEventType.PayoutWithdrawal1)]
     public void SerializationRoundtrip_Works(FundingEventSummaryPagedV1DataEventType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -896,14 +888,6 @@ public class FundingEventSummaryPagedV1DataStatusTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatus.Pending)]
     [InlineData(FundingEventSummaryPagedV1DataStatus.Paid)]
     [InlineData(FundingEventSummaryPagedV1DataStatus.Reversed)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Created1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Scheduled1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Failed1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Cancelled1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.OnHold1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Pending1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Paid1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Reversed1)]
     public void Validation_Works(FundingEventSummaryPagedV1DataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -931,14 +915,6 @@ public class FundingEventSummaryPagedV1DataStatusTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatus.Pending)]
     [InlineData(FundingEventSummaryPagedV1DataStatus.Paid)]
     [InlineData(FundingEventSummaryPagedV1DataStatus.Reversed)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Created1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Scheduled1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Failed1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Cancelled1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.OnHold1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Pending1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Paid1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatus.Reversed1)]
     public void SerializationRoundtrip_Works(FundingEventSummaryPagedV1DataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1157,26 +1133,6 @@ public class FundingEventSummaryPagedV1DataStatusDetailsReasonTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.RequireReview)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.InsufficientFunds1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.ClosedBankAccount1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidBankAccount1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidRouting1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.Disputed1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.PaymentStopped1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.OwnerDeceased1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.FrozenBankAccount1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.RiskReview1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.Fraudulent1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.DuplicateEntry1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidPaykey1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.PaymentBlocked1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.AmountTooLarge1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.TooManyAttempts1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.InternalSystemError1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.UserRequest1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.Ok1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.OtherNetworkReturn1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.PayoutRefused1)]
     public void Validation_Works(FundingEventSummaryPagedV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1221,26 +1177,6 @@ public class FundingEventSummaryPagedV1DataStatusDetailsReasonTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.RequireReview)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.InsufficientFunds1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.ClosedBankAccount1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidBankAccount1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidRouting1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.Disputed1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.PaymentStopped1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.OwnerDeceased1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.FrozenBankAccount1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.RiskReview1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.Fraudulent1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.DuplicateEntry1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.InvalidPaykey1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.PaymentBlocked1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.AmountTooLarge1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.TooManyAttempts1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.InternalSystemError1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.UserRequest1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.Ok1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.OtherNetworkReturn1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.PayoutRefused1)]
     public void SerializationRoundtrip_Works(
         FundingEventSummaryPagedV1DataStatusDetailsReason rawValue
     )
@@ -1279,11 +1215,6 @@ public class FundingEventSummaryPagedV1DataStatusDetailsSourceTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.CustomerDispute)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.UserAction)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.System)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.Watchtower1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.BankDecline1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.CustomerDispute1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.UserAction1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.System1)]
     public void Validation_Works(FundingEventSummaryPagedV1DataStatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1308,11 +1239,6 @@ public class FundingEventSummaryPagedV1DataStatusDetailsSourceTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.CustomerDispute)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.UserAction)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.System)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.Watchtower1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.BankDecline1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.CustomerDispute1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.UserAction1)]
-    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsSource.System1)]
     public void SerializationRoundtrip_Works(
         FundingEventSummaryPagedV1DataStatusDetailsSource rawValue
     )
@@ -1474,8 +1400,6 @@ public class MetaSortOrderTest : TestBase
     [Theory]
     [InlineData(MetaSortOrder.Asc)]
     [InlineData(MetaSortOrder.Desc)]
-    [InlineData(MetaSortOrder.Asc1)]
-    [InlineData(MetaSortOrder.Desc1)]
     public void Validation_Works(MetaSortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1498,8 +1422,6 @@ public class MetaSortOrderTest : TestBase
     [Theory]
     [InlineData(MetaSortOrder.Asc)]
     [InlineData(MetaSortOrder.Desc)]
-    [InlineData(MetaSortOrder.Asc1)]
-    [InlineData(MetaSortOrder.Desc1)]
     public void SerializationRoundtrip_Works(MetaSortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1538,10 +1460,6 @@ public class FundingEventSummaryPagedV1ResponseTypeTest : TestBase
     [InlineData(FundingEventSummaryPagedV1ResponseType.Array)]
     [InlineData(FundingEventSummaryPagedV1ResponseType.Error)]
     [InlineData(FundingEventSummaryPagedV1ResponseType.None)]
-    [InlineData(FundingEventSummaryPagedV1ResponseType.Object1)]
-    [InlineData(FundingEventSummaryPagedV1ResponseType.Array1)]
-    [InlineData(FundingEventSummaryPagedV1ResponseType.Error1)]
-    [InlineData(FundingEventSummaryPagedV1ResponseType.None1)]
     public void Validation_Works(FundingEventSummaryPagedV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1565,10 +1483,6 @@ public class FundingEventSummaryPagedV1ResponseTypeTest : TestBase
     [InlineData(FundingEventSummaryPagedV1ResponseType.Array)]
     [InlineData(FundingEventSummaryPagedV1ResponseType.Error)]
     [InlineData(FundingEventSummaryPagedV1ResponseType.None)]
-    [InlineData(FundingEventSummaryPagedV1ResponseType.Object1)]
-    [InlineData(FundingEventSummaryPagedV1ResponseType.Array1)]
-    [InlineData(FundingEventSummaryPagedV1ResponseType.Error1)]
-    [InlineData(FundingEventSummaryPagedV1ResponseType.None1)]
     public void SerializationRoundtrip_Works(FundingEventSummaryPagedV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

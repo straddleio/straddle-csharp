@@ -2750,26 +2750,6 @@ public class ReasonTest : TestBase
     [InlineData(Reason.RequireReview)]
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
-    [InlineData(Reason.InsufficientFunds1)]
-    [InlineData(Reason.ClosedBankAccount1)]
-    [InlineData(Reason.InvalidBankAccount1)]
-    [InlineData(Reason.InvalidRouting1)]
-    [InlineData(Reason.Disputed1)]
-    [InlineData(Reason.PaymentStopped1)]
-    [InlineData(Reason.OwnerDeceased1)]
-    [InlineData(Reason.FrozenBankAccount1)]
-    [InlineData(Reason.RiskReview1)]
-    [InlineData(Reason.Fraudulent1)]
-    [InlineData(Reason.DuplicateEntry1)]
-    [InlineData(Reason.InvalidPaykey1)]
-    [InlineData(Reason.PaymentBlocked1)]
-    [InlineData(Reason.AmountTooLarge1)]
-    [InlineData(Reason.TooManyAttempts1)]
-    [InlineData(Reason.InternalSystemError1)]
-    [InlineData(Reason.UserRequest1)]
-    [InlineData(Reason.Ok1)]
-    [InlineData(Reason.OtherNetworkReturn1)]
-    [InlineData(Reason.PayoutRefused1)]
     public void Validation_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2815,26 +2795,6 @@ public class ReasonTest : TestBase
     [InlineData(Reason.RequireReview)]
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
-    [InlineData(Reason.InsufficientFunds1)]
-    [InlineData(Reason.ClosedBankAccount1)]
-    [InlineData(Reason.InvalidBankAccount1)]
-    [InlineData(Reason.InvalidRouting1)]
-    [InlineData(Reason.Disputed1)]
-    [InlineData(Reason.PaymentStopped1)]
-    [InlineData(Reason.OwnerDeceased1)]
-    [InlineData(Reason.FrozenBankAccount1)]
-    [InlineData(Reason.RiskReview1)]
-    [InlineData(Reason.Fraudulent1)]
-    [InlineData(Reason.DuplicateEntry1)]
-    [InlineData(Reason.InvalidPaykey1)]
-    [InlineData(Reason.PaymentBlocked1)]
-    [InlineData(Reason.AmountTooLarge1)]
-    [InlineData(Reason.TooManyAttempts1)]
-    [InlineData(Reason.InternalSystemError1)]
-    [InlineData(Reason.UserRequest1)]
-    [InlineData(Reason.Ok1)]
-    [InlineData(Reason.OtherNetworkReturn1)]
-    [InlineData(Reason.PayoutRefused1)]
     public void SerializationRoundtrip_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2874,11 +2834,6 @@ public class StatusDetailsSourceTest : TestBase
     [InlineData(StatusDetailsSource.CustomerDispute)]
     [InlineData(StatusDetailsSource.UserAction)]
     [InlineData(StatusDetailsSource.System)]
-    [InlineData(StatusDetailsSource.Watchtower1)]
-    [InlineData(StatusDetailsSource.BankDecline1)]
-    [InlineData(StatusDetailsSource.CustomerDispute1)]
-    [InlineData(StatusDetailsSource.UserAction1)]
-    [InlineData(StatusDetailsSource.System1)]
     public void Validation_Works(StatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2904,11 +2859,6 @@ public class StatusDetailsSourceTest : TestBase
     [InlineData(StatusDetailsSource.CustomerDispute)]
     [InlineData(StatusDetailsSource.UserAction)]
     [InlineData(StatusDetailsSource.System)]
-    [InlineData(StatusDetailsSource.Watchtower1)]
-    [InlineData(StatusDetailsSource.BankDecline1)]
-    [InlineData(StatusDetailsSource.CustomerDispute1)]
-    [InlineData(StatusDetailsSource.UserAction1)]
-    [InlineData(StatusDetailsSource.System1)]
     public void SerializationRoundtrip_Works(StatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -3885,10 +3835,6 @@ public class ResponseTypeTest : TestBase
     [InlineData(ResponseType.Array)]
     [InlineData(ResponseType.Error)]
     [InlineData(ResponseType.None)]
-    [InlineData(ResponseType.Object1)]
-    [InlineData(ResponseType.Array1)]
-    [InlineData(ResponseType.Error1)]
-    [InlineData(ResponseType.None1)]
     public void Validation_Works(ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -3913,10 +3859,6 @@ public class ResponseTypeTest : TestBase
     [InlineData(ResponseType.Array)]
     [InlineData(ResponseType.Error)]
     [InlineData(ResponseType.None)]
-    [InlineData(ResponseType.Object1)]
-    [InlineData(ResponseType.Array1)]
-    [InlineData(ResponseType.Error1)]
-    [InlineData(ResponseType.None1)]
     public void SerializationRoundtrip_Works(ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

@@ -586,17 +586,6 @@ public enum PayoutUnmaskResponseDataConfigSandboxOutcome
     ReversedCustomerDispute,
     FailedClosedBankAccount,
     ReversedClosedBankAccount,
-    Standard1,
-    Paid1,
-    OnHoldDailyLimit1,
-    CancelledForFraudRisk1,
-    CancelledForBalanceCheck1,
-    FailedInsufficientFunds1,
-    ReversedInsufficientFunds1,
-    FailedCustomerDispute1,
-    ReversedCustomerDispute1,
-    FailedClosedBankAccount1,
-    ReversedClosedBankAccount1,
 }
 
 sealed class PayoutUnmaskResponseDataConfigSandboxOutcomeConverter
@@ -629,25 +618,6 @@ sealed class PayoutUnmaskResponseDataConfigSandboxOutcomeConverter
                 PayoutUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount,
             "reversed_closed_bank_account" =>
                 PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount,
-            "Standard" => PayoutUnmaskResponseDataConfigSandboxOutcome.Standard1,
-            "Paid" => PayoutUnmaskResponseDataConfigSandboxOutcome.Paid1,
-            "OnHoldDailyLimit" => PayoutUnmaskResponseDataConfigSandboxOutcome.OnHoldDailyLimit1,
-            "CancelledForFraudRisk" =>
-                PayoutUnmaskResponseDataConfigSandboxOutcome.CancelledForFraudRisk1,
-            "CancelledForBalanceCheck" =>
-                PayoutUnmaskResponseDataConfigSandboxOutcome.CancelledForBalanceCheck1,
-            "FailedInsufficientFunds" =>
-                PayoutUnmaskResponseDataConfigSandboxOutcome.FailedInsufficientFunds1,
-            "ReversedInsufficientFunds" =>
-                PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedInsufficientFunds1,
-            "FailedCustomerDispute" =>
-                PayoutUnmaskResponseDataConfigSandboxOutcome.FailedCustomerDispute1,
-            "ReversedCustomerDispute" =>
-                PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute1,
-            "FailedClosedBankAccount" =>
-                PayoutUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount1,
-            "ReversedClosedBankAccount" =>
-                PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount1,
             _ => (PayoutUnmaskResponseDataConfigSandboxOutcome)(-1),
         };
     }
@@ -682,26 +652,6 @@ sealed class PayoutUnmaskResponseDataConfigSandboxOutcomeConverter
                     "failed_closed_bank_account",
                 PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount =>
                     "reversed_closed_bank_account",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.Standard1 => "Standard",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.Paid1 => "Paid",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.OnHoldDailyLimit1 =>
-                    "OnHoldDailyLimit",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.CancelledForFraudRisk1 =>
-                    "CancelledForFraudRisk",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.CancelledForBalanceCheck1 =>
-                    "CancelledForBalanceCheck",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.FailedInsufficientFunds1 =>
-                    "FailedInsufficientFunds",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedInsufficientFunds1 =>
-                    "ReversedInsufficientFunds",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.FailedCustomerDispute1 =>
-                    "FailedCustomerDispute",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute1 =>
-                    "ReversedCustomerDispute",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount1 =>
-                    "FailedClosedBankAccount",
-                PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount1 =>
-                    "ReversedClosedBankAccount",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -786,14 +736,6 @@ public enum PayoutUnmaskResponseDataStatus
     Pending,
     Paid,
     Reversed,
-    Created1,
-    Scheduled1,
-    Failed1,
-    Cancelled1,
-    OnHold1,
-    Pending1,
-    Paid1,
-    Reversed1,
 }
 
 sealed class PayoutUnmaskResponseDataStatusConverter : JsonConverter<PayoutUnmaskResponseDataStatus>
@@ -814,14 +756,6 @@ sealed class PayoutUnmaskResponseDataStatusConverter : JsonConverter<PayoutUnmas
             "pending" => PayoutUnmaskResponseDataStatus.Pending,
             "paid" => PayoutUnmaskResponseDataStatus.Paid,
             "reversed" => PayoutUnmaskResponseDataStatus.Reversed,
-            "Created" => PayoutUnmaskResponseDataStatus.Created1,
-            "Scheduled" => PayoutUnmaskResponseDataStatus.Scheduled1,
-            "Failed" => PayoutUnmaskResponseDataStatus.Failed1,
-            "Cancelled" => PayoutUnmaskResponseDataStatus.Cancelled1,
-            "OnHold" => PayoutUnmaskResponseDataStatus.OnHold1,
-            "Pending" => PayoutUnmaskResponseDataStatus.Pending1,
-            "Paid" => PayoutUnmaskResponseDataStatus.Paid1,
-            "Reversed" => PayoutUnmaskResponseDataStatus.Reversed1,
             _ => (PayoutUnmaskResponseDataStatus)(-1),
         };
     }
@@ -844,14 +778,6 @@ sealed class PayoutUnmaskResponseDataStatusConverter : JsonConverter<PayoutUnmas
                 PayoutUnmaskResponseDataStatus.Pending => "pending",
                 PayoutUnmaskResponseDataStatus.Paid => "paid",
                 PayoutUnmaskResponseDataStatus.Reversed => "reversed",
-                PayoutUnmaskResponseDataStatus.Created1 => "Created",
-                PayoutUnmaskResponseDataStatus.Scheduled1 => "Scheduled",
-                PayoutUnmaskResponseDataStatus.Failed1 => "Failed",
-                PayoutUnmaskResponseDataStatus.Cancelled1 => "Cancelled",
-                PayoutUnmaskResponseDataStatus.OnHold1 => "OnHold",
-                PayoutUnmaskResponseDataStatus.Pending1 => "Pending",
-                PayoutUnmaskResponseDataStatus.Paid1 => "Paid",
-                PayoutUnmaskResponseDataStatus.Reversed1 => "Reversed",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1034,26 +960,6 @@ public enum PayoutUnmaskResponseDataStatusHistoryReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
-    InsufficientFunds1,
-    ClosedBankAccount1,
-    InvalidBankAccount1,
-    InvalidRouting1,
-    Disputed1,
-    PaymentStopped1,
-    OwnerDeceased1,
-    FrozenBankAccount1,
-    RiskReview1,
-    Fraudulent1,
-    DuplicateEntry1,
-    InvalidPaykey1,
-    PaymentBlocked1,
-    AmountTooLarge1,
-    TooManyAttempts1,
-    InternalSystemError1,
-    UserRequest1,
-    Ok1,
-    OtherNetworkReturn1,
-    PayoutRefused1,
 }
 
 sealed class PayoutUnmaskResponseDataStatusHistoryReasonConverter
@@ -1095,27 +1001,6 @@ sealed class PayoutUnmaskResponseDataStatusHistoryReasonConverter
             "require_review" => PayoutUnmaskResponseDataStatusHistoryReason.RequireReview,
             "blocked_by_system" => PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem,
             "watchtower_review" => PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview,
-            "InsufficientFunds" => PayoutUnmaskResponseDataStatusHistoryReason.InsufficientFunds1,
-            "ClosedBankAccount" => PayoutUnmaskResponseDataStatusHistoryReason.ClosedBankAccount1,
-            "InvalidBankAccount" => PayoutUnmaskResponseDataStatusHistoryReason.InvalidBankAccount1,
-            "InvalidRouting" => PayoutUnmaskResponseDataStatusHistoryReason.InvalidRouting1,
-            "Disputed" => PayoutUnmaskResponseDataStatusHistoryReason.Disputed1,
-            "PaymentStopped" => PayoutUnmaskResponseDataStatusHistoryReason.PaymentStopped1,
-            "OwnerDeceased" => PayoutUnmaskResponseDataStatusHistoryReason.OwnerDeceased1,
-            "FrozenBankAccount" => PayoutUnmaskResponseDataStatusHistoryReason.FrozenBankAccount1,
-            "RiskReview" => PayoutUnmaskResponseDataStatusHistoryReason.RiskReview1,
-            "Fraudulent" => PayoutUnmaskResponseDataStatusHistoryReason.Fraudulent1,
-            "DuplicateEntry" => PayoutUnmaskResponseDataStatusHistoryReason.DuplicateEntry1,
-            "InvalidPaykey" => PayoutUnmaskResponseDataStatusHistoryReason.InvalidPaykey1,
-            "PaymentBlocked" => PayoutUnmaskResponseDataStatusHistoryReason.PaymentBlocked1,
-            "AmountTooLarge" => PayoutUnmaskResponseDataStatusHistoryReason.AmountTooLarge1,
-            "TooManyAttempts" => PayoutUnmaskResponseDataStatusHistoryReason.TooManyAttempts1,
-            "InternalSystemError" =>
-                PayoutUnmaskResponseDataStatusHistoryReason.InternalSystemError1,
-            "UserRequest" => PayoutUnmaskResponseDataStatusHistoryReason.UserRequest1,
-            "Ok" => PayoutUnmaskResponseDataStatusHistoryReason.Ok1,
-            "OtherNetworkReturn" => PayoutUnmaskResponseDataStatusHistoryReason.OtherNetworkReturn1,
-            "PayoutRefused" => PayoutUnmaskResponseDataStatusHistoryReason.PayoutRefused1,
             _ => (PayoutUnmaskResponseDataStatusHistoryReason)(-1),
         };
     }
@@ -1162,32 +1047,6 @@ sealed class PayoutUnmaskResponseDataStatusHistoryReasonConverter
                 PayoutUnmaskResponseDataStatusHistoryReason.RequireReview => "require_review",
                 PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem => "blocked_by_system",
                 PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview => "watchtower_review",
-                PayoutUnmaskResponseDataStatusHistoryReason.InsufficientFunds1 =>
-                    "InsufficientFunds",
-                PayoutUnmaskResponseDataStatusHistoryReason.ClosedBankAccount1 =>
-                    "ClosedBankAccount",
-                PayoutUnmaskResponseDataStatusHistoryReason.InvalidBankAccount1 =>
-                    "InvalidBankAccount",
-                PayoutUnmaskResponseDataStatusHistoryReason.InvalidRouting1 => "InvalidRouting",
-                PayoutUnmaskResponseDataStatusHistoryReason.Disputed1 => "Disputed",
-                PayoutUnmaskResponseDataStatusHistoryReason.PaymentStopped1 => "PaymentStopped",
-                PayoutUnmaskResponseDataStatusHistoryReason.OwnerDeceased1 => "OwnerDeceased",
-                PayoutUnmaskResponseDataStatusHistoryReason.FrozenBankAccount1 =>
-                    "FrozenBankAccount",
-                PayoutUnmaskResponseDataStatusHistoryReason.RiskReview1 => "RiskReview",
-                PayoutUnmaskResponseDataStatusHistoryReason.Fraudulent1 => "Fraudulent",
-                PayoutUnmaskResponseDataStatusHistoryReason.DuplicateEntry1 => "DuplicateEntry",
-                PayoutUnmaskResponseDataStatusHistoryReason.InvalidPaykey1 => "InvalidPaykey",
-                PayoutUnmaskResponseDataStatusHistoryReason.PaymentBlocked1 => "PaymentBlocked",
-                PayoutUnmaskResponseDataStatusHistoryReason.AmountTooLarge1 => "AmountTooLarge",
-                PayoutUnmaskResponseDataStatusHistoryReason.TooManyAttempts1 => "TooManyAttempts",
-                PayoutUnmaskResponseDataStatusHistoryReason.InternalSystemError1 =>
-                    "InternalSystemError",
-                PayoutUnmaskResponseDataStatusHistoryReason.UserRequest1 => "UserRequest",
-                PayoutUnmaskResponseDataStatusHistoryReason.Ok1 => "Ok",
-                PayoutUnmaskResponseDataStatusHistoryReason.OtherNetworkReturn1 =>
-                    "OtherNetworkReturn",
-                PayoutUnmaskResponseDataStatusHistoryReason.PayoutRefused1 => "PayoutRefused",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1209,11 +1068,6 @@ public enum PayoutUnmaskResponseDataStatusHistorySource
     CustomerDispute,
     UserAction,
     System,
-    Watchtower1,
-    BankDecline1,
-    CustomerDispute1,
-    UserAction1,
-    System1,
 }
 
 sealed class PayoutUnmaskResponseDataStatusHistorySourceConverter
@@ -1232,11 +1086,6 @@ sealed class PayoutUnmaskResponseDataStatusHistorySourceConverter
             "customer_dispute" => PayoutUnmaskResponseDataStatusHistorySource.CustomerDispute,
             "user_action" => PayoutUnmaskResponseDataStatusHistorySource.UserAction,
             "system" => PayoutUnmaskResponseDataStatusHistorySource.System,
-            "Watchtower" => PayoutUnmaskResponseDataStatusHistorySource.Watchtower1,
-            "BankDecline" => PayoutUnmaskResponseDataStatusHistorySource.BankDecline1,
-            "CustomerDispute" => PayoutUnmaskResponseDataStatusHistorySource.CustomerDispute1,
-            "UserAction" => PayoutUnmaskResponseDataStatusHistorySource.UserAction1,
-            "System" => PayoutUnmaskResponseDataStatusHistorySource.System1,
             _ => (PayoutUnmaskResponseDataStatusHistorySource)(-1),
         };
     }
@@ -1256,11 +1105,6 @@ sealed class PayoutUnmaskResponseDataStatusHistorySourceConverter
                 PayoutUnmaskResponseDataStatusHistorySource.CustomerDispute => "customer_dispute",
                 PayoutUnmaskResponseDataStatusHistorySource.UserAction => "user_action",
                 PayoutUnmaskResponseDataStatusHistorySource.System => "system",
-                PayoutUnmaskResponseDataStatusHistorySource.Watchtower1 => "Watchtower",
-                PayoutUnmaskResponseDataStatusHistorySource.BankDecline1 => "BankDecline",
-                PayoutUnmaskResponseDataStatusHistorySource.CustomerDispute1 => "CustomerDispute",
-                PayoutUnmaskResponseDataStatusHistorySource.UserAction1 => "UserAction",
-                PayoutUnmaskResponseDataStatusHistorySource.System1 => "System",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1284,14 +1128,6 @@ public enum PayoutUnmaskResponseDataStatusHistoryStatus
     Pending,
     Paid,
     Reversed,
-    Created1,
-    Scheduled1,
-    Failed1,
-    Cancelled1,
-    OnHold1,
-    Pending1,
-    Paid1,
-    Reversed1,
 }
 
 sealed class PayoutUnmaskResponseDataStatusHistoryStatusConverter
@@ -1313,14 +1149,6 @@ sealed class PayoutUnmaskResponseDataStatusHistoryStatusConverter
             "pending" => PayoutUnmaskResponseDataStatusHistoryStatus.Pending,
             "paid" => PayoutUnmaskResponseDataStatusHistoryStatus.Paid,
             "reversed" => PayoutUnmaskResponseDataStatusHistoryStatus.Reversed,
-            "Created" => PayoutUnmaskResponseDataStatusHistoryStatus.Created1,
-            "Scheduled" => PayoutUnmaskResponseDataStatusHistoryStatus.Scheduled1,
-            "Failed" => PayoutUnmaskResponseDataStatusHistoryStatus.Failed1,
-            "Cancelled" => PayoutUnmaskResponseDataStatusHistoryStatus.Cancelled1,
-            "OnHold" => PayoutUnmaskResponseDataStatusHistoryStatus.OnHold1,
-            "Pending" => PayoutUnmaskResponseDataStatusHistoryStatus.Pending1,
-            "Paid" => PayoutUnmaskResponseDataStatusHistoryStatus.Paid1,
-            "Reversed" => PayoutUnmaskResponseDataStatusHistoryStatus.Reversed1,
             _ => (PayoutUnmaskResponseDataStatusHistoryStatus)(-1),
         };
     }
@@ -1343,14 +1171,6 @@ sealed class PayoutUnmaskResponseDataStatusHistoryStatusConverter
                 PayoutUnmaskResponseDataStatusHistoryStatus.Pending => "pending",
                 PayoutUnmaskResponseDataStatusHistoryStatus.Paid => "paid",
                 PayoutUnmaskResponseDataStatusHistoryStatus.Reversed => "reversed",
-                PayoutUnmaskResponseDataStatusHistoryStatus.Created1 => "Created",
-                PayoutUnmaskResponseDataStatusHistoryStatus.Scheduled1 => "Scheduled",
-                PayoutUnmaskResponseDataStatusHistoryStatus.Failed1 => "Failed",
-                PayoutUnmaskResponseDataStatusHistoryStatus.Cancelled1 => "Cancelled",
-                PayoutUnmaskResponseDataStatusHistoryStatus.OnHold1 => "OnHold",
-                PayoutUnmaskResponseDataStatusHistoryStatus.Pending1 => "Pending",
-                PayoutUnmaskResponseDataStatusHistoryStatus.Paid1 => "Paid",
-                PayoutUnmaskResponseDataStatusHistoryStatus.Reversed1 => "Reversed",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1367,7 +1187,6 @@ sealed class PayoutUnmaskResponseDataStatusHistoryStatusConverter
 public enum PayoutUnmaskResponseDataPaymentRail
 {
     Ach,
-    Ach1,
 }
 
 sealed class PayoutUnmaskResponseDataPaymentRailConverter
@@ -1382,7 +1201,6 @@ sealed class PayoutUnmaskResponseDataPaymentRailConverter
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "ach" => PayoutUnmaskResponseDataPaymentRail.Ach,
-            "ACH" => PayoutUnmaskResponseDataPaymentRail.Ach1,
             _ => (PayoutUnmaskResponseDataPaymentRail)(-1),
         };
     }
@@ -1398,7 +1216,6 @@ sealed class PayoutUnmaskResponseDataPaymentRailConverter
             value switch
             {
                 PayoutUnmaskResponseDataPaymentRail.Ach => "ach",
-                PayoutUnmaskResponseDataPaymentRail.Ach1 => "ACH",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1421,10 +1238,6 @@ public enum PayoutUnmaskResponseResponseType
     Array,
     Error,
     None,
-    Object1,
-    Array1,
-    Error1,
-    None1,
 }
 
 sealed class PayoutUnmaskResponseResponseTypeConverter
@@ -1442,10 +1255,6 @@ sealed class PayoutUnmaskResponseResponseTypeConverter
             "array" => PayoutUnmaskResponseResponseType.Array,
             "error" => PayoutUnmaskResponseResponseType.Error,
             "none" => PayoutUnmaskResponseResponseType.None,
-            "Object" => PayoutUnmaskResponseResponseType.Object1,
-            "Array" => PayoutUnmaskResponseResponseType.Array1,
-            "Error" => PayoutUnmaskResponseResponseType.Error1,
-            "None" => PayoutUnmaskResponseResponseType.None1,
             _ => (PayoutUnmaskResponseResponseType)(-1),
         };
     }
@@ -1464,10 +1273,6 @@ sealed class PayoutUnmaskResponseResponseTypeConverter
                 PayoutUnmaskResponseResponseType.Array => "array",
                 PayoutUnmaskResponseResponseType.Error => "error",
                 PayoutUnmaskResponseResponseType.None => "none",
-                PayoutUnmaskResponseResponseType.Object1 => "Object",
-                PayoutUnmaskResponseResponseType.Array1 => "Array",
-                PayoutUnmaskResponseResponseType.Error1 => "Error",
-                PayoutUnmaskResponseResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

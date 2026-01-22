@@ -382,8 +382,6 @@ public enum SortOrder
 {
     Asc,
     Desc,
-    Asc1,
-    Desc1,
 }
 
 sealed class SortOrderConverter : JsonConverter<SortOrder>
@@ -398,8 +396,6 @@ sealed class SortOrderConverter : JsonConverter<SortOrder>
         {
             "asc" => SortOrder.Asc,
             "desc" => SortOrder.Desc,
-            "Asc" => SortOrder.Asc1,
-            "Desc" => SortOrder.Desc1,
             _ => (SortOrder)(-1),
         };
     }
@@ -416,8 +412,6 @@ sealed class SortOrderConverter : JsonConverter<SortOrder>
             {
                 SortOrder.Asc => "asc",
                 SortOrder.Desc => "desc",
-                SortOrder.Asc1 => "Asc",
-                SortOrder.Desc1 => "Desc",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

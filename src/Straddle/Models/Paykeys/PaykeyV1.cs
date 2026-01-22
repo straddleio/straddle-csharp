@@ -1091,26 +1091,6 @@ public enum PaykeyV1DataStatusDetailsReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
-    InsufficientFunds1,
-    ClosedBankAccount1,
-    InvalidBankAccount1,
-    InvalidRouting1,
-    Disputed1,
-    PaymentStopped1,
-    OwnerDeceased1,
-    FrozenBankAccount1,
-    RiskReview1,
-    Fraudulent1,
-    DuplicateEntry1,
-    InvalidPaykey1,
-    PaymentBlocked1,
-    AmountTooLarge1,
-    TooManyAttempts1,
-    InternalSystemError1,
-    UserRequest1,
-    Ok1,
-    OtherNetworkReturn1,
-    PayoutRefused1,
 }
 
 sealed class PaykeyV1DataStatusDetailsReasonConverter
@@ -1149,26 +1129,6 @@ sealed class PaykeyV1DataStatusDetailsReasonConverter
             "require_review" => PaykeyV1DataStatusDetailsReason.RequireReview,
             "blocked_by_system" => PaykeyV1DataStatusDetailsReason.BlockedBySystem,
             "watchtower_review" => PaykeyV1DataStatusDetailsReason.WatchtowerReview,
-            "InsufficientFunds" => PaykeyV1DataStatusDetailsReason.InsufficientFunds1,
-            "ClosedBankAccount" => PaykeyV1DataStatusDetailsReason.ClosedBankAccount1,
-            "InvalidBankAccount" => PaykeyV1DataStatusDetailsReason.InvalidBankAccount1,
-            "InvalidRouting" => PaykeyV1DataStatusDetailsReason.InvalidRouting1,
-            "Disputed" => PaykeyV1DataStatusDetailsReason.Disputed1,
-            "PaymentStopped" => PaykeyV1DataStatusDetailsReason.PaymentStopped1,
-            "OwnerDeceased" => PaykeyV1DataStatusDetailsReason.OwnerDeceased1,
-            "FrozenBankAccount" => PaykeyV1DataStatusDetailsReason.FrozenBankAccount1,
-            "RiskReview" => PaykeyV1DataStatusDetailsReason.RiskReview1,
-            "Fraudulent" => PaykeyV1DataStatusDetailsReason.Fraudulent1,
-            "DuplicateEntry" => PaykeyV1DataStatusDetailsReason.DuplicateEntry1,
-            "InvalidPaykey" => PaykeyV1DataStatusDetailsReason.InvalidPaykey1,
-            "PaymentBlocked" => PaykeyV1DataStatusDetailsReason.PaymentBlocked1,
-            "AmountTooLarge" => PaykeyV1DataStatusDetailsReason.AmountTooLarge1,
-            "TooManyAttempts" => PaykeyV1DataStatusDetailsReason.TooManyAttempts1,
-            "InternalSystemError" => PaykeyV1DataStatusDetailsReason.InternalSystemError1,
-            "UserRequest" => PaykeyV1DataStatusDetailsReason.UserRequest1,
-            "Ok" => PaykeyV1DataStatusDetailsReason.Ok1,
-            "OtherNetworkReturn" => PaykeyV1DataStatusDetailsReason.OtherNetworkReturn1,
-            "PayoutRefused" => PaykeyV1DataStatusDetailsReason.PayoutRefused1,
             _ => (PaykeyV1DataStatusDetailsReason)(-1),
         };
     }
@@ -1208,26 +1168,6 @@ sealed class PaykeyV1DataStatusDetailsReasonConverter
                 PaykeyV1DataStatusDetailsReason.RequireReview => "require_review",
                 PaykeyV1DataStatusDetailsReason.BlockedBySystem => "blocked_by_system",
                 PaykeyV1DataStatusDetailsReason.WatchtowerReview => "watchtower_review",
-                PaykeyV1DataStatusDetailsReason.InsufficientFunds1 => "InsufficientFunds",
-                PaykeyV1DataStatusDetailsReason.ClosedBankAccount1 => "ClosedBankAccount",
-                PaykeyV1DataStatusDetailsReason.InvalidBankAccount1 => "InvalidBankAccount",
-                PaykeyV1DataStatusDetailsReason.InvalidRouting1 => "InvalidRouting",
-                PaykeyV1DataStatusDetailsReason.Disputed1 => "Disputed",
-                PaykeyV1DataStatusDetailsReason.PaymentStopped1 => "PaymentStopped",
-                PaykeyV1DataStatusDetailsReason.OwnerDeceased1 => "OwnerDeceased",
-                PaykeyV1DataStatusDetailsReason.FrozenBankAccount1 => "FrozenBankAccount",
-                PaykeyV1DataStatusDetailsReason.RiskReview1 => "RiskReview",
-                PaykeyV1DataStatusDetailsReason.Fraudulent1 => "Fraudulent",
-                PaykeyV1DataStatusDetailsReason.DuplicateEntry1 => "DuplicateEntry",
-                PaykeyV1DataStatusDetailsReason.InvalidPaykey1 => "InvalidPaykey",
-                PaykeyV1DataStatusDetailsReason.PaymentBlocked1 => "PaymentBlocked",
-                PaykeyV1DataStatusDetailsReason.AmountTooLarge1 => "AmountTooLarge",
-                PaykeyV1DataStatusDetailsReason.TooManyAttempts1 => "TooManyAttempts",
-                PaykeyV1DataStatusDetailsReason.InternalSystemError1 => "InternalSystemError",
-                PaykeyV1DataStatusDetailsReason.UserRequest1 => "UserRequest",
-                PaykeyV1DataStatusDetailsReason.Ok1 => "Ok",
-                PaykeyV1DataStatusDetailsReason.OtherNetworkReturn1 => "OtherNetworkReturn",
-                PaykeyV1DataStatusDetailsReason.PayoutRefused1 => "PayoutRefused",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1245,11 +1185,6 @@ public enum PaykeyV1DataStatusDetailsSource
     CustomerDispute,
     UserAction,
     System,
-    Watchtower1,
-    BankDecline1,
-    CustomerDispute1,
-    UserAction1,
-    System1,
 }
 
 sealed class PaykeyV1DataStatusDetailsSourceConverter
@@ -1268,11 +1203,6 @@ sealed class PaykeyV1DataStatusDetailsSourceConverter
             "customer_dispute" => PaykeyV1DataStatusDetailsSource.CustomerDispute,
             "user_action" => PaykeyV1DataStatusDetailsSource.UserAction,
             "system" => PaykeyV1DataStatusDetailsSource.System,
-            "Watchtower" => PaykeyV1DataStatusDetailsSource.Watchtower1,
-            "BankDecline" => PaykeyV1DataStatusDetailsSource.BankDecline1,
-            "CustomerDispute" => PaykeyV1DataStatusDetailsSource.CustomerDispute1,
-            "UserAction" => PaykeyV1DataStatusDetailsSource.UserAction1,
-            "System" => PaykeyV1DataStatusDetailsSource.System1,
             _ => (PaykeyV1DataStatusDetailsSource)(-1),
         };
     }
@@ -1292,11 +1222,6 @@ sealed class PaykeyV1DataStatusDetailsSourceConverter
                 PaykeyV1DataStatusDetailsSource.CustomerDispute => "customer_dispute",
                 PaykeyV1DataStatusDetailsSource.UserAction => "user_action",
                 PaykeyV1DataStatusDetailsSource.System => "system",
-                PaykeyV1DataStatusDetailsSource.Watchtower1 => "Watchtower",
-                PaykeyV1DataStatusDetailsSource.BankDecline1 => "BankDecline",
-                PaykeyV1DataStatusDetailsSource.CustomerDispute1 => "CustomerDispute",
-                PaykeyV1DataStatusDetailsSource.UserAction1 => "UserAction",
-                PaykeyV1DataStatusDetailsSource.System1 => "System",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1319,10 +1244,6 @@ public enum PaykeyV1ResponseType
     Array,
     Error,
     None,
-    Object1,
-    Array1,
-    Error1,
-    None1,
 }
 
 sealed class PaykeyV1ResponseTypeConverter : JsonConverter<PaykeyV1ResponseType>
@@ -1339,10 +1260,6 @@ sealed class PaykeyV1ResponseTypeConverter : JsonConverter<PaykeyV1ResponseType>
             "array" => PaykeyV1ResponseType.Array,
             "error" => PaykeyV1ResponseType.Error,
             "none" => PaykeyV1ResponseType.None,
-            "Object" => PaykeyV1ResponseType.Object1,
-            "Array" => PaykeyV1ResponseType.Array1,
-            "Error" => PaykeyV1ResponseType.Error1,
-            "None" => PaykeyV1ResponseType.None1,
             _ => (PaykeyV1ResponseType)(-1),
         };
     }
@@ -1361,10 +1278,6 @@ sealed class PaykeyV1ResponseTypeConverter : JsonConverter<PaykeyV1ResponseType>
                 PaykeyV1ResponseType.Array => "array",
                 PaykeyV1ResponseType.Error => "error",
                 PaykeyV1ResponseType.None => "none",
-                PaykeyV1ResponseType.Object1 => "Object",
-                PaykeyV1ResponseType.Array1 => "Array",
-                PaykeyV1ResponseType.Error1 => "Error",
-                PaykeyV1ResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

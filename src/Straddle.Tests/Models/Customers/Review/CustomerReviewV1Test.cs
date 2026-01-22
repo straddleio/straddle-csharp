@@ -3310,8 +3310,6 @@ public class TypeTest : TestBase
     [Theory]
     [InlineData(Review::Type.Individual)]
     [InlineData(Review::Type.Business)]
-    [InlineData(Review::Type.Individual1)]
-    [InlineData(Review::Type.Business1)]
     public void Validation_Works(Review::Type rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -3334,8 +3332,6 @@ public class TypeTest : TestBase
     [Theory]
     [InlineData(Review::Type.Individual)]
     [InlineData(Review::Type.Business)]
-    [InlineData(Review::Type.Individual1)]
-    [InlineData(Review::Type.Business1)]
     public void SerializationRoundtrip_Works(Review::Type rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -9615,10 +9611,6 @@ public class ResponseTypeTest : TestBase
     [InlineData(Review::ResponseType.Array)]
     [InlineData(Review::ResponseType.Error)]
     [InlineData(Review::ResponseType.None)]
-    [InlineData(Review::ResponseType.Object1)]
-    [InlineData(Review::ResponseType.Array1)]
-    [InlineData(Review::ResponseType.Error1)]
-    [InlineData(Review::ResponseType.None1)]
     public void Validation_Works(Review::ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -9643,10 +9635,6 @@ public class ResponseTypeTest : TestBase
     [InlineData(Review::ResponseType.Array)]
     [InlineData(Review::ResponseType.Error)]
     [InlineData(Review::ResponseType.None)]
-    [InlineData(Review::ResponseType.Object1)]
-    [InlineData(Review::ResponseType.Array1)]
-    [InlineData(Review::ResponseType.Error1)]
-    [InlineData(Review::ResponseType.None1)]
     public void SerializationRoundtrip_Works(Review::ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

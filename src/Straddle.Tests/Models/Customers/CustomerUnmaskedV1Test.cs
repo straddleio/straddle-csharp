@@ -925,8 +925,6 @@ public class CustomerUnmaskedV1DataTypeTest : TestBase
     [Theory]
     [InlineData(CustomerUnmaskedV1DataType.Individual)]
     [InlineData(CustomerUnmaskedV1DataType.Business)]
-    [InlineData(CustomerUnmaskedV1DataType.Individual1)]
-    [InlineData(CustomerUnmaskedV1DataType.Business1)]
     public void Validation_Works(CustomerUnmaskedV1DataType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -949,8 +947,6 @@ public class CustomerUnmaskedV1DataTypeTest : TestBase
     [Theory]
     [InlineData(CustomerUnmaskedV1DataType.Individual)]
     [InlineData(CustomerUnmaskedV1DataType.Business)]
-    [InlineData(CustomerUnmaskedV1DataType.Individual1)]
-    [InlineData(CustomerUnmaskedV1DataType.Business1)]
     public void SerializationRoundtrip_Works(CustomerUnmaskedV1DataType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1739,10 +1735,6 @@ public class CustomerUnmaskedV1ResponseTypeTest : TestBase
     [InlineData(CustomerUnmaskedV1ResponseType.Array)]
     [InlineData(CustomerUnmaskedV1ResponseType.Error)]
     [InlineData(CustomerUnmaskedV1ResponseType.None)]
-    [InlineData(CustomerUnmaskedV1ResponseType.Object1)]
-    [InlineData(CustomerUnmaskedV1ResponseType.Array1)]
-    [InlineData(CustomerUnmaskedV1ResponseType.Error1)]
-    [InlineData(CustomerUnmaskedV1ResponseType.None1)]
     public void Validation_Works(CustomerUnmaskedV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1767,10 +1759,6 @@ public class CustomerUnmaskedV1ResponseTypeTest : TestBase
     [InlineData(CustomerUnmaskedV1ResponseType.Array)]
     [InlineData(CustomerUnmaskedV1ResponseType.Error)]
     [InlineData(CustomerUnmaskedV1ResponseType.None)]
-    [InlineData(CustomerUnmaskedV1ResponseType.Object1)]
-    [InlineData(CustomerUnmaskedV1ResponseType.Array1)]
-    [InlineData(CustomerUnmaskedV1ResponseType.Error1)]
-    [InlineData(CustomerUnmaskedV1ResponseType.None1)]
     public void SerializationRoundtrip_Works(CustomerUnmaskedV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

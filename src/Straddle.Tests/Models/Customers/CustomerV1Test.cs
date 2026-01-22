@@ -909,8 +909,6 @@ public class CustomerV1DataTypeTest : TestBase
     [Theory]
     [InlineData(CustomerV1DataType.Individual)]
     [InlineData(CustomerV1DataType.Business)]
-    [InlineData(CustomerV1DataType.Individual1)]
-    [InlineData(CustomerV1DataType.Business1)]
     public void Validation_Works(CustomerV1DataType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -933,8 +931,6 @@ public class CustomerV1DataTypeTest : TestBase
     [Theory]
     [InlineData(CustomerV1DataType.Individual)]
     [InlineData(CustomerV1DataType.Business)]
-    [InlineData(CustomerV1DataType.Individual1)]
-    [InlineData(CustomerV1DataType.Business1)]
     public void SerializationRoundtrip_Works(CustomerV1DataType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1762,10 +1758,6 @@ public class CustomerV1ResponseTypeTest : TestBase
     [InlineData(CustomerV1ResponseType.Array)]
     [InlineData(CustomerV1ResponseType.Error)]
     [InlineData(CustomerV1ResponseType.None)]
-    [InlineData(CustomerV1ResponseType.Object1)]
-    [InlineData(CustomerV1ResponseType.Array1)]
-    [InlineData(CustomerV1ResponseType.Error1)]
-    [InlineData(CustomerV1ResponseType.None1)]
     public void Validation_Works(CustomerV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1790,10 +1782,6 @@ public class CustomerV1ResponseTypeTest : TestBase
     [InlineData(CustomerV1ResponseType.Array)]
     [InlineData(CustomerV1ResponseType.Error)]
     [InlineData(CustomerV1ResponseType.None)]
-    [InlineData(CustomerV1ResponseType.Object1)]
-    [InlineData(CustomerV1ResponseType.Array1)]
-    [InlineData(CustomerV1ResponseType.Error1)]
-    [InlineData(CustomerV1ResponseType.None1)]
     public void SerializationRoundtrip_Works(CustomerV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
