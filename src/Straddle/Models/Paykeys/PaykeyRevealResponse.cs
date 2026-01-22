@@ -1122,26 +1122,6 @@ public enum PaykeyRevealResponseDataStatusDetailsReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
-    InsufficientFunds1,
-    ClosedBankAccount1,
-    InvalidBankAccount1,
-    InvalidRouting1,
-    Disputed1,
-    PaymentStopped1,
-    OwnerDeceased1,
-    FrozenBankAccount1,
-    RiskReview1,
-    Fraudulent1,
-    DuplicateEntry1,
-    InvalidPaykey1,
-    PaymentBlocked1,
-    AmountTooLarge1,
-    TooManyAttempts1,
-    InternalSystemError1,
-    UserRequest1,
-    Ok1,
-    OtherNetworkReturn1,
-    PayoutRefused1,
 }
 
 sealed class PaykeyRevealResponseDataStatusDetailsReasonConverter
@@ -1183,27 +1163,6 @@ sealed class PaykeyRevealResponseDataStatusDetailsReasonConverter
             "require_review" => PaykeyRevealResponseDataStatusDetailsReason.RequireReview,
             "blocked_by_system" => PaykeyRevealResponseDataStatusDetailsReason.BlockedBySystem,
             "watchtower_review" => PaykeyRevealResponseDataStatusDetailsReason.WatchtowerReview,
-            "InsufficientFunds" => PaykeyRevealResponseDataStatusDetailsReason.InsufficientFunds1,
-            "ClosedBankAccount" => PaykeyRevealResponseDataStatusDetailsReason.ClosedBankAccount1,
-            "InvalidBankAccount" => PaykeyRevealResponseDataStatusDetailsReason.InvalidBankAccount1,
-            "InvalidRouting" => PaykeyRevealResponseDataStatusDetailsReason.InvalidRouting1,
-            "Disputed" => PaykeyRevealResponseDataStatusDetailsReason.Disputed1,
-            "PaymentStopped" => PaykeyRevealResponseDataStatusDetailsReason.PaymentStopped1,
-            "OwnerDeceased" => PaykeyRevealResponseDataStatusDetailsReason.OwnerDeceased1,
-            "FrozenBankAccount" => PaykeyRevealResponseDataStatusDetailsReason.FrozenBankAccount1,
-            "RiskReview" => PaykeyRevealResponseDataStatusDetailsReason.RiskReview1,
-            "Fraudulent" => PaykeyRevealResponseDataStatusDetailsReason.Fraudulent1,
-            "DuplicateEntry" => PaykeyRevealResponseDataStatusDetailsReason.DuplicateEntry1,
-            "InvalidPaykey" => PaykeyRevealResponseDataStatusDetailsReason.InvalidPaykey1,
-            "PaymentBlocked" => PaykeyRevealResponseDataStatusDetailsReason.PaymentBlocked1,
-            "AmountTooLarge" => PaykeyRevealResponseDataStatusDetailsReason.AmountTooLarge1,
-            "TooManyAttempts" => PaykeyRevealResponseDataStatusDetailsReason.TooManyAttempts1,
-            "InternalSystemError" =>
-                PaykeyRevealResponseDataStatusDetailsReason.InternalSystemError1,
-            "UserRequest" => PaykeyRevealResponseDataStatusDetailsReason.UserRequest1,
-            "Ok" => PaykeyRevealResponseDataStatusDetailsReason.Ok1,
-            "OtherNetworkReturn" => PaykeyRevealResponseDataStatusDetailsReason.OtherNetworkReturn1,
-            "PayoutRefused" => PaykeyRevealResponseDataStatusDetailsReason.PayoutRefused1,
             _ => (PaykeyRevealResponseDataStatusDetailsReason)(-1),
         };
     }
@@ -1250,32 +1209,6 @@ sealed class PaykeyRevealResponseDataStatusDetailsReasonConverter
                 PaykeyRevealResponseDataStatusDetailsReason.RequireReview => "require_review",
                 PaykeyRevealResponseDataStatusDetailsReason.BlockedBySystem => "blocked_by_system",
                 PaykeyRevealResponseDataStatusDetailsReason.WatchtowerReview => "watchtower_review",
-                PaykeyRevealResponseDataStatusDetailsReason.InsufficientFunds1 =>
-                    "InsufficientFunds",
-                PaykeyRevealResponseDataStatusDetailsReason.ClosedBankAccount1 =>
-                    "ClosedBankAccount",
-                PaykeyRevealResponseDataStatusDetailsReason.InvalidBankAccount1 =>
-                    "InvalidBankAccount",
-                PaykeyRevealResponseDataStatusDetailsReason.InvalidRouting1 => "InvalidRouting",
-                PaykeyRevealResponseDataStatusDetailsReason.Disputed1 => "Disputed",
-                PaykeyRevealResponseDataStatusDetailsReason.PaymentStopped1 => "PaymentStopped",
-                PaykeyRevealResponseDataStatusDetailsReason.OwnerDeceased1 => "OwnerDeceased",
-                PaykeyRevealResponseDataStatusDetailsReason.FrozenBankAccount1 =>
-                    "FrozenBankAccount",
-                PaykeyRevealResponseDataStatusDetailsReason.RiskReview1 => "RiskReview",
-                PaykeyRevealResponseDataStatusDetailsReason.Fraudulent1 => "Fraudulent",
-                PaykeyRevealResponseDataStatusDetailsReason.DuplicateEntry1 => "DuplicateEntry",
-                PaykeyRevealResponseDataStatusDetailsReason.InvalidPaykey1 => "InvalidPaykey",
-                PaykeyRevealResponseDataStatusDetailsReason.PaymentBlocked1 => "PaymentBlocked",
-                PaykeyRevealResponseDataStatusDetailsReason.AmountTooLarge1 => "AmountTooLarge",
-                PaykeyRevealResponseDataStatusDetailsReason.TooManyAttempts1 => "TooManyAttempts",
-                PaykeyRevealResponseDataStatusDetailsReason.InternalSystemError1 =>
-                    "InternalSystemError",
-                PaykeyRevealResponseDataStatusDetailsReason.UserRequest1 => "UserRequest",
-                PaykeyRevealResponseDataStatusDetailsReason.Ok1 => "Ok",
-                PaykeyRevealResponseDataStatusDetailsReason.OtherNetworkReturn1 =>
-                    "OtherNetworkReturn",
-                PaykeyRevealResponseDataStatusDetailsReason.PayoutRefused1 => "PayoutRefused",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1293,11 +1226,6 @@ public enum PaykeyRevealResponseDataStatusDetailsSource
     CustomerDispute,
     UserAction,
     System,
-    Watchtower1,
-    BankDecline1,
-    CustomerDispute1,
-    UserAction1,
-    System1,
 }
 
 sealed class PaykeyRevealResponseDataStatusDetailsSourceConverter
@@ -1316,11 +1244,6 @@ sealed class PaykeyRevealResponseDataStatusDetailsSourceConverter
             "customer_dispute" => PaykeyRevealResponseDataStatusDetailsSource.CustomerDispute,
             "user_action" => PaykeyRevealResponseDataStatusDetailsSource.UserAction,
             "system" => PaykeyRevealResponseDataStatusDetailsSource.System,
-            "Watchtower" => PaykeyRevealResponseDataStatusDetailsSource.Watchtower1,
-            "BankDecline" => PaykeyRevealResponseDataStatusDetailsSource.BankDecline1,
-            "CustomerDispute" => PaykeyRevealResponseDataStatusDetailsSource.CustomerDispute1,
-            "UserAction" => PaykeyRevealResponseDataStatusDetailsSource.UserAction1,
-            "System" => PaykeyRevealResponseDataStatusDetailsSource.System1,
             _ => (PaykeyRevealResponseDataStatusDetailsSource)(-1),
         };
     }
@@ -1340,11 +1263,6 @@ sealed class PaykeyRevealResponseDataStatusDetailsSourceConverter
                 PaykeyRevealResponseDataStatusDetailsSource.CustomerDispute => "customer_dispute",
                 PaykeyRevealResponseDataStatusDetailsSource.UserAction => "user_action",
                 PaykeyRevealResponseDataStatusDetailsSource.System => "system",
-                PaykeyRevealResponseDataStatusDetailsSource.Watchtower1 => "Watchtower",
-                PaykeyRevealResponseDataStatusDetailsSource.BankDecline1 => "BankDecline",
-                PaykeyRevealResponseDataStatusDetailsSource.CustomerDispute1 => "CustomerDispute",
-                PaykeyRevealResponseDataStatusDetailsSource.UserAction1 => "UserAction",
-                PaykeyRevealResponseDataStatusDetailsSource.System1 => "System",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1367,10 +1285,6 @@ public enum PaykeyRevealResponseResponseType
     Array,
     Error,
     None,
-    Object1,
-    Array1,
-    Error1,
-    None1,
 }
 
 sealed class PaykeyRevealResponseResponseTypeConverter
@@ -1388,10 +1302,6 @@ sealed class PaykeyRevealResponseResponseTypeConverter
             "array" => PaykeyRevealResponseResponseType.Array,
             "error" => PaykeyRevealResponseResponseType.Error,
             "none" => PaykeyRevealResponseResponseType.None,
-            "Object" => PaykeyRevealResponseResponseType.Object1,
-            "Array" => PaykeyRevealResponseResponseType.Array1,
-            "Error" => PaykeyRevealResponseResponseType.Error1,
-            "None" => PaykeyRevealResponseResponseType.None1,
             _ => (PaykeyRevealResponseResponseType)(-1),
         };
     }
@@ -1410,10 +1320,6 @@ sealed class PaykeyRevealResponseResponseTypeConverter
                 PaykeyRevealResponseResponseType.Array => "array",
                 PaykeyRevealResponseResponseType.Error => "error",
                 PaykeyRevealResponseResponseType.None => "none",
-                PaykeyRevealResponseResponseType.Object1 => "Object",
-                PaykeyRevealResponseResponseType.Array1 => "Array",
-                PaykeyRevealResponseResponseType.Error1 => "Error",
-                PaykeyRevealResponseResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

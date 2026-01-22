@@ -1911,26 +1911,6 @@ public class PaykeyV1DataStatusDetailsReasonTest : TestBase
     [InlineData(PaykeyV1DataStatusDetailsReason.RequireReview)]
     [InlineData(PaykeyV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(PaykeyV1DataStatusDetailsReason.WatchtowerReview)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.InsufficientFunds1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.ClosedBankAccount1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidBankAccount1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidRouting1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.Disputed1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.PaymentStopped1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.OwnerDeceased1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.FrozenBankAccount1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.RiskReview1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.Fraudulent1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.DuplicateEntry1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidPaykey1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.PaymentBlocked1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.AmountTooLarge1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.TooManyAttempts1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.InternalSystemError1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.UserRequest1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.Ok1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.OtherNetworkReturn1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.PayoutRefused1)]
     public void Validation_Works(PaykeyV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1976,26 +1956,6 @@ public class PaykeyV1DataStatusDetailsReasonTest : TestBase
     [InlineData(PaykeyV1DataStatusDetailsReason.RequireReview)]
     [InlineData(PaykeyV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(PaykeyV1DataStatusDetailsReason.WatchtowerReview)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.InsufficientFunds1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.ClosedBankAccount1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidBankAccount1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidRouting1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.Disputed1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.PaymentStopped1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.OwnerDeceased1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.FrozenBankAccount1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.RiskReview1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.Fraudulent1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.DuplicateEntry1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidPaykey1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.PaymentBlocked1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.AmountTooLarge1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.TooManyAttempts1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.InternalSystemError1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.UserRequest1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.Ok1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.OtherNetworkReturn1)]
-    [InlineData(PaykeyV1DataStatusDetailsReason.PayoutRefused1)]
     public void SerializationRoundtrip_Works(PaykeyV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2033,11 +1993,6 @@ public class PaykeyV1DataStatusDetailsSourceTest : TestBase
     [InlineData(PaykeyV1DataStatusDetailsSource.CustomerDispute)]
     [InlineData(PaykeyV1DataStatusDetailsSource.UserAction)]
     [InlineData(PaykeyV1DataStatusDetailsSource.System)]
-    [InlineData(PaykeyV1DataStatusDetailsSource.Watchtower1)]
-    [InlineData(PaykeyV1DataStatusDetailsSource.BankDecline1)]
-    [InlineData(PaykeyV1DataStatusDetailsSource.CustomerDispute1)]
-    [InlineData(PaykeyV1DataStatusDetailsSource.UserAction1)]
-    [InlineData(PaykeyV1DataStatusDetailsSource.System1)]
     public void Validation_Works(PaykeyV1DataStatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2063,11 +2018,6 @@ public class PaykeyV1DataStatusDetailsSourceTest : TestBase
     [InlineData(PaykeyV1DataStatusDetailsSource.CustomerDispute)]
     [InlineData(PaykeyV1DataStatusDetailsSource.UserAction)]
     [InlineData(PaykeyV1DataStatusDetailsSource.System)]
-    [InlineData(PaykeyV1DataStatusDetailsSource.Watchtower1)]
-    [InlineData(PaykeyV1DataStatusDetailsSource.BankDecline1)]
-    [InlineData(PaykeyV1DataStatusDetailsSource.CustomerDispute1)]
-    [InlineData(PaykeyV1DataStatusDetailsSource.UserAction1)]
-    [InlineData(PaykeyV1DataStatusDetailsSource.System1)]
     public void SerializationRoundtrip_Works(PaykeyV1DataStatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2104,10 +2054,6 @@ public class PaykeyV1ResponseTypeTest : TestBase
     [InlineData(PaykeyV1ResponseType.Array)]
     [InlineData(PaykeyV1ResponseType.Error)]
     [InlineData(PaykeyV1ResponseType.None)]
-    [InlineData(PaykeyV1ResponseType.Object1)]
-    [InlineData(PaykeyV1ResponseType.Array1)]
-    [InlineData(PaykeyV1ResponseType.Error1)]
-    [InlineData(PaykeyV1ResponseType.None1)]
     public void Validation_Works(PaykeyV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2132,10 +2078,6 @@ public class PaykeyV1ResponseTypeTest : TestBase
     [InlineData(PaykeyV1ResponseType.Array)]
     [InlineData(PaykeyV1ResponseType.Error)]
     [InlineData(PaykeyV1ResponseType.None)]
-    [InlineData(PaykeyV1ResponseType.Object1)]
-    [InlineData(PaykeyV1ResponseType.Array1)]
-    [InlineData(PaykeyV1ResponseType.Error1)]
-    [InlineData(PaykeyV1ResponseType.None1)]
     public void SerializationRoundtrip_Works(PaykeyV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

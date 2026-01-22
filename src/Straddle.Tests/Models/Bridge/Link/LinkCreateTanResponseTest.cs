@@ -1890,26 +1890,6 @@ public class LinkCreateTanResponseDataStatusDetailsReasonTest : TestBase
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.RequireReview)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.BlockedBySystem)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.WatchtowerReview)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.InsufficientFunds1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.ClosedBankAccount1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.InvalidBankAccount1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.InvalidRouting1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.Disputed1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.PaymentStopped1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.OwnerDeceased1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.FrozenBankAccount1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.RiskReview1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.Fraudulent1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.DuplicateEntry1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.InvalidPaykey1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.PaymentBlocked1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.AmountTooLarge1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.TooManyAttempts1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.InternalSystemError1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.UserRequest1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.Ok1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.OtherNetworkReturn1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.PayoutRefused1)]
     public void Validation_Works(LinkCreateTanResponseDataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1954,26 +1934,6 @@ public class LinkCreateTanResponseDataStatusDetailsReasonTest : TestBase
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.RequireReview)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.BlockedBySystem)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.WatchtowerReview)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.InsufficientFunds1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.ClosedBankAccount1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.InvalidBankAccount1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.InvalidRouting1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.Disputed1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.PaymentStopped1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.OwnerDeceased1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.FrozenBankAccount1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.RiskReview1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.Fraudulent1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.DuplicateEntry1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.InvalidPaykey1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.PaymentBlocked1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.AmountTooLarge1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.TooManyAttempts1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.InternalSystemError1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.UserRequest1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.Ok1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.OtherNetworkReturn1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.PayoutRefused1)]
     public void SerializationRoundtrip_Works(LinkCreateTanResponseDataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2010,11 +1970,6 @@ public class LinkCreateTanResponseDataStatusDetailsSourceTest : TestBase
     [InlineData(LinkCreateTanResponseDataStatusDetailsSource.CustomerDispute)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsSource.UserAction)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsSource.System)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsSource.Watchtower1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsSource.BankDecline1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsSource.CustomerDispute1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsSource.UserAction1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsSource.System1)]
     public void Validation_Works(LinkCreateTanResponseDataStatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2039,11 +1994,6 @@ public class LinkCreateTanResponseDataStatusDetailsSourceTest : TestBase
     [InlineData(LinkCreateTanResponseDataStatusDetailsSource.CustomerDispute)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsSource.UserAction)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsSource.System)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsSource.Watchtower1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsSource.BankDecline1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsSource.CustomerDispute1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsSource.UserAction1)]
-    [InlineData(LinkCreateTanResponseDataStatusDetailsSource.System1)]
     public void SerializationRoundtrip_Works(LinkCreateTanResponseDataStatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2079,10 +2029,6 @@ public class LinkCreateTanResponseResponseTypeTest : TestBase
     [InlineData(LinkCreateTanResponseResponseType.Array)]
     [InlineData(LinkCreateTanResponseResponseType.Error)]
     [InlineData(LinkCreateTanResponseResponseType.None)]
-    [InlineData(LinkCreateTanResponseResponseType.Object1)]
-    [InlineData(LinkCreateTanResponseResponseType.Array1)]
-    [InlineData(LinkCreateTanResponseResponseType.Error1)]
-    [InlineData(LinkCreateTanResponseResponseType.None1)]
     public void Validation_Works(LinkCreateTanResponseResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2107,10 +2053,6 @@ public class LinkCreateTanResponseResponseTypeTest : TestBase
     [InlineData(LinkCreateTanResponseResponseType.Array)]
     [InlineData(LinkCreateTanResponseResponseType.Error)]
     [InlineData(LinkCreateTanResponseResponseType.None)]
-    [InlineData(LinkCreateTanResponseResponseType.Object1)]
-    [InlineData(LinkCreateTanResponseResponseType.Array1)]
-    [InlineData(LinkCreateTanResponseResponseType.Error1)]
-    [InlineData(LinkCreateTanResponseResponseType.None1)]
     public void SerializationRoundtrip_Works(LinkCreateTanResponseResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

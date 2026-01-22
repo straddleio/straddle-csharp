@@ -621,9 +621,6 @@ public enum ChargeUnmaskResponseDataConfigBalanceCheck
     Required,
     Enabled,
     Disabled,
-    Required1,
-    Enabled1,
-    Disabled1,
 }
 
 sealed class ChargeUnmaskResponseDataConfigBalanceCheckConverter
@@ -640,9 +637,6 @@ sealed class ChargeUnmaskResponseDataConfigBalanceCheckConverter
             "required" => ChargeUnmaskResponseDataConfigBalanceCheck.Required,
             "enabled" => ChargeUnmaskResponseDataConfigBalanceCheck.Enabled,
             "disabled" => ChargeUnmaskResponseDataConfigBalanceCheck.Disabled,
-            "Required" => ChargeUnmaskResponseDataConfigBalanceCheck.Required1,
-            "Enabled" => ChargeUnmaskResponseDataConfigBalanceCheck.Enabled1,
-            "Disabled" => ChargeUnmaskResponseDataConfigBalanceCheck.Disabled1,
             _ => (ChargeUnmaskResponseDataConfigBalanceCheck)(-1),
         };
     }
@@ -660,9 +654,6 @@ sealed class ChargeUnmaskResponseDataConfigBalanceCheckConverter
                 ChargeUnmaskResponseDataConfigBalanceCheck.Required => "required",
                 ChargeUnmaskResponseDataConfigBalanceCheck.Enabled => "enabled",
                 ChargeUnmaskResponseDataConfigBalanceCheck.Disabled => "disabled",
-                ChargeUnmaskResponseDataConfigBalanceCheck.Required1 => "Required",
-                ChargeUnmaskResponseDataConfigBalanceCheck.Enabled1 => "Enabled",
-                ChargeUnmaskResponseDataConfigBalanceCheck.Disabled1 => "Disabled",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -689,17 +680,6 @@ public enum ChargeUnmaskResponseDataConfigSandboxOutcome
     ReversedCustomerDispute,
     FailedClosedBankAccount,
     ReversedClosedBankAccount,
-    Standard1,
-    Paid1,
-    OnHoldDailyLimit1,
-    CancelledForFraudRisk1,
-    CancelledForBalanceCheck1,
-    FailedInsufficientFunds1,
-    ReversedInsufficientFunds1,
-    FailedCustomerDispute1,
-    ReversedCustomerDispute1,
-    FailedClosedBankAccount1,
-    ReversedClosedBankAccount1,
 }
 
 sealed class ChargeUnmaskResponseDataConfigSandboxOutcomeConverter
@@ -732,25 +712,6 @@ sealed class ChargeUnmaskResponseDataConfigSandboxOutcomeConverter
                 ChargeUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount,
             "reversed_closed_bank_account" =>
                 ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount,
-            "Standard" => ChargeUnmaskResponseDataConfigSandboxOutcome.Standard1,
-            "Paid" => ChargeUnmaskResponseDataConfigSandboxOutcome.Paid1,
-            "OnHoldDailyLimit" => ChargeUnmaskResponseDataConfigSandboxOutcome.OnHoldDailyLimit1,
-            "CancelledForFraudRisk" =>
-                ChargeUnmaskResponseDataConfigSandboxOutcome.CancelledForFraudRisk1,
-            "CancelledForBalanceCheck" =>
-                ChargeUnmaskResponseDataConfigSandboxOutcome.CancelledForBalanceCheck1,
-            "FailedInsufficientFunds" =>
-                ChargeUnmaskResponseDataConfigSandboxOutcome.FailedInsufficientFunds1,
-            "ReversedInsufficientFunds" =>
-                ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedInsufficientFunds1,
-            "FailedCustomerDispute" =>
-                ChargeUnmaskResponseDataConfigSandboxOutcome.FailedCustomerDispute1,
-            "ReversedCustomerDispute" =>
-                ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute1,
-            "FailedClosedBankAccount" =>
-                ChargeUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount1,
-            "ReversedClosedBankAccount" =>
-                ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount1,
             _ => (ChargeUnmaskResponseDataConfigSandboxOutcome)(-1),
         };
     }
@@ -785,26 +746,6 @@ sealed class ChargeUnmaskResponseDataConfigSandboxOutcomeConverter
                     "failed_closed_bank_account",
                 ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount =>
                     "reversed_closed_bank_account",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.Standard1 => "Standard",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.Paid1 => "Paid",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.OnHoldDailyLimit1 =>
-                    "OnHoldDailyLimit",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.CancelledForFraudRisk1 =>
-                    "CancelledForFraudRisk",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.CancelledForBalanceCheck1 =>
-                    "CancelledForBalanceCheck",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.FailedInsufficientFunds1 =>
-                    "FailedInsufficientFunds",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedInsufficientFunds1 =>
-                    "ReversedInsufficientFunds",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.FailedCustomerDispute1 =>
-                    "FailedCustomerDispute",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute1 =>
-                    "ReversedCustomerDispute",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount1 =>
-                    "FailedClosedBankAccount",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount1 =>
-                    "ReversedClosedBankAccount",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -824,8 +765,6 @@ public enum ChargeUnmaskResponseDataConsentType
 {
     Internet,
     Signed,
-    Internet1,
-    Signed1,
 }
 
 sealed class ChargeUnmaskResponseDataConsentTypeConverter
@@ -841,8 +780,6 @@ sealed class ChargeUnmaskResponseDataConsentTypeConverter
         {
             "internet" => ChargeUnmaskResponseDataConsentType.Internet,
             "signed" => ChargeUnmaskResponseDataConsentType.Signed,
-            "Internet" => ChargeUnmaskResponseDataConsentType.Internet1,
-            "Signed" => ChargeUnmaskResponseDataConsentType.Signed1,
             _ => (ChargeUnmaskResponseDataConsentType)(-1),
         };
     }
@@ -859,8 +796,6 @@ sealed class ChargeUnmaskResponseDataConsentTypeConverter
             {
                 ChargeUnmaskResponseDataConsentType.Internet => "internet",
                 ChargeUnmaskResponseDataConsentType.Signed => "signed",
-                ChargeUnmaskResponseDataConsentType.Internet1 => "Internet",
-                ChargeUnmaskResponseDataConsentType.Signed1 => "Signed",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -945,14 +880,6 @@ public enum ChargeUnmaskResponseDataStatus
     Pending,
     Paid,
     Reversed,
-    Created1,
-    Scheduled1,
-    Failed1,
-    Cancelled1,
-    OnHold1,
-    Pending1,
-    Paid1,
-    Reversed1,
 }
 
 sealed class ChargeUnmaskResponseDataStatusConverter : JsonConverter<ChargeUnmaskResponseDataStatus>
@@ -973,14 +900,6 @@ sealed class ChargeUnmaskResponseDataStatusConverter : JsonConverter<ChargeUnmas
             "pending" => ChargeUnmaskResponseDataStatus.Pending,
             "paid" => ChargeUnmaskResponseDataStatus.Paid,
             "reversed" => ChargeUnmaskResponseDataStatus.Reversed,
-            "Created" => ChargeUnmaskResponseDataStatus.Created1,
-            "Scheduled" => ChargeUnmaskResponseDataStatus.Scheduled1,
-            "Failed" => ChargeUnmaskResponseDataStatus.Failed1,
-            "Cancelled" => ChargeUnmaskResponseDataStatus.Cancelled1,
-            "OnHold" => ChargeUnmaskResponseDataStatus.OnHold1,
-            "Pending" => ChargeUnmaskResponseDataStatus.Pending1,
-            "Paid" => ChargeUnmaskResponseDataStatus.Paid1,
-            "Reversed" => ChargeUnmaskResponseDataStatus.Reversed1,
             _ => (ChargeUnmaskResponseDataStatus)(-1),
         };
     }
@@ -1003,14 +922,6 @@ sealed class ChargeUnmaskResponseDataStatusConverter : JsonConverter<ChargeUnmas
                 ChargeUnmaskResponseDataStatus.Pending => "pending",
                 ChargeUnmaskResponseDataStatus.Paid => "paid",
                 ChargeUnmaskResponseDataStatus.Reversed => "reversed",
-                ChargeUnmaskResponseDataStatus.Created1 => "Created",
-                ChargeUnmaskResponseDataStatus.Scheduled1 => "Scheduled",
-                ChargeUnmaskResponseDataStatus.Failed1 => "Failed",
-                ChargeUnmaskResponseDataStatus.Cancelled1 => "Cancelled",
-                ChargeUnmaskResponseDataStatus.OnHold1 => "OnHold",
-                ChargeUnmaskResponseDataStatus.Pending1 => "Pending",
-                ChargeUnmaskResponseDataStatus.Paid1 => "Paid",
-                ChargeUnmaskResponseDataStatus.Reversed1 => "Reversed",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1193,26 +1104,6 @@ public enum ChargeUnmaskResponseDataStatusHistoryReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
-    InsufficientFunds1,
-    ClosedBankAccount1,
-    InvalidBankAccount1,
-    InvalidRouting1,
-    Disputed1,
-    PaymentStopped1,
-    OwnerDeceased1,
-    FrozenBankAccount1,
-    RiskReview1,
-    Fraudulent1,
-    DuplicateEntry1,
-    InvalidPaykey1,
-    PaymentBlocked1,
-    AmountTooLarge1,
-    TooManyAttempts1,
-    InternalSystemError1,
-    UserRequest1,
-    Ok1,
-    OtherNetworkReturn1,
-    PayoutRefused1,
 }
 
 sealed class ChargeUnmaskResponseDataStatusHistoryReasonConverter
@@ -1254,27 +1145,6 @@ sealed class ChargeUnmaskResponseDataStatusHistoryReasonConverter
             "require_review" => ChargeUnmaskResponseDataStatusHistoryReason.RequireReview,
             "blocked_by_system" => ChargeUnmaskResponseDataStatusHistoryReason.BlockedBySystem,
             "watchtower_review" => ChargeUnmaskResponseDataStatusHistoryReason.WatchtowerReview,
-            "InsufficientFunds" => ChargeUnmaskResponseDataStatusHistoryReason.InsufficientFunds1,
-            "ClosedBankAccount" => ChargeUnmaskResponseDataStatusHistoryReason.ClosedBankAccount1,
-            "InvalidBankAccount" => ChargeUnmaskResponseDataStatusHistoryReason.InvalidBankAccount1,
-            "InvalidRouting" => ChargeUnmaskResponseDataStatusHistoryReason.InvalidRouting1,
-            "Disputed" => ChargeUnmaskResponseDataStatusHistoryReason.Disputed1,
-            "PaymentStopped" => ChargeUnmaskResponseDataStatusHistoryReason.PaymentStopped1,
-            "OwnerDeceased" => ChargeUnmaskResponseDataStatusHistoryReason.OwnerDeceased1,
-            "FrozenBankAccount" => ChargeUnmaskResponseDataStatusHistoryReason.FrozenBankAccount1,
-            "RiskReview" => ChargeUnmaskResponseDataStatusHistoryReason.RiskReview1,
-            "Fraudulent" => ChargeUnmaskResponseDataStatusHistoryReason.Fraudulent1,
-            "DuplicateEntry" => ChargeUnmaskResponseDataStatusHistoryReason.DuplicateEntry1,
-            "InvalidPaykey" => ChargeUnmaskResponseDataStatusHistoryReason.InvalidPaykey1,
-            "PaymentBlocked" => ChargeUnmaskResponseDataStatusHistoryReason.PaymentBlocked1,
-            "AmountTooLarge" => ChargeUnmaskResponseDataStatusHistoryReason.AmountTooLarge1,
-            "TooManyAttempts" => ChargeUnmaskResponseDataStatusHistoryReason.TooManyAttempts1,
-            "InternalSystemError" =>
-                ChargeUnmaskResponseDataStatusHistoryReason.InternalSystemError1,
-            "UserRequest" => ChargeUnmaskResponseDataStatusHistoryReason.UserRequest1,
-            "Ok" => ChargeUnmaskResponseDataStatusHistoryReason.Ok1,
-            "OtherNetworkReturn" => ChargeUnmaskResponseDataStatusHistoryReason.OtherNetworkReturn1,
-            "PayoutRefused" => ChargeUnmaskResponseDataStatusHistoryReason.PayoutRefused1,
             _ => (ChargeUnmaskResponseDataStatusHistoryReason)(-1),
         };
     }
@@ -1321,32 +1191,6 @@ sealed class ChargeUnmaskResponseDataStatusHistoryReasonConverter
                 ChargeUnmaskResponseDataStatusHistoryReason.RequireReview => "require_review",
                 ChargeUnmaskResponseDataStatusHistoryReason.BlockedBySystem => "blocked_by_system",
                 ChargeUnmaskResponseDataStatusHistoryReason.WatchtowerReview => "watchtower_review",
-                ChargeUnmaskResponseDataStatusHistoryReason.InsufficientFunds1 =>
-                    "InsufficientFunds",
-                ChargeUnmaskResponseDataStatusHistoryReason.ClosedBankAccount1 =>
-                    "ClosedBankAccount",
-                ChargeUnmaskResponseDataStatusHistoryReason.InvalidBankAccount1 =>
-                    "InvalidBankAccount",
-                ChargeUnmaskResponseDataStatusHistoryReason.InvalidRouting1 => "InvalidRouting",
-                ChargeUnmaskResponseDataStatusHistoryReason.Disputed1 => "Disputed",
-                ChargeUnmaskResponseDataStatusHistoryReason.PaymentStopped1 => "PaymentStopped",
-                ChargeUnmaskResponseDataStatusHistoryReason.OwnerDeceased1 => "OwnerDeceased",
-                ChargeUnmaskResponseDataStatusHistoryReason.FrozenBankAccount1 =>
-                    "FrozenBankAccount",
-                ChargeUnmaskResponseDataStatusHistoryReason.RiskReview1 => "RiskReview",
-                ChargeUnmaskResponseDataStatusHistoryReason.Fraudulent1 => "Fraudulent",
-                ChargeUnmaskResponseDataStatusHistoryReason.DuplicateEntry1 => "DuplicateEntry",
-                ChargeUnmaskResponseDataStatusHistoryReason.InvalidPaykey1 => "InvalidPaykey",
-                ChargeUnmaskResponseDataStatusHistoryReason.PaymentBlocked1 => "PaymentBlocked",
-                ChargeUnmaskResponseDataStatusHistoryReason.AmountTooLarge1 => "AmountTooLarge",
-                ChargeUnmaskResponseDataStatusHistoryReason.TooManyAttempts1 => "TooManyAttempts",
-                ChargeUnmaskResponseDataStatusHistoryReason.InternalSystemError1 =>
-                    "InternalSystemError",
-                ChargeUnmaskResponseDataStatusHistoryReason.UserRequest1 => "UserRequest",
-                ChargeUnmaskResponseDataStatusHistoryReason.Ok1 => "Ok",
-                ChargeUnmaskResponseDataStatusHistoryReason.OtherNetworkReturn1 =>
-                    "OtherNetworkReturn",
-                ChargeUnmaskResponseDataStatusHistoryReason.PayoutRefused1 => "PayoutRefused",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1368,11 +1212,6 @@ public enum ChargeUnmaskResponseDataStatusHistorySource
     CustomerDispute,
     UserAction,
     System,
-    Watchtower1,
-    BankDecline1,
-    CustomerDispute1,
-    UserAction1,
-    System1,
 }
 
 sealed class ChargeUnmaskResponseDataStatusHistorySourceConverter
@@ -1391,11 +1230,6 @@ sealed class ChargeUnmaskResponseDataStatusHistorySourceConverter
             "customer_dispute" => ChargeUnmaskResponseDataStatusHistorySource.CustomerDispute,
             "user_action" => ChargeUnmaskResponseDataStatusHistorySource.UserAction,
             "system" => ChargeUnmaskResponseDataStatusHistorySource.System,
-            "Watchtower" => ChargeUnmaskResponseDataStatusHistorySource.Watchtower1,
-            "BankDecline" => ChargeUnmaskResponseDataStatusHistorySource.BankDecline1,
-            "CustomerDispute" => ChargeUnmaskResponseDataStatusHistorySource.CustomerDispute1,
-            "UserAction" => ChargeUnmaskResponseDataStatusHistorySource.UserAction1,
-            "System" => ChargeUnmaskResponseDataStatusHistorySource.System1,
             _ => (ChargeUnmaskResponseDataStatusHistorySource)(-1),
         };
     }
@@ -1415,11 +1249,6 @@ sealed class ChargeUnmaskResponseDataStatusHistorySourceConverter
                 ChargeUnmaskResponseDataStatusHistorySource.CustomerDispute => "customer_dispute",
                 ChargeUnmaskResponseDataStatusHistorySource.UserAction => "user_action",
                 ChargeUnmaskResponseDataStatusHistorySource.System => "system",
-                ChargeUnmaskResponseDataStatusHistorySource.Watchtower1 => "Watchtower",
-                ChargeUnmaskResponseDataStatusHistorySource.BankDecline1 => "BankDecline",
-                ChargeUnmaskResponseDataStatusHistorySource.CustomerDispute1 => "CustomerDispute",
-                ChargeUnmaskResponseDataStatusHistorySource.UserAction1 => "UserAction",
-                ChargeUnmaskResponseDataStatusHistorySource.System1 => "System",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1443,14 +1272,6 @@ public enum ChargeUnmaskResponseDataStatusHistoryStatus
     Pending,
     Paid,
     Reversed,
-    Created1,
-    Scheduled1,
-    Failed1,
-    Cancelled1,
-    OnHold1,
-    Pending1,
-    Paid1,
-    Reversed1,
 }
 
 sealed class ChargeUnmaskResponseDataStatusHistoryStatusConverter
@@ -1472,14 +1293,6 @@ sealed class ChargeUnmaskResponseDataStatusHistoryStatusConverter
             "pending" => ChargeUnmaskResponseDataStatusHistoryStatus.Pending,
             "paid" => ChargeUnmaskResponseDataStatusHistoryStatus.Paid,
             "reversed" => ChargeUnmaskResponseDataStatusHistoryStatus.Reversed,
-            "Created" => ChargeUnmaskResponseDataStatusHistoryStatus.Created1,
-            "Scheduled" => ChargeUnmaskResponseDataStatusHistoryStatus.Scheduled1,
-            "Failed" => ChargeUnmaskResponseDataStatusHistoryStatus.Failed1,
-            "Cancelled" => ChargeUnmaskResponseDataStatusHistoryStatus.Cancelled1,
-            "OnHold" => ChargeUnmaskResponseDataStatusHistoryStatus.OnHold1,
-            "Pending" => ChargeUnmaskResponseDataStatusHistoryStatus.Pending1,
-            "Paid" => ChargeUnmaskResponseDataStatusHistoryStatus.Paid1,
-            "Reversed" => ChargeUnmaskResponseDataStatusHistoryStatus.Reversed1,
             _ => (ChargeUnmaskResponseDataStatusHistoryStatus)(-1),
         };
     }
@@ -1502,14 +1315,6 @@ sealed class ChargeUnmaskResponseDataStatusHistoryStatusConverter
                 ChargeUnmaskResponseDataStatusHistoryStatus.Pending => "pending",
                 ChargeUnmaskResponseDataStatusHistoryStatus.Paid => "paid",
                 ChargeUnmaskResponseDataStatusHistoryStatus.Reversed => "reversed",
-                ChargeUnmaskResponseDataStatusHistoryStatus.Created1 => "Created",
-                ChargeUnmaskResponseDataStatusHistoryStatus.Scheduled1 => "Scheduled",
-                ChargeUnmaskResponseDataStatusHistoryStatus.Failed1 => "Failed",
-                ChargeUnmaskResponseDataStatusHistoryStatus.Cancelled1 => "Cancelled",
-                ChargeUnmaskResponseDataStatusHistoryStatus.OnHold1 => "OnHold",
-                ChargeUnmaskResponseDataStatusHistoryStatus.Pending1 => "Pending",
-                ChargeUnmaskResponseDataStatusHistoryStatus.Paid1 => "Paid",
-                ChargeUnmaskResponseDataStatusHistoryStatus.Reversed1 => "Reversed",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1526,7 +1331,6 @@ sealed class ChargeUnmaskResponseDataStatusHistoryStatusConverter
 public enum ChargeUnmaskResponseDataPaymentRail
 {
     Ach,
-    Ach1,
 }
 
 sealed class ChargeUnmaskResponseDataPaymentRailConverter
@@ -1541,7 +1345,6 @@ sealed class ChargeUnmaskResponseDataPaymentRailConverter
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
             "ach" => ChargeUnmaskResponseDataPaymentRail.Ach,
-            "ACH" => ChargeUnmaskResponseDataPaymentRail.Ach1,
             _ => (ChargeUnmaskResponseDataPaymentRail)(-1),
         };
     }
@@ -1557,7 +1360,6 @@ sealed class ChargeUnmaskResponseDataPaymentRailConverter
             value switch
             {
                 ChargeUnmaskResponseDataPaymentRail.Ach => "ach",
-                ChargeUnmaskResponseDataPaymentRail.Ach1 => "ACH",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1580,10 +1382,6 @@ public enum ChargeUnmaskResponseResponseType
     Array,
     Error,
     None,
-    Object1,
-    Array1,
-    Error1,
-    None1,
 }
 
 sealed class ChargeUnmaskResponseResponseTypeConverter
@@ -1601,10 +1399,6 @@ sealed class ChargeUnmaskResponseResponseTypeConverter
             "array" => ChargeUnmaskResponseResponseType.Array,
             "error" => ChargeUnmaskResponseResponseType.Error,
             "none" => ChargeUnmaskResponseResponseType.None,
-            "Object" => ChargeUnmaskResponseResponseType.Object1,
-            "Array" => ChargeUnmaskResponseResponseType.Array1,
-            "Error" => ChargeUnmaskResponseResponseType.Error1,
-            "None" => ChargeUnmaskResponseResponseType.None1,
             _ => (ChargeUnmaskResponseResponseType)(-1),
         };
     }
@@ -1623,10 +1417,6 @@ sealed class ChargeUnmaskResponseResponseTypeConverter
                 ChargeUnmaskResponseResponseType.Array => "array",
                 ChargeUnmaskResponseResponseType.Error => "error",
                 ChargeUnmaskResponseResponseType.None => "none",
-                ChargeUnmaskResponseResponseType.Object1 => "Object",
-                ChargeUnmaskResponseResponseType.Array1 => "Array",
-                ChargeUnmaskResponseResponseType.Error1 => "Error",
-                ChargeUnmaskResponseResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

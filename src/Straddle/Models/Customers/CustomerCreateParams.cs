@@ -351,8 +351,6 @@ public enum Type
 {
     Individual,
     Business,
-    Individual1,
-    Business1,
 }
 
 sealed class TypeConverter : JsonConverter<global::Straddle.Models.Customers.Type>
@@ -367,8 +365,6 @@ sealed class TypeConverter : JsonConverter<global::Straddle.Models.Customers.Typ
         {
             "individual" => global::Straddle.Models.Customers.Type.Individual,
             "business" => global::Straddle.Models.Customers.Type.Business,
-            "Individual" => global::Straddle.Models.Customers.Type.Individual1,
-            "Business" => global::Straddle.Models.Customers.Type.Business1,
             _ => (global::Straddle.Models.Customers.Type)(-1),
         };
     }
@@ -385,8 +381,6 @@ sealed class TypeConverter : JsonConverter<global::Straddle.Models.Customers.Typ
             {
                 global::Straddle.Models.Customers.Type.Individual => "individual",
                 global::Straddle.Models.Customers.Type.Business => "business",
-                global::Straddle.Models.Customers.Type.Individual1 => "Individual",
-                global::Straddle.Models.Customers.Type.Business1 => "Business",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
