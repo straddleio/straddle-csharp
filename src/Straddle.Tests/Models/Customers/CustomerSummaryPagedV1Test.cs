@@ -514,6 +514,8 @@ public class DataTypeTest : TestBase
     [Theory]
     [InlineData(DataType.Individual)]
     [InlineData(DataType.Business)]
+    [InlineData(DataType.Individual1)]
+    [InlineData(DataType.Business1)]
     public void Validation_Works(DataType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -536,6 +538,8 @@ public class DataTypeTest : TestBase
     [Theory]
     [InlineData(DataType.Individual)]
     [InlineData(DataType.Business)]
+    [InlineData(DataType.Individual1)]
+    [InlineData(DataType.Business1)]
     public void SerializationRoundtrip_Works(DataType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -698,6 +702,8 @@ public class MetaSortOrderTest : TestBase
     [Theory]
     [InlineData(MetaSortOrder.Asc)]
     [InlineData(MetaSortOrder.Desc)]
+    [InlineData(MetaSortOrder.Asc1)]
+    [InlineData(MetaSortOrder.Desc1)]
     public void Validation_Works(MetaSortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -720,6 +726,8 @@ public class MetaSortOrderTest : TestBase
     [Theory]
     [InlineData(MetaSortOrder.Asc)]
     [InlineData(MetaSortOrder.Desc)]
+    [InlineData(MetaSortOrder.Asc1)]
+    [InlineData(MetaSortOrder.Desc1)]
     public void SerializationRoundtrip_Works(MetaSortOrder rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -758,6 +766,10 @@ public class ResponseTypeTest : TestBase
     [InlineData(ResponseType.Array)]
     [InlineData(ResponseType.Error)]
     [InlineData(ResponseType.None)]
+    [InlineData(ResponseType.Object1)]
+    [InlineData(ResponseType.Array1)]
+    [InlineData(ResponseType.Error1)]
+    [InlineData(ResponseType.None1)]
     public void Validation_Works(ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -782,6 +794,10 @@ public class ResponseTypeTest : TestBase
     [InlineData(ResponseType.Array)]
     [InlineData(ResponseType.Error)]
     [InlineData(ResponseType.None)]
+    [InlineData(ResponseType.Object1)]
+    [InlineData(ResponseType.Array1)]
+    [InlineData(ResponseType.Error1)]
+    [InlineData(ResponseType.None1)]
     public void SerializationRoundtrip_Works(ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

@@ -344,6 +344,8 @@ public class TypeTest : TestBase
     [Theory]
     [InlineData(Customers::Type.Individual)]
     [InlineData(Customers::Type.Business)]
+    [InlineData(Customers::Type.Individual1)]
+    [InlineData(Customers::Type.Business1)]
     public void Validation_Works(Customers::Type rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -366,6 +368,8 @@ public class TypeTest : TestBase
     [Theory]
     [InlineData(Customers::Type.Individual)]
     [InlineData(Customers::Type.Business)]
+    [InlineData(Customers::Type.Individual1)]
+    [InlineData(Customers::Type.Business1)]
     public void SerializationRoundtrip_Works(Customers::Type rawValue)
     {
         // force implicit conversion because Theory can't do that for us

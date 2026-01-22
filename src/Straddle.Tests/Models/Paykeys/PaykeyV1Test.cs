@@ -54,6 +54,7 @@ public class PaykeyV1Test : TestBase
                     Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             Meta = new()
             {
@@ -102,6 +103,7 @@ public class PaykeyV1Test : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
         ResponseMetadata expectedMeta = new()
         {
@@ -159,6 +161,7 @@ public class PaykeyV1Test : TestBase
                     Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             Meta = new()
             {
@@ -218,6 +221,7 @@ public class PaykeyV1Test : TestBase
                     Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             Meta = new()
             {
@@ -273,6 +277,7 @@ public class PaykeyV1Test : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
         ResponseMetadata expectedMeta = new()
         {
@@ -330,6 +335,7 @@ public class PaykeyV1Test : TestBase
                     Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             Meta = new()
             {
@@ -387,6 +393,7 @@ public class PaykeyV1DataTest : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
@@ -426,6 +433,7 @@ public class PaykeyV1DataTest : TestBase
             Source = PaykeyV1DataStatusDetailsSource.Watchtower,
             Code = "code",
         };
+        bool expectedUnblockEligible = true;
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedConfig, model.Config);
@@ -450,6 +458,7 @@ public class PaykeyV1DataTest : TestBase
             Assert.Equal(value, model.Metadata[item.Key]);
         }
         Assert.Equal(expectedStatusDetails, model.StatusDetails);
+        Assert.Equal(expectedUnblockEligible, model.UnblockEligible);
     }
 
     [Fact]
@@ -494,6 +503,7 @@ public class PaykeyV1DataTest : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -547,6 +557,7 @@ public class PaykeyV1DataTest : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -593,6 +604,7 @@ public class PaykeyV1DataTest : TestBase
             Source = PaykeyV1DataStatusDetailsSource.Watchtower,
             Code = "code",
         };
+        bool expectedUnblockEligible = true;
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedConfig, deserialized.Config);
@@ -617,6 +629,7 @@ public class PaykeyV1DataTest : TestBase
             Assert.Equal(value, deserialized.Metadata[item.Key]);
         }
         Assert.Equal(expectedStatusDetails, deserialized.StatusDetails);
+        Assert.Equal(expectedUnblockEligible, deserialized.UnblockEligible);
     }
 
     [Fact]
@@ -661,6 +674,7 @@ public class PaykeyV1DataTest : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         model.Validate();
@@ -688,6 +702,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
         };
 
         Assert.Null(model.Balance);
@@ -720,6 +735,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
         };
 
         model.Validate();
@@ -747,6 +763,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
 
             // Null should be interpreted as omitted for these properties
             Balance = null,
@@ -784,6 +801,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
 
             // Null should be interpreted as omitted for these properties
             Balance = null,
@@ -843,6 +861,8 @@ public class PaykeyV1DataTest : TestBase
         Assert.False(model.RawData.ContainsKey("institution_name"));
         Assert.Null(model.Metadata);
         Assert.False(model.RawData.ContainsKey("metadata"));
+        Assert.Null(model.UnblockEligible);
+        Assert.False(model.RawData.ContainsKey("unblock_eligible"));
     }
 
     [Fact]
@@ -930,6 +950,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = null,
             InstitutionName = null,
             Metadata = null,
+            UnblockEligible = null,
         };
 
         Assert.Null(model.CustomerID);
@@ -942,6 +963,8 @@ public class PaykeyV1DataTest : TestBase
         Assert.True(model.RawData.ContainsKey("institution_name"));
         Assert.Null(model.Metadata);
         Assert.True(model.RawData.ContainsKey("metadata"));
+        Assert.Null(model.UnblockEligible);
+        Assert.True(model.RawData.ContainsKey("unblock_eligible"));
     }
 
     [Fact]
@@ -987,6 +1010,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = null,
             InstitutionName = null,
             Metadata = null,
+            UnblockEligible = null,
         };
 
         model.Validate();
@@ -1887,6 +1911,26 @@ public class PaykeyV1DataStatusDetailsReasonTest : TestBase
     [InlineData(PaykeyV1DataStatusDetailsReason.RequireReview)]
     [InlineData(PaykeyV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(PaykeyV1DataStatusDetailsReason.WatchtowerReview)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.InsufficientFunds1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.ClosedBankAccount1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidBankAccount1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidRouting1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.Disputed1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.PaymentStopped1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.OwnerDeceased1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.FrozenBankAccount1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.RiskReview1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.Fraudulent1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.DuplicateEntry1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidPaykey1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.PaymentBlocked1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.AmountTooLarge1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.TooManyAttempts1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.InternalSystemError1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.UserRequest1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.Ok1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.OtherNetworkReturn1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.PayoutRefused1)]
     public void Validation_Works(PaykeyV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1932,6 +1976,26 @@ public class PaykeyV1DataStatusDetailsReasonTest : TestBase
     [InlineData(PaykeyV1DataStatusDetailsReason.RequireReview)]
     [InlineData(PaykeyV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(PaykeyV1DataStatusDetailsReason.WatchtowerReview)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.InsufficientFunds1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.ClosedBankAccount1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidBankAccount1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidRouting1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.Disputed1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.PaymentStopped1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.OwnerDeceased1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.FrozenBankAccount1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.RiskReview1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.Fraudulent1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.DuplicateEntry1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.InvalidPaykey1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.PaymentBlocked1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.AmountTooLarge1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.TooManyAttempts1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.InternalSystemError1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.UserRequest1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.Ok1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.OtherNetworkReturn1)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.PayoutRefused1)]
     public void SerializationRoundtrip_Works(PaykeyV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1969,6 +2033,11 @@ public class PaykeyV1DataStatusDetailsSourceTest : TestBase
     [InlineData(PaykeyV1DataStatusDetailsSource.CustomerDispute)]
     [InlineData(PaykeyV1DataStatusDetailsSource.UserAction)]
     [InlineData(PaykeyV1DataStatusDetailsSource.System)]
+    [InlineData(PaykeyV1DataStatusDetailsSource.Watchtower1)]
+    [InlineData(PaykeyV1DataStatusDetailsSource.BankDecline1)]
+    [InlineData(PaykeyV1DataStatusDetailsSource.CustomerDispute1)]
+    [InlineData(PaykeyV1DataStatusDetailsSource.UserAction1)]
+    [InlineData(PaykeyV1DataStatusDetailsSource.System1)]
     public void Validation_Works(PaykeyV1DataStatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1994,6 +2063,11 @@ public class PaykeyV1DataStatusDetailsSourceTest : TestBase
     [InlineData(PaykeyV1DataStatusDetailsSource.CustomerDispute)]
     [InlineData(PaykeyV1DataStatusDetailsSource.UserAction)]
     [InlineData(PaykeyV1DataStatusDetailsSource.System)]
+    [InlineData(PaykeyV1DataStatusDetailsSource.Watchtower1)]
+    [InlineData(PaykeyV1DataStatusDetailsSource.BankDecline1)]
+    [InlineData(PaykeyV1DataStatusDetailsSource.CustomerDispute1)]
+    [InlineData(PaykeyV1DataStatusDetailsSource.UserAction1)]
+    [InlineData(PaykeyV1DataStatusDetailsSource.System1)]
     public void SerializationRoundtrip_Works(PaykeyV1DataStatusDetailsSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2030,6 +2104,10 @@ public class PaykeyV1ResponseTypeTest : TestBase
     [InlineData(PaykeyV1ResponseType.Array)]
     [InlineData(PaykeyV1ResponseType.Error)]
     [InlineData(PaykeyV1ResponseType.None)]
+    [InlineData(PaykeyV1ResponseType.Object1)]
+    [InlineData(PaykeyV1ResponseType.Array1)]
+    [InlineData(PaykeyV1ResponseType.Error1)]
+    [InlineData(PaykeyV1ResponseType.None1)]
     public void Validation_Works(PaykeyV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2054,6 +2132,10 @@ public class PaykeyV1ResponseTypeTest : TestBase
     [InlineData(PaykeyV1ResponseType.Array)]
     [InlineData(PaykeyV1ResponseType.Error)]
     [InlineData(PaykeyV1ResponseType.None)]
+    [InlineData(PaykeyV1ResponseType.Object1)]
+    [InlineData(PaykeyV1ResponseType.Array1)]
+    [InlineData(PaykeyV1ResponseType.Error1)]
+    [InlineData(PaykeyV1ResponseType.None1)]
     public void SerializationRoundtrip_Works(PaykeyV1ResponseType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

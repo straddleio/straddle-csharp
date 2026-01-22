@@ -397,6 +397,21 @@ public sealed record class PaykeyDetails : JsonModel
         }
     }
 
+    /// <summary>
+    /// Indicates whether this paykey is eligible for client-initiated unblocking.
+    /// Only present for blocked paykeys. True when blocked due to R29 returns and
+    /// not previously unblocked, false otherwise. Null when paykey is not blocked.
+    /// </summary>
+    public bool? UnblockEligible
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("unblock_eligible");
+        }
+        init { this._rawData.Set("unblock_eligible", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -416,6 +431,7 @@ public sealed record class PaykeyDetails : JsonModel
         _ = this.InstitutionName;
         _ = this.Metadata;
         this.StatusDetails?.Validate();
+        _ = this.UnblockEligible;
     }
 
     public PaykeyDetails() { }
@@ -1126,6 +1142,26 @@ public enum Reason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    InsufficientFunds1,
+    ClosedBankAccount1,
+    InvalidBankAccount1,
+    InvalidRouting1,
+    Disputed1,
+    PaymentStopped1,
+    OwnerDeceased1,
+    FrozenBankAccount1,
+    RiskReview1,
+    Fraudulent1,
+    DuplicateEntry1,
+    InvalidPaykey1,
+    PaymentBlocked1,
+    AmountTooLarge1,
+    TooManyAttempts1,
+    InternalSystemError1,
+    UserRequest1,
+    Ok1,
+    OtherNetworkReturn1,
+    PayoutRefused1,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -1163,6 +1199,26 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "require_review" => Reason.RequireReview,
             "blocked_by_system" => Reason.BlockedBySystem,
             "watchtower_review" => Reason.WatchtowerReview,
+            "InsufficientFunds" => Reason.InsufficientFunds1,
+            "ClosedBankAccount" => Reason.ClosedBankAccount1,
+            "InvalidBankAccount" => Reason.InvalidBankAccount1,
+            "InvalidRouting" => Reason.InvalidRouting1,
+            "Disputed" => Reason.Disputed1,
+            "PaymentStopped" => Reason.PaymentStopped1,
+            "OwnerDeceased" => Reason.OwnerDeceased1,
+            "FrozenBankAccount" => Reason.FrozenBankAccount1,
+            "RiskReview" => Reason.RiskReview1,
+            "Fraudulent" => Reason.Fraudulent1,
+            "DuplicateEntry" => Reason.DuplicateEntry1,
+            "InvalidPaykey" => Reason.InvalidPaykey1,
+            "PaymentBlocked" => Reason.PaymentBlocked1,
+            "AmountTooLarge" => Reason.AmountTooLarge1,
+            "TooManyAttempts" => Reason.TooManyAttempts1,
+            "InternalSystemError" => Reason.InternalSystemError1,
+            "UserRequest" => Reason.UserRequest1,
+            "Ok" => Reason.Ok1,
+            "OtherNetworkReturn" => Reason.OtherNetworkReturn1,
+            "PayoutRefused" => Reason.PayoutRefused1,
             _ => (Reason)(-1),
         };
     }
@@ -1198,6 +1254,26 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.RequireReview => "require_review",
                 Reason.BlockedBySystem => "blocked_by_system",
                 Reason.WatchtowerReview => "watchtower_review",
+                Reason.InsufficientFunds1 => "InsufficientFunds",
+                Reason.ClosedBankAccount1 => "ClosedBankAccount",
+                Reason.InvalidBankAccount1 => "InvalidBankAccount",
+                Reason.InvalidRouting1 => "InvalidRouting",
+                Reason.Disputed1 => "Disputed",
+                Reason.PaymentStopped1 => "PaymentStopped",
+                Reason.OwnerDeceased1 => "OwnerDeceased",
+                Reason.FrozenBankAccount1 => "FrozenBankAccount",
+                Reason.RiskReview1 => "RiskReview",
+                Reason.Fraudulent1 => "Fraudulent",
+                Reason.DuplicateEntry1 => "DuplicateEntry",
+                Reason.InvalidPaykey1 => "InvalidPaykey",
+                Reason.PaymentBlocked1 => "PaymentBlocked",
+                Reason.AmountTooLarge1 => "AmountTooLarge",
+                Reason.TooManyAttempts1 => "TooManyAttempts",
+                Reason.InternalSystemError1 => "InternalSystemError",
+                Reason.UserRequest1 => "UserRequest",
+                Reason.Ok1 => "Ok",
+                Reason.OtherNetworkReturn1 => "OtherNetworkReturn",
+                Reason.PayoutRefused1 => "PayoutRefused",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1215,6 +1291,11 @@ public enum StatusDetailsSource
     CustomerDispute,
     UserAction,
     System,
+    Watchtower1,
+    BankDecline1,
+    CustomerDispute1,
+    UserAction1,
+    System1,
 }
 
 sealed class StatusDetailsSourceConverter : JsonConverter<StatusDetailsSource>
@@ -1232,6 +1313,11 @@ sealed class StatusDetailsSourceConverter : JsonConverter<StatusDetailsSource>
             "customer_dispute" => StatusDetailsSource.CustomerDispute,
             "user_action" => StatusDetailsSource.UserAction,
             "system" => StatusDetailsSource.System,
+            "Watchtower" => StatusDetailsSource.Watchtower1,
+            "BankDecline" => StatusDetailsSource.BankDecline1,
+            "CustomerDispute" => StatusDetailsSource.CustomerDispute1,
+            "UserAction" => StatusDetailsSource.UserAction1,
+            "System" => StatusDetailsSource.System1,
             _ => (StatusDetailsSource)(-1),
         };
     }
@@ -1251,6 +1337,11 @@ sealed class StatusDetailsSourceConverter : JsonConverter<StatusDetailsSource>
                 StatusDetailsSource.CustomerDispute => "customer_dispute",
                 StatusDetailsSource.UserAction => "user_action",
                 StatusDetailsSource.System => "system",
+                StatusDetailsSource.Watchtower1 => "Watchtower",
+                StatusDetailsSource.BankDecline1 => "BankDecline",
+                StatusDetailsSource.CustomerDispute1 => "CustomerDispute",
+                StatusDetailsSource.UserAction1 => "UserAction",
+                StatusDetailsSource.System1 => "System",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1826,6 +1917,10 @@ public enum ResponseType
     Array,
     Error,
     None,
+    Object1,
+    Array1,
+    Error1,
+    None1,
 }
 
 sealed class ResponseTypeConverter : JsonConverter<ResponseType>
@@ -1842,6 +1937,10 @@ sealed class ResponseTypeConverter : JsonConverter<ResponseType>
             "array" => ResponseType.Array,
             "error" => ResponseType.Error,
             "none" => ResponseType.None,
+            "Object" => ResponseType.Object1,
+            "Array" => ResponseType.Array1,
+            "Error" => ResponseType.Error1,
+            "None" => ResponseType.None1,
             _ => (ResponseType)(-1),
         };
     }
@@ -1860,6 +1959,10 @@ sealed class ResponseTypeConverter : JsonConverter<ResponseType>
                 ResponseType.Array => "array",
                 ResponseType.Error => "error",
                 ResponseType.None => "none",
+                ResponseType.Object1 => "Object",
+                ResponseType.Array1 => "Array",
+                ResponseType.Error1 => "Error",
+                ResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

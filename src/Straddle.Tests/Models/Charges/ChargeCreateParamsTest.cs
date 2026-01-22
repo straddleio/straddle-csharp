@@ -414,6 +414,9 @@ public class BalanceCheckTest : TestBase
     [InlineData(BalanceCheck.Required)]
     [InlineData(BalanceCheck.Enabled)]
     [InlineData(BalanceCheck.Disabled)]
+    [InlineData(BalanceCheck.Required1)]
+    [InlineData(BalanceCheck.Enabled1)]
+    [InlineData(BalanceCheck.Disabled1)]
     public void Validation_Works(BalanceCheck rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -437,6 +440,9 @@ public class BalanceCheckTest : TestBase
     [InlineData(BalanceCheck.Required)]
     [InlineData(BalanceCheck.Enabled)]
     [InlineData(BalanceCheck.Disabled)]
+    [InlineData(BalanceCheck.Required1)]
+    [InlineData(BalanceCheck.Enabled1)]
+    [InlineData(BalanceCheck.Disabled1)]
     public void SerializationRoundtrip_Works(BalanceCheck rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -482,6 +488,17 @@ public class SandboxOutcomeTest : TestBase
     [InlineData(SandboxOutcome.ReversedCustomerDispute)]
     [InlineData(SandboxOutcome.FailedClosedBankAccount)]
     [InlineData(SandboxOutcome.ReversedClosedBankAccount)]
+    [InlineData(SandboxOutcome.Standard1)]
+    [InlineData(SandboxOutcome.Paid1)]
+    [InlineData(SandboxOutcome.OnHoldDailyLimit1)]
+    [InlineData(SandboxOutcome.CancelledForFraudRisk1)]
+    [InlineData(SandboxOutcome.CancelledForBalanceCheck1)]
+    [InlineData(SandboxOutcome.FailedInsufficientFunds1)]
+    [InlineData(SandboxOutcome.ReversedInsufficientFunds1)]
+    [InlineData(SandboxOutcome.FailedCustomerDispute1)]
+    [InlineData(SandboxOutcome.ReversedCustomerDispute1)]
+    [InlineData(SandboxOutcome.FailedClosedBankAccount1)]
+    [InlineData(SandboxOutcome.ReversedClosedBankAccount1)]
     public void Validation_Works(SandboxOutcome rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -513,6 +530,17 @@ public class SandboxOutcomeTest : TestBase
     [InlineData(SandboxOutcome.ReversedCustomerDispute)]
     [InlineData(SandboxOutcome.FailedClosedBankAccount)]
     [InlineData(SandboxOutcome.ReversedClosedBankAccount)]
+    [InlineData(SandboxOutcome.Standard1)]
+    [InlineData(SandboxOutcome.Paid1)]
+    [InlineData(SandboxOutcome.OnHoldDailyLimit1)]
+    [InlineData(SandboxOutcome.CancelledForFraudRisk1)]
+    [InlineData(SandboxOutcome.CancelledForBalanceCheck1)]
+    [InlineData(SandboxOutcome.FailedInsufficientFunds1)]
+    [InlineData(SandboxOutcome.ReversedInsufficientFunds1)]
+    [InlineData(SandboxOutcome.FailedCustomerDispute1)]
+    [InlineData(SandboxOutcome.ReversedCustomerDispute1)]
+    [InlineData(SandboxOutcome.FailedClosedBankAccount1)]
+    [InlineData(SandboxOutcome.ReversedClosedBankAccount1)]
     public void SerializationRoundtrip_Works(SandboxOutcome rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -549,6 +577,8 @@ public class ConsentTypeTest : TestBase
     [Theory]
     [InlineData(ConsentType.Internet)]
     [InlineData(ConsentType.Signed)]
+    [InlineData(ConsentType.Internet1)]
+    [InlineData(ConsentType.Signed1)]
     public void Validation_Works(ConsentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -571,6 +601,8 @@ public class ConsentTypeTest : TestBase
     [Theory]
     [InlineData(ConsentType.Internet)]
     [InlineData(ConsentType.Signed)]
+    [InlineData(ConsentType.Internet1)]
+    [InlineData(ConsentType.Signed1)]
     public void SerializationRoundtrip_Works(ConsentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

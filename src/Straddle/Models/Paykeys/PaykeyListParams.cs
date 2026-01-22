@@ -172,6 +172,30 @@ public record class PaykeyListParams : ParamsBase
         }
     }
 
+    /// <summary>
+    /// Filter paykeys by unblock eligibility. When true, returns only blocked paykeys
+    /// eligible for client-initiated unblocking (blocked due to R29 returns and not
+    /// previously unblocked). When false, returns only blocked paykeys that are
+    /// not eligible for unblocking.
+    /// </summary>
+    public bool? UnblockEligible
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("unblock_eligible");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("unblock_eligible", value);
+        }
+    }
+
     public string? CorrelationID
     {
         get
@@ -358,6 +382,8 @@ public enum SortOrder
 {
     Asc,
     Desc,
+    Asc1,
+    Desc1,
 }
 
 sealed class SortOrderConverter : JsonConverter<SortOrder>
@@ -372,6 +398,8 @@ sealed class SortOrderConverter : JsonConverter<SortOrder>
         {
             "asc" => SortOrder.Asc,
             "desc" => SortOrder.Desc,
+            "Asc" => SortOrder.Asc1,
+            "Desc" => SortOrder.Desc1,
             _ => (SortOrder)(-1),
         };
     }
@@ -388,6 +416,8 @@ sealed class SortOrderConverter : JsonConverter<SortOrder>
             {
                 SortOrder.Asc => "asc",
                 SortOrder.Desc => "desc",
+                SortOrder.Asc1 => "Asc",
+                SortOrder.Desc1 => "Desc",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

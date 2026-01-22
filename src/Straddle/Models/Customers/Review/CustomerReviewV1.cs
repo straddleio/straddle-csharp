@@ -480,6 +480,8 @@ public enum Type
 {
     Individual,
     Business,
+    Individual1,
+    Business1,
 }
 
 sealed class TypeConverter : JsonConverter<global::Straddle.Models.Customers.Review.Type>
@@ -494,6 +496,8 @@ sealed class TypeConverter : JsonConverter<global::Straddle.Models.Customers.Rev
         {
             "individual" => global::Straddle.Models.Customers.Review.Type.Individual,
             "business" => global::Straddle.Models.Customers.Review.Type.Business,
+            "Individual" => global::Straddle.Models.Customers.Review.Type.Individual1,
+            "Business" => global::Straddle.Models.Customers.Review.Type.Business1,
             _ => (global::Straddle.Models.Customers.Review.Type)(-1),
         };
     }
@@ -510,6 +514,8 @@ sealed class TypeConverter : JsonConverter<global::Straddle.Models.Customers.Rev
             {
                 global::Straddle.Models.Customers.Review.Type.Individual => "individual",
                 global::Straddle.Models.Customers.Review.Type.Business => "business",
+                global::Straddle.Models.Customers.Review.Type.Individual1 => "Individual",
+                global::Straddle.Models.Customers.Review.Type.Business1 => "Business",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -3222,6 +3228,10 @@ public enum ResponseType
     Array,
     Error,
     None,
+    Object1,
+    Array1,
+    Error1,
+    None1,
 }
 
 sealed class ResponseTypeConverter : JsonConverter<ResponseType>
@@ -3238,6 +3248,10 @@ sealed class ResponseTypeConverter : JsonConverter<ResponseType>
             "array" => ResponseType.Array,
             "error" => ResponseType.Error,
             "none" => ResponseType.None,
+            "Object" => ResponseType.Object1,
+            "Array" => ResponseType.Array1,
+            "Error" => ResponseType.Error1,
+            "None" => ResponseType.None1,
             _ => (ResponseType)(-1),
         };
     }
@@ -3256,6 +3270,10 @@ sealed class ResponseTypeConverter : JsonConverter<ResponseType>
                 ResponseType.Array => "array",
                 ResponseType.Error => "error",
                 ResponseType.None => "none",
+                ResponseType.Object1 => "Object",
+                ResponseType.Array1 => "Array",
+                ResponseType.Error1 => "Error",
+                ResponseType.None1 => "None",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -461,6 +461,8 @@ public enum SortOrder
 {
     Asc,
     Desc,
+    Asc1,
+    Desc1,
 }
 
 sealed class SortOrderConverter : JsonConverter<SortOrder>
@@ -475,6 +477,8 @@ sealed class SortOrderConverter : JsonConverter<SortOrder>
         {
             "asc" => SortOrder.Asc,
             "desc" => SortOrder.Desc,
+            "Asc" => SortOrder.Asc1,
+            "Desc" => SortOrder.Desc1,
             _ => (SortOrder)(-1),
         };
     }
@@ -491,6 +495,8 @@ sealed class SortOrderConverter : JsonConverter<SortOrder>
             {
                 SortOrder.Asc => "asc",
                 SortOrder.Desc => "desc",
+                SortOrder.Asc1 => "Asc",
+                SortOrder.Desc1 => "Desc",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -558,6 +564,8 @@ public enum CustomerListParamsType
 {
     Individual,
     Business,
+    Individual1,
+    Business1,
 }
 
 sealed class CustomerListParamsTypeConverter : JsonConverter<CustomerListParamsType>
@@ -572,6 +580,8 @@ sealed class CustomerListParamsTypeConverter : JsonConverter<CustomerListParamsT
         {
             "individual" => CustomerListParamsType.Individual,
             "business" => CustomerListParamsType.Business,
+            "Individual" => CustomerListParamsType.Individual1,
+            "Business" => CustomerListParamsType.Business1,
             _ => (CustomerListParamsType)(-1),
         };
     }
@@ -588,6 +598,8 @@ sealed class CustomerListParamsTypeConverter : JsonConverter<CustomerListParamsT
             {
                 CustomerListParamsType.Individual => "individual",
                 CustomerListParamsType.Business => "business",
+                CustomerListParamsType.Individual1 => "Individual",
+                CustomerListParamsType.Business1 => "Business",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
