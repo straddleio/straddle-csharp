@@ -526,4 +526,47 @@ public class BusinessProfileV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new BusinessProfileV1
+        {
+            Name = "name",
+            Website = "https://example.com",
+            Address = new()
+            {
+                Address1 = "address1",
+                City = "city",
+                State = "SE",
+                Zip = "zip",
+                Address2 = "address2",
+                Country = "country",
+                Line1 = "line1",
+                Line2 = "line2",
+                PostalCode = "21029-1360",
+            },
+            Description = "description",
+            Industry = new()
+            {
+                Category = "category",
+                Mcc = "mcc",
+                Sector = "sector",
+            },
+            LegalName = "legal_name",
+            Phone = "+46991022",
+            SupportChannels = new()
+            {
+                Email = "dev@stainless.com",
+                Phone = "+46991022",
+                Url = "https://example.com",
+            },
+            TaxID = "210297980",
+            UseCase = "use_case",
+        };
+
+        BusinessProfileV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }

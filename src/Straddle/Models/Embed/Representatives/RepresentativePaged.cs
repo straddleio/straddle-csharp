@@ -73,8 +73,11 @@ public sealed record class RepresentativePaged : JsonModel
 
     public RepresentativePaged() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public RepresentativePaged(RepresentativePaged representativePaged)
         : base(representativePaged) { }
+#pragma warning restore CS8618
 
     public RepresentativePaged(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -370,8 +373,11 @@ public sealed record class RepresentativePagedData : JsonModel
 
     public RepresentativePagedData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public RepresentativePagedData(RepresentativePagedData representativePagedData)
         : base(representativePagedData) { }
+#pragma warning restore CS8618
 
     public RepresentativePagedData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -495,10 +501,13 @@ public sealed record class RepresentativePagedDataRelationship : JsonModel
 
     public RepresentativePagedDataRelationship() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public RepresentativePagedDataRelationship(
         RepresentativePagedDataRelationship representativePagedDataRelationship
     )
         : base(representativePagedDataRelationship) { }
+#pragma warning restore CS8618
 
     public RepresentativePagedDataRelationship(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -662,10 +671,13 @@ public sealed record class RepresentativePagedDataStatusDetail : JsonModel
 
     public RepresentativePagedDataStatusDetail() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public RepresentativePagedDataStatusDetail(
         RepresentativePagedDataStatusDetail representativePagedDataStatusDetail
     )
         : base(representativePagedDataStatusDetail) { }
+#pragma warning restore CS8618
 
     public RepresentativePagedDataStatusDetail(IReadOnlyDictionary<string, JsonElement> rawData)
     {

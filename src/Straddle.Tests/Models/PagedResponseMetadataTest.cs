@@ -136,6 +136,27 @@ public class PagedResponseMetadataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PagedResponseMetadata
+        {
+            ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            MaxPageSize = 0,
+            PageNumber = 0,
+            PageSize = 0,
+            SortBy = "sort_by",
+            SortOrder = SortOrder.Asc,
+            TotalItems = 0,
+            TotalPages = 0,
+        };
+
+        PagedResponseMetadata copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class SortOrderTest : TestBase

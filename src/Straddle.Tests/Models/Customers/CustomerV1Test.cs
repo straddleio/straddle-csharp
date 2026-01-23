@@ -298,6 +298,56 @@ public class CustomerV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerV1
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Email = "ron.swanson@pawnee.com",
+                Name = "Ron Swanson",
+                Phone = "+12128675309",
+                Status = CustomerV1DataStatus.Pending,
+                Type = CustomerV1DataType.Individual,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Address = new()
+                {
+                    Address1 = "123 Main St",
+                    City = "Anytown",
+                    State = "CA",
+                    Zip = "12345",
+                    Address2 = "Apt 1",
+                },
+                ComplianceProfile = new CustomerV1DataComplianceProfileIndividualComplianceProfile()
+                {
+                    Dob = "2019-12-27",
+                    Ssn = "***-**-****",
+                },
+                Config = new()
+                {
+                    ProcessingMethod = CustomerV1DataConfigProcessingMethod.Inline,
+                    SandboxOutcome = CustomerV1DataConfigSandboxOutcome.Standard,
+                },
+                Device = new("192.168.1.1"),
+                ExternalID = "external_id",
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = CustomerV1ResponseType.Object,
+        };
+
+        CustomerV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerV1DataTest : TestBase
@@ -838,6 +888,47 @@ public class CustomerV1DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerV1Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Email = "ron.swanson@pawnee.com",
+            Name = "Ron Swanson",
+            Phone = "+12128675309",
+            Status = CustomerV1DataStatus.Pending,
+            Type = CustomerV1DataType.Individual,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Address = new()
+            {
+                Address1 = "123 Main St",
+                City = "Anytown",
+                State = "CA",
+                Zip = "12345",
+                Address2 = "Apt 1",
+            },
+            ComplianceProfile = new CustomerV1DataComplianceProfileIndividualComplianceProfile()
+            {
+                Dob = "2019-12-27",
+                Ssn = "***-**-****",
+            },
+            Config = new()
+            {
+                ProcessingMethod = CustomerV1DataConfigProcessingMethod.Inline,
+                SandboxOutcome = CustomerV1DataConfigSandboxOutcome.Standard,
+            },
+            Device = new("192.168.1.1"),
+            ExternalID = "external_id",
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+        };
+
+        CustomerV1Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerV1DataStatusTest : TestBase
@@ -1117,6 +1208,20 @@ public class CustomerV1DataComplianceProfileIndividualComplianceProfileTest : Te
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerV1DataComplianceProfileIndividualComplianceProfile
+        {
+            Dob = "2019-12-27",
+            Ssn = "***-**-****",
+        };
+
+        CustomerV1DataComplianceProfileIndividualComplianceProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerV1DataComplianceProfileBusinessComplianceProfileTest : TestBase
@@ -1325,6 +1430,30 @@ public class CustomerV1DataComplianceProfileBusinessComplianceProfileTest : Test
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerV1DataComplianceProfileBusinessComplianceProfile
+        {
+            Ein = "21-6051329",
+            LegalBusinessName = "Acme Corp LLC",
+            Representatives =
+            [
+                new()
+                {
+                    Name = "name",
+                    Email = "email",
+                    Phone = "phone",
+                },
+            ],
+            Website = "https://example.com",
+        };
+
+        CustomerV1DataComplianceProfileBusinessComplianceProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentativeTest : TestBase
@@ -1463,6 +1592,21 @@ public class CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentat
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentative
+        {
+            Name = "name",
+            Email = "email",
+            Phone = "phone",
+        };
+
+        CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentative copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerV1DataConfigTest : TestBase
@@ -1586,6 +1730,20 @@ public class CustomerV1DataConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerV1DataConfig
+        {
+            ProcessingMethod = CustomerV1DataConfigProcessingMethod.Inline,
+            SandboxOutcome = CustomerV1DataConfigSandboxOutcome.Standard,
+        };
+
+        CustomerV1DataConfig copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1748,6 +1906,16 @@ public class DeviceTest : TestBase
         var model = new Device { IPAddress = "192.168.1.1" };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Device { IPAddress = "192.168.1.1" };
+
+        Device copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

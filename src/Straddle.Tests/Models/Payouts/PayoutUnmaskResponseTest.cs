@@ -460,6 +460,83 @@ public class PayoutUnmaskResponseTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PayoutUnmaskResponse
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Amount = 0,
+                Config = new()
+                {
+                    SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+                },
+                Currency = "currency",
+                Description = "description",
+                Device = new("ip_address"),
+                ExternalID = "external_id",
+                FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                Paykey = "paykey",
+                PaymentDate = "2019-12-27",
+                Status = PayoutUnmaskResponseDataStatus.Created,
+                StatusDetails = new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Payment successfully created and awaiting validation.",
+                    Reason = Models::Reason.InsufficientFunds,
+                    Source = Models::Source.System,
+                    Code = null,
+                },
+                StatusHistory =
+                [
+                    new()
+                    {
+                        ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Message = "Payment successfully created and awaiting validation.",
+                        Reason = PayoutUnmaskResponseDataStatusHistoryReason.InsufficientFunds,
+                        Source = PayoutUnmaskResponseDataStatusHistorySource.Watchtower,
+                        Status = PayoutUnmaskResponseDataStatusHistoryStatus.Created,
+                        Code = null,
+                    },
+                ],
+                TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                CustomerDetails = new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    CustomerType = Models::CustomerType.Individual,
+                    Email = "ron@swanson.com",
+                    Name = "Ron Swanson",
+                    Phone = "+1234567890",
+                },
+                EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                PaykeyDetails = new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    Label = "Bank of America ****1234",
+                    Balance = 0,
+                },
+                PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
+                ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = PayoutUnmaskResponseResponseType.Object,
+        };
+
+        PayoutUnmaskResponse copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PayoutUnmaskResponseDataTest : TestBase
@@ -1436,6 +1513,74 @@ public class PayoutUnmaskResponseDataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PayoutUnmaskResponseData
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Amount = 0,
+            Config = new()
+            {
+                SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+            },
+            Currency = "currency",
+            Description = "description",
+            Device = new("ip_address"),
+            ExternalID = "external_id",
+            FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            Paykey = "paykey",
+            PaymentDate = "2019-12-27",
+            Status = PayoutUnmaskResponseDataStatus.Created,
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Payment successfully created and awaiting validation.",
+                Reason = Models::Reason.InsufficientFunds,
+                Source = Models::Source.System,
+                Code = null,
+            },
+            StatusHistory =
+            [
+                new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Payment successfully created and awaiting validation.",
+                    Reason = PayoutUnmaskResponseDataStatusHistoryReason.InsufficientFunds,
+                    Source = PayoutUnmaskResponseDataStatusHistorySource.Watchtower,
+                    Status = PayoutUnmaskResponseDataStatusHistoryStatus.Created,
+                    Code = null,
+                },
+            ],
+            TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            CustomerDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CustomerType = Models::CustomerType.Individual,
+                Email = "ron@swanson.com",
+                Name = "Ron Swanson",
+                Phone = "+1234567890",
+            },
+            EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            PaykeyDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Label = "Bank of America ****1234",
+                Balance = 0,
+            },
+            PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
+            ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        PayoutUnmaskResponseData copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PayoutUnmaskResponseDataConfigTest : TestBase
@@ -1543,6 +1688,19 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+        };
+
+        PayoutUnmaskResponseDataConfig copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1661,6 +1819,16 @@ public class DeviceTest : TestBase
         var model = new Device { IPAddress = "ip_address" };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Device { IPAddress = "ip_address" };
+
+        Device copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1903,6 +2071,24 @@ public class PayoutUnmaskResponseDataStatusHistoryTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PayoutUnmaskResponseDataStatusHistory
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Payment successfully created and awaiting validation.",
+            Reason = PayoutUnmaskResponseDataStatusHistoryReason.InsufficientFunds,
+            Source = PayoutUnmaskResponseDataStatusHistorySource.Watchtower,
+            Status = PayoutUnmaskResponseDataStatusHistoryStatus.Created,
+            Code = null,
+        };
+
+        PayoutUnmaskResponseDataStatusHistory copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

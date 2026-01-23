@@ -64,8 +64,11 @@ public sealed record class FundingEventSummaryItemV1 : JsonModel
 
     public FundingEventSummaryItemV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public FundingEventSummaryItemV1(FundingEventSummaryItemV1 fundingEventSummaryItemV1)
         : base(fundingEventSummaryItemV1) { }
+#pragma warning restore CS8618
 
     public FundingEventSummaryItemV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -316,8 +319,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -585,8 +591,11 @@ public sealed record class StatusDetails : JsonModel
 
     public StatusDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public StatusDetails(StatusDetails statusDetails)
         : base(statusDetails) { }
+#pragma warning restore CS8618
 
     public StatusDetails(IReadOnlyDictionary<string, JsonElement> rawData)
     {

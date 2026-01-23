@@ -62,8 +62,11 @@ public sealed record class ChargeV1 : JsonModel
 
     public ChargeV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public ChargeV1(ChargeV1 chargeV1)
         : base(chargeV1) { }
+#pragma warning restore CS8618
 
     public ChargeV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -482,8 +485,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -565,8 +571,11 @@ public sealed record class DataConfig : JsonModel
 
     public DataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public DataConfig(DataConfig dataConfig)
         : base(dataConfig) { }
+#pragma warning restore CS8618
 
     public DataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -935,8 +944,11 @@ public sealed record class StatusHistory : JsonModel
 
     public StatusHistory() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public StatusHistory(StatusHistory statusHistory)
         : base(statusHistory) { }
+#pragma warning restore CS8618
 
     public StatusHistory(IReadOnlyDictionary<string, JsonElement> rawData)
     {

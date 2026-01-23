@@ -63,8 +63,11 @@ public sealed record class PaykeyUnmaskedV1 : JsonModel
 
     public PaykeyUnmaskedV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyUnmaskedV1(PaykeyUnmaskedV1 paykeyUnmaskedV1)
         : base(paykeyUnmaskedV1) { }
+#pragma warning restore CS8618
 
     public PaykeyUnmaskedV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -350,8 +353,11 @@ public sealed record class PaykeyUnmaskedV1Data : JsonModel
 
     public PaykeyUnmaskedV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyUnmaskedV1Data(PaykeyUnmaskedV1Data paykeyUnmaskedV1Data)
         : base(paykeyUnmaskedV1Data) { }
+#pragma warning restore CS8618
 
     public PaykeyUnmaskedV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -437,8 +443,11 @@ public sealed record class PaykeyUnmaskedV1DataConfig : JsonModel
 
     public PaykeyUnmaskedV1DataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyUnmaskedV1DataConfig(PaykeyUnmaskedV1DataConfig paykeyUnmaskedV1DataConfig)
         : base(paykeyUnmaskedV1DataConfig) { }
+#pragma warning restore CS8618
 
     public PaykeyUnmaskedV1DataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -730,8 +739,11 @@ public sealed record class Balance : JsonModel
 
     public Balance() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Balance(Balance balance)
         : base(balance) { }
+#pragma warning restore CS8618
 
     public Balance(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -867,8 +879,11 @@ public sealed record class PaykeyUnmaskedV1DataBankData : JsonModel
 
     public PaykeyUnmaskedV1DataBankData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyUnmaskedV1DataBankData(PaykeyUnmaskedV1DataBankData paykeyUnmaskedV1DataBankData)
         : base(paykeyUnmaskedV1DataBankData) { }
+#pragma warning restore CS8618
 
     public PaykeyUnmaskedV1DataBankData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1028,10 +1043,13 @@ public sealed record class PaykeyUnmaskedV1DataStatusDetails : JsonModel
 
     public PaykeyUnmaskedV1DataStatusDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyUnmaskedV1DataStatusDetails(
         PaykeyUnmaskedV1DataStatusDetails paykeyUnmaskedV1DataStatusDetails
     )
         : base(paykeyUnmaskedV1DataStatusDetails) { }
+#pragma warning restore CS8618
 
     public PaykeyUnmaskedV1DataStatusDetails(IReadOnlyDictionary<string, JsonElement> rawData)
     {

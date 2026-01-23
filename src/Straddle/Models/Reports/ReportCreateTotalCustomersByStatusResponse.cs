@@ -66,10 +66,13 @@ public sealed record class ReportCreateTotalCustomersByStatusResponse : JsonMode
 
     public ReportCreateTotalCustomersByStatusResponse() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public ReportCreateTotalCustomersByStatusResponse(
         ReportCreateTotalCustomersByStatusResponse reportCreateTotalCustomersByStatusResponse
     )
         : base(reportCreateTotalCustomersByStatusResponse) { }
+#pragma warning restore CS8618
 
     public ReportCreateTotalCustomersByStatusResponse(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -169,8 +172,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {

@@ -64,8 +64,11 @@ public sealed record class LinkedBankAccountV1 : JsonModel
 
     public LinkedBankAccountV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountV1(LinkedBankAccountV1 linkedBankAccountV1)
         : base(linkedBankAccountV1) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -278,8 +281,11 @@ public sealed record class LinkedBankAccountV1Data : JsonModel
 
     public LinkedBankAccountV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountV1Data(LinkedBankAccountV1Data linkedBankAccountV1Data)
         : base(linkedBankAccountV1Data) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -370,10 +376,13 @@ public sealed record class LinkedBankAccountV1DataBankAccount : JsonModel
 
     public LinkedBankAccountV1DataBankAccount() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountV1DataBankAccount(
         LinkedBankAccountV1DataBankAccount linkedBankAccountV1DataBankAccount
     )
         : base(linkedBankAccountV1DataBankAccount) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountV1DataBankAccount(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -587,10 +596,13 @@ public sealed record class LinkedBankAccountV1DataStatusDetail : JsonModel
 
     public LinkedBankAccountV1DataStatusDetail() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountV1DataStatusDetail(
         LinkedBankAccountV1DataStatusDetail linkedBankAccountV1DataStatusDetail
     )
         : base(linkedBankAccountV1DataStatusDetail) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountV1DataStatusDetail(IReadOnlyDictionary<string, JsonElement> rawData)
     {

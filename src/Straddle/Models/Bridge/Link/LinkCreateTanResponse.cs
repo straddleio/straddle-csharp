@@ -63,8 +63,11 @@ public sealed record class LinkCreateTanResponse : JsonModel
 
     public LinkCreateTanResponse() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkCreateTanResponse(LinkCreateTanResponse linkCreateTanResponse)
         : base(linkCreateTanResponse) { }
+#pragma warning restore CS8618
 
     public LinkCreateTanResponse(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -354,8 +357,11 @@ public sealed record class LinkCreateTanResponseData : JsonModel
 
     public LinkCreateTanResponseData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkCreateTanResponseData(LinkCreateTanResponseData linkCreateTanResponseData)
         : base(linkCreateTanResponseData) { }
+#pragma warning restore CS8618
 
     public LinkCreateTanResponseData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -444,10 +450,13 @@ public sealed record class LinkCreateTanResponseDataConfig : JsonModel
 
     public LinkCreateTanResponseDataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkCreateTanResponseDataConfig(
         LinkCreateTanResponseDataConfig linkCreateTanResponseDataConfig
     )
         : base(linkCreateTanResponseDataConfig) { }
+#pragma warning restore CS8618
 
     public LinkCreateTanResponseDataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -748,10 +757,13 @@ public sealed record class LinkCreateTanResponseDataBalance : JsonModel
 
     public LinkCreateTanResponseDataBalance() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkCreateTanResponseDataBalance(
         LinkCreateTanResponseDataBalance linkCreateTanResponseDataBalance
     )
         : base(linkCreateTanResponseDataBalance) { }
+#pragma warning restore CS8618
 
     public LinkCreateTanResponseDataBalance(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -897,10 +909,13 @@ public sealed record class LinkCreateTanResponseDataBankData : JsonModel
 
     public LinkCreateTanResponseDataBankData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkCreateTanResponseDataBankData(
         LinkCreateTanResponseDataBankData linkCreateTanResponseDataBankData
     )
         : base(linkCreateTanResponseDataBankData) { }
+#pragma warning restore CS8618
 
     public LinkCreateTanResponseDataBankData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1060,10 +1075,13 @@ public sealed record class LinkCreateTanResponseDataStatusDetails : JsonModel
 
     public LinkCreateTanResponseDataStatusDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkCreateTanResponseDataStatusDetails(
         LinkCreateTanResponseDataStatusDetails linkCreateTanResponseDataStatusDetails
     )
         : base(linkCreateTanResponseDataStatusDetails) { }
+#pragma warning restore CS8618
 
     public LinkCreateTanResponseDataStatusDetails(IReadOnlyDictionary<string, JsonElement> rawData)
     {

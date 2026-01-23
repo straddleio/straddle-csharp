@@ -32,8 +32,11 @@ public sealed record class DeviceUnmaskedV1 : JsonModel
 
     public DeviceUnmaskedV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public DeviceUnmaskedV1(DeviceUnmaskedV1 deviceUnmaskedV1)
         : base(deviceUnmaskedV1) { }
+#pragma warning restore CS8618
 
     public DeviceUnmaskedV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {

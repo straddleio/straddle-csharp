@@ -375,6 +375,68 @@ public class PaykeySummaryPagedV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeySummaryPagedV1
+        {
+            Data =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    Config = new()
+                    {
+                        ProcessingMethod = ProcessingMethod.Inline,
+                        SandboxOutcome = SandboxOutcome.Standard,
+                    },
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Label = "Bank of America ****1234",
+                    Paykey = "paykey",
+                    Source = DataSource.BankAccount,
+                    Status = DataStatus.Pending,
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    BankData = new()
+                    {
+                        AccountNumber = "****1234",
+                        AccountType = AccountType.Checking,
+                        RoutingNumber = "021000021",
+                    },
+                    CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    ExternalID = "external_id",
+                    InstitutionName = "Bank of America",
+                    StatusDetails = new()
+                    {
+                        ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Message = "Bank account sucesfully validated",
+                        Reason = Reason.InsufficientFunds,
+                        Source = StatusDetailsSource.Watchtower,
+                        Code = "code",
+                    },
+                    UnblockEligible = true,
+                },
+            ],
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                MaxPageSize = 0,
+                PageNumber = 0,
+                PageSize = 0,
+                SortBy = "sort_by",
+                SortOrder = MetaSortOrder.Asc,
+                TotalItems = 0,
+                TotalPages = 0,
+            },
+            ResponseType = ResponseType.Object,
+        };
+
+        PaykeySummaryPagedV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataTest : TestBase
@@ -937,6 +999,49 @@ public class DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Config = new()
+            {
+                ProcessingMethod = ProcessingMethod.Inline,
+                SandboxOutcome = SandboxOutcome.Standard,
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Label = "Bank of America ****1234",
+            Paykey = "paykey",
+            Source = DataSource.BankAccount,
+            Status = DataStatus.Pending,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            BankData = new()
+            {
+                AccountNumber = "****1234",
+                AccountType = AccountType.Checking,
+                RoutingNumber = "021000021",
+            },
+            CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExternalID = "external_id",
+            InstitutionName = "Bank of America",
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Bank account sucesfully validated",
+                Reason = Reason.InsufficientFunds,
+                Source = StatusDetailsSource.Watchtower,
+                Code = "code",
+            },
+            UnblockEligible = true,
+        };
+
+        Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class ConfigTest : TestBase
@@ -1050,6 +1155,20 @@ public class ConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Config
+        {
+            ProcessingMethod = ProcessingMethod.Inline,
+            SandboxOutcome = SandboxOutcome.Standard,
+        };
+
+        Config copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1382,6 +1501,21 @@ public class BankDataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new BankData
+        {
+            AccountNumber = "****1234",
+            AccountType = AccountType.Checking,
+            RoutingNumber = "021000021",
+        };
+
+        BankData copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class AccountTypeTest : TestBase
@@ -1597,6 +1731,23 @@ public class StatusDetailsTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new StatusDetails
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Bank account sucesfully validated",
+            Reason = Reason.InsufficientFunds,
+            Source = StatusDetailsSource.Watchtower,
+            Code = "code",
+        };
+
+        StatusDetails copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1891,6 +2042,27 @@ public class MetaTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Meta
+        {
+            ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            MaxPageSize = 0,
+            PageNumber = 0,
+            PageSize = 0,
+            SortBy = "sort_by",
+            SortOrder = MetaSortOrder.Asc,
+            TotalItems = 0,
+            TotalPages = 0,
+        };
+
+        Meta copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

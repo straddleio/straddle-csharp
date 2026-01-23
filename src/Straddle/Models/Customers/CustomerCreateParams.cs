@@ -688,8 +688,11 @@ public sealed record class IndividualComplianceProfile : JsonModel
 
     public IndividualComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public IndividualComplianceProfile(IndividualComplianceProfile individualComplianceProfile)
         : base(individualComplianceProfile) { }
+#pragma warning restore CS8618
 
     public IndividualComplianceProfile(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -805,8 +808,11 @@ public sealed record class BusinessComplianceProfile : JsonModel
 
     public BusinessComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public BusinessComplianceProfile(BusinessComplianceProfile businessComplianceProfile)
         : base(businessComplianceProfile) { }
+#pragma warning restore CS8618
 
     public BusinessComplianceProfile(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -881,8 +887,11 @@ public sealed record class Representative : JsonModel
 
     public Representative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Representative(Representative representative)
         : base(representative) { }
+#pragma warning restore CS8618
 
     public Representative(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -970,8 +979,11 @@ public sealed record class Config : JsonModel
 
     public Config() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Config(Config config)
         : base(config) { }
+#pragma warning restore CS8618
 
     public Config(IReadOnlyDictionary<string, JsonElement> rawData)
     {

@@ -74,8 +74,11 @@ public sealed record class FundingEventSummaryPagedV1 : JsonModel
 
     public FundingEventSummaryPagedV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public FundingEventSummaryPagedV1(FundingEventSummaryPagedV1 fundingEventSummaryPagedV1)
         : base(fundingEventSummaryPagedV1) { }
+#pragma warning restore CS8618
 
     public FundingEventSummaryPagedV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -339,10 +342,13 @@ public sealed record class FundingEventSummaryPagedV1Data : JsonModel
 
     public FundingEventSummaryPagedV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public FundingEventSummaryPagedV1Data(
         FundingEventSummaryPagedV1Data fundingEventSummaryPagedV1Data
     )
         : base(fundingEventSummaryPagedV1Data) { }
+#pragma warning restore CS8618
 
     public FundingEventSummaryPagedV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -625,10 +631,13 @@ public sealed record class FundingEventSummaryPagedV1DataStatusDetails : JsonMod
 
     public FundingEventSummaryPagedV1DataStatusDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public FundingEventSummaryPagedV1DataStatusDetails(
         FundingEventSummaryPagedV1DataStatusDetails fundingEventSummaryPagedV1DataStatusDetails
     )
         : base(fundingEventSummaryPagedV1DataStatusDetails) { }
+#pragma warning restore CS8618
 
     public FundingEventSummaryPagedV1DataStatusDetails(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -987,8 +996,11 @@ public sealed record class Meta : JsonModel
 
     public Meta() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Meta(Meta meta)
         : base(meta) { }
+#pragma warning restore CS8618
 
     public Meta(IReadOnlyDictionary<string, JsonElement> rawData)
     {

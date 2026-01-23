@@ -334,8 +334,11 @@ public sealed record class BankAccount : JsonModel
 
     public BankAccount() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public BankAccount(BankAccount bankAccount)
         : base(bankAccount) { }
+#pragma warning restore CS8618
 
     public BankAccount(IReadOnlyDictionary<string, JsonElement> rawData)
     {
