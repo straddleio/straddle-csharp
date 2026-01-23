@@ -1305,6 +1305,224 @@ public class CustomerReviewV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::CustomerReviewV1
+        {
+            Data = new()
+            {
+                CustomerDetails = new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Email = "ron.swanson@pawnee.com",
+                    Name = "Ron Swanson",
+                    Phone = "+12128675309",
+                    Status = Review::CustomerDetailsStatus.Pending,
+                    Type = Review::Type.Individual,
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Address = new()
+                    {
+                        Address1 = "123 Main St",
+                        City = "Anytown",
+                        State = "CA",
+                        Zip = "12345",
+                        Address2 = "Apt 1",
+                    },
+                    ComplianceProfile = new Review::IndividualComplianceProfile()
+                    {
+                        Dob = "2019-12-27",
+                        Ssn = "***-**-****",
+                    },
+                    Config = new()
+                    {
+                        ProcessingMethod = Review::ProcessingMethod.Inline,
+                        SandboxOutcome = Review::SandboxOutcome.Standard,
+                    },
+                    Device = new("192.168.1.1"),
+                    ExternalID = "external_id",
+                    Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                },
+                IdentityDetails = new()
+                {
+                    Breakdown = new()
+                    {
+                        Address = new()
+                        {
+                            Codes = ["string"],
+                            Correlation =
+                                Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                            CorrelationScore = 0,
+                            Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                            RiskScore = 0,
+                        },
+                        BusinessEvaluation = new()
+                        {
+                            Codes = ["string"],
+                            Correlation =
+                                Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                            CorrelationScore = 0,
+                            Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                            RiskScore = 0,
+                        },
+                        BusinessIdentification = new()
+                        {
+                            Codes = ["string"],
+                            Correlation =
+                                Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                            CorrelationScore = 0,
+                            Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                            RiskScore = 0,
+                        },
+                        BusinessValidation = new()
+                        {
+                            Codes = ["string"],
+                            Correlation =
+                                Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                            CorrelationScore = 0,
+                            Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                            RiskScore = 0,
+                        },
+                        Email = new()
+                        {
+                            Codes = ["string"],
+                            Correlation =
+                                Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                            CorrelationScore = 0,
+                            Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                            RiskScore = 0,
+                        },
+                        Fraud = new()
+                        {
+                            Codes = ["string"],
+                            Correlation =
+                                Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                            CorrelationScore = 0,
+                            Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                            RiskScore = 0,
+                        },
+                        Phone = new()
+                        {
+                            Codes = ["string"],
+                            Correlation =
+                                Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                            CorrelationScore = 0,
+                            Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                            RiskScore = 0,
+                        },
+                        Synthetic = new()
+                        {
+                            Codes = ["string"],
+                            Correlation =
+                                Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                            CorrelationScore = 0,
+                            Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                            RiskScore = 0,
+                        },
+                    },
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Decision = Review::Decision.Accept,
+                    ReviewID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Kyc = new()
+                    {
+                        Validations = new()
+                        {
+                            Address = true,
+                            City = true,
+                            Dob = true,
+                            Email = true,
+                            FirstName = true,
+                            LastName = true,
+                            Phone = true,
+                            Ssn = true,
+                            State = true,
+                            Zip = true,
+                        },
+                        Codes = ["string"],
+                        Decision = Review::KycDecision.Accept,
+                    },
+                    Messages = new Dictionary<string, string>() { { "foo", "string" } },
+                    NetworkAlerts = new()
+                    {
+                        Alerts = ["string"],
+                        Codes = ["string"],
+                        Decision = Review::NetworkAlertsDecision.Accept,
+                    },
+                    Reputation = new()
+                    {
+                        Codes = ["string"],
+                        Decision = Review::ReputationDecision.Accept,
+                        Insights = new()
+                        {
+                            AccountsActiveCount = 0,
+                            AccountsClosedCount = 0,
+                            AccountsClosedDates = ["2019-12-27"],
+                            AccountsCount = 0,
+                            AccountsFraudCount = 0,
+                            AccountsFraudLabeledDates = ["2019-12-27"],
+                            AccountsFraudLossTotalAmount = 0,
+                            AchFraudTransactionsCount = 0,
+                            AchFraudTransactionsDates = ["2019-12-27"],
+                            AchFraudTransactionsTotalAmount = 0,
+                            AchReturnedTransactionsCount = 0,
+                            AchReturnedTransactionsDates = ["2019-12-27"],
+                            AchReturnedTransactionsTotalAmount = 0,
+                            ApplicationsApprovedCount = 0,
+                            ApplicationsCount = 0,
+                            ApplicationsDates = ["2019-12-27"],
+                            ApplicationsDeclinedCount = 0,
+                            ApplicationsFraudCount = 0,
+                            CardDisputedTransactionsCount = 0,
+                            CardDisputedTransactionsDates = ["2019-12-27"],
+                            CardDisputedTransactionsTotalAmount = 0,
+                            CardFraudTransactionsCount = 0,
+                            CardFraudTransactionsDates = ["2019-12-27"],
+                            CardFraudTransactionsTotalAmount = 0,
+                            CardStoppedTransactionsCount = 0,
+                            CardStoppedTransactionsDates = ["2019-12-27"],
+                            UserActiveProfileCount = 0,
+                            UserAddressCount = 0,
+                            UserClosedProfileCount = 0,
+                            UserDobCount = 0,
+                            UserEmailCount = 0,
+                            UserInstitutionCount = 0,
+                            UserMobileCount = 0,
+                        },
+                        RiskScore = 0,
+                    },
+                    WatchList = new()
+                    {
+                        Codes = ["string"],
+                        Decision = Review::WatchListDecision.Accept,
+                        Matched = ["string"],
+                        Matches =
+                        [
+                            new()
+                            {
+                                Correlation = Review::Correlation.LowConfidence,
+                                ListName = "list_name",
+                                MatchFields = ["string"],
+                                Urls = ["string"],
+                            },
+                        ],
+                    },
+                },
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = Review::ResponseType.Object,
+        };
+
+        Review::CustomerReviewV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataTest : TestBase
@@ -2707,6 +2925,215 @@ public class DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::Data
+        {
+            CustomerDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Email = "ron.swanson@pawnee.com",
+                Name = "Ron Swanson",
+                Phone = "+12128675309",
+                Status = Review::CustomerDetailsStatus.Pending,
+                Type = Review::Type.Individual,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Address = new()
+                {
+                    Address1 = "123 Main St",
+                    City = "Anytown",
+                    State = "CA",
+                    Zip = "12345",
+                    Address2 = "Apt 1",
+                },
+                ComplianceProfile = new Review::IndividualComplianceProfile()
+                {
+                    Dob = "2019-12-27",
+                    Ssn = "***-**-****",
+                },
+                Config = new()
+                {
+                    ProcessingMethod = Review::ProcessingMethod.Inline,
+                    SandboxOutcome = Review::SandboxOutcome.Standard,
+                },
+                Device = new("192.168.1.1"),
+                ExternalID = "external_id",
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            },
+            IdentityDetails = new()
+            {
+                Breakdown = new()
+                {
+                    Address = new()
+                    {
+                        Codes = ["string"],
+                        Correlation =
+                            Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                        CorrelationScore = 0,
+                        Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                        RiskScore = 0,
+                    },
+                    BusinessEvaluation = new()
+                    {
+                        Codes = ["string"],
+                        Correlation =
+                            Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                        CorrelationScore = 0,
+                        Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                        RiskScore = 0,
+                    },
+                    BusinessIdentification = new()
+                    {
+                        Codes = ["string"],
+                        Correlation =
+                            Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                        CorrelationScore = 0,
+                        Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                        RiskScore = 0,
+                    },
+                    BusinessValidation = new()
+                    {
+                        Codes = ["string"],
+                        Correlation =
+                            Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                        CorrelationScore = 0,
+                        Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                        RiskScore = 0,
+                    },
+                    Email = new()
+                    {
+                        Codes = ["string"],
+                        Correlation =
+                            Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                        CorrelationScore = 0,
+                        Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                        RiskScore = 0,
+                    },
+                    Fraud = new()
+                    {
+                        Codes = ["string"],
+                        Correlation =
+                            Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                        CorrelationScore = 0,
+                        Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                        RiskScore = 0,
+                    },
+                    Phone = new()
+                    {
+                        Codes = ["string"],
+                        Correlation =
+                            Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                        CorrelationScore = 0,
+                        Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                        RiskScore = 0,
+                    },
+                    Synthetic = new()
+                    {
+                        Codes = ["string"],
+                        Correlation =
+                            Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                        CorrelationScore = 0,
+                        Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                        RiskScore = 0,
+                    },
+                },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Decision = Review::Decision.Accept,
+                ReviewID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Kyc = new()
+                {
+                    Validations = new()
+                    {
+                        Address = true,
+                        City = true,
+                        Dob = true,
+                        Email = true,
+                        FirstName = true,
+                        LastName = true,
+                        Phone = true,
+                        Ssn = true,
+                        State = true,
+                        Zip = true,
+                    },
+                    Codes = ["string"],
+                    Decision = Review::KycDecision.Accept,
+                },
+                Messages = new Dictionary<string, string>() { { "foo", "string" } },
+                NetworkAlerts = new()
+                {
+                    Alerts = ["string"],
+                    Codes = ["string"],
+                    Decision = Review::NetworkAlertsDecision.Accept,
+                },
+                Reputation = new()
+                {
+                    Codes = ["string"],
+                    Decision = Review::ReputationDecision.Accept,
+                    Insights = new()
+                    {
+                        AccountsActiveCount = 0,
+                        AccountsClosedCount = 0,
+                        AccountsClosedDates = ["2019-12-27"],
+                        AccountsCount = 0,
+                        AccountsFraudCount = 0,
+                        AccountsFraudLabeledDates = ["2019-12-27"],
+                        AccountsFraudLossTotalAmount = 0,
+                        AchFraudTransactionsCount = 0,
+                        AchFraudTransactionsDates = ["2019-12-27"],
+                        AchFraudTransactionsTotalAmount = 0,
+                        AchReturnedTransactionsCount = 0,
+                        AchReturnedTransactionsDates = ["2019-12-27"],
+                        AchReturnedTransactionsTotalAmount = 0,
+                        ApplicationsApprovedCount = 0,
+                        ApplicationsCount = 0,
+                        ApplicationsDates = ["2019-12-27"],
+                        ApplicationsDeclinedCount = 0,
+                        ApplicationsFraudCount = 0,
+                        CardDisputedTransactionsCount = 0,
+                        CardDisputedTransactionsDates = ["2019-12-27"],
+                        CardDisputedTransactionsTotalAmount = 0,
+                        CardFraudTransactionsCount = 0,
+                        CardFraudTransactionsDates = ["2019-12-27"],
+                        CardFraudTransactionsTotalAmount = 0,
+                        CardStoppedTransactionsCount = 0,
+                        CardStoppedTransactionsDates = ["2019-12-27"],
+                        UserActiveProfileCount = 0,
+                        UserAddressCount = 0,
+                        UserClosedProfileCount = 0,
+                        UserDobCount = 0,
+                        UserEmailCount = 0,
+                        UserInstitutionCount = 0,
+                        UserMobileCount = 0,
+                    },
+                    RiskScore = 0,
+                },
+                WatchList = new()
+                {
+                    Codes = ["string"],
+                    Decision = Review::WatchListDecision.Accept,
+                    Matched = ["string"],
+                    Matches =
+                    [
+                        new()
+                        {
+                            Correlation = Review::Correlation.LowConfidence,
+                            ListName = "list_name",
+                            MatchFields = ["string"],
+                            Urls = ["string"],
+                        },
+                    ],
+                },
+            },
+        };
+
+        Review::Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerDetailsTest : TestBase
@@ -3241,6 +3668,47 @@ public class CustomerDetailsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::CustomerDetails
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Email = "ron.swanson@pawnee.com",
+            Name = "Ron Swanson",
+            Phone = "+12128675309",
+            Status = Review::CustomerDetailsStatus.Pending,
+            Type = Review::Type.Individual,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Address = new()
+            {
+                Address1 = "123 Main St",
+                City = "Anytown",
+                State = "CA",
+                Zip = "12345",
+                Address2 = "Apt 1",
+            },
+            ComplianceProfile = new Review::IndividualComplianceProfile()
+            {
+                Dob = "2019-12-27",
+                Ssn = "***-**-****",
+            },
+            Config = new()
+            {
+                ProcessingMethod = Review::ProcessingMethod.Inline,
+                SandboxOutcome = Review::SandboxOutcome.Standard,
+            },
+            Device = new("192.168.1.1"),
+            ExternalID = "external_id",
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+        };
+
+        Review::CustomerDetails copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerDetailsStatusTest : TestBase
@@ -3512,6 +3980,20 @@ public class IndividualComplianceProfileTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::IndividualComplianceProfile
+        {
+            Dob = "2019-12-27",
+            Ssn = "***-**-****",
+        };
+
+        Review::IndividualComplianceProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class BusinessComplianceProfileTest : TestBase
@@ -3718,6 +4200,30 @@ public class BusinessComplianceProfileTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::BusinessComplianceProfile
+        {
+            Ein = "21-6051329",
+            LegalBusinessName = "Acme Corp LLC",
+            Representatives =
+            [
+                new()
+                {
+                    Name = "name",
+                    Email = "email",
+                    Phone = "phone",
+                },
+            ],
+            Website = "https://example.com",
+        };
+
+        Review::BusinessComplianceProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class RepresentativeTest : TestBase
@@ -3848,6 +4354,21 @@ public class RepresentativeTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::Representative
+        {
+            Name = "name",
+            Email = "email",
+            Phone = "phone",
+        };
+
+        Review::Representative copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class ConfigTest : TestBase
@@ -3971,6 +4492,20 @@ public class ConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::Config
+        {
+            ProcessingMethod = Review::ProcessingMethod.Inline,
+            SandboxOutcome = Review::SandboxOutcome.Standard,
+        };
+
+        Review::Config copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -4145,6 +4680,16 @@ public class DeviceTest : TestBase
         var model = new Review::Device { IPAddress = "192.168.1.1" };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::Device { IPAddress = "192.168.1.1" };
+
+        Review::Device copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -6172,6 +6717,172 @@ public class IdentityDetailsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::IdentityDetails
+        {
+            Breakdown = new()
+            {
+                Address = new()
+                {
+                    Codes = ["string"],
+                    Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                    CorrelationScore = 0,
+                    Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                    RiskScore = 0,
+                },
+                BusinessEvaluation = new()
+                {
+                    Codes = ["string"],
+                    Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                    CorrelationScore = 0,
+                    Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                    RiskScore = 0,
+                },
+                BusinessIdentification = new()
+                {
+                    Codes = ["string"],
+                    Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                    CorrelationScore = 0,
+                    Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                    RiskScore = 0,
+                },
+                BusinessValidation = new()
+                {
+                    Codes = ["string"],
+                    Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                    CorrelationScore = 0,
+                    Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                    RiskScore = 0,
+                },
+                Email = new()
+                {
+                    Codes = ["string"],
+                    Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                    CorrelationScore = 0,
+                    Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                    RiskScore = 0,
+                },
+                Fraud = new()
+                {
+                    Codes = ["string"],
+                    Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                    CorrelationScore = 0,
+                    Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                    RiskScore = 0,
+                },
+                Phone = new()
+                {
+                    Codes = ["string"],
+                    Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                    CorrelationScore = 0,
+                    Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                    RiskScore = 0,
+                },
+                Synthetic = new()
+                {
+                    Codes = ["string"],
+                    Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                    CorrelationScore = 0,
+                    Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                    RiskScore = 0,
+                },
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Decision = Review::Decision.Accept,
+            ReviewID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Kyc = new()
+            {
+                Validations = new()
+                {
+                    Address = true,
+                    City = true,
+                    Dob = true,
+                    Email = true,
+                    FirstName = true,
+                    LastName = true,
+                    Phone = true,
+                    Ssn = true,
+                    State = true,
+                    Zip = true,
+                },
+                Codes = ["string"],
+                Decision = Review::KycDecision.Accept,
+            },
+            Messages = new Dictionary<string, string>() { { "foo", "string" } },
+            NetworkAlerts = new()
+            {
+                Alerts = ["string"],
+                Codes = ["string"],
+                Decision = Review::NetworkAlertsDecision.Accept,
+            },
+            Reputation = new()
+            {
+                Codes = ["string"],
+                Decision = Review::ReputationDecision.Accept,
+                Insights = new()
+                {
+                    AccountsActiveCount = 0,
+                    AccountsClosedCount = 0,
+                    AccountsClosedDates = ["2019-12-27"],
+                    AccountsCount = 0,
+                    AccountsFraudCount = 0,
+                    AccountsFraudLabeledDates = ["2019-12-27"],
+                    AccountsFraudLossTotalAmount = 0,
+                    AchFraudTransactionsCount = 0,
+                    AchFraudTransactionsDates = ["2019-12-27"],
+                    AchFraudTransactionsTotalAmount = 0,
+                    AchReturnedTransactionsCount = 0,
+                    AchReturnedTransactionsDates = ["2019-12-27"],
+                    AchReturnedTransactionsTotalAmount = 0,
+                    ApplicationsApprovedCount = 0,
+                    ApplicationsCount = 0,
+                    ApplicationsDates = ["2019-12-27"],
+                    ApplicationsDeclinedCount = 0,
+                    ApplicationsFraudCount = 0,
+                    CardDisputedTransactionsCount = 0,
+                    CardDisputedTransactionsDates = ["2019-12-27"],
+                    CardDisputedTransactionsTotalAmount = 0,
+                    CardFraudTransactionsCount = 0,
+                    CardFraudTransactionsDates = ["2019-12-27"],
+                    CardFraudTransactionsTotalAmount = 0,
+                    CardStoppedTransactionsCount = 0,
+                    CardStoppedTransactionsDates = ["2019-12-27"],
+                    UserActiveProfileCount = 0,
+                    UserAddressCount = 0,
+                    UserClosedProfileCount = 0,
+                    UserDobCount = 0,
+                    UserEmailCount = 0,
+                    UserInstitutionCount = 0,
+                    UserMobileCount = 0,
+                },
+                RiskScore = 0,
+            },
+            WatchList = new()
+            {
+                Codes = ["string"],
+                Decision = Review::WatchListDecision.Accept,
+                Matched = ["string"],
+                Matches =
+                [
+                    new()
+                    {
+                        Correlation = Review::Correlation.LowConfidence,
+                        ListName = "list_name",
+                        MatchFields = ["string"],
+                        Urls = ["string"],
+                    },
+                ],
+            },
+        };
+
+        Review::IdentityDetails copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class BreakdownTest : TestBase
@@ -6712,6 +7423,82 @@ public class BreakdownTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::Breakdown
+        {
+            Address = new()
+            {
+                Codes = ["string"],
+                Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                CorrelationScore = 0,
+                Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                RiskScore = 0,
+            },
+            BusinessEvaluation = new()
+            {
+                Codes = ["string"],
+                Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                CorrelationScore = 0,
+                Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                RiskScore = 0,
+            },
+            BusinessIdentification = new()
+            {
+                Codes = ["string"],
+                Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                CorrelationScore = 0,
+                Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                RiskScore = 0,
+            },
+            BusinessValidation = new()
+            {
+                Codes = ["string"],
+                Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                CorrelationScore = 0,
+                Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                RiskScore = 0,
+            },
+            Email = new()
+            {
+                Codes = ["string"],
+                Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                CorrelationScore = 0,
+                Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                RiskScore = 0,
+            },
+            Fraud = new()
+            {
+                Codes = ["string"],
+                Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                CorrelationScore = 0,
+                Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                RiskScore = 0,
+            },
+            Phone = new()
+            {
+                Codes = ["string"],
+                Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                CorrelationScore = 0,
+                Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                RiskScore = 0,
+            },
+            Synthetic = new()
+            {
+                Codes = ["string"],
+                Correlation = Review::IdentityVerificationBreakdownV1Correlation.LowConfidence,
+                CorrelationScore = 0,
+                Decision = Review::IdentityVerificationBreakdownV1Decision.Accept,
+                RiskScore = 0,
+            },
+        };
+
+        Review::Breakdown copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DecisionTest : TestBase
@@ -7140,6 +7927,33 @@ public class KycTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::Kyc
+        {
+            Validations = new()
+            {
+                Address = true,
+                City = true,
+                Dob = true,
+                Email = true,
+                FirstName = true,
+                LastName = true,
+                Phone = true,
+                Ssn = true,
+                State = true,
+                Zip = true,
+            },
+            Codes = ["string"],
+            Decision = Review::KycDecision.Accept,
+        };
+
+        Review::Kyc copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class ValidationsTest : TestBase
@@ -7371,6 +8185,28 @@ public class ValidationsTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::Validations
+        {
+            Address = true,
+            City = true,
+            Dob = true,
+            Email = true,
+            FirstName = true,
+            LastName = true,
+            Phone = true,
+            Ssn = true,
+            State = true,
+            Zip = true,
+        };
+
+        Review::Validations copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -7631,6 +8467,21 @@ public class NetworkAlertsTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::NetworkAlerts
+        {
+            Alerts = ["string"],
+            Codes = ["string"],
+            Decision = Review::NetworkAlertsDecision.Accept,
+        };
+
+        Review::NetworkAlerts copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -8253,6 +9104,57 @@ public class ReputationTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::Reputation
+        {
+            Codes = ["string"],
+            Decision = Review::ReputationDecision.Accept,
+            Insights = new()
+            {
+                AccountsActiveCount = 0,
+                AccountsClosedCount = 0,
+                AccountsClosedDates = ["2019-12-27"],
+                AccountsCount = 0,
+                AccountsFraudCount = 0,
+                AccountsFraudLabeledDates = ["2019-12-27"],
+                AccountsFraudLossTotalAmount = 0,
+                AchFraudTransactionsCount = 0,
+                AchFraudTransactionsDates = ["2019-12-27"],
+                AchFraudTransactionsTotalAmount = 0,
+                AchReturnedTransactionsCount = 0,
+                AchReturnedTransactionsDates = ["2019-12-27"],
+                AchReturnedTransactionsTotalAmount = 0,
+                ApplicationsApprovedCount = 0,
+                ApplicationsCount = 0,
+                ApplicationsDates = ["2019-12-27"],
+                ApplicationsDeclinedCount = 0,
+                ApplicationsFraudCount = 0,
+                CardDisputedTransactionsCount = 0,
+                CardDisputedTransactionsDates = ["2019-12-27"],
+                CardDisputedTransactionsTotalAmount = 0,
+                CardFraudTransactionsCount = 0,
+                CardFraudTransactionsDates = ["2019-12-27"],
+                CardFraudTransactionsTotalAmount = 0,
+                CardStoppedTransactionsCount = 0,
+                CardStoppedTransactionsDates = ["2019-12-27"],
+                UserActiveProfileCount = 0,
+                UserAddressCount = 0,
+                UserClosedProfileCount = 0,
+                UserDobCount = 0,
+                UserEmailCount = 0,
+                UserInstitutionCount = 0,
+                UserMobileCount = 0,
+            },
+            RiskScore = 0,
+        };
+
+        Review::Reputation copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -9048,6 +9950,51 @@ public class InsightsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::Insights
+        {
+            AccountsActiveCount = 0,
+            AccountsClosedCount = 0,
+            AccountsClosedDates = ["2019-12-27"],
+            AccountsCount = 0,
+            AccountsFraudCount = 0,
+            AccountsFraudLabeledDates = ["2019-12-27"],
+            AccountsFraudLossTotalAmount = 0,
+            AchFraudTransactionsCount = 0,
+            AchFraudTransactionsDates = ["2019-12-27"],
+            AchFraudTransactionsTotalAmount = 0,
+            AchReturnedTransactionsCount = 0,
+            AchReturnedTransactionsDates = ["2019-12-27"],
+            AchReturnedTransactionsTotalAmount = 0,
+            ApplicationsApprovedCount = 0,
+            ApplicationsCount = 0,
+            ApplicationsDates = ["2019-12-27"],
+            ApplicationsDeclinedCount = 0,
+            ApplicationsFraudCount = 0,
+            CardDisputedTransactionsCount = 0,
+            CardDisputedTransactionsDates = ["2019-12-27"],
+            CardDisputedTransactionsTotalAmount = 0,
+            CardFraudTransactionsCount = 0,
+            CardFraudTransactionsDates = ["2019-12-27"],
+            CardFraudTransactionsTotalAmount = 0,
+            CardStoppedTransactionsCount = 0,
+            CardStoppedTransactionsDates = ["2019-12-27"],
+            UserActiveProfileCount = 0,
+            UserAddressCount = 0,
+            UserClosedProfileCount = 0,
+            UserDobCount = 0,
+            UserEmailCount = 0,
+            UserInstitutionCount = 0,
+            UserMobileCount = 0,
+        };
+
+        Review::Insights copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class WatchListTest : TestBase
@@ -9374,6 +10321,31 @@ public class WatchListTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::WatchList
+        {
+            Codes = ["string"],
+            Decision = Review::WatchListDecision.Accept,
+            Matched = ["string"],
+            Matches =
+            [
+                new()
+                {
+                    Correlation = Review::Correlation.LowConfidence,
+                    ListName = "list_name",
+                    MatchFields = ["string"],
+                    Urls = ["string"],
+                },
+            ],
+        };
+
+        Review::WatchList copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class WatchListDecisionTest : TestBase
@@ -9539,6 +10511,22 @@ public class MatchTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Review::Match
+        {
+            Correlation = Review::Correlation.LowConfidence,
+            ListName = "list_name",
+            MatchFields = ["string"],
+            Urls = ["string"],
+        };
+
+        Review::Match copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

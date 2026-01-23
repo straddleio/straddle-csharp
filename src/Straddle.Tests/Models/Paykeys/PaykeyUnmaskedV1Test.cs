@@ -346,6 +346,64 @@ public class PaykeyUnmaskedV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyUnmaskedV1
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Config = new()
+                {
+                    ProcessingMethod = PaykeyUnmaskedV1DataConfigProcessingMethod.Inline,
+                    SandboxOutcome = PaykeyUnmaskedV1DataConfigSandboxOutcome.Standard,
+                },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Label = "label",
+                Paykey = "paykey",
+                Source = PaykeyUnmaskedV1DataSource.BankAccount,
+                Status = PaykeyUnmaskedV1DataStatus.Pending,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Balance = new()
+                {
+                    Status = BalanceStatus.Pending,
+                    AccountBalance = 0,
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+                BankData = new()
+                {
+                    AccountNumber = "123456789",
+                    AccountType = PaykeyUnmaskedV1DataBankDataAccountType.Checking,
+                    RoutingNumber = "021000021",
+                },
+                CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ExternalID = "external_id",
+                InstitutionName = "Bank of America",
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                StatusDetails = new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Bank account sucesfully validated",
+                    Reason = PaykeyUnmaskedV1DataStatusDetailsReason.InsufficientFunds,
+                    Source = PaykeyUnmaskedV1DataStatusDetailsSource.Watchtower,
+                    Code = "code",
+                },
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = PaykeyUnmaskedV1ResponseType.Object,
+        };
+
+        PaykeyUnmaskedV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PaykeyUnmaskedV1DataTest : TestBase
@@ -1000,6 +1058,55 @@ public class PaykeyUnmaskedV1DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyUnmaskedV1Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Config = new()
+            {
+                ProcessingMethod = PaykeyUnmaskedV1DataConfigProcessingMethod.Inline,
+                SandboxOutcome = PaykeyUnmaskedV1DataConfigSandboxOutcome.Standard,
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Label = "label",
+            Paykey = "paykey",
+            Source = PaykeyUnmaskedV1DataSource.BankAccount,
+            Status = PaykeyUnmaskedV1DataStatus.Pending,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Balance = new()
+            {
+                Status = BalanceStatus.Pending,
+                AccountBalance = 0,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            BankData = new()
+            {
+                AccountNumber = "123456789",
+                AccountType = PaykeyUnmaskedV1DataBankDataAccountType.Checking,
+                RoutingNumber = "021000021",
+            },
+            CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExternalID = "external_id",
+            InstitutionName = "Bank of America",
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Bank account sucesfully validated",
+                Reason = PaykeyUnmaskedV1DataStatusDetailsReason.InsufficientFunds,
+                Source = PaykeyUnmaskedV1DataStatusDetailsSource.Watchtower,
+                Code = "code",
+            },
+        };
+
+        PaykeyUnmaskedV1Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PaykeyUnmaskedV1DataConfigTest : TestBase
@@ -1123,6 +1230,20 @@ public class PaykeyUnmaskedV1DataConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyUnmaskedV1DataConfig
+        {
+            ProcessingMethod = PaykeyUnmaskedV1DataConfigProcessingMethod.Inline,
+            SandboxOutcome = PaykeyUnmaskedV1DataConfigSandboxOutcome.Standard,
+        };
+
+        PaykeyUnmaskedV1DataConfig copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1497,6 +1618,21 @@ public class BalanceTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Balance
+        {
+            Status = BalanceStatus.Pending,
+            AccountBalance = 0,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        Balance copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class BalanceStatusTest : TestBase
@@ -1638,6 +1774,21 @@ public class PaykeyUnmaskedV1DataBankDataTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyUnmaskedV1DataBankData
+        {
+            AccountNumber = "123456789",
+            AccountType = PaykeyUnmaskedV1DataBankDataAccountType.Checking,
+            RoutingNumber = "021000021",
+        };
+
+        PaykeyUnmaskedV1DataBankData copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1854,6 +2005,23 @@ public class PaykeyUnmaskedV1DataStatusDetailsTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyUnmaskedV1DataStatusDetails
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Bank account sucesfully validated",
+            Reason = PaykeyUnmaskedV1DataStatusDetailsReason.InsufficientFunds,
+            Source = PaykeyUnmaskedV1DataStatusDetailsSource.Watchtower,
+            Code = "code",
+        };
+
+        PaykeyUnmaskedV1DataStatusDetails copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

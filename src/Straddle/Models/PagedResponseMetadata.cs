@@ -145,8 +145,11 @@ public sealed record class PagedResponseMetadata : JsonModel
 
     public PagedResponseMetadata() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PagedResponseMetadata(PagedResponseMetadata pagedResponseMetadata)
         : base(pagedResponseMetadata) { }
+#pragma warning restore CS8618
 
     public PagedResponseMetadata(IReadOnlyDictionary<string, JsonElement> rawData)
     {

@@ -63,8 +63,11 @@ public sealed record class OrganizationV1 : JsonModel
 
     public OrganizationV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public OrganizationV1(OrganizationV1 organizationV1)
         : base(organizationV1) { }
+#pragma warning restore CS8618
 
     public OrganizationV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -195,8 +198,11 @@ public sealed record class OrganizationV1Data : JsonModel
 
     public OrganizationV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public OrganizationV1Data(OrganizationV1Data organizationV1Data)
         : base(organizationV1Data) { }
+#pragma warning restore CS8618
 
     public OrganizationV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {

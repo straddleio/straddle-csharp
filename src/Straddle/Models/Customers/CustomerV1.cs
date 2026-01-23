@@ -64,8 +64,11 @@ public sealed record class CustomerV1 : JsonModel
 
     public CustomerV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1(CustomerV1 customerV1)
         : base(customerV1) { }
+#pragma warning restore CS8618
 
     public CustomerV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -315,8 +318,11 @@ public sealed record class CustomerV1Data : JsonModel
 
     public CustomerV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1Data(CustomerV1Data customerV1Data)
         : base(customerV1Data) { }
+#pragma warning restore CS8618
 
     public CustomerV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -756,10 +762,13 @@ public sealed record class CustomerV1DataComplianceProfileIndividualCompliancePr
 
     public CustomerV1DataComplianceProfileIndividualComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1DataComplianceProfileIndividualComplianceProfile(
         CustomerV1DataComplianceProfileIndividualComplianceProfile customerV1DataComplianceProfileIndividualComplianceProfile
     )
         : base(customerV1DataComplianceProfileIndividualComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerV1DataComplianceProfileIndividualComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -882,10 +891,13 @@ public sealed record class CustomerV1DataComplianceProfileBusinessComplianceProf
 
     public CustomerV1DataComplianceProfileBusinessComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1DataComplianceProfileBusinessComplianceProfile(
         CustomerV1DataComplianceProfileBusinessComplianceProfile customerV1DataComplianceProfileBusinessComplianceProfile
     )
         : base(customerV1DataComplianceProfileBusinessComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerV1DataComplianceProfileBusinessComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -971,10 +983,13 @@ public sealed record class CustomerV1DataComplianceProfileBusinessComplianceProf
 
     public CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentative(
         CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentative customerV1DataComplianceProfileBusinessComplianceProfileRepresentative
     )
         : base(customerV1DataComplianceProfileBusinessComplianceProfileRepresentative) { }
+#pragma warning restore CS8618
 
     public CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentative(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -1073,8 +1088,11 @@ public sealed record class CustomerV1DataConfig : JsonModel
 
     public CustomerV1DataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1DataConfig(CustomerV1DataConfig customerV1DataConfig)
         : base(customerV1DataConfig) { }
+#pragma warning restore CS8618
 
     public CustomerV1DataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1230,8 +1248,11 @@ public sealed record class Device : JsonModel
 
     public Device() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Device(Device device)
         : base(device) { }
+#pragma warning restore CS8618
 
     public Device(IReadOnlyDictionary<string, JsonElement> rawData)
     {

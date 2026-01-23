@@ -70,8 +70,11 @@ public sealed record class LinkedBankAccountPagedV1 : JsonModel
 
     public LinkedBankAccountPagedV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountPagedV1(LinkedBankAccountPagedV1 linkedBankAccountPagedV1)
         : base(linkedBankAccountPagedV1) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountPagedV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -279,8 +282,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -363,8 +369,11 @@ public sealed record class DataBankAccount : JsonModel
 
     public DataBankAccount() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public DataBankAccount(DataBankAccount dataBankAccount)
         : base(dataBankAccount) { }
+#pragma warning restore CS8618
 
     public DataBankAccount(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -566,8 +575,11 @@ public sealed record class StatusDetail : JsonModel
 
     public StatusDetail() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public StatusDetail(StatusDetail statusDetail)
         : base(statusDetail) { }
+#pragma warning restore CS8618
 
     public StatusDetail(IReadOnlyDictionary<string, JsonElement> rawData)
     {

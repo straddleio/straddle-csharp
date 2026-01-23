@@ -63,8 +63,11 @@ public sealed record class PaykeyV1 : JsonModel
 
     public PaykeyV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyV1(PaykeyV1 paykeyV1)
         : base(paykeyV1) { }
+#pragma warning restore CS8618
 
     public PaykeyV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -358,8 +361,11 @@ public sealed record class PaykeyV1Data : JsonModel
 
     public PaykeyV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyV1Data(PaykeyV1Data paykeyV1Data)
         : base(paykeyV1Data) { }
+#pragma warning restore CS8618
 
     public PaykeyV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -440,8 +446,11 @@ public sealed record class PaykeyV1DataConfig : JsonModel
 
     public PaykeyV1DataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyV1DataConfig(PaykeyV1DataConfig paykeyV1DataConfig)
         : base(paykeyV1DataConfig) { }
+#pragma warning restore CS8618
 
     public PaykeyV1DataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -734,8 +743,11 @@ public sealed record class PaykeyV1DataBalance : JsonModel
 
     public PaykeyV1DataBalance() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyV1DataBalance(PaykeyV1DataBalance paykeyV1DataBalance)
         : base(paykeyV1DataBalance) { }
+#pragma warning restore CS8618
 
     public PaykeyV1DataBalance(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -872,8 +884,11 @@ public sealed record class PaykeyV1DataBankData : JsonModel
 
     public PaykeyV1DataBankData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyV1DataBankData(PaykeyV1DataBankData paykeyV1DataBankData)
         : base(paykeyV1DataBankData) { }
+#pragma warning restore CS8618
 
     public PaykeyV1DataBankData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1030,8 +1045,11 @@ public sealed record class PaykeyV1DataStatusDetails : JsonModel
 
     public PaykeyV1DataStatusDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyV1DataStatusDetails(PaykeyV1DataStatusDetails paykeyV1DataStatusDetails)
         : base(paykeyV1DataStatusDetails) { }
+#pragma warning restore CS8618
 
     public PaykeyV1DataStatusDetails(IReadOnlyDictionary<string, JsonElement> rawData)
     {

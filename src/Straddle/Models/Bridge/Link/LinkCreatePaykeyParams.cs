@@ -335,8 +335,11 @@ public sealed record class LinkCreatePaykeyParamsConfig : JsonModel
 
     public LinkCreatePaykeyParamsConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkCreatePaykeyParamsConfig(LinkCreatePaykeyParamsConfig linkCreatePaykeyParamsConfig)
         : base(linkCreatePaykeyParamsConfig) { }
+#pragma warning restore CS8618
 
     public LinkCreatePaykeyParamsConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {

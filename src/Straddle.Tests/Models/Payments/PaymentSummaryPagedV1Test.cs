@@ -418,6 +418,75 @@ public class PaymentSummaryPagedV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaymentSummaryPagedV1
+        {
+            Data =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    Amount = 10000,
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Currency = "currency",
+                    Description = "Invoice payment for 100 widgets",
+                    ExternalID = "external_id",
+                    FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                    Paykey = "paykey",
+                    PaymentDate = "2019-12-27",
+                    PaymentType = DataPaymentType.Charge,
+                    Status = Status.Created,
+                    StatusDetails = new()
+                    {
+                        ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Message = "Payment successfully created and awaiting validation.",
+                        Reason = Reason.InsufficientFunds,
+                        Source = Source.System,
+                        Code = null,
+                    },
+                    TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    CustomerDetails = new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        CustomerType = CustomerType.Individual,
+                        Email = "ron@swanson.com",
+                        Name = "Ron Swanson",
+                        Phone = "+1234567890",
+                    },
+                    EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaykeyDetails = new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        Label = "Bank of America ****1234",
+                        Balance = 0,
+                    },
+                },
+            ],
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                MaxPageSize = 0,
+                PageNumber = 0,
+                PageSize = 0,
+                SortBy = "sort_by",
+                SortOrder = MetaSortOrder.Asc,
+                TotalItems = 0,
+                TotalPages = 0,
+            },
+            ResponseType = ResponseType.Object,
+        };
+
+        PaymentSummaryPagedV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataTest : TestBase
@@ -1094,6 +1163,56 @@ public class DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Amount = 10000,
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Currency = "currency",
+            Description = "Invoice payment for 100 widgets",
+            ExternalID = "external_id",
+            FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            Paykey = "paykey",
+            PaymentDate = "2019-12-27",
+            PaymentType = DataPaymentType.Charge,
+            Status = Status.Created,
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Payment successfully created and awaiting validation.",
+                Reason = Reason.InsufficientFunds,
+                Source = Source.System,
+                Code = null,
+            },
+            TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            CustomerDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CustomerType = CustomerType.Individual,
+                Email = "ron@swanson.com",
+                Name = "Ron Swanson",
+                Phone = "+1234567890",
+            },
+            EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaykeyDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Label = "Bank of America ****1234",
+                Balance = 0,
+            },
+        };
+
+        Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataPaymentTypeTest : TestBase
@@ -1347,6 +1466,27 @@ public class MetaTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Meta
+        {
+            ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            MaxPageSize = 0,
+            PageNumber = 0,
+            PageSize = 0,
+            SortBy = "sort_by",
+            SortOrder = MetaSortOrder.Asc,
+            TotalItems = 0,
+            TotalPages = 0,
+        };
+
+        Meta copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

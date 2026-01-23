@@ -546,6 +546,20 @@ public class IndividualComplianceProfileTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Customers::IndividualComplianceProfile
+        {
+            Dob = "1969-04-20",
+            Ssn = "123-45-6789",
+        };
+
+        Customers::IndividualComplianceProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class BusinessComplianceProfileTest : TestBase
@@ -752,6 +766,30 @@ public class BusinessComplianceProfileTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Customers::BusinessComplianceProfile
+        {
+            Ein = "12-3456789",
+            LegalBusinessName = "Acme Corp LLC",
+            Representatives =
+            [
+                new()
+                {
+                    Name = "name",
+                    Email = "email",
+                    Phone = "phone",
+                },
+            ],
+            Website = "https://example.com",
+        };
+
+        Customers::BusinessComplianceProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class RepresentativeTest : TestBase
@@ -882,6 +920,21 @@ public class RepresentativeTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Customers::Representative
+        {
+            Name = "name",
+            Email = "email",
+            Phone = "phone",
+        };
+
+        Customers::Representative copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class ConfigTest : TestBase
@@ -1005,6 +1058,20 @@ public class ConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Customers::Config
+        {
+            ProcessingMethod = Customers::ProcessingMethod.Inline,
+            SandboxOutcome = Customers::SandboxOutcome.Standard,
+        };
+
+        Customers::Config copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
