@@ -346,6 +346,64 @@ public class PaykeyRevealResponseTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyRevealResponse
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Config = new()
+                {
+                    ProcessingMethod = PaykeyRevealResponseDataConfigProcessingMethod.Inline,
+                    SandboxOutcome = PaykeyRevealResponseDataConfigSandboxOutcome.Standard,
+                },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Label = "Bank of America ****1234",
+                Paykey = "paykey",
+                Source = PaykeyRevealResponseDataSource.Straddle,
+                Status = PaykeyRevealResponseDataStatus.Pending,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Balance = new()
+                {
+                    Status = PaykeyRevealResponseDataBalanceStatus.Pending,
+                    AccountBalance = 0,
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+                BankData = new()
+                {
+                    AccountNumber = "****1234",
+                    AccountType = PaykeyRevealResponseDataBankDataAccountType.Checking,
+                    RoutingNumber = "021000021",
+                },
+                CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ExternalID = "external_id",
+                InstitutionName = "Bank of America",
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                StatusDetails = new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Bank account sucesfully validated",
+                    Reason = PaykeyRevealResponseDataStatusDetailsReason.InsufficientFunds,
+                    Source = PaykeyRevealResponseDataStatusDetailsSource.Watchtower,
+                    Code = "code",
+                },
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = PaykeyRevealResponseResponseType.Object,
+        };
+
+        PaykeyRevealResponse copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PaykeyRevealResponseDataTest : TestBase
@@ -1000,6 +1058,55 @@ public class PaykeyRevealResponseDataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyRevealResponseData
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Config = new()
+            {
+                ProcessingMethod = PaykeyRevealResponseDataConfigProcessingMethod.Inline,
+                SandboxOutcome = PaykeyRevealResponseDataConfigSandboxOutcome.Standard,
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Label = "Bank of America ****1234",
+            Paykey = "paykey",
+            Source = PaykeyRevealResponseDataSource.Straddle,
+            Status = PaykeyRevealResponseDataStatus.Pending,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Balance = new()
+            {
+                Status = PaykeyRevealResponseDataBalanceStatus.Pending,
+                AccountBalance = 0,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            BankData = new()
+            {
+                AccountNumber = "****1234",
+                AccountType = PaykeyRevealResponseDataBankDataAccountType.Checking,
+                RoutingNumber = "021000021",
+            },
+            CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExternalID = "external_id",
+            InstitutionName = "Bank of America",
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Bank account sucesfully validated",
+                Reason = PaykeyRevealResponseDataStatusDetailsReason.InsufficientFunds,
+                Source = PaykeyRevealResponseDataStatusDetailsSource.Watchtower,
+                Code = "code",
+            },
+        };
+
+        PaykeyRevealResponseData copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PaykeyRevealResponseDataConfigTest : TestBase
@@ -1123,6 +1230,20 @@ public class PaykeyRevealResponseDataConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyRevealResponseDataConfig
+        {
+            ProcessingMethod = PaykeyRevealResponseDataConfigProcessingMethod.Inline,
+            SandboxOutcome = PaykeyRevealResponseDataConfigSandboxOutcome.Standard,
+        };
+
+        PaykeyRevealResponseDataConfig copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1506,6 +1627,21 @@ public class PaykeyRevealResponseDataBalanceTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyRevealResponseDataBalance
+        {
+            Status = PaykeyRevealResponseDataBalanceStatus.Pending,
+            AccountBalance = 0,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        PaykeyRevealResponseDataBalance copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PaykeyRevealResponseDataBalanceStatusTest : TestBase
@@ -1643,6 +1779,21 @@ public class PaykeyRevealResponseDataBankDataTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyRevealResponseDataBankData
+        {
+            AccountNumber = "****1234",
+            AccountType = PaykeyRevealResponseDataBankDataAccountType.Checking,
+            RoutingNumber = "021000021",
+        };
+
+        PaykeyRevealResponseDataBankData copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1859,6 +2010,23 @@ public class PaykeyRevealResponseDataStatusDetailsTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyRevealResponseDataStatusDetails
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Bank account sucesfully validated",
+            Reason = PaykeyRevealResponseDataStatusDetailsReason.InsufficientFunds,
+            Source = PaykeyRevealResponseDataStatusDetailsSource.Watchtower,
+            Code = "code",
+        };
+
+        PaykeyRevealResponseDataStatusDetails copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

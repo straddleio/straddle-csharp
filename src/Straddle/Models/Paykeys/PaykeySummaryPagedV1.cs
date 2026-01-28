@@ -65,8 +65,11 @@ public sealed record class PaykeySummaryPagedV1 : JsonModel
 
     public PaykeySummaryPagedV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeySummaryPagedV1(PaykeySummaryPagedV1 paykeySummaryPagedV1)
         : base(paykeySummaryPagedV1) { }
+#pragma warning restore CS8618
 
     public PaykeySummaryPagedV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -287,6 +290,21 @@ public sealed record class Data : JsonModel
         }
     }
 
+    /// <summary>
+    /// Indicates whether this paykey is eligible for client-initiated unblocking.
+    /// Only present for blocked paykeys. True when blocked due to R29 returns and
+    /// not previously unblocked, false otherwise. Null when paykey is not blocked.
+    /// </summary>
+    public bool? UnblockEligible
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("unblock_eligible");
+        }
+        init { this._rawData.Set("unblock_eligible", value); }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -304,12 +322,16 @@ public sealed record class Data : JsonModel
         _ = this.ExternalID;
         _ = this.InstitutionName;
         this.StatusDetails?.Validate();
+        _ = this.UnblockEligible;
     }
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -390,8 +412,11 @@ public sealed record class Config : JsonModel
 
     public Config() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Config(Config config)
         : base(config) { }
+#pragma warning restore CS8618
 
     public Config(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -679,8 +704,11 @@ public sealed record class BankData : JsonModel
 
     public BankData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public BankData(BankData bankData)
         : base(bankData) { }
+#pragma warning restore CS8618
 
     public BankData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -827,8 +855,11 @@ public sealed record class StatusDetails : JsonModel
 
     public StatusDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public StatusDetails(StatusDetails statusDetails)
         : base(statusDetails) { }
+#pragma warning restore CS8618
 
     public StatusDetails(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1149,8 +1180,11 @@ public sealed record class Meta : JsonModel
 
     public Meta() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Meta(Meta meta)
         : base(meta) { }
+#pragma warning restore CS8618
 
     public Meta(IReadOnlyDictionary<string, JsonElement> rawData)
     {

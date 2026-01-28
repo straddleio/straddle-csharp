@@ -464,4 +464,21 @@ public class RelationshipTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Relationship
+        {
+            Control = true,
+            Owner = true,
+            Primary = true,
+            PercentOwnership = 0,
+            Title = "title",
+        };
+
+        Relationship copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }

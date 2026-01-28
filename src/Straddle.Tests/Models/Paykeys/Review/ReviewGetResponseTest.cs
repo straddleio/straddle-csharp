@@ -56,6 +56,7 @@ public class ReviewGetResponseTest : TestBase
                         Source = StatusDetailsSource.Watchtower,
                         Code = "code",
                     },
+                    UnblockEligible = true,
                 },
                 VerificationDetails = new()
                 {
@@ -134,6 +135,7 @@ public class ReviewGetResponseTest : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             VerificationDetails = new()
             {
@@ -221,6 +223,7 @@ public class ReviewGetResponseTest : TestBase
                         Source = StatusDetailsSource.Watchtower,
                         Code = "code",
                     },
+                    UnblockEligible = true,
                 },
                 VerificationDetails = new()
                 {
@@ -313,6 +316,7 @@ public class ReviewGetResponseTest : TestBase
                         Source = StatusDetailsSource.Watchtower,
                         Code = "code",
                     },
+                    UnblockEligible = true,
                 },
                 VerificationDetails = new()
                 {
@@ -398,6 +402,7 @@ public class ReviewGetResponseTest : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             VerificationDetails = new()
             {
@@ -485,6 +490,7 @@ public class ReviewGetResponseTest : TestBase
                         Source = StatusDetailsSource.Watchtower,
                         Code = "code",
                     },
+                    UnblockEligible = true,
                 },
                 VerificationDetails = new()
                 {
@@ -523,6 +529,95 @@ public class ReviewGetResponseTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new ReviewGetResponse
+        {
+            Data = new()
+            {
+                PaykeyDetails = new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    Config = new()
+                    {
+                        ProcessingMethod = ProcessingMethod.Inline,
+                        SandboxOutcome = SandboxOutcome.Standard,
+                    },
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Label = "label",
+                    Paykey = "paykey",
+                    Source = Source.BankAccount,
+                    Status = PaykeyDetailsStatus.Pending,
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Balance = new()
+                    {
+                        Status = BalanceStatus.Pending,
+                        AccountBalance = 0,
+                        UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                    BankData = new()
+                    {
+                        AccountNumber = "****1234",
+                        AccountType = AccountType.Checking,
+                        RoutingNumber = "021000021",
+                    },
+                    CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    ExternalID = "external_id",
+                    InstitutionName = "Bank of America",
+                    Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                    StatusDetails = new()
+                    {
+                        ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Message = "Bank account sucesfully validated",
+                        Reason = Reason.InsufficientFunds,
+                        Source = StatusDetailsSource.Watchtower,
+                        Code = "code",
+                    },
+                    UnblockEligible = true,
+                },
+                VerificationDetails = new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    Breakdown = new()
+                    {
+                        AccountValidation = new()
+                        {
+                            Codes = ["string"],
+                            Decision = Decision.Accept,
+                            Reason = "reason",
+                        },
+                        NameMatch = new()
+                        {
+                            Codes = ["string"],
+                            Decision = NameMatchDecision.Accept,
+                            CorrelationScore = 0,
+                            CustomerName = "customer_name",
+                            MatchedName = "matched_name",
+                            NamesOnAccount = ["string"],
+                            Reason = "reason",
+                        },
+                    },
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Decision = VerificationDetailsDecision.Accept,
+                    Messages = new Dictionary<string, string>() { { "foo", "string" } },
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = ResponseType.Object,
+        };
+
+        ReviewGetResponse copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -572,6 +667,7 @@ public class DataTest : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             VerificationDetails = new()
             {
@@ -641,6 +737,7 @@ public class DataTest : TestBase
                 Source = StatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
         VerificationDetails expectedVerificationDetails = new()
         {
@@ -718,6 +815,7 @@ public class DataTest : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             VerificationDetails = new()
             {
@@ -798,6 +896,7 @@ public class DataTest : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             VerificationDetails = new()
             {
@@ -871,6 +970,7 @@ public class DataTest : TestBase
                 Source = StatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
         VerificationDetails expectedVerificationDetails = new()
         {
@@ -948,6 +1048,7 @@ public class DataTest : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             VerificationDetails = new()
             {
@@ -1025,6 +1126,7 @@ public class DataTest : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
         };
 
@@ -1076,6 +1178,7 @@ public class DataTest : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
         };
 
@@ -1126,6 +1229,7 @@ public class DataTest : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
 
             // Null should be interpreted as omitted for these properties
@@ -1180,6 +1284,7 @@ public class DataTest : TestBase
                     Source = StatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
 
             // Null should be interpreted as omitted for these properties
@@ -1187,6 +1292,86 @@ public class DataTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Data
+        {
+            PaykeyDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Config = new()
+                {
+                    ProcessingMethod = ProcessingMethod.Inline,
+                    SandboxOutcome = SandboxOutcome.Standard,
+                },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Label = "label",
+                Paykey = "paykey",
+                Source = Source.BankAccount,
+                Status = PaykeyDetailsStatus.Pending,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Balance = new()
+                {
+                    Status = BalanceStatus.Pending,
+                    AccountBalance = 0,
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+                BankData = new()
+                {
+                    AccountNumber = "****1234",
+                    AccountType = AccountType.Checking,
+                    RoutingNumber = "021000021",
+                },
+                CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ExternalID = "external_id",
+                InstitutionName = "Bank of America",
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                StatusDetails = new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Bank account sucesfully validated",
+                    Reason = Reason.InsufficientFunds,
+                    Source = StatusDetailsSource.Watchtower,
+                    Code = "code",
+                },
+                UnblockEligible = true,
+            },
+            VerificationDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Breakdown = new()
+                {
+                    AccountValidation = new()
+                    {
+                        Codes = ["string"],
+                        Decision = Decision.Accept,
+                        Reason = "reason",
+                    },
+                    NameMatch = new()
+                    {
+                        Codes = ["string"],
+                        Decision = NameMatchDecision.Accept,
+                        CorrelationScore = 0,
+                        CustomerName = "customer_name",
+                        MatchedName = "matched_name",
+                        NamesOnAccount = ["string"],
+                        Reason = "reason",
+                    },
+                },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Decision = VerificationDetailsDecision.Accept,
+                Messages = new Dictionary<string, string>() { { "foo", "string" } },
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+        };
+
+        Data copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1234,6 +1419,7 @@ public class PaykeyDetailsTest : TestBase
                 Source = StatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
@@ -1273,6 +1459,7 @@ public class PaykeyDetailsTest : TestBase
             Source = StatusDetailsSource.Watchtower,
             Code = "code",
         };
+        bool expectedUnblockEligible = true;
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedConfig, model.Config);
@@ -1297,6 +1484,7 @@ public class PaykeyDetailsTest : TestBase
             Assert.Equal(value, model.Metadata[item.Key]);
         }
         Assert.Equal(expectedStatusDetails, model.StatusDetails);
+        Assert.Equal(expectedUnblockEligible, model.UnblockEligible);
     }
 
     [Fact]
@@ -1341,6 +1529,7 @@ public class PaykeyDetailsTest : TestBase
                 Source = StatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1394,6 +1583,7 @@ public class PaykeyDetailsTest : TestBase
                 Source = StatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1440,6 +1630,7 @@ public class PaykeyDetailsTest : TestBase
             Source = StatusDetailsSource.Watchtower,
             Code = "code",
         };
+        bool expectedUnblockEligible = true;
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedConfig, deserialized.Config);
@@ -1464,6 +1655,7 @@ public class PaykeyDetailsTest : TestBase
             Assert.Equal(value, deserialized.Metadata[item.Key]);
         }
         Assert.Equal(expectedStatusDetails, deserialized.StatusDetails);
+        Assert.Equal(expectedUnblockEligible, deserialized.UnblockEligible);
     }
 
     [Fact]
@@ -1508,6 +1700,7 @@ public class PaykeyDetailsTest : TestBase
                 Source = StatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         model.Validate();
@@ -1535,6 +1728,7 @@ public class PaykeyDetailsTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
         };
 
         Assert.Null(model.Balance);
@@ -1567,6 +1761,7 @@ public class PaykeyDetailsTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
         };
 
         model.Validate();
@@ -1594,6 +1789,7 @@ public class PaykeyDetailsTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
 
             // Null should be interpreted as omitted for these properties
             Balance = null,
@@ -1631,6 +1827,7 @@ public class PaykeyDetailsTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
 
             // Null should be interpreted as omitted for these properties
             Balance = null,
@@ -1690,6 +1887,8 @@ public class PaykeyDetailsTest : TestBase
         Assert.False(model.RawData.ContainsKey("institution_name"));
         Assert.Null(model.Metadata);
         Assert.False(model.RawData.ContainsKey("metadata"));
+        Assert.Null(model.UnblockEligible);
+        Assert.False(model.RawData.ContainsKey("unblock_eligible"));
     }
 
     [Fact]
@@ -1777,6 +1976,7 @@ public class PaykeyDetailsTest : TestBase
             ExternalID = null,
             InstitutionName = null,
             Metadata = null,
+            UnblockEligible = null,
         };
 
         Assert.Null(model.CustomerID);
@@ -1789,6 +1989,8 @@ public class PaykeyDetailsTest : TestBase
         Assert.True(model.RawData.ContainsKey("institution_name"));
         Assert.Null(model.Metadata);
         Assert.True(model.RawData.ContainsKey("metadata"));
+        Assert.Null(model.UnblockEligible);
+        Assert.True(model.RawData.ContainsKey("unblock_eligible"));
     }
 
     [Fact]
@@ -1834,9 +2036,60 @@ public class PaykeyDetailsTest : TestBase
             ExternalID = null,
             InstitutionName = null,
             Metadata = null,
+            UnblockEligible = null,
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyDetails
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Config = new()
+            {
+                ProcessingMethod = ProcessingMethod.Inline,
+                SandboxOutcome = SandboxOutcome.Standard,
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Label = "label",
+            Paykey = "paykey",
+            Source = Source.BankAccount,
+            Status = PaykeyDetailsStatus.Pending,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Balance = new()
+            {
+                Status = BalanceStatus.Pending,
+                AccountBalance = 0,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            BankData = new()
+            {
+                AccountNumber = "****1234",
+                AccountType = AccountType.Checking,
+                RoutingNumber = "021000021",
+            },
+            CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExternalID = "external_id",
+            InstitutionName = "Bank of America",
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Bank account sucesfully validated",
+                Reason = Reason.InsufficientFunds,
+                Source = StatusDetailsSource.Watchtower,
+                Code = "code",
+            },
+            UnblockEligible = true,
+        };
+
+        PaykeyDetails copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1951,6 +2204,20 @@ public class ConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Config
+        {
+            ProcessingMethod = ProcessingMethod.Inline,
+            SandboxOutcome = SandboxOutcome.Standard,
+        };
+
+        Config copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -2333,6 +2600,21 @@ public class BalanceTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Balance
+        {
+            Status = BalanceStatus.Pending,
+            AccountBalance = 0,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        Balance copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class BalanceStatusTest : TestBase
@@ -2469,6 +2751,21 @@ public class BankDataTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new BankData
+        {
+            AccountNumber = "****1234",
+            AccountType = AccountType.Checking,
+            RoutingNumber = "021000021",
+        };
+
+        BankData copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -2685,6 +2982,23 @@ public class StatusDetailsTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new StatusDetails
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Bank account sucesfully validated",
+            Reason = Reason.InsufficientFunds,
+            Source = StatusDetailsSource.Watchtower,
+            Code = "code",
+        };
+
+        StatusDetails copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -3080,6 +3394,42 @@ public class VerificationDetailsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new VerificationDetails
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Breakdown = new()
+            {
+                AccountValidation = new()
+                {
+                    Codes = ["string"],
+                    Decision = Decision.Accept,
+                    Reason = "reason",
+                },
+                NameMatch = new()
+                {
+                    Codes = ["string"],
+                    Decision = NameMatchDecision.Accept,
+                    CorrelationScore = 0,
+                    CustomerName = "customer_name",
+                    MatchedName = "matched_name",
+                    NamesOnAccount = ["string"],
+                    Reason = "reason",
+                },
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Decision = VerificationDetailsDecision.Accept,
+            Messages = new Dictionary<string, string>() { { "foo", "string" } },
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        VerificationDetails copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class BreakdownTest : TestBase
@@ -3281,6 +3631,34 @@ public class BreakdownTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Breakdown
+        {
+            AccountValidation = new()
+            {
+                Codes = ["string"],
+                Decision = Decision.Accept,
+                Reason = "reason",
+            },
+            NameMatch = new()
+            {
+                Codes = ["string"],
+                Decision = NameMatchDecision.Accept,
+                CorrelationScore = 0,
+                CustomerName = "customer_name",
+                MatchedName = "matched_name",
+                NamesOnAccount = ["string"],
+                Reason = "reason",
+            },
+        };
+
+        Breakdown copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class AccountValidationTest : TestBase
@@ -3414,6 +3792,21 @@ public class AccountValidationTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountValidation
+        {
+            Codes = ["string"],
+            Decision = Decision.Accept,
+            Reason = "reason",
+        };
+
+        AccountValidation copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -3671,6 +4064,25 @@ public class NameMatchTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new NameMatch
+        {
+            Codes = ["string"],
+            Decision = NameMatchDecision.Accept,
+            CorrelationScore = 0,
+            CustomerName = "customer_name",
+            MatchedName = "matched_name",
+            NamesOnAccount = ["string"],
+            Reason = "reason",
+        };
+
+        NameMatch copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

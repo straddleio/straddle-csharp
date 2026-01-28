@@ -134,4 +134,19 @@ public class IndustryV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new IndustryV1
+        {
+            Category = "category",
+            Mcc = "mcc",
+            Sector = "sector",
+        };
+
+        IndustryV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }

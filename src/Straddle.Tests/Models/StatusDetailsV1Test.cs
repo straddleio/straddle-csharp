@@ -160,6 +160,23 @@ public class StatusDetailsV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new StatusDetailsV1
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Payment successfully created and awaiting validation.",
+            Reason = Reason.InsufficientFunds,
+            Source = Source.System,
+            Code = null,
+        };
+
+        StatusDetailsV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class ReasonTest : TestBase

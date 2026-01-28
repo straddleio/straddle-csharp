@@ -64,8 +64,11 @@ public sealed record class ChargeUnmaskResponse : JsonModel
 
     public ChargeUnmaskResponse() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public ChargeUnmaskResponse(ChargeUnmaskResponse chargeUnmaskResponse)
         : base(chargeUnmaskResponse) { }
+#pragma warning restore CS8618
 
     public ChargeUnmaskResponse(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -480,8 +483,11 @@ public sealed record class ChargeUnmaskResponseData : JsonModel
 
     public ChargeUnmaskResponseData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public ChargeUnmaskResponseData(ChargeUnmaskResponseData chargeUnmaskResponseData)
         : base(chargeUnmaskResponseData) { }
+#pragma warning restore CS8618
 
     public ChargeUnmaskResponseData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -568,10 +574,13 @@ public sealed record class ChargeUnmaskResponseDataConfig : JsonModel
 
     public ChargeUnmaskResponseDataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public ChargeUnmaskResponseDataConfig(
         ChargeUnmaskResponseDataConfig chargeUnmaskResponseDataConfig
     )
         : base(chargeUnmaskResponseDataConfig) { }
+#pragma warning restore CS8618
 
     public ChargeUnmaskResponseDataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -829,8 +838,11 @@ public sealed record class Device : JsonModel
 
     public Device() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Device(Device device)
         : base(device) { }
+#pragma warning restore CS8618
 
     public Device(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1037,10 +1049,13 @@ public sealed record class ChargeUnmaskResponseDataStatusHistory : JsonModel
 
     public ChargeUnmaskResponseDataStatusHistory() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public ChargeUnmaskResponseDataStatusHistory(
         ChargeUnmaskResponseDataStatusHistory chargeUnmaskResponseDataStatusHistory
     )
         : base(chargeUnmaskResponseDataStatusHistory) { }
+#pragma warning restore CS8618
 
     public ChargeUnmaskResponseDataStatusHistory(IReadOnlyDictionary<string, JsonElement> rawData)
     {

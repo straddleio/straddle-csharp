@@ -151,6 +151,32 @@ public class ReportCreateTotalCustomersByStatusResponseTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new ReportCreateTotalCustomersByStatusResponse
+        {
+            Data = new()
+            {
+                Inactive = 0,
+                Pending = 0,
+                Rejected = 0,
+                Review = 0,
+                Verified = 0,
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = ResponseType.Object,
+        };
+
+        ReportCreateTotalCustomersByStatusResponse copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataTest : TestBase
@@ -240,6 +266,23 @@ public class DataTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Data
+        {
+            Inactive = 0,
+            Pending = 0,
+            Rejected = 0,
+            Review = 0,
+            Verified = 0,
+        };
+
+        Data copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

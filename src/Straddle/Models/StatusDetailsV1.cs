@@ -90,8 +90,11 @@ public sealed record class StatusDetailsV1 : JsonModel
 
     public StatusDetailsV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public StatusDetailsV1(StatusDetailsV1 statusDetailsV1)
         : base(statusDetailsV1) { }
+#pragma warning restore CS8618
 
     public StatusDetailsV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {

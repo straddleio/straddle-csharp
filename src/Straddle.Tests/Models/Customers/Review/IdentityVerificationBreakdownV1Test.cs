@@ -246,6 +246,23 @@ public class IdentityVerificationBreakdownV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new IdentityVerificationBreakdownV1
+        {
+            Codes = ["string"],
+            Correlation = IdentityVerificationBreakdownV1Correlation.LowConfidence,
+            CorrelationScore = 0,
+            Decision = IdentityVerificationBreakdownV1Decision.Accept,
+            RiskScore = 0,
+        };
+
+        IdentityVerificationBreakdownV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class IdentityVerificationBreakdownV1CorrelationTest : TestBase

@@ -353,6 +353,20 @@ public class LinkCreatePaykeyParamsConfigTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkCreatePaykeyParamsConfig
+        {
+            ProcessingMethod = LinkCreatePaykeyParamsConfigProcessingMethod.Inline,
+            SandboxOutcome = LinkCreatePaykeyParamsConfigSandboxOutcome.Standard,
+        };
+
+        LinkCreatePaykeyParamsConfig copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class LinkCreatePaykeyParamsConfigProcessingMethodTest : TestBase

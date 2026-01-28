@@ -467,6 +467,85 @@ public class ChargeV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new ChargeV1
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Amount = 10000,
+                Config = new()
+                {
+                    BalanceCheck = DataConfigBalanceCheck.Required,
+                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
+                },
+                ConsentType = DataConsentType.Internet,
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Currency = "currency",
+                Description = "Monthly subscription fee",
+                Device = new("192.168.1.1"),
+                ExternalID = "external_id",
+                FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                Paykey = "paykey",
+                PaymentDate = "2019-12-27",
+                Status = Status.Created,
+                StatusDetails = new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Payment successfully created and awaiting validation.",
+                    Reason = Models::Reason.InsufficientFunds,
+                    Source = Models::Source.System,
+                    Code = null,
+                },
+                StatusHistory =
+                [
+                    new()
+                    {
+                        ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Message = "Payment successfully created and awaiting validation.",
+                        Reason = Reason.InsufficientFunds,
+                        Source = Source.Watchtower,
+                        Status = StatusHistoryStatus.Created,
+                        Code = null,
+                    },
+                ],
+                TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                CustomerDetails = new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    CustomerType = Models::CustomerType.Individual,
+                    Email = "ron@swanson.com",
+                    Name = "Ron Swanson",
+                    Phone = "+1234567890",
+                },
+                EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                PaykeyDetails = new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    Label = "Bank of America ****1234",
+                    Balance = 0,
+                },
+                PaymentRail = PaymentRail.Ach,
+                ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = ResponseType.Object,
+        };
+
+        ChargeV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataTest : TestBase
@@ -1459,6 +1538,76 @@ public class DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Amount = 10000,
+            Config = new()
+            {
+                BalanceCheck = DataConfigBalanceCheck.Required,
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
+            ConsentType = DataConsentType.Internet,
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Currency = "currency",
+            Description = "Monthly subscription fee",
+            Device = new("192.168.1.1"),
+            ExternalID = "external_id",
+            FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            Paykey = "paykey",
+            PaymentDate = "2019-12-27",
+            Status = Status.Created,
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Payment successfully created and awaiting validation.",
+                Reason = Models::Reason.InsufficientFunds,
+                Source = Models::Source.System,
+                Code = null,
+            },
+            StatusHistory =
+            [
+                new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Payment successfully created and awaiting validation.",
+                    Reason = Reason.InsufficientFunds,
+                    Source = Source.Watchtower,
+                    Status = StatusHistoryStatus.Created,
+                    Code = null,
+                },
+            ],
+            TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            CustomerDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CustomerType = Models::CustomerType.Individual,
+                Email = "ron@swanson.com",
+                Name = "Ron Swanson",
+                Phone = "+1234567890",
+            },
+            EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            PaykeyDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Label = "Bank of America ****1234",
+                Balance = 0,
+            },
+            PaymentRail = PaymentRail.Ach,
+            ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataConfigTest : TestBase
@@ -1580,6 +1729,20 @@ public class DataConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DataConfig
+        {
+            BalanceCheck = DataConfigBalanceCheck.Required,
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+        };
+
+        DataConfig copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -2012,6 +2175,24 @@ public class StatusHistoryTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new StatusHistory
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Payment successfully created and awaiting validation.",
+            Reason = Reason.InsufficientFunds,
+            Source = Source.Watchtower,
+            Status = StatusHistoryStatus.Created,
+            Code = null,
+        };
+
+        StatusHistory copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

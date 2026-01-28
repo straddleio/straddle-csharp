@@ -346,6 +346,64 @@ public class LinkCreateTanResponseTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkCreateTanResponse
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Config = new()
+                {
+                    ProcessingMethod = LinkCreateTanResponseDataConfigProcessingMethod.Inline,
+                    SandboxOutcome = LinkCreateTanResponseDataConfigSandboxOutcome.Standard,
+                },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Label = "Bank of America ****1234",
+                Paykey = "paykey",
+                Source = LinkCreateTanResponseDataSource.Straddle,
+                Status = LinkCreateTanResponseDataStatus.Pending,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Balance = new()
+                {
+                    Status = LinkCreateTanResponseDataBalanceStatus.Pending,
+                    AccountBalance = 0,
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+                BankData = new()
+                {
+                    AccountNumber = "****1234",
+                    AccountType = LinkCreateTanResponseDataBankDataAccountType.Checking,
+                    RoutingNumber = "021000021",
+                },
+                CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ExternalID = "external_id",
+                InstitutionName = "Bank of America",
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                StatusDetails = new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Bank account sucesfully validated",
+                    Reason = LinkCreateTanResponseDataStatusDetailsReason.InsufficientFunds,
+                    Source = LinkCreateTanResponseDataStatusDetailsSource.Watchtower,
+                    Code = "code",
+                },
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = LinkCreateTanResponseResponseType.Object,
+        };
+
+        LinkCreateTanResponse copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class LinkCreateTanResponseDataTest : TestBase
@@ -1000,6 +1058,55 @@ public class LinkCreateTanResponseDataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkCreateTanResponseData
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Config = new()
+            {
+                ProcessingMethod = LinkCreateTanResponseDataConfigProcessingMethod.Inline,
+                SandboxOutcome = LinkCreateTanResponseDataConfigSandboxOutcome.Standard,
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Label = "Bank of America ****1234",
+            Paykey = "paykey",
+            Source = LinkCreateTanResponseDataSource.Straddle,
+            Status = LinkCreateTanResponseDataStatus.Pending,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Balance = new()
+            {
+                Status = LinkCreateTanResponseDataBalanceStatus.Pending,
+                AccountBalance = 0,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            BankData = new()
+            {
+                AccountNumber = "****1234",
+                AccountType = LinkCreateTanResponseDataBankDataAccountType.Checking,
+                RoutingNumber = "021000021",
+            },
+            CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExternalID = "external_id",
+            InstitutionName = "Bank of America",
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Bank account sucesfully validated",
+                Reason = LinkCreateTanResponseDataStatusDetailsReason.InsufficientFunds,
+                Source = LinkCreateTanResponseDataStatusDetailsSource.Watchtower,
+                Code = "code",
+            },
+        };
+
+        LinkCreateTanResponseData copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class LinkCreateTanResponseDataConfigTest : TestBase
@@ -1123,6 +1230,20 @@ public class LinkCreateTanResponseDataConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkCreateTanResponseDataConfig
+        {
+            ProcessingMethod = LinkCreateTanResponseDataConfigProcessingMethod.Inline,
+            SandboxOutcome = LinkCreateTanResponseDataConfigSandboxOutcome.Standard,
+        };
+
+        LinkCreateTanResponseDataConfig copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1506,6 +1627,21 @@ public class LinkCreateTanResponseDataBalanceTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkCreateTanResponseDataBalance
+        {
+            Status = LinkCreateTanResponseDataBalanceStatus.Pending,
+            AccountBalance = 0,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        LinkCreateTanResponseDataBalance copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class LinkCreateTanResponseDataBalanceStatusTest : TestBase
@@ -1643,6 +1779,21 @@ public class LinkCreateTanResponseDataBankDataTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkCreateTanResponseDataBankData
+        {
+            AccountNumber = "****1234",
+            AccountType = LinkCreateTanResponseDataBankDataAccountType.Checking,
+            RoutingNumber = "021000021",
+        };
+
+        LinkCreateTanResponseDataBankData copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1859,6 +2010,23 @@ public class LinkCreateTanResponseDataStatusDetailsTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkCreateTanResponseDataStatusDetails
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Bank account sucesfully validated",
+            Reason = LinkCreateTanResponseDataStatusDetailsReason.InsufficientFunds,
+            Source = LinkCreateTanResponseDataStatusDetailsSource.Watchtower,
+            Code = "code",
+        };
+
+        LinkCreateTanResponseDataStatusDetails copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

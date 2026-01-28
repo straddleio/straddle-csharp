@@ -334,6 +334,21 @@ public class BankAccountTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new BankAccount
+        {
+            AccountHolder = "account_holder",
+            AccountNumber = "account_number",
+            RoutingNumber = "xxxxxxxxx",
+        };
+
+        BankAccount copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PurposeTest : TestBase

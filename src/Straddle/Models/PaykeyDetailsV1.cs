@@ -74,8 +74,11 @@ public sealed record class PaykeyDetailsV1 : JsonModel
 
     public PaykeyDetailsV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyDetailsV1(PaykeyDetailsV1 paykeyDetailsV1)
         : base(paykeyDetailsV1) { }
+#pragma warning restore CS8618
 
     public PaykeyDetailsV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {

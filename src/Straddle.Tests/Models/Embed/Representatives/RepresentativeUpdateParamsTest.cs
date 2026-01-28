@@ -469,4 +469,21 @@ public class RepresentativeUpdateParamsRelationshipTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RepresentativeUpdateParamsRelationship
+        {
+            Control = true,
+            Owner = true,
+            Primary = true,
+            PercentOwnership = 0,
+            Title = "title",
+        };
+
+        RepresentativeUpdateParamsRelationship copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }

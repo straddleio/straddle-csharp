@@ -70,8 +70,11 @@ public sealed record class CapabilityRequestPagedV1 : JsonModel
 
     public CapabilityRequestPagedV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CapabilityRequestPagedV1(CapabilityRequestPagedV1 capabilityRequestPagedV1)
         : base(capabilityRequestPagedV1) { }
+#pragma warning restore CS8618
 
     public CapabilityRequestPagedV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -235,8 +238,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {

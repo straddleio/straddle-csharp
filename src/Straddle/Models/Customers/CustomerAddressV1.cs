@@ -91,8 +91,11 @@ public sealed record class CustomerAddressV1 : JsonModel
 
     public CustomerAddressV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerAddressV1(CustomerAddressV1 customerAddressV1)
         : base(customerAddressV1) { }
+#pragma warning restore CS8618
 
     public CustomerAddressV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {

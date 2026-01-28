@@ -401,8 +401,11 @@ public sealed record class LinkCreateTanParamsConfig : JsonModel
 
     public LinkCreateTanParamsConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkCreateTanParamsConfig(LinkCreateTanParamsConfig linkCreateTanParamsConfig)
         : base(linkCreateTanParamsConfig) { }
+#pragma warning restore CS8618
 
     public LinkCreateTanParamsConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {

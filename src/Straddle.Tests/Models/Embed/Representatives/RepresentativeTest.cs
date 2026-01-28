@@ -308,6 +308,58 @@ public class RepresentativeTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Representative
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Dob = "1980-01-01",
+                Email = "ron.swanson@pawnee.com",
+                FirstName = "Ron",
+                LastName = "Swanson",
+                MobileNumber = "+12128675309",
+                Name = "name",
+                Relationship = new()
+                {
+                    Control = true,
+                    Owner = true,
+                    Primary = true,
+                    PercentOwnership = 0,
+                    Title = "title",
+                },
+                SsnLast4 = "1234",
+                Status = Status.Created,
+                StatusDetail = new()
+                {
+                    Code = "code",
+                    Message = "message",
+                    Reason = Reason.Unverified,
+                    Source = Source.Watchtower,
+                },
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ExternalID = "external_id",
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                Phone = "phone",
+                UserID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = ResponseType.Object,
+        };
+
+        Representative copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataTest : TestBase
@@ -766,6 +818,49 @@ public class DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Dob = "1980-01-01",
+            Email = "ron.swanson@pawnee.com",
+            FirstName = "Ron",
+            LastName = "Swanson",
+            MobileNumber = "+12128675309",
+            Name = "name",
+            Relationship = new()
+            {
+                Control = true,
+                Owner = true,
+                Primary = true,
+                PercentOwnership = 0,
+                Title = "title",
+            },
+            SsnLast4 = "1234",
+            Status = Status.Created,
+            StatusDetail = new()
+            {
+                Code = "code",
+                Message = "message",
+                Reason = Reason.Unverified,
+                Source = Source.Watchtower,
+            },
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExternalID = "external_id",
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            Phone = "phone",
+            UserID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+        };
+
+        Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataRelationshipTest : TestBase
@@ -926,6 +1021,23 @@ public class DataRelationshipTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DataRelationship
+        {
+            Control = true,
+            Owner = true,
+            Primary = true,
+            PercentOwnership = 0,
+            Title = "title",
+        };
+
+        DataRelationship copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class StatusTest : TestBase
@@ -1077,6 +1189,22 @@ public class StatusDetailTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new StatusDetail
+        {
+            Code = "code",
+            Message = "message",
+            Reason = Reason.Unverified,
+            Source = Source.Watchtower,
+        };
+
+        StatusDetail copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

@@ -62,8 +62,11 @@ public sealed record class CustomerReviewV1 : JsonModel
 
     public CustomerReviewV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerReviewV1(CustomerReviewV1 customerReviewV1)
         : base(customerReviewV1) { }
+#pragma warning restore CS8618
 
     public CustomerReviewV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -134,8 +137,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -392,8 +398,11 @@ public sealed record class CustomerDetails : JsonModel
 
     public CustomerDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerDetails(CustomerDetails customerDetails)
         : base(customerDetails) { }
+#pragma warning restore CS8618
 
     public CustomerDetails(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -815,8 +824,11 @@ public sealed record class IndividualComplianceProfile : JsonModel
 
     public IndividualComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public IndividualComplianceProfile(IndividualComplianceProfile individualComplianceProfile)
         : base(individualComplianceProfile) { }
+#pragma warning restore CS8618
 
     public IndividualComplianceProfile(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -931,8 +943,11 @@ public sealed record class BusinessComplianceProfile : JsonModel
 
     public BusinessComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public BusinessComplianceProfile(BusinessComplianceProfile businessComplianceProfile)
         : base(businessComplianceProfile) { }
+#pragma warning restore CS8618
 
     public BusinessComplianceProfile(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1007,8 +1022,11 @@ public sealed record class Representative : JsonModel
 
     public Representative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Representative(Representative representative)
         : base(representative) { }
+#pragma warning restore CS8618
 
     public Representative(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1096,8 +1114,11 @@ public sealed record class Config : JsonModel
 
     public Config() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Config(Config config)
         : base(config) { }
+#pragma warning restore CS8618
 
     public Config(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1248,8 +1269,11 @@ public sealed record class Device : JsonModel
 
     public Device() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Device(Device device)
         : base(device) { }
+#pragma warning restore CS8618
 
     public Device(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1459,8 +1483,11 @@ public sealed record class IdentityDetails : JsonModel
 
     public IdentityDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public IdentityDetails(IdentityDetails identityDetails)
         : base(identityDetails) { }
+#pragma warning restore CS8618
 
     public IdentityDetails(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1661,8 +1688,11 @@ public sealed record class Breakdown : JsonModel
 
     public Breakdown() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Breakdown(Breakdown breakdown)
         : base(breakdown) { }
+#pragma warning restore CS8618
 
     public Breakdown(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1797,8 +1827,11 @@ public sealed record class Kyc : JsonModel
 
     public Kyc() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Kyc(Kyc kyc)
         : base(kyc) { }
+#pragma warning restore CS8618
 
     public Kyc(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -2037,8 +2070,11 @@ public sealed record class Validations : JsonModel
 
     public Validations() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Validations(Validations validations)
         : base(validations) { }
+#pragma warning restore CS8618
 
     public Validations(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -2185,8 +2221,11 @@ public sealed record class NetworkAlerts : JsonModel
 
     public NetworkAlerts() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public NetworkAlerts(NetworkAlerts networkAlerts)
         : base(networkAlerts) { }
+#pragma warning restore CS8618
 
     public NetworkAlerts(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -2341,8 +2380,11 @@ public sealed record class Reputation : JsonModel
 
     public Reputation() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Reputation(Reputation reputation)
         : base(reputation) { }
+#pragma warning restore CS8618
 
     public Reputation(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -2855,8 +2897,11 @@ public sealed record class Insights : JsonModel
 
     public Insights() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Insights(Insights insights)
         : base(insights) { }
+#pragma warning restore CS8618
 
     public Insights(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -2977,8 +3022,11 @@ public sealed record class WatchList : JsonModel
 
     public WatchList() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public WatchList(WatchList watchList)
         : base(watchList) { }
+#pragma warning restore CS8618
 
     public WatchList(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -3129,8 +3177,11 @@ public sealed record class Match : JsonModel
 
     public Match() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Match(Match match)
         : base(match) { }
+#pragma warning restore CS8618
 
     public Match(IReadOnlyDictionary<string, JsonElement> rawData)
     {

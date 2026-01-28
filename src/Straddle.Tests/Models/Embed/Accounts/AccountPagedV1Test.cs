@@ -772,6 +772,134 @@ public class AccountPagedV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountPagedV1
+        {
+            Data =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    AccessLevel = DataAccessLevel.Standard,
+                    OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    Status = DataStatus.Created,
+                    StatusDetail = new()
+                    {
+                        Code = "code",
+                        Message = "message",
+                        Reason = Reason.Unverified,
+                        Source = Source.Watchtower,
+                    },
+                    Type = DataType.Business,
+                    BusinessProfile = new()
+                    {
+                        Name = "name",
+                        Website = "https://example.com",
+                        Address = new()
+                        {
+                            Address1 = "address1",
+                            City = "city",
+                            State = "SE",
+                            Zip = "zip",
+                            Address2 = "address2",
+                            Country = "country",
+                            Line1 = "line1",
+                            Line2 = "line2",
+                            PostalCode = "21029-1360",
+                        },
+                        Description = "description",
+                        Industry = new()
+                        {
+                            Category = "category",
+                            Mcc = "mcc",
+                            Sector = "sector",
+                        },
+                        LegalName = "legal_name",
+                        Phone = "+46991022",
+                        SupportChannels = new()
+                        {
+                            Email = "dev@stainless.com",
+                            Phone = "+46991022",
+                            Url = "https://example.com",
+                        },
+                        TaxID = "210297980",
+                        UseCase = "use_case",
+                    },
+                    Capabilities = new()
+                    {
+                        ConsentTypes = new()
+                        {
+                            Internet = new(CapabilityStatus.Active),
+                            SignedAgreement = new(CapabilityStatus.Active),
+                        },
+                        CustomerTypes = new()
+                        {
+                            Businesses = new(CapabilityStatus.Active),
+                            Individuals = new(CapabilityStatus.Active),
+                        },
+                        PaymentTypes = new()
+                        {
+                            Charges = new(CapabilityStatus.Active),
+                            Payouts = new(CapabilityStatus.Active),
+                        },
+                    },
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    ExternalID = "external_id",
+                    Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                    Settings = new()
+                    {
+                        Charges = new()
+                        {
+                            DailyAmount = 0,
+                            FundingTime = FundingTime.Immediate,
+                            LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                            MaxAmount = 0,
+                            MonthlyAmount = 0,
+                            MonthlyCount = 0,
+                        },
+                        Payouts = new()
+                        {
+                            DailyAmount = 0,
+                            FundingTime = SettingsPayoutsFundingTime.Immediate,
+                            LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                            MaxAmount = 0,
+                            MonthlyAmount = 0,
+                            MonthlyCount = 0,
+                        },
+                    },
+                    TermsOfService = new()
+                    {
+                        AcceptedDate = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        AgreementType = AgreementType.Embedded,
+                        AgreementUrl = "agreement_url",
+                        AcceptedIP = "accepted_ip",
+                        AcceptedUserAgent = "accepted_user_agent",
+                    },
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                MaxPageSize = 0,
+                PageNumber = 0,
+                PageSize = 0,
+                SortBy = "sort_by",
+                SortOrder = Models::SortOrder.Asc,
+                TotalItems = 0,
+                TotalPages = 0,
+            },
+            ResponseType = ResponseType.Object,
+        };
+
+        AccountPagedV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataTest : TestBase
@@ -2012,6 +2140,115 @@ public class DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            AccessLevel = DataAccessLevel.Standard,
+            OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Status = DataStatus.Created,
+            StatusDetail = new()
+            {
+                Code = "code",
+                Message = "message",
+                Reason = Reason.Unverified,
+                Source = Source.Watchtower,
+            },
+            Type = DataType.Business,
+            BusinessProfile = new()
+            {
+                Name = "name",
+                Website = "https://example.com",
+                Address = new()
+                {
+                    Address1 = "address1",
+                    City = "city",
+                    State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
+                    Country = "country",
+                    Line1 = "line1",
+                    Line2 = "line2",
+                    PostalCode = "21029-1360",
+                },
+                Description = "description",
+                Industry = new()
+                {
+                    Category = "category",
+                    Mcc = "mcc",
+                    Sector = "sector",
+                },
+                LegalName = "legal_name",
+                Phone = "+46991022",
+                SupportChannels = new()
+                {
+                    Email = "dev@stainless.com",
+                    Phone = "+46991022",
+                    Url = "https://example.com",
+                },
+                TaxID = "210297980",
+                UseCase = "use_case",
+            },
+            Capabilities = new()
+            {
+                ConsentTypes = new()
+                {
+                    Internet = new(CapabilityStatus.Active),
+                    SignedAgreement = new(CapabilityStatus.Active),
+                },
+                CustomerTypes = new()
+                {
+                    Businesses = new(CapabilityStatus.Active),
+                    Individuals = new(CapabilityStatus.Active),
+                },
+                PaymentTypes = new()
+                {
+                    Charges = new(CapabilityStatus.Active),
+                    Payouts = new(CapabilityStatus.Active),
+                },
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExternalID = "external_id",
+            Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            Settings = new()
+            {
+                Charges = new()
+                {
+                    DailyAmount = 0,
+                    FundingTime = FundingTime.Immediate,
+                    LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    MaxAmount = 0,
+                    MonthlyAmount = 0,
+                    MonthlyCount = 0,
+                },
+                Payouts = new()
+                {
+                    DailyAmount = 0,
+                    FundingTime = SettingsPayoutsFundingTime.Immediate,
+                    LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    MaxAmount = 0,
+                    MonthlyAmount = 0,
+                    MonthlyCount = 0,
+                },
+            },
+            TermsOfService = new()
+            {
+                AcceptedDate = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                AgreementType = AgreementType.Embedded,
+                AgreementUrl = "agreement_url",
+                AcceptedIP = "accepted_ip",
+                AcceptedUserAgent = "accepted_user_agent",
+            },
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataAccessLevelTest : TestBase
@@ -2221,6 +2458,22 @@ public class StatusDetailTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new StatusDetail
+        {
+            Code = "code",
+            Message = "message",
+            Reason = Reason.Unverified,
+            Source = Source.Watchtower,
+        };
+
+        StatusDetail copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -2558,6 +2811,33 @@ public class CapabilitiesTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Capabilities
+        {
+            ConsentTypes = new()
+            {
+                Internet = new(CapabilityStatus.Active),
+                SignedAgreement = new(CapabilityStatus.Active),
+            },
+            CustomerTypes = new()
+            {
+                Businesses = new(CapabilityStatus.Active),
+                Individuals = new(CapabilityStatus.Active),
+            },
+            PaymentTypes = new()
+            {
+                Charges = new(CapabilityStatus.Active),
+                Payouts = new(CapabilityStatus.Active),
+            },
+        };
+
+        Capabilities copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class ConsentTypesTest : TestBase
@@ -2629,6 +2909,20 @@ public class ConsentTypesTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new ConsentTypes
+        {
+            Internet = new(CapabilityStatus.Active),
+            SignedAgreement = new(CapabilityStatus.Active),
+        };
+
+        ConsentTypes copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -2702,6 +2996,20 @@ public class CustomerTypesTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerTypes
+        {
+            Businesses = new(CapabilityStatus.Active),
+            Individuals = new(CapabilityStatus.Active),
+        };
+
+        CustomerTypes copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PaymentTypesTest : TestBase
@@ -2773,6 +3081,20 @@ public class PaymentTypesTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaymentTypes
+        {
+            Charges = new(CapabilityStatus.Active),
+            Payouts = new(CapabilityStatus.Active),
+        };
+
+        PaymentTypes copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -2939,6 +3261,36 @@ public class SettingsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Settings
+        {
+            Charges = new()
+            {
+                DailyAmount = 0,
+                FundingTime = FundingTime.Immediate,
+                LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                MaxAmount = 0,
+                MonthlyAmount = 0,
+                MonthlyCount = 0,
+            },
+            Payouts = new()
+            {
+                DailyAmount = 0,
+                FundingTime = SettingsPayoutsFundingTime.Immediate,
+                LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                MaxAmount = 0,
+                MonthlyAmount = 0,
+                MonthlyCount = 0,
+            },
+        };
+
+        Settings copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class SettingsChargesTest : TestBase
@@ -3042,6 +3394,24 @@ public class SettingsChargesTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new SettingsCharges
+        {
+            DailyAmount = 0,
+            FundingTime = FundingTime.Immediate,
+            LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            MaxAmount = 0,
+            MonthlyAmount = 0,
+            MonthlyCount = 0,
+        };
+
+        SettingsCharges copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -3212,6 +3582,24 @@ public class SettingsPayoutsTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new SettingsPayouts
+        {
+            DailyAmount = 0,
+            FundingTime = SettingsPayoutsFundingTime.Immediate,
+            LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            MaxAmount = 0,
+            MonthlyAmount = 0,
+            MonthlyCount = 0,
+        };
+
+        SettingsPayouts copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

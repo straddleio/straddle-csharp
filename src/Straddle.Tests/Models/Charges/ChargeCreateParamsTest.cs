@@ -406,6 +406,20 @@ public class ConfigTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Config
+        {
+            BalanceCheck = BalanceCheck.Required,
+            SandboxOutcome = SandboxOutcome.Standard,
+        };
+
+        Config copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class BalanceCheckTest : TestBase

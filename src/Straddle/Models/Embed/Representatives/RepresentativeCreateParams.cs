@@ -407,8 +407,11 @@ public sealed record class Relationship : JsonModel
 
     public Relationship() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Relationship(Relationship relationship)
         : base(relationship) { }
+#pragma warning restore CS8618
 
     public Relationship(IReadOnlyDictionary<string, JsonElement> rawData)
     {

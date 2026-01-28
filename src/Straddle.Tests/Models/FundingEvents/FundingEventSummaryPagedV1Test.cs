@@ -315,6 +315,58 @@ public class FundingEventSummaryPagedV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new FundingEventSummaryPagedV1
+        {
+            Data =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    Amount = 100000,
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Direction = FundingEventSummaryPagedV1DataDirection.Deposit,
+                    EventType = FundingEventSummaryPagedV1DataEventType.ChargeDeposit,
+                    PaymentCount = 0,
+                    TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+                    TraceNumbers = ["string"],
+                    TransferDate = "2019-12-27",
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Status = FundingEventSummaryPagedV1DataStatus.Created,
+                    StatusDetails = new()
+                    {
+                        ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Message = "Bank account sucesfully validated",
+                        Reason =
+                            FundingEventSummaryPagedV1DataStatusDetailsReason.InsufficientFunds,
+                        Source = FundingEventSummaryPagedV1DataStatusDetailsSource.Watchtower,
+                        Code = "code",
+                    },
+                    TraceNumber = "trace_number",
+                },
+            ],
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                MaxPageSize = 0,
+                PageNumber = 0,
+                PageSize = 0,
+                SortBy = "sort_by",
+                SortOrder = MetaSortOrder.Asc,
+                TotalItems = 0,
+                TotalPages = 0,
+            },
+            ResponseType = FundingEventSummaryPagedV1ResponseType.Object,
+        };
+
+        FundingEventSummaryPagedV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class FundingEventSummaryPagedV1DataTest : TestBase
@@ -763,6 +815,38 @@ public class FundingEventSummaryPagedV1DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new FundingEventSummaryPagedV1Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Amount = 100000,
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Direction = FundingEventSummaryPagedV1DataDirection.Deposit,
+            EventType = FundingEventSummaryPagedV1DataEventType.ChargeDeposit,
+            PaymentCount = 0,
+            TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+            TraceNumbers = ["string"],
+            TransferDate = "2019-12-27",
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Status = FundingEventSummaryPagedV1DataStatus.Created,
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Bank account sucesfully validated",
+                Reason = FundingEventSummaryPagedV1DataStatusDetailsReason.InsufficientFunds,
+                Source = FundingEventSummaryPagedV1DataStatusDetailsSource.Watchtower,
+                Code = "code",
+            },
+            TraceNumber = "trace_number",
+        };
+
+        FundingEventSummaryPagedV1Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class FundingEventSummaryPagedV1DataDirectionTest : TestBase
@@ -1103,6 +1187,23 @@ public class FundingEventSummaryPagedV1DataStatusDetailsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new FundingEventSummaryPagedV1DataStatusDetails
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Bank account sucesfully validated",
+            Reason = FundingEventSummaryPagedV1DataStatusDetailsReason.InsufficientFunds,
+            Source = FundingEventSummaryPagedV1DataStatusDetailsSource.Watchtower,
+            Code = "code",
+        };
+
+        FundingEventSummaryPagedV1DataStatusDetails copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class FundingEventSummaryPagedV1DataStatusDetailsReasonTest : TestBase
@@ -1392,6 +1493,27 @@ public class MetaTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Meta
+        {
+            ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            MaxPageSize = 0,
+            PageNumber = 0,
+            PageSize = 0,
+            SortBy = "sort_by",
+            SortOrder = MetaSortOrder.Asc,
+            TotalItems = 0,
+            TotalPages = 0,
+        };
+
+        Meta copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

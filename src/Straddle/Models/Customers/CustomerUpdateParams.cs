@@ -706,10 +706,13 @@ public sealed record class CustomerUpdateParamsComplianceProfileIndividualCompli
 
     public CustomerUpdateParamsComplianceProfileIndividualComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUpdateParamsComplianceProfileIndividualComplianceProfile(
         CustomerUpdateParamsComplianceProfileIndividualComplianceProfile customerUpdateParamsComplianceProfileIndividualComplianceProfile
     )
         : base(customerUpdateParamsComplianceProfileIndividualComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerUpdateParamsComplianceProfileIndividualComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -834,10 +837,13 @@ public sealed record class CustomerUpdateParamsComplianceProfileBusinessComplian
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfile(
         CustomerUpdateParamsComplianceProfileBusinessComplianceProfile customerUpdateParamsComplianceProfileBusinessComplianceProfile
     )
         : base(customerUpdateParamsComplianceProfileBusinessComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -923,10 +929,13 @@ public sealed record class CustomerUpdateParamsComplianceProfileBusinessComplian
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative(
         CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative customerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative
     )
         : base(customerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative) { }
+#pragma warning restore CS8618
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative(
         IReadOnlyDictionary<string, JsonElement> rawData

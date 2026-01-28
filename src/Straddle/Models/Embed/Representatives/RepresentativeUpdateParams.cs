@@ -413,10 +413,13 @@ public sealed record class RepresentativeUpdateParamsRelationship : JsonModel
 
     public RepresentativeUpdateParamsRelationship() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public RepresentativeUpdateParamsRelationship(
         RepresentativeUpdateParamsRelationship representativeUpdateParamsRelationship
     )
         : base(representativeUpdateParamsRelationship) { }
+#pragma warning restore CS8618
 
     public RepresentativeUpdateParamsRelationship(IReadOnlyDictionary<string, JsonElement> rawData)
     {

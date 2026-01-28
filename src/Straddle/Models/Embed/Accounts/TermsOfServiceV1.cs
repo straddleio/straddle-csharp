@@ -90,8 +90,11 @@ public sealed record class TermsOfServiceV1 : JsonModel
 
     public TermsOfServiceV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public TermsOfServiceV1(TermsOfServiceV1 termsOfServiceV1)
         : base(termsOfServiceV1) { }
+#pragma warning restore CS8618
 
     public TermsOfServiceV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {

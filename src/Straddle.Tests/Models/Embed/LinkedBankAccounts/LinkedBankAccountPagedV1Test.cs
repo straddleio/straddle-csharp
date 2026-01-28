@@ -328,6 +328,60 @@ public class LinkedBankAccountPagedV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkedBankAccountPagedV1
+        {
+            Data =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    BankAccount = new()
+                    {
+                        AccountHolder = "account_holder",
+                        AccountMask = "account_mask",
+                        InstitutionName = "institution_name",
+                        RoutingNumber = "routing_number",
+                    },
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Purposes = [DataPurpose.Charges],
+                    Status = DataStatus.Created,
+                    StatusDetail = new()
+                    {
+                        Code = "code",
+                        Message = "message",
+                        Reason = Reason.Unverified,
+                        Source = Source.Watchtower,
+                    },
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Description = "description",
+                    Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                    PlatformID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                },
+            ],
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                MaxPageSize = 0,
+                PageNumber = 0,
+                PageSize = 0,
+                SortBy = "sort_by",
+                SortOrder = Models::SortOrder.Asc,
+                TotalItems = 0,
+                TotalPages = 0,
+            },
+            ResponseType = ResponseType.Object,
+        };
+
+        LinkedBankAccountPagedV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataTest : TestBase
@@ -698,6 +752,41 @@ public class DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            BankAccount = new()
+            {
+                AccountHolder = "account_holder",
+                AccountMask = "account_mask",
+                InstitutionName = "institution_name",
+                RoutingNumber = "routing_number",
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Purposes = [DataPurpose.Charges],
+            Status = DataStatus.Created,
+            StatusDetail = new()
+            {
+                Code = "code",
+                Message = "message",
+                Reason = Reason.Unverified,
+                Source = Source.Watchtower,
+            },
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Description = "description",
+            Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlatformID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+        };
+
+        Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataBankAccountTest : TestBase
@@ -785,6 +874,22 @@ public class DataBankAccountTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DataBankAccount
+        {
+            AccountHolder = "account_holder",
+            AccountMask = "account_mask",
+            InstitutionName = "institution_name",
+            RoutingNumber = "routing_number",
+        };
+
+        DataBankAccount copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -999,6 +1104,22 @@ public class StatusDetailTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new StatusDetail
+        {
+            Code = "code",
+            Message = "message",
+            Reason = Reason.Unverified,
+            Source = Source.Watchtower,
+        };
+
+        StatusDetail copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

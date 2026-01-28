@@ -59,8 +59,11 @@ public sealed record class IndustryV1 : JsonModel
 
     public IndustryV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public IndustryV1(IndustryV1 industryV1)
         : base(industryV1) { }
+#pragma warning restore CS8618
 
     public IndustryV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {

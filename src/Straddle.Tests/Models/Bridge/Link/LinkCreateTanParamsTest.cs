@@ -430,6 +430,20 @@ public class LinkCreateTanParamsConfigTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkCreateTanParamsConfig
+        {
+            ProcessingMethod = LinkCreateTanParamsConfigProcessingMethod.Inline,
+            SandboxOutcome = LinkCreateTanParamsConfigSandboxOutcome.Standard,
+        };
+
+        LinkCreateTanParamsConfig copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class LinkCreateTanParamsConfigProcessingMethodTest : TestBase

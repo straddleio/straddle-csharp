@@ -64,8 +64,11 @@ public sealed record class PayoutUnmaskResponse : JsonModel
 
     public PayoutUnmaskResponse() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PayoutUnmaskResponse(PayoutUnmaskResponse payoutUnmaskResponse)
         : base(payoutUnmaskResponse) { }
+#pragma warning restore CS8618
 
     public PayoutUnmaskResponse(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -462,8 +465,11 @@ public sealed record class PayoutUnmaskResponseData : JsonModel
 
     public PayoutUnmaskResponseData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PayoutUnmaskResponseData(PayoutUnmaskResponseData payoutUnmaskResponseData)
         : base(payoutUnmaskResponseData) { }
+#pragma warning restore CS8618
 
     public PayoutUnmaskResponseData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -534,10 +540,13 @@ public sealed record class PayoutUnmaskResponseDataConfig : JsonModel
 
     public PayoutUnmaskResponseDataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PayoutUnmaskResponseDataConfig(
         PayoutUnmaskResponseDataConfig payoutUnmaskResponseDataConfig
     )
         : base(payoutUnmaskResponseDataConfig) { }
+#pragma warning restore CS8618
 
     public PayoutUnmaskResponseDataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -685,8 +694,11 @@ public sealed record class Device : JsonModel
 
     public Device() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Device(Device device)
         : base(device) { }
+#pragma warning restore CS8618
 
     public Device(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -893,10 +905,13 @@ public sealed record class PayoutUnmaskResponseDataStatusHistory : JsonModel
 
     public PayoutUnmaskResponseDataStatusHistory() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PayoutUnmaskResponseDataStatusHistory(
         PayoutUnmaskResponseDataStatusHistory payoutUnmaskResponseDataStatusHistory
     )
         : base(payoutUnmaskResponseDataStatusHistory) { }
+#pragma warning restore CS8618
 
     public PayoutUnmaskResponseDataStatusHistory(IReadOnlyDictionary<string, JsonElement> rawData)
     {

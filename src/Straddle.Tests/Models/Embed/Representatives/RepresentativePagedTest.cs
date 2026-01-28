@@ -378,6 +378,68 @@ public class RepresentativePagedTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RepresentativePaged
+        {
+            Data =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Dob = "1980-01-01",
+                    Email = "ron.swanson@pawnee.com",
+                    FirstName = "Ron",
+                    LastName = "Swanson",
+                    MobileNumber = "+12128675309",
+                    Name = "name",
+                    Relationship = new()
+                    {
+                        Control = true,
+                        Owner = true,
+                        Primary = true,
+                        PercentOwnership = 0,
+                        Title = "title",
+                    },
+                    SsnLast4 = "1234",
+                    Status = RepresentativePagedDataStatus.Created,
+                    StatusDetail = new()
+                    {
+                        Code = "code",
+                        Message = "message",
+                        Reason = RepresentativePagedDataStatusDetailReason.Unverified,
+                        Source = RepresentativePagedDataStatusDetailSource.Watchtower,
+                    },
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    ExternalID = "external_id",
+                    Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                    Phone = "phone",
+                    UserID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                },
+            ],
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                MaxPageSize = 0,
+                PageNumber = 0,
+                PageSize = 0,
+                SortBy = "sort_by",
+                SortOrder = Models::SortOrder.Asc,
+                TotalItems = 0,
+                TotalPages = 0,
+            },
+            ResponseType = RepresentativePagedResponseType.Object,
+        };
+
+        RepresentativePaged copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class RepresentativePagedDataTest : TestBase
@@ -844,6 +906,49 @@ public class RepresentativePagedDataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RepresentativePagedData
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Dob = "1980-01-01",
+            Email = "ron.swanson@pawnee.com",
+            FirstName = "Ron",
+            LastName = "Swanson",
+            MobileNumber = "+12128675309",
+            Name = "name",
+            Relationship = new()
+            {
+                Control = true,
+                Owner = true,
+                Primary = true,
+                PercentOwnership = 0,
+                Title = "title",
+            },
+            SsnLast4 = "1234",
+            Status = RepresentativePagedDataStatus.Created,
+            StatusDetail = new()
+            {
+                Code = "code",
+                Message = "message",
+                Reason = RepresentativePagedDataStatusDetailReason.Unverified,
+                Source = RepresentativePagedDataStatusDetailSource.Watchtower,
+            },
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExternalID = "external_id",
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            Phone = "phone",
+            UserID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+        };
+
+        RepresentativePagedData copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class RepresentativePagedDataRelationshipTest : TestBase
@@ -1004,6 +1109,23 @@ public class RepresentativePagedDataRelationshipTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RepresentativePagedDataRelationship
+        {
+            Control = true,
+            Owner = true,
+            Primary = true,
+            PercentOwnership = 0,
+            Title = "title",
+        };
+
+        RepresentativePagedDataRelationship copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class RepresentativePagedDataStatusTest : TestBase
@@ -1157,6 +1279,22 @@ public class RepresentativePagedDataStatusDetailTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RepresentativePagedDataStatusDetail
+        {
+            Code = "code",
+            Message = "message",
+            Reason = RepresentativePagedDataStatusDetailReason.Unverified,
+            Source = RepresentativePagedDataStatusDetailSource.Watchtower,
+        };
+
+        RepresentativePagedDataStatusDetail copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

@@ -146,8 +146,11 @@ public sealed record class AddressV1 : JsonModel
 
     public AddressV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AddressV1(AddressV1 addressV1)
         : base(addressV1) { }
+#pragma warning restore CS8618
 
     public AddressV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {

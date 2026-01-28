@@ -172,6 +172,30 @@ public record class PaykeyListParams : ParamsBase
         }
     }
 
+    /// <summary>
+    /// Filter paykeys by unblock eligibility. When true, returns only blocked paykeys
+    /// eligible for client-initiated unblocking (blocked due to R29 returns and not
+    /// previously unblocked). When false, returns only blocked paykeys that are
+    /// not eligible for unblocking.
+    /// </summary>
+    public bool? UnblockEligible
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("unblock_eligible");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("unblock_eligible", value);
+        }
+    }
+
     public string? CorrelationID
     {
         get

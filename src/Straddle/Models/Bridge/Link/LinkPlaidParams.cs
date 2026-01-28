@@ -334,8 +334,11 @@ public sealed record class LinkPlaidParamsConfig : JsonModel
 
     public LinkPlaidParamsConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkPlaidParamsConfig(LinkPlaidParamsConfig linkPlaidParamsConfig)
         : base(linkPlaidParamsConfig) { }
+#pragma warning restore CS8618
 
     public LinkPlaidParamsConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {

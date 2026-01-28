@@ -160,4 +160,21 @@ public class CustomerAddressV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerAddressV1
+        {
+            Address1 = "123 Main St",
+            City = "Anytown",
+            State = "CA",
+            Zip = "12345",
+            Address2 = "Apt 1",
+        };
+
+        CustomerAddressV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }

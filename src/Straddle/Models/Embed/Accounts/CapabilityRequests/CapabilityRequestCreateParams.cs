@@ -349,8 +349,11 @@ public sealed record class Businesses : JsonModel
 
     public Businesses() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Businesses(Businesses businesses)
         : base(businesses) { }
+#pragma warning restore CS8618
 
     public Businesses(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -474,10 +477,13 @@ public sealed record class CapabilityRequestCreateParamsCharges : JsonModel
 
     public CapabilityRequestCreateParamsCharges() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CapabilityRequestCreateParamsCharges(
         CapabilityRequestCreateParamsCharges capabilityRequestCreateParamsCharges
     )
         : base(capabilityRequestCreateParamsCharges) { }
+#pragma warning restore CS8618
 
     public CapabilityRequestCreateParamsCharges(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -534,8 +540,11 @@ public sealed record class Individuals : JsonModel
 
     public Individuals() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Individuals(Individuals individuals)
         : base(individuals) { }
+#pragma warning restore CS8618
 
     public Individuals(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -595,8 +604,11 @@ public sealed record class Internet : JsonModel
 
     public Internet() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Internet(Internet internet)
         : base(internet) { }
+#pragma warning restore CS8618
 
     public Internet(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -720,10 +732,13 @@ public sealed record class CapabilityRequestCreateParamsPayouts : JsonModel
 
     public CapabilityRequestCreateParamsPayouts() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CapabilityRequestCreateParamsPayouts(
         CapabilityRequestCreateParamsPayouts capabilityRequestCreateParamsPayouts
     )
         : base(capabilityRequestCreateParamsPayouts) { }
+#pragma warning restore CS8618
 
     public CapabilityRequestCreateParamsPayouts(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -780,8 +795,11 @@ public sealed record class SignedAgreement : JsonModel
 
     public SignedAgreement() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public SignedAgreement(SignedAgreement signedAgreement)
         : base(signedAgreement) { }
+#pragma warning restore CS8618
 
     public SignedAgreement(IReadOnlyDictionary<string, JsonElement> rawData)
     {
