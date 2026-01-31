@@ -711,10 +711,10 @@ public record class ComplianceProfile : ModelBase
         this.Switch((individual) => individual.Validate(), (business) => business.Validate());
     }
 
-    public virtual bool Equals(ComplianceProfile? other)
-    {
-        return other != null && JsonElement.DeepEquals(this.Json, other.Json);
-    }
+    public virtual bool Equals(ComplianceProfile? other) =>
+        other != null
+        && this.VariantIndex() == other.VariantIndex()
+        && JsonElement.DeepEquals(this.Json, other.Json);
 
     public override int GetHashCode()
     {
@@ -723,6 +723,16 @@ public record class ComplianceProfile : ModelBase
 
     public override string ToString() =>
         JsonSerializer.Serialize(this._element, ModelBase.ToStringSerializerOptions);
+
+    int VariantIndex()
+    {
+        return this.Value switch
+        {
+            IndividualComplianceProfile _ => 0,
+            BusinessComplianceProfile _ => 1,
+            _ => -1,
+        };
+    }
 }
 
 sealed class ComplianceProfileConverter : JsonConverter<ComplianceProfile?>
