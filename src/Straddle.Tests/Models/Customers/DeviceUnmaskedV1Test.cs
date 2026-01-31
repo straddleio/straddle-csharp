@@ -54,4 +54,14 @@ public class DeviceUnmaskedV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DeviceUnmaskedV1 { IPAddress = "192.168.1.1" };
+
+        DeviceUnmaskedV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }

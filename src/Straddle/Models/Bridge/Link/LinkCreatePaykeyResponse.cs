@@ -63,8 +63,11 @@ public sealed record class LinkCreatePaykeyResponse : JsonModel
 
     public LinkCreatePaykeyResponse() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkCreatePaykeyResponse(LinkCreatePaykeyResponse linkCreatePaykeyResponse)
         : base(linkCreatePaykeyResponse) { }
+#pragma warning restore CS8618
 
     public LinkCreatePaykeyResponse(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -346,8 +349,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -428,8 +434,11 @@ public sealed record class DataConfig : JsonModel
 
     public DataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public DataConfig(DataConfig dataConfig)
         : base(dataConfig) { }
+#pragma warning restore CS8618
 
     public DataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -708,8 +717,11 @@ public sealed record class Balance : JsonModel
 
     public Balance() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Balance(Balance balance)
         : base(balance) { }
+#pragma warning restore CS8618
 
     public Balance(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -844,8 +856,11 @@ public sealed record class BankData : JsonModel
 
     public BankData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public BankData(BankData bankData)
         : base(bankData) { }
+#pragma warning restore CS8618
 
     public BankData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -992,8 +1007,11 @@ public sealed record class StatusDetails : JsonModel
 
     public StatusDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public StatusDetails(StatusDetails statusDetails)
         : base(statusDetails) { }
+#pragma warning restore CS8618
 
     public StatusDetails(IReadOnlyDictionary<string, JsonElement> rawData)
     {

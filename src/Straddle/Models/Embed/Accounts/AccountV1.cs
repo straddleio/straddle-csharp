@@ -63,8 +63,11 @@ public sealed record class AccountV1 : JsonModel
 
     public AccountV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountV1(AccountV1 accountV1)
         : base(accountV1) { }
+#pragma warning restore CS8618
 
     public AccountV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -327,8 +330,11 @@ public sealed record class AccountV1Data : JsonModel
 
     public AccountV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountV1Data(AccountV1Data accountV1Data)
         : base(accountV1Data) { }
+#pragma warning restore CS8618
 
     public AccountV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -534,8 +540,11 @@ public sealed record class AccountV1DataStatusDetail : JsonModel
 
     public AccountV1DataStatusDetail() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountV1DataStatusDetail(AccountV1DataStatusDetail accountV1DataStatusDetail)
         : base(accountV1DataStatusDetail) { }
+#pragma warning restore CS8618
 
     public AccountV1DataStatusDetail(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -777,8 +786,11 @@ public sealed record class AccountV1DataCapabilities : JsonModel
 
     public AccountV1DataCapabilities() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountV1DataCapabilities(AccountV1DataCapabilities accountV1DataCapabilities)
         : base(accountV1DataCapabilities) { }
+#pragma warning restore CS8618
 
     public AccountV1DataCapabilities(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -854,10 +866,13 @@ public sealed record class AccountV1DataCapabilitiesConsentTypes : JsonModel
 
     public AccountV1DataCapabilitiesConsentTypes() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountV1DataCapabilitiesConsentTypes(
         AccountV1DataCapabilitiesConsentTypes accountV1DataCapabilitiesConsentTypes
     )
         : base(accountV1DataCapabilitiesConsentTypes) { }
+#pragma warning restore CS8618
 
     public AccountV1DataCapabilitiesConsentTypes(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -927,10 +942,13 @@ public sealed record class AccountV1DataCapabilitiesCustomerTypes : JsonModel
 
     public AccountV1DataCapabilitiesCustomerTypes() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountV1DataCapabilitiesCustomerTypes(
         AccountV1DataCapabilitiesCustomerTypes accountV1DataCapabilitiesCustomerTypes
     )
         : base(accountV1DataCapabilitiesCustomerTypes) { }
+#pragma warning restore CS8618
 
     public AccountV1DataCapabilitiesCustomerTypes(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1000,10 +1018,13 @@ public sealed record class AccountV1DataCapabilitiesPaymentTypes : JsonModel
 
     public AccountV1DataCapabilitiesPaymentTypes() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountV1DataCapabilitiesPaymentTypes(
         AccountV1DataCapabilitiesPaymentTypes accountV1DataCapabilitiesPaymentTypes
     )
         : base(accountV1DataCapabilitiesPaymentTypes) { }
+#pragma warning restore CS8618
 
     public AccountV1DataCapabilitiesPaymentTypes(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1068,8 +1089,11 @@ public sealed record class AccountV1DataSettings : JsonModel
 
     public AccountV1DataSettings() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountV1DataSettings(AccountV1DataSettings accountV1DataSettings)
         : base(accountV1DataSettings) { }
+#pragma warning restore CS8618
 
     public AccountV1DataSettings(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1201,8 +1225,11 @@ public sealed record class AccountV1DataSettingsCharges : JsonModel
 
     public AccountV1DataSettingsCharges() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountV1DataSettingsCharges(AccountV1DataSettingsCharges accountV1DataSettingsCharges)
         : base(accountV1DataSettingsCharges) { }
+#pragma warning restore CS8618
 
     public AccountV1DataSettingsCharges(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1391,8 +1418,11 @@ public sealed record class AccountV1DataSettingsPayouts : JsonModel
 
     public AccountV1DataSettingsPayouts() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountV1DataSettingsPayouts(AccountV1DataSettingsPayouts accountV1DataSettingsPayouts)
         : base(accountV1DataSettingsPayouts) { }
+#pragma warning restore CS8618
 
     public AccountV1DataSettingsPayouts(IReadOnlyDictionary<string, JsonElement> rawData)
     {

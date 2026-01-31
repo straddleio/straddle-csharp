@@ -267,6 +267,16 @@ public class BusinessesTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Businesses { Enable = true };
+
+        Businesses copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CapabilityRequestCreateParamsChargesTest : TestBase
@@ -363,6 +373,23 @@ public class CapabilityRequestCreateParamsChargesTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CapabilityRequestCreateParamsCharges
+        {
+            DailyAmount = 0,
+            Enable = true,
+            MaxAmount = 0,
+            MonthlyAmount = 0,
+            MonthlyCount = 0,
+        };
+
+        CapabilityRequestCreateParamsCharges copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class IndividualsTest : TestBase
@@ -415,6 +442,16 @@ public class IndividualsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Individuals { Enable = true };
+
+        Individuals copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class InternetTest : TestBase
@@ -463,6 +500,16 @@ public class InternetTest : TestBase
         var model = new Internet { Enable = true };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Internet { Enable = true };
+
+        Internet copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -560,6 +607,23 @@ public class CapabilityRequestCreateParamsPayoutsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CapabilityRequestCreateParamsPayouts
+        {
+            DailyAmount = 0,
+            Enable = true,
+            MaxAmount = 0,
+            MonthlyAmount = 0,
+            MonthlyCount = 0,
+        };
+
+        CapabilityRequestCreateParamsPayouts copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class SignedAgreementTest : TestBase
@@ -611,5 +675,15 @@ public class SignedAgreementTest : TestBase
         var model = new SignedAgreement { Enable = true };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new SignedAgreement { Enable = true };
+
+        SignedAgreement copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }

@@ -65,8 +65,11 @@ public sealed record class LinkedBankAccountUnmaskV1 : JsonModel
 
     public LinkedBankAccountUnmaskV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountUnmaskV1(LinkedBankAccountUnmaskV1 linkedBankAccountUnmaskV1)
         : base(linkedBankAccountUnmaskV1) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountUnmaskV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -231,10 +234,13 @@ public sealed record class LinkedBankAccountUnmaskV1Data : JsonModel
 
     public LinkedBankAccountUnmaskV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountUnmaskV1Data(
         LinkedBankAccountUnmaskV1Data linkedBankAccountUnmaskV1Data
     )
         : base(linkedBankAccountUnmaskV1Data) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountUnmaskV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -328,10 +334,13 @@ public sealed record class LinkedBankAccountUnmaskV1DataBankAccount : JsonModel
 
     public LinkedBankAccountUnmaskV1DataBankAccount() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountUnmaskV1DataBankAccount(
         LinkedBankAccountUnmaskV1DataBankAccount linkedBankAccountUnmaskV1DataBankAccount
     )
         : base(linkedBankAccountUnmaskV1DataBankAccount) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountUnmaskV1DataBankAccount(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -505,10 +514,13 @@ public sealed record class LinkedBankAccountUnmaskV1DataStatusDetail : JsonModel
 
     public LinkedBankAccountUnmaskV1DataStatusDetail() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountUnmaskV1DataStatusDetail(
         LinkedBankAccountUnmaskV1DataStatusDetail linkedBankAccountUnmaskV1DataStatusDetail
     )
         : base(linkedBankAccountUnmaskV1DataStatusDetail) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountUnmaskV1DataStatusDetail(
         IReadOnlyDictionary<string, JsonElement> rawData

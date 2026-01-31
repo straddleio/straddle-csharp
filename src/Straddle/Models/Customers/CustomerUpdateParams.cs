@@ -585,10 +585,10 @@ public record class CustomerUpdateParamsComplianceProfile : ModelBase
         this.Switch((individual) => individual.Validate(), (business) => business.Validate());
     }
 
-    public virtual bool Equals(CustomerUpdateParamsComplianceProfile? other)
-    {
-        return other != null && JsonElement.DeepEquals(this.Json, other.Json);
-    }
+    public virtual bool Equals(CustomerUpdateParamsComplianceProfile? other) =>
+        other != null
+        && this.VariantIndex() == other.VariantIndex()
+        && JsonElement.DeepEquals(this.Json, other.Json);
 
     public override int GetHashCode()
     {
@@ -597,6 +597,16 @@ public record class CustomerUpdateParamsComplianceProfile : ModelBase
 
     public override string ToString() =>
         JsonSerializer.Serialize(this._element, ModelBase.ToStringSerializerOptions);
+
+    int VariantIndex()
+    {
+        return this.Value switch
+        {
+            CustomerUpdateParamsComplianceProfileIndividualComplianceProfile _ => 0,
+            CustomerUpdateParamsComplianceProfileBusinessComplianceProfile _ => 1,
+            _ => -1,
+        };
+    }
 }
 
 sealed class CustomerUpdateParamsComplianceProfileConverter
@@ -706,10 +716,13 @@ public sealed record class CustomerUpdateParamsComplianceProfileIndividualCompli
 
     public CustomerUpdateParamsComplianceProfileIndividualComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUpdateParamsComplianceProfileIndividualComplianceProfile(
         CustomerUpdateParamsComplianceProfileIndividualComplianceProfile customerUpdateParamsComplianceProfileIndividualComplianceProfile
     )
         : base(customerUpdateParamsComplianceProfileIndividualComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerUpdateParamsComplianceProfileIndividualComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -834,10 +847,13 @@ public sealed record class CustomerUpdateParamsComplianceProfileBusinessComplian
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfile(
         CustomerUpdateParamsComplianceProfileBusinessComplianceProfile customerUpdateParamsComplianceProfileBusinessComplianceProfile
     )
         : base(customerUpdateParamsComplianceProfileBusinessComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -923,10 +939,13 @@ public sealed record class CustomerUpdateParamsComplianceProfileBusinessComplian
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative(
         CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative customerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative
     )
         : base(customerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative) { }
+#pragma warning restore CS8618
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative(
         IReadOnlyDictionary<string, JsonElement> rawData

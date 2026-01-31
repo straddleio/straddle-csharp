@@ -291,10 +291,13 @@ public sealed record class LinkedBankAccountUpdateParamsBankAccount : JsonModel
 
     public LinkedBankAccountUpdateParamsBankAccount() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountUpdateParamsBankAccount(
         LinkedBankAccountUpdateParamsBankAccount linkedBankAccountUpdateParamsBankAccount
     )
         : base(linkedBankAccountUpdateParamsBankAccount) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountUpdateParamsBankAccount(
         IReadOnlyDictionary<string, JsonElement> rawData

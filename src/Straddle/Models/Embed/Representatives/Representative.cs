@@ -61,8 +61,11 @@ public sealed record class Representative : JsonModel
 
     public Representative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Representative(Representative representative)
         : base(representative) { }
+#pragma warning restore CS8618
 
     public Representative(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -350,8 +353,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -467,8 +473,11 @@ public sealed record class DataRelationship : JsonModel
 
     public DataRelationship() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public DataRelationship(DataRelationship dataRelationship)
         : base(dataRelationship) { }
+#pragma warning restore CS8618
 
     public DataRelationship(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -618,8 +627,11 @@ public sealed record class StatusDetail : JsonModel
 
     public StatusDetail() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public StatusDetail(StatusDetail statusDetail)
         : base(statusDetail) { }
+#pragma warning restore CS8618
 
     public StatusDetail(IReadOnlyDictionary<string, JsonElement> rawData)
     {

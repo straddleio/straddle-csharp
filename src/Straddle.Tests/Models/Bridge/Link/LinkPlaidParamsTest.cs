@@ -353,6 +353,20 @@ public class LinkPlaidParamsConfigTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkPlaidParamsConfig
+        {
+            ProcessingMethod = LinkPlaidParamsConfigProcessingMethod.Inline,
+            SandboxOutcome = LinkPlaidParamsConfigSandboxOutcome.Standard,
+        };
+
+        LinkPlaidParamsConfig copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class LinkPlaidParamsConfigProcessingMethodTest : TestBase

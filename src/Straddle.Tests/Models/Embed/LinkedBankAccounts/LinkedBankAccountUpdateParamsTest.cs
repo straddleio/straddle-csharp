@@ -300,4 +300,19 @@ public class LinkedBankAccountUpdateParamsBankAccountTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkedBankAccountUpdateParamsBankAccount
+        {
+            AccountHolder = "account_holder",
+            AccountNumber = "account_number",
+            RoutingNumber = "xxxxxxxxx",
+        };
+
+        LinkedBankAccountUpdateParamsBankAccount copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }

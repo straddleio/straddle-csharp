@@ -32,8 +32,11 @@ public sealed record class CapabilityV1 : JsonModel
 
     public CapabilityV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CapabilityV1(CapabilityV1 capabilityV1)
         : base(capabilityV1) { }
+#pragma warning restore CS8618
 
     public CapabilityV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {

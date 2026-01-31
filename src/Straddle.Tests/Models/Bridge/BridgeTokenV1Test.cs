@@ -109,6 +109,25 @@ public class BridgeTokenV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new BridgeTokenV1
+        {
+            Data = new("bridge_token"),
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = ResponseType.Object,
+        };
+
+        BridgeTokenV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataTest : TestBase
@@ -154,6 +173,16 @@ public class DataTest : TestBase
         var model = new Data { BridgeToken = "bridge_token" };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Data { BridgeToken = "bridge_token" };
+
+        Data copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

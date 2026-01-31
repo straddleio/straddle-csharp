@@ -213,4 +213,25 @@ public class AddressV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AddressV1
+        {
+            Address1 = "address1",
+            City = "city",
+            State = "SE",
+            Zip = "zip",
+            Address2 = "address2",
+            Country = "country",
+            Line1 = "line1",
+            Line2 = "line2",
+            PostalCode = "21029-1360",
+        };
+
+        AddressV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }

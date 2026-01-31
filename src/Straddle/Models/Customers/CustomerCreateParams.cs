@@ -574,10 +574,10 @@ public record class ComplianceProfile : ModelBase
         this.Switch((individual) => individual.Validate(), (business) => business.Validate());
     }
 
-    public virtual bool Equals(ComplianceProfile? other)
-    {
-        return other != null && JsonElement.DeepEquals(this.Json, other.Json);
-    }
+    public virtual bool Equals(ComplianceProfile? other) =>
+        other != null
+        && this.VariantIndex() == other.VariantIndex()
+        && JsonElement.DeepEquals(this.Json, other.Json);
 
     public override int GetHashCode()
     {
@@ -586,6 +586,16 @@ public record class ComplianceProfile : ModelBase
 
     public override string ToString() =>
         JsonSerializer.Serialize(this._element, ModelBase.ToStringSerializerOptions);
+
+    int VariantIndex()
+    {
+        return this.Value switch
+        {
+            IndividualComplianceProfile _ => 0,
+            BusinessComplianceProfile _ => 1,
+            _ => -1,
+        };
+    }
 }
 
 sealed class ComplianceProfileConverter : JsonConverter<ComplianceProfile?>
@@ -688,8 +698,11 @@ public sealed record class IndividualComplianceProfile : JsonModel
 
     public IndividualComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public IndividualComplianceProfile(IndividualComplianceProfile individualComplianceProfile)
         : base(individualComplianceProfile) { }
+#pragma warning restore CS8618
 
     public IndividualComplianceProfile(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -805,8 +818,11 @@ public sealed record class BusinessComplianceProfile : JsonModel
 
     public BusinessComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public BusinessComplianceProfile(BusinessComplianceProfile businessComplianceProfile)
         : base(businessComplianceProfile) { }
+#pragma warning restore CS8618
 
     public BusinessComplianceProfile(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -881,8 +897,11 @@ public sealed record class Representative : JsonModel
 
     public Representative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Representative(Representative representative)
         : base(representative) { }
+#pragma warning restore CS8618
 
     public Representative(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -970,8 +989,11 @@ public sealed record class Config : JsonModel
 
     public Config() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Config(Config config)
         : base(config) { }
+#pragma warning restore CS8618
 
     public Config(IReadOnlyDictionary<string, JsonElement> rawData)
     {

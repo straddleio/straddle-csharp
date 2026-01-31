@@ -54,6 +54,7 @@ public class PaykeyV1Test : TestBase
                     Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             Meta = new()
             {
@@ -102,6 +103,7 @@ public class PaykeyV1Test : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
         ResponseMetadata expectedMeta = new()
         {
@@ -159,6 +161,7 @@ public class PaykeyV1Test : TestBase
                     Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             Meta = new()
             {
@@ -218,6 +221,7 @@ public class PaykeyV1Test : TestBase
                     Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             Meta = new()
             {
@@ -273,6 +277,7 @@ public class PaykeyV1Test : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
         ResponseMetadata expectedMeta = new()
         {
@@ -330,6 +335,7 @@ public class PaykeyV1Test : TestBase
                     Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                     Code = "code",
                 },
+                UnblockEligible = true,
             },
             Meta = new()
             {
@@ -340,6 +346,65 @@ public class PaykeyV1Test : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyV1
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Config = new()
+                {
+                    ProcessingMethod = PaykeyV1DataConfigProcessingMethod.Inline,
+                    SandboxOutcome = PaykeyV1DataConfigSandboxOutcome.Standard,
+                },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Label = "label",
+                Paykey = "paykey",
+                Source = PaykeyV1DataSource.BankAccount,
+                Status = PaykeyV1DataStatus.Pending,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Balance = new()
+                {
+                    Status = PaykeyV1DataBalanceStatus.Pending,
+                    AccountBalance = 0,
+                    UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+                BankData = new()
+                {
+                    AccountNumber = "****1234",
+                    AccountType = PaykeyV1DataBankDataAccountType.Checking,
+                    RoutingNumber = "021000021",
+                },
+                CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ExternalID = "external_id",
+                InstitutionName = "Bank of America",
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                StatusDetails = new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Bank account sucesfully validated",
+                    Reason = PaykeyV1DataStatusDetailsReason.InsufficientFunds,
+                    Source = PaykeyV1DataStatusDetailsSource.Watchtower,
+                    Code = "code",
+                },
+                UnblockEligible = true,
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = PaykeyV1ResponseType.Object,
+        };
+
+        PaykeyV1 copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -387,6 +452,7 @@ public class PaykeyV1DataTest : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
@@ -426,6 +492,7 @@ public class PaykeyV1DataTest : TestBase
             Source = PaykeyV1DataStatusDetailsSource.Watchtower,
             Code = "code",
         };
+        bool expectedUnblockEligible = true;
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedConfig, model.Config);
@@ -450,6 +517,7 @@ public class PaykeyV1DataTest : TestBase
             Assert.Equal(value, model.Metadata[item.Key]);
         }
         Assert.Equal(expectedStatusDetails, model.StatusDetails);
+        Assert.Equal(expectedUnblockEligible, model.UnblockEligible);
     }
 
     [Fact]
@@ -494,6 +562,7 @@ public class PaykeyV1DataTest : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -547,6 +616,7 @@ public class PaykeyV1DataTest : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -593,6 +663,7 @@ public class PaykeyV1DataTest : TestBase
             Source = PaykeyV1DataStatusDetailsSource.Watchtower,
             Code = "code",
         };
+        bool expectedUnblockEligible = true;
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedConfig, deserialized.Config);
@@ -617,6 +688,7 @@ public class PaykeyV1DataTest : TestBase
             Assert.Equal(value, deserialized.Metadata[item.Key]);
         }
         Assert.Equal(expectedStatusDetails, deserialized.StatusDetails);
+        Assert.Equal(expectedUnblockEligible, deserialized.UnblockEligible);
     }
 
     [Fact]
@@ -661,6 +733,7 @@ public class PaykeyV1DataTest : TestBase
                 Source = PaykeyV1DataStatusDetailsSource.Watchtower,
                 Code = "code",
             },
+            UnblockEligible = true,
         };
 
         model.Validate();
@@ -688,6 +761,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
         };
 
         Assert.Null(model.Balance);
@@ -720,6 +794,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
         };
 
         model.Validate();
@@ -747,6 +822,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
 
             // Null should be interpreted as omitted for these properties
             Balance = null,
@@ -784,6 +860,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = "external_id",
             InstitutionName = "Bank of America",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            UnblockEligible = true,
 
             // Null should be interpreted as omitted for these properties
             Balance = null,
@@ -843,6 +920,8 @@ public class PaykeyV1DataTest : TestBase
         Assert.False(model.RawData.ContainsKey("institution_name"));
         Assert.Null(model.Metadata);
         Assert.False(model.RawData.ContainsKey("metadata"));
+        Assert.Null(model.UnblockEligible);
+        Assert.False(model.RawData.ContainsKey("unblock_eligible"));
     }
 
     [Fact]
@@ -930,6 +1009,7 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = null,
             InstitutionName = null,
             Metadata = null,
+            UnblockEligible = null,
         };
 
         Assert.Null(model.CustomerID);
@@ -942,6 +1022,8 @@ public class PaykeyV1DataTest : TestBase
         Assert.True(model.RawData.ContainsKey("institution_name"));
         Assert.Null(model.Metadata);
         Assert.True(model.RawData.ContainsKey("metadata"));
+        Assert.Null(model.UnblockEligible);
+        Assert.True(model.RawData.ContainsKey("unblock_eligible"));
     }
 
     [Fact]
@@ -987,9 +1069,60 @@ public class PaykeyV1DataTest : TestBase
             ExternalID = null,
             InstitutionName = null,
             Metadata = null,
+            UnblockEligible = null,
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyV1Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Config = new()
+            {
+                ProcessingMethod = PaykeyV1DataConfigProcessingMethod.Inline,
+                SandboxOutcome = PaykeyV1DataConfigSandboxOutcome.Standard,
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Label = "label",
+            Paykey = "paykey",
+            Source = PaykeyV1DataSource.BankAccount,
+            Status = PaykeyV1DataStatus.Pending,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Balance = new()
+            {
+                Status = PaykeyV1DataBalanceStatus.Pending,
+                AccountBalance = 0,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            BankData = new()
+            {
+                AccountNumber = "****1234",
+                AccountType = PaykeyV1DataBankDataAccountType.Checking,
+                RoutingNumber = "021000021",
+            },
+            CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            ExpiresAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExternalID = "external_id",
+            InstitutionName = "Bank of America",
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Bank account sucesfully validated",
+                Reason = PaykeyV1DataStatusDetailsReason.InsufficientFunds,
+                Source = PaykeyV1DataStatusDetailsSource.Watchtower,
+                Code = "code",
+            },
+            UnblockEligible = true,
+        };
+
+        PaykeyV1Data copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1114,6 +1247,20 @@ public class PaykeyV1DataConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyV1DataConfig
+        {
+            ProcessingMethod = PaykeyV1DataConfigProcessingMethod.Inline,
+            SandboxOutcome = PaykeyV1DataConfigSandboxOutcome.Standard,
+        };
+
+        PaykeyV1DataConfig copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1497,6 +1644,21 @@ public class PaykeyV1DataBalanceTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyV1DataBalance
+        {
+            Status = PaykeyV1DataBalanceStatus.Pending,
+            AccountBalance = 0,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        PaykeyV1DataBalance copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PaykeyV1DataBalanceStatusTest : TestBase
@@ -1638,6 +1800,21 @@ public class PaykeyV1DataBankDataTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyV1DataBankData
+        {
+            AccountNumber = "****1234",
+            AccountType = PaykeyV1DataBankDataAccountType.Checking,
+            RoutingNumber = "021000021",
+        };
+
+        PaykeyV1DataBankData copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1856,6 +2033,23 @@ public class PaykeyV1DataStatusDetailsTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PaykeyV1DataStatusDetails
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Bank account sucesfully validated",
+            Reason = PaykeyV1DataStatusDetailsReason.InsufficientFunds,
+            Source = PaykeyV1DataStatusDetailsSource.Watchtower,
+            Code = "code",
+        };
+
+        PaykeyV1DataStatusDetails copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
