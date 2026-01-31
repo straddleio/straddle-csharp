@@ -661,10 +661,10 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
         this.Switch((individual) => individual.Validate(), (business) => business.Validate());
     }
 
-    public virtual bool Equals(CustomerUnmaskedV1DataComplianceProfile? other)
-    {
-        return other != null && JsonElement.DeepEquals(this.Json, other.Json);
-    }
+    public virtual bool Equals(CustomerUnmaskedV1DataComplianceProfile? other) =>
+        other != null
+        && this.VariantIndex() == other.VariantIndex()
+        && JsonElement.DeepEquals(this.Json, other.Json);
 
     public override int GetHashCode()
     {
@@ -673,6 +673,16 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
 
     public override string ToString() =>
         JsonSerializer.Serialize(this._element, ModelBase.ToStringSerializerOptions);
+
+    int VariantIndex()
+    {
+        return this.Value switch
+        {
+            CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile _ => 0,
+            CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile _ => 1,
+            _ => -1,
+        };
+    }
 }
 
 sealed class CustomerUnmaskedV1DataComplianceProfileConverter
