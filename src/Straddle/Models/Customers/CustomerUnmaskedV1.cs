@@ -672,7 +672,10 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
     }
 
     public override string ToString() =>
-        JsonSerializer.Serialize(this._element, ModelBase.ToStringSerializerOptions);
+        JsonSerializer.Serialize(
+            FriendlyJsonPrinter.PrintValue(this.Json),
+            ModelBase.ToStringSerializerOptions
+        );
 
     int VariantIndex()
     {
