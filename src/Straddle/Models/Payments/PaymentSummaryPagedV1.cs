@@ -351,6 +351,25 @@ public sealed record class Data : JsonModel
     }
 
     /// <summary>
+    /// Metadata for payment - only included if requested.
+    /// </summary>
+    public IReadOnlyDictionary<string, string>? Metadata
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<FrozenDictionary<string, string>>("metadata");
+        }
+        init
+        {
+            this._rawData.Set<FrozenDictionary<string, string>?>(
+                "metadata",
+                value == null ? null : FrozenDictionary.ToFrozenDictionary(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Information about the paykey used for the `charge` or `payout`.
     /// </summary>
     public PaykeyDetailsV1? PaykeyDetails
@@ -391,6 +410,7 @@ public sealed record class Data : JsonModel
         this.CustomerDetails?.Validate();
         _ = this.EffectiveAt;
         _ = this.FundingID;
+        _ = this.Metadata;
         this.PaykeyDetails?.Validate();
     }
 
