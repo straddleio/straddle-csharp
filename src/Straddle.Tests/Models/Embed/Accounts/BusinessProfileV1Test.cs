@@ -15,15 +15,12 @@ public class BusinessProfileV1Test : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             Industry = new()
@@ -48,15 +45,12 @@ public class BusinessProfileV1Test : TestBase
         string expectedWebsite = "https://example.com";
         AddressV1 expectedAddress = new()
         {
-            Address1 = "address1",
             City = "city",
-            State = "SE",
-            Zip = "zip",
-            Address2 = "address2",
-            Country = "country",
             Line1 = "line1",
-            Line2 = "line2",
             PostalCode = "21029-1360",
+            State = "SE",
+            Country = "country",
+            Line2 = "line2",
         };
         string expectedDescription = "description";
         IndustryV1 expectedIndustry = new()
@@ -97,15 +91,12 @@ public class BusinessProfileV1Test : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             Industry = new()
@@ -144,15 +135,12 @@ public class BusinessProfileV1Test : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             Industry = new()
@@ -184,15 +172,12 @@ public class BusinessProfileV1Test : TestBase
         string expectedWebsite = "https://example.com";
         AddressV1 expectedAddress = new()
         {
-            Address1 = "address1",
             City = "city",
-            State = "SE",
-            Zip = "zip",
-            Address2 = "address2",
-            Country = "country",
             Line1 = "line1",
-            Line2 = "line2",
             PostalCode = "21029-1360",
+            State = "SE",
+            Country = "country",
+            Line2 = "line2",
         };
         string expectedDescription = "description";
         IndustryV1 expectedIndustry = new()
@@ -233,15 +218,12 @@ public class BusinessProfileV1Test : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             Industry = new()
@@ -274,15 +256,12 @@ public class BusinessProfileV1Test : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             LegalName = "legal_name",
@@ -306,15 +285,12 @@ public class BusinessProfileV1Test : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             LegalName = "legal_name",
@@ -335,15 +311,12 @@ public class BusinessProfileV1Test : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             LegalName = "legal_name",
@@ -371,15 +344,12 @@ public class BusinessProfileV1Test : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             LegalName = "legal_name",
@@ -536,15 +506,12 @@ public class BusinessProfileV1Test : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             Industry = new()

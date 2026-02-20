@@ -146,27 +146,6 @@ public record class PaymentListParams : ParamsBase
     }
 
     /// <summary>
-    /// Include the metadata for payments in the returned data.
-    /// </summary>
-    public bool? IncludeMetadata
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableStruct<bool>("include_metadata");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawQueryData.Set("include_metadata", value);
-        }
-    }
-
-    /// <summary>
     /// Search using a maximum `amount` of a `charge` or `payout`.
     /// </summary>
     public int? MaxAmount
