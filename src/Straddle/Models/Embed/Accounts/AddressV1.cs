@@ -14,19 +14,6 @@ namespace Straddle.Models.Embed.Accounts;
 public sealed record class AddressV1 : JsonModel
 {
     /// <summary>
-    /// Primary address line (e.g., street, PO Box).
-    /// </summary>
-    public required string Address1
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("address1");
-        }
-        init { this._rawData.Set("address1", value); }
-    }
-
-    /// <summary>
     /// City, district, suburb, town, or village.
     /// </summary>
     public required string? City
@@ -37,6 +24,32 @@ public sealed record class AddressV1 : JsonModel
             return this._rawData.GetNullableClass<string>("city");
         }
         init { this._rawData.Set("city", value); }
+    }
+
+    /// <summary>
+    /// Primary address line (e.g., street, PO Box).
+    /// </summary>
+    public required string? Line1
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("line1");
+        }
+        init { this._rawData.Set("line1", value); }
+    }
+
+    /// <summary>
+    /// Postal or ZIP code.
+    /// </summary>
+    public required string? PostalCode
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("postal_code");
+        }
+        init { this._rawData.Set("postal_code", value); }
     }
 
     /// <summary>
@@ -53,32 +66,6 @@ public sealed record class AddressV1 : JsonModel
     }
 
     /// <summary>
-    /// Zip or postal code.
-    /// </summary>
-    public required string Zip
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("zip");
-        }
-        init { this._rawData.Set("zip", value); }
-    }
-
-    /// <summary>
-    /// Secondary address line (e.g., apartment, suite, unit, or building).
-    /// </summary>
-    public string? Address2
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("address2");
-        }
-        init { this._rawData.Set("address2", value); }
-    }
-
-    /// <summary>
     /// The country of the address, in ISO 3166-1 alpha-2 format.
     /// </summary>
     public string? Country
@@ -89,19 +76,6 @@ public sealed record class AddressV1 : JsonModel
             return this._rawData.GetNullableClass<string>("country");
         }
         init { this._rawData.Set("country", value); }
-    }
-
-    /// <summary>
-    /// Primary address line (e.g., street, PO Box).
-    /// </summary>
-    public string? Line1
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("line1");
-        }
-        init { this._rawData.Set("line1", value); }
     }
 
     /// <summary>
@@ -117,31 +91,15 @@ public sealed record class AddressV1 : JsonModel
         init { this._rawData.Set("line2", value); }
     }
 
-    /// <summary>
-    /// Postal or ZIP code.
-    /// </summary>
-    public string? PostalCode
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("postal_code");
-        }
-        init { this._rawData.Set("postal_code", value); }
-    }
-
     /// <inheritdoc/>
     public override void Validate()
     {
-        _ = this.Address1;
         _ = this.City;
-        _ = this.State;
-        _ = this.Zip;
-        _ = this.Address2;
-        _ = this.Country;
         _ = this.Line1;
-        _ = this.Line2;
         _ = this.PostalCode;
+        _ = this.State;
+        _ = this.Country;
+        _ = this.Line2;
     }
 
     public AddressV1() { }
