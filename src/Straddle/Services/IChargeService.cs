@@ -7,9 +7,15 @@ using Straddle.Models.Charges;
 namespace Straddle.Services;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Charges represent attempts to debit money from a customer's bank account using
+/// a Paykey. Each charge includes automatic balance verification, real-time fraud
+/// screening, and multi-rail optimization and detailed status tracking throughout
+/// the payment lifecycle. Use charges to accept bank payments with confidence knowing
+/// every transaction is protected.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IChargeService
 {

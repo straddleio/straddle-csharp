@@ -8,9 +8,15 @@ using Straddle.Models.Paykeys.Review;
 namespace Straddle.Services.Paykeys;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Paykeys are secure tokens that link verified customer identities to their bank
+/// accounts. Each Paykey includes built-in balance checking, fraud detection through
+/// LSTM machine learning models, and can be reused for subscriptions and recurring
+/// payments without storing sensitive data. Paykeys eliminate fraud by ensuring
+/// the person initiating payment owns the funding account.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IReviewService
 {

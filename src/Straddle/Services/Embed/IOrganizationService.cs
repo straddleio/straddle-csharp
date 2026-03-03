@@ -7,9 +7,14 @@ using Straddle.Models.Embed.Organizations;
 namespace Straddle.Services.Embed;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Organizations are a powerful feature in Straddle that allow you to manage multiple
+/// accounts under a single umbrella. This hierarchical structure is particularly
+/// useful for businesses with complex operations, multiple departments, or legally
+/// related entities.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IOrganizationService
 {
