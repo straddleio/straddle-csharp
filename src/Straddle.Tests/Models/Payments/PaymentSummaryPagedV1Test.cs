@@ -50,7 +50,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     },
                     EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                     PaykeyDetails = new()
                     {
                         ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -110,7 +109,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                 },
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
                 {
                     ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -183,7 +181,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     },
                     EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                     PaykeyDetails = new()
                     {
                         ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -257,7 +254,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     },
                     EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                     PaykeyDetails = new()
                     {
                         ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -324,7 +320,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                 },
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
                 {
                     ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -397,7 +392,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     },
                     EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                     PaykeyDetails = new()
                     {
                         ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -465,7 +459,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     },
                     EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                     PaykeyDetails = new()
                     {
                         ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -534,7 +527,6 @@ public class DataTest : TestBase
             },
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -575,7 +567,6 @@ public class DataTest : TestBase
         };
         DateTimeOffset expectedEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedFundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        Dictionary<string, string> expectedMetadata = new() { { "foo", "string" } };
         PaykeyDetailsV1 expectedPaykeyDetails = new()
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -611,14 +602,6 @@ public class DataTest : TestBase
         Assert.Equal(expectedCustomerDetails, model.CustomerDetails);
         Assert.Equal(expectedEffectiveAt, model.EffectiveAt);
         Assert.Equal(expectedFundingID, model.FundingID);
-        Assert.NotNull(model.Metadata);
-        Assert.Equal(expectedMetadata.Count, model.Metadata.Count);
-        foreach (var item in expectedMetadata)
-        {
-            Assert.True(model.Metadata.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, model.Metadata[item.Key]);
-        }
         Assert.Equal(expectedPaykeyDetails, model.PaykeyDetails);
     }
 
@@ -658,7 +641,6 @@ public class DataTest : TestBase
             },
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -710,7 +692,6 @@ public class DataTest : TestBase
             },
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -755,7 +736,6 @@ public class DataTest : TestBase
         };
         DateTimeOffset expectedEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedFundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        Dictionary<string, string> expectedMetadata = new() { { "foo", "string" } };
         PaykeyDetailsV1 expectedPaykeyDetails = new()
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -791,14 +771,6 @@ public class DataTest : TestBase
         Assert.Equal(expectedCustomerDetails, deserialized.CustomerDetails);
         Assert.Equal(expectedEffectiveAt, deserialized.EffectiveAt);
         Assert.Equal(expectedFundingID, deserialized.FundingID);
-        Assert.NotNull(deserialized.Metadata);
-        Assert.Equal(expectedMetadata.Count, deserialized.Metadata.Count);
-        foreach (var item in expectedMetadata)
-        {
-            Assert.True(deserialized.Metadata.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, deserialized.Metadata[item.Key]);
-        }
         Assert.Equal(expectedPaykeyDetails, deserialized.PaykeyDetails);
     }
 
@@ -838,7 +810,6 @@ public class DataTest : TestBase
             },
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
@@ -879,7 +850,6 @@ public class DataTest : TestBase
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
         };
 
         Assert.Null(model.CustomerDetails);
@@ -916,7 +886,6 @@ public class DataTest : TestBase
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
         };
 
         model.Validate();
@@ -950,7 +919,6 @@ public class DataTest : TestBase
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
 
             // Null should be interpreted as omitted for these properties
             CustomerDetails = null,
@@ -991,7 +959,6 @@ public class DataTest : TestBase
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
 
             // Null should be interpreted as omitted for these properties
             CustomerDetails = null,
@@ -1048,8 +1015,6 @@ public class DataTest : TestBase
         Assert.False(model.RawData.ContainsKey("effective_at"));
         Assert.Null(model.FundingID);
         Assert.False(model.RawData.ContainsKey("funding_id"));
-        Assert.Null(model.Metadata);
-        Assert.False(model.RawData.ContainsKey("metadata"));
     }
 
     [Fact]
@@ -1142,15 +1107,12 @@ public class DataTest : TestBase
 
             EffectiveAt = null,
             FundingID = null,
-            Metadata = null,
         };
 
         Assert.Null(model.EffectiveAt);
         Assert.True(model.RawData.ContainsKey("effective_at"));
         Assert.Null(model.FundingID);
         Assert.True(model.RawData.ContainsKey("funding_id"));
-        Assert.Null(model.Metadata);
-        Assert.True(model.RawData.ContainsKey("metadata"));
     }
 
     [Fact]
@@ -1197,7 +1159,6 @@ public class DataTest : TestBase
 
             EffectiveAt = null,
             FundingID = null,
-            Metadata = null,
         };
 
         model.Validate();
@@ -1239,7 +1200,6 @@ public class DataTest : TestBase
             },
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
