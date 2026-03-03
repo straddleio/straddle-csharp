@@ -8,9 +8,15 @@ using Straddle.Services.Embed.Accounts;
 namespace Straddle.Services.Embed;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Accounts represent businesses using Straddle through your platform. Each account
+/// must complete automated verification before processing payments. Use accounts
+/// to manage your users' payment capabilities, track verification status, and control
+/// access to features. Accounts can be instantly created in sandbox and require
+/// additional verification for production access.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IAccountService
 {

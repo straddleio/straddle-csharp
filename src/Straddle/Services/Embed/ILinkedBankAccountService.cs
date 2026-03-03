@@ -7,9 +7,14 @@ using Straddle.Models.Embed.LinkedBankAccounts;
 namespace Straddle.Services.Embed;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Linked bank accounts connect your platform users' external bank accounts to Straddle
+/// for settlements and payment funding. Each linked account undergoes automated
+/// verification and continuous monitoring. Use linked accounts to manage where clients
+/// receive deposits, fund payouts, and track settlement preferences.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface ILinkedBankAccountService
 {

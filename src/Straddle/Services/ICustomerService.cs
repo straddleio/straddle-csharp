@@ -8,9 +8,16 @@ using Straddle.Services.Customers;
 namespace Straddle.Services;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Customers represent the end users who send or receive payments through your integration.
+/// Each customer undergoes automatic identity verification and fraud screening upon
+/// creation. Use customers to track payment history, manage bank account connections,
+/// and maintain a secure record of all transactions associated with a user. Customers
+/// can be either individuals or businesses with appropriate compliance checks for
+/// each type.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface ICustomerService
 {

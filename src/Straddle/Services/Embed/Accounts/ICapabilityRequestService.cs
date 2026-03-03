@@ -7,9 +7,14 @@ using Straddle.Models.Embed.Accounts.CapabilityRequests;
 namespace Straddle.Services.Embed.Accounts;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Capabilities enable specific features and services for an Account. Use capability
+/// requests to unlock higher processing limits, new payment types, or additional
+/// platform features as your users' businesses grow. Track approval status and manage
+/// documentation requirements through a single interface.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface ICapabilityRequestService
 {

@@ -7,9 +7,16 @@ using Straddle.Models.Embed.Representatives;
 namespace Straddle.Services.Embed;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Representatives are individuals who have legal authority or significant responsibility
+/// within a business entity associated with a Straddle account. Each representative
+/// undergoes automated verification as part of KYC/KYB compliance. Use representatives
+/// to collect and verify beneficial owners, control persons, and authorized signers
+/// required for account onboarding. Representatives also determine who can legally
+/// operate the account and make important changes.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IRepresentativeService
 {

@@ -8,9 +8,15 @@ using Straddle.Models.Paykeys;
 namespace Straddle.Services.Bridge;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Bridge provides a comprehensive suite of tools for connecting customer bank accounts.
+/// Use it to generate secure widget sessions for instant account verification, accept
+/// tokens from major providers like Plaid and Finicity, or verify accounts directly
+/// via our API. Bridge handles all sensitive banking credentials and ensures secure,
+/// compliant connections with support for 90% of US bank accounts.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface ILinkService
 {
