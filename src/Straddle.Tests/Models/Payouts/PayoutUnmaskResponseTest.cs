@@ -72,6 +72,13 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RelatedPayments = new Dictionary<
+                    string,
+                    ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+                >()
+                {
+                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -139,6 +146,13 @@ public class PayoutUnmaskResponseTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -216,6 +230,13 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RelatedPayments = new Dictionary<
+                    string,
+                    ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+                >()
+                {
+                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -297,6 +318,13 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RelatedPayments = new Dictionary<
+                    string,
+                    ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+                >()
+                {
+                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -371,6 +399,13 @@ public class PayoutUnmaskResponseTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -448,6 +483,13 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RelatedPayments = new Dictionary<
+                    string,
+                    ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+                >()
+                {
+                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -523,6 +565,13 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RelatedPayments = new Dictionary<
+                    string,
+                    ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+                >()
+                {
+                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -601,6 +650,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -661,6 +717,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
         ApiEnum<string, PayoutUnmaskResponseDataPaymentRail> expectedPaymentRail =
             PayoutUnmaskResponseDataPaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        Dictionary<
+            string,
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+        > expectedRelatedPayments = new()
+        {
+            { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+        };
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, model.ID);
@@ -705,6 +768,14 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Assert.Equal(expectedPaykeyDetails, model.PaykeyDetails);
         Assert.Equal(expectedPaymentRail, model.PaymentRail);
         Assert.Equal(expectedProcessedAt, model.ProcessedAt);
+        Assert.NotNull(model.RelatedPayments);
+        Assert.Equal(expectedRelatedPayments.Count, model.RelatedPayments.Count);
+        foreach (var item in expectedRelatedPayments)
+        {
+            Assert.True(model.RelatedPayments.TryGetValue(item.Key, out var value));
+
+            Assert.Equal(value, model.RelatedPayments[item.Key]);
+        }
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
     }
 
@@ -768,6 +839,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -840,6 +918,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -907,6 +992,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
         ApiEnum<string, PayoutUnmaskResponseDataPaymentRail> expectedPaymentRail =
             PayoutUnmaskResponseDataPaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        Dictionary<
+            string,
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+        > expectedRelatedPayments = new()
+        {
+            { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+        };
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, deserialized.ID);
@@ -951,6 +1043,14 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Assert.Equal(expectedPaykeyDetails, deserialized.PaykeyDetails);
         Assert.Equal(expectedPaymentRail, deserialized.PaymentRail);
         Assert.Equal(expectedProcessedAt, deserialized.ProcessedAt);
+        Assert.NotNull(deserialized.RelatedPayments);
+        Assert.Equal(expectedRelatedPayments.Count, deserialized.RelatedPayments.Count);
+        foreach (var item in expectedRelatedPayments)
+        {
+            Assert.True(deserialized.RelatedPayments.TryGetValue(item.Key, out var value));
+
+            Assert.Equal(value, deserialized.RelatedPayments[item.Key]);
+        }
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
     }
 
@@ -1014,6 +1114,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1064,6 +1171,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1119,6 +1233,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1169,6 +1290,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1229,6 +1357,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1306,6 +1441,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Assert.False(model.RawData.ContainsKey("metadata"));
         Assert.Null(model.ProcessedAt);
         Assert.False(model.RawData.ContainsKey("processed_at"));
+        Assert.Null(model.RelatedPayments);
+        Assert.False(model.RawData.ContainsKey("related_payments"));
         Assert.Null(model.UpdatedAt);
         Assert.False(model.RawData.ContainsKey("updated_at"));
     }
@@ -1432,6 +1569,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = null,
             Metadata = null,
             ProcessedAt = null,
+            RelatedPayments = null,
             UpdatedAt = null,
         };
 
@@ -1443,6 +1581,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Assert.True(model.RawData.ContainsKey("metadata"));
         Assert.Null(model.ProcessedAt);
         Assert.True(model.RawData.ContainsKey("processed_at"));
+        Assert.Null(model.RelatedPayments);
+        Assert.True(model.RawData.ContainsKey("related_payments"));
         Assert.Null(model.UpdatedAt);
         Assert.True(model.RawData.ContainsKey("updated_at"));
     }
@@ -1508,6 +1648,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = null,
             Metadata = null,
             ProcessedAt = null,
+            RelatedPayments = null,
             UpdatedAt = null,
         };
 
@@ -1574,6 +1715,13 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments = new Dictionary<
+                string,
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+            >()
+            {
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1843,6 +1991,7 @@ public class PayoutUnmaskResponseDataStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatus.Reversed)]
+    [InlineData(PayoutUnmaskResponseDataStatus.Validating)]
     public void Validation_Works(PayoutUnmaskResponseDataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1871,6 +2020,7 @@ public class PayoutUnmaskResponseDataStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatus.Reversed)]
+    [InlineData(PayoutUnmaskResponseDataStatus.Validating)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2120,6 +2270,7 @@ public class PayoutUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.RequireReview)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.Validating)]
     public void Validation_Works(PayoutUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2164,6 +2315,7 @@ public class PayoutUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.RequireReview)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.Validating)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2263,6 +2415,7 @@ public class PayoutUnmaskResponseDataStatusHistoryStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Reversed)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Validating)]
     public void Validation_Works(PayoutUnmaskResponseDataStatusHistoryStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2290,6 +2443,7 @@ public class PayoutUnmaskResponseDataStatusHistoryStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Reversed)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Validating)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataStatusHistoryStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2364,6 +2518,64 @@ public class PayoutUnmaskResponseDataPaymentRailTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, PayoutUnmaskResponseDataPaymentRail>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class PayoutUnmaskResponseDataRelatedPaymentsItemTest : TestBase
+{
+    [Theory]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Original)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Resubmit)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Refund)]
+    public void Validation_Works(PayoutUnmaskResponseDataRelatedPaymentsItem rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Original)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Resubmit)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Refund)]
+    public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataRelatedPaymentsItem rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);

@@ -424,6 +424,27 @@ public sealed record class Data : JsonModel
     }
 
     /// <summary>
+    /// Related payments.
+    /// </summary>
+    public IReadOnlyDictionary<string, ApiEnum<string, RelatedPaymentsItem>>? RelatedPayments
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                FrozenDictionary<string, ApiEnum<string, RelatedPaymentsItem>>
+            >("related_payments");
+        }
+        init
+        {
+            this._rawData.Set<FrozenDictionary<string, ApiEnum<string, RelatedPaymentsItem>>?>(
+                "related_payments",
+                value == null ? null : FrozenDictionary.ToFrozenDictionary(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// The time the payout was last updated.
     /// </summary>
     public DateTimeOffset? UpdatedAt
@@ -463,6 +484,13 @@ public sealed record class Data : JsonModel
         this.PaykeyDetails?.Validate();
         this.PaymentRail?.Validate();
         _ = this.ProcessedAt;
+        if (this.RelatedPayments != null)
+        {
+            foreach (var item in this.RelatedPayments.Values)
+            {
+                item.Validate();
+            }
+        }
         _ = this.UpdatedAt;
     }
 
@@ -660,6 +688,7 @@ public enum Status
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class StatusConverter : JsonConverter<Status>
@@ -680,6 +709,7 @@ sealed class StatusConverter : JsonConverter<Status>
             "pending" => Status.Pending,
             "paid" => Status.Paid,
             "reversed" => Status.Reversed,
+            "validating" => Status.Validating,
             _ => (Status)(-1),
         };
     }
@@ -698,6 +728,7 @@ sealed class StatusConverter : JsonConverter<Status>
                 Status.Pending => "pending",
                 Status.Paid => "paid",
                 Status.Reversed => "reversed",
+                Status.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -866,6 +897,7 @@ public enum Reason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -903,6 +935,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "require_review" => Reason.RequireReview,
             "blocked_by_system" => Reason.BlockedBySystem,
             "watchtower_review" => Reason.WatchtowerReview,
+            "validating" => Reason.Validating,
             _ => (Reason)(-1),
         };
     }
@@ -938,6 +971,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.RequireReview => "require_review",
                 Reason.BlockedBySystem => "blocked_by_system",
                 Reason.WatchtowerReview => "watchtower_review",
+                Reason.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1014,6 +1048,7 @@ public enum StatusHistoryStatus
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class StatusHistoryStatusConverter : JsonConverter<StatusHistoryStatus>
@@ -1034,6 +1069,7 @@ sealed class StatusHistoryStatusConverter : JsonConverter<StatusHistoryStatus>
             "pending" => StatusHistoryStatus.Pending,
             "paid" => StatusHistoryStatus.Paid,
             "reversed" => StatusHistoryStatus.Reversed,
+            "validating" => StatusHistoryStatus.Validating,
             _ => (StatusHistoryStatus)(-1),
         };
     }
@@ -1056,6 +1092,7 @@ sealed class StatusHistoryStatusConverter : JsonConverter<StatusHistoryStatus>
                 StatusHistoryStatus.Pending => "pending",
                 StatusHistoryStatus.Paid => "paid",
                 StatusHistoryStatus.Reversed => "reversed",
+                StatusHistoryStatus.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1100,6 +1137,56 @@ sealed class PaymentRailConverter : JsonConverter<PaymentRail>
             value switch
             {
                 PaymentRail.Ach => "ach",
+                _ => throw new StraddleInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(typeof(RelatedPaymentsItemConverter))]
+public enum RelatedPaymentsItem
+{
+    Unknown,
+    Original,
+    Resubmit,
+    Refund,
+}
+
+sealed class RelatedPaymentsItemConverter : JsonConverter<RelatedPaymentsItem>
+{
+    public override RelatedPaymentsItem Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "unknown" => RelatedPaymentsItem.Unknown,
+            "original" => RelatedPaymentsItem.Original,
+            "resubmit" => RelatedPaymentsItem.Resubmit,
+            "refund" => RelatedPaymentsItem.Refund,
+            _ => (RelatedPaymentsItem)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        RelatedPaymentsItem value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                RelatedPaymentsItem.Unknown => "unknown",
+                RelatedPaymentsItem.Original => "original",
+                RelatedPaymentsItem.Resubmit => "resubmit",
+                RelatedPaymentsItem.Refund => "refund",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

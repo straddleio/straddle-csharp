@@ -1163,6 +1163,7 @@ public enum Reason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -1200,6 +1201,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "require_review" => Reason.RequireReview,
             "blocked_by_system" => Reason.BlockedBySystem,
             "watchtower_review" => Reason.WatchtowerReview,
+            "validating" => Reason.Validating,
             _ => (Reason)(-1),
         };
     }
@@ -1235,6 +1237,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.RequireReview => "require_review",
                 Reason.BlockedBySystem => "blocked_by_system",
                 Reason.WatchtowerReview => "watchtower_review",
+                Reason.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

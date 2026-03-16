@@ -2081,6 +2081,7 @@ public class PaykeyV1DataStatusDetailsReasonTest : TestBase
     [InlineData(PaykeyV1DataStatusDetailsReason.RequireReview)]
     [InlineData(PaykeyV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(PaykeyV1DataStatusDetailsReason.WatchtowerReview)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.Validating)]
     public void Validation_Works(PaykeyV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2126,6 +2127,7 @@ public class PaykeyV1DataStatusDetailsReasonTest : TestBase
     [InlineData(PaykeyV1DataStatusDetailsReason.RequireReview)]
     [InlineData(PaykeyV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(PaykeyV1DataStatusDetailsReason.WatchtowerReview)]
+    [InlineData(PaykeyV1DataStatusDetailsReason.Validating)]
     public void SerializationRoundtrip_Works(PaykeyV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
