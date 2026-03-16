@@ -450,6 +450,36 @@ public sealed record class ChargeUnmaskResponseData : JsonModel
         init { this._rawData.Set("processed_at", value); }
     }
 
+    /// <summary>
+    /// Related payments.
+    /// </summary>
+    public IReadOnlyDictionary<
+        string,
+        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
+    >? RelatedPayments
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                FrozenDictionary<
+                    string,
+                    ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
+                >
+            >("related_payments");
+        }
+        init
+        {
+            this._rawData.Set<FrozenDictionary<
+                string,
+                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
+            >?>(
+                "related_payments",
+                value == null ? null : FrozenDictionary.ToFrozenDictionary(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -479,6 +509,13 @@ public sealed record class ChargeUnmaskResponseData : JsonModel
         this.PaykeyDetails?.Validate();
         this.PaymentRail?.Validate();
         _ = this.ProcessedAt;
+        if (this.RelatedPayments != null)
+        {
+            foreach (var item in this.RelatedPayments.Values)
+            {
+                item.Validate();
+            }
+        }
     }
 
     public ChargeUnmaskResponseData() { }
@@ -892,6 +929,7 @@ public enum ChargeUnmaskResponseDataStatus
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class ChargeUnmaskResponseDataStatusConverter : JsonConverter<ChargeUnmaskResponseDataStatus>
@@ -912,6 +950,7 @@ sealed class ChargeUnmaskResponseDataStatusConverter : JsonConverter<ChargeUnmas
             "pending" => ChargeUnmaskResponseDataStatus.Pending,
             "paid" => ChargeUnmaskResponseDataStatus.Paid,
             "reversed" => ChargeUnmaskResponseDataStatus.Reversed,
+            "validating" => ChargeUnmaskResponseDataStatus.Validating,
             _ => (ChargeUnmaskResponseDataStatus)(-1),
         };
     }
@@ -934,6 +973,7 @@ sealed class ChargeUnmaskResponseDataStatusConverter : JsonConverter<ChargeUnmas
                 ChargeUnmaskResponseDataStatus.Pending => "pending",
                 ChargeUnmaskResponseDataStatus.Paid => "paid",
                 ChargeUnmaskResponseDataStatus.Reversed => "reversed",
+                ChargeUnmaskResponseDataStatus.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1119,6 +1159,7 @@ public enum ChargeUnmaskResponseDataStatusHistoryReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
 }
 
 sealed class ChargeUnmaskResponseDataStatusHistoryReasonConverter
@@ -1160,6 +1201,7 @@ sealed class ChargeUnmaskResponseDataStatusHistoryReasonConverter
             "require_review" => ChargeUnmaskResponseDataStatusHistoryReason.RequireReview,
             "blocked_by_system" => ChargeUnmaskResponseDataStatusHistoryReason.BlockedBySystem,
             "watchtower_review" => ChargeUnmaskResponseDataStatusHistoryReason.WatchtowerReview,
+            "validating" => ChargeUnmaskResponseDataStatusHistoryReason.Validating,
             _ => (ChargeUnmaskResponseDataStatusHistoryReason)(-1),
         };
     }
@@ -1206,6 +1248,7 @@ sealed class ChargeUnmaskResponseDataStatusHistoryReasonConverter
                 ChargeUnmaskResponseDataStatusHistoryReason.RequireReview => "require_review",
                 ChargeUnmaskResponseDataStatusHistoryReason.BlockedBySystem => "blocked_by_system",
                 ChargeUnmaskResponseDataStatusHistoryReason.WatchtowerReview => "watchtower_review",
+                ChargeUnmaskResponseDataStatusHistoryReason.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1287,6 +1330,7 @@ public enum ChargeUnmaskResponseDataStatusHistoryStatus
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class ChargeUnmaskResponseDataStatusHistoryStatusConverter
@@ -1308,6 +1352,7 @@ sealed class ChargeUnmaskResponseDataStatusHistoryStatusConverter
             "pending" => ChargeUnmaskResponseDataStatusHistoryStatus.Pending,
             "paid" => ChargeUnmaskResponseDataStatusHistoryStatus.Paid,
             "reversed" => ChargeUnmaskResponseDataStatusHistoryStatus.Reversed,
+            "validating" => ChargeUnmaskResponseDataStatusHistoryStatus.Validating,
             _ => (ChargeUnmaskResponseDataStatusHistoryStatus)(-1),
         };
     }
@@ -1330,6 +1375,7 @@ sealed class ChargeUnmaskResponseDataStatusHistoryStatusConverter
                 ChargeUnmaskResponseDataStatusHistoryStatus.Pending => "pending",
                 ChargeUnmaskResponseDataStatusHistoryStatus.Paid => "paid",
                 ChargeUnmaskResponseDataStatusHistoryStatus.Reversed => "reversed",
+                ChargeUnmaskResponseDataStatusHistoryStatus.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1375,6 +1421,57 @@ sealed class ChargeUnmaskResponseDataPaymentRailConverter
             value switch
             {
                 ChargeUnmaskResponseDataPaymentRail.Ach => "ach",
+                _ => throw new StraddleInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(typeof(ChargeUnmaskResponseDataRelatedPaymentsItemConverter))]
+public enum ChargeUnmaskResponseDataRelatedPaymentsItem
+{
+    Unknown,
+    Original,
+    Resubmit,
+    Refund,
+}
+
+sealed class ChargeUnmaskResponseDataRelatedPaymentsItemConverter
+    : JsonConverter<ChargeUnmaskResponseDataRelatedPaymentsItem>
+{
+    public override ChargeUnmaskResponseDataRelatedPaymentsItem Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "unknown" => ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown,
+            "original" => ChargeUnmaskResponseDataRelatedPaymentsItem.Original,
+            "resubmit" => ChargeUnmaskResponseDataRelatedPaymentsItem.Resubmit,
+            "refund" => ChargeUnmaskResponseDataRelatedPaymentsItem.Refund,
+            _ => (ChargeUnmaskResponseDataRelatedPaymentsItem)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        ChargeUnmaskResponseDataRelatedPaymentsItem value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown => "unknown",
+                ChargeUnmaskResponseDataRelatedPaymentsItem.Original => "original",
+                ChargeUnmaskResponseDataRelatedPaymentsItem.Resubmit => "resubmit",
+                ChargeUnmaskResponseDataRelatedPaymentsItem.Refund => "refund",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

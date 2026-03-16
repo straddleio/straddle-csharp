@@ -884,6 +884,7 @@ public class DataStatusTest : TestBase
     [InlineData(DataStatus.Pending)]
     [InlineData(DataStatus.Paid)]
     [InlineData(DataStatus.Reversed)]
+    [InlineData(DataStatus.Validating)]
     public void Validation_Works(DataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -912,6 +913,7 @@ public class DataStatusTest : TestBase
     [InlineData(DataStatus.Pending)]
     [InlineData(DataStatus.Paid)]
     [InlineData(DataStatus.Reversed)]
+    [InlineData(DataStatus.Validating)]
     public void SerializationRoundtrip_Works(DataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1146,6 +1148,7 @@ public class ReasonTest : TestBase
     [InlineData(Reason.RequireReview)]
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
+    [InlineData(Reason.Validating)]
     public void Validation_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1191,6 +1194,7 @@ public class ReasonTest : TestBase
     [InlineData(Reason.RequireReview)]
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
+    [InlineData(Reason.Validating)]
     public void SerializationRoundtrip_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
