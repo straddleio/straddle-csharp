@@ -43,8 +43,8 @@ public interface IFundingEventService
 
     /// <summary>
     /// Retrieves the details of an existing funding event. Supply the unique funding
-    /// event `id`, and Straddle will return the individual transaction items that
-    /// make up the funding event.
+    /// event `id`, and Straddle will return the individual transaction items that make
+    /// up the funding event.
     /// </summary>
     Task<FundingEventSummaryItemV1> Get(
         FundingEventGetParams parameters,
@@ -73,7 +73,7 @@ public interface IFundingEventServiceWithRawResponse
     IFundingEventServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/funding_events`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/funding_events</c>, but is otherwise the
     /// same as <see cref="IFundingEventService.List(FundingEventListParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<FundingEventListPage>> List(
@@ -82,7 +82,7 @@ public interface IFundingEventServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/funding_events/{id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/funding_events/{id}</c>, but is otherwise the
     /// same as <see cref="IFundingEventService.Get(FundingEventGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<FundingEventSummaryItemV1>> Get(

@@ -34,8 +34,8 @@ public interface ILinkedBankAccountService
     /// <summary>
     /// Creates a new linked bank account associated with a Straddle account. This
     /// endpoint allows you to associate external bank accounts with a Straddle account
-    /// for various payment operations such as payment deposits, payout withdrawals,
-    /// and more.
+    /// for various payment operations such as payment deposits, payout withdrawals, and
+    /// more.
     /// </summary>
     Task<LinkedBankAccountV1> Create(
         LinkedBankAccountCreateParams parameters,
@@ -44,8 +44,9 @@ public interface ILinkedBankAccountService
 
     /// <summary>
     /// Updates an existing linked bank account's information. This can be used to
-    /// update account details during onboarding or to update metadata associated
-    /// with the linked account. The linked bank account must be in 'created' or 'onboarding' status.
+    /// update account details during onboarding or to update metadata associated with
+    /// the linked account. The linked bank account must be in 'created' or 'onboarding'
+    /// status.
     /// </summary>
     Task<LinkedBankAccountV1> Update(
         LinkedBankAccountUpdateParams parameters,
@@ -60,8 +61,8 @@ public interface ILinkedBankAccountService
     );
 
     /// <summary>
-    /// Returns a list of bank accounts associated with a specific Straddle account.
-    /// The linked bank accounts are returned sorted by creation date, with the most
+    /// Returns a list of bank accounts associated with a specific Straddle account. The
+    /// linked bank accounts are returned sorted by creation date, with the most
     /// recently created appearing first. This endpoint supports pagination to handle
     /// accounts with multiple linked bank accounts.
     /// </summary>
@@ -72,8 +73,8 @@ public interface ILinkedBankAccountService
 
     /// <summary>
     /// Cancels an existing linked bank account. This can be used to cancel a linked
-    /// bank account before it has been reviewed. The linked bank account must be
-    /// in 'created' status.
+    /// bank account before it has been reviewed. The linked bank account must be in
+    /// 'created' status.
     /// </summary>
     Task<LinkedBankAccountV1> Cancel(
         LinkedBankAccountCancelParams parameters,
@@ -89,8 +90,9 @@ public interface ILinkedBankAccountService
 
     /// <summary>
     /// Retrieves the details of a linked bank account that has previously been created.
-    /// Supply the unique linked bank account `id`, and Straddle will return the corresponding
-    /// information. The response includes masked account details for security purposes.
+    /// Supply the unique linked bank account `id`, and Straddle will return the
+    /// corresponding information. The response includes masked account details for
+    /// security purposes.
     /// </summary>
     Task<LinkedBankAccountV1> Get(
         LinkedBankAccountGetParams parameters,
@@ -105,10 +107,10 @@ public interface ILinkedBankAccountService
     );
 
     /// <summary>
-    /// Retrieves the unmasked details of a linked bank account that has previously
-    /// been created. Supply the unique linked bank account `id`, and Straddle will
-    /// return the corresponding information, including sensitive details. This endpoint
-    /// needs to be enabled by Straddle for your account and should only be used when
+    /// Retrieves the unmasked details of a linked bank account that has previously been
+    /// created. Supply the unique linked bank account `id`, and Straddle will return
+    /// the corresponding information, including sensitive details. This endpoint needs
+    /// to be enabled by Straddle for your account and should only be used when
     /// absolutely necessary.
     /// </summary>
     Task<LinkedBankAccountUnmaskV1> Unmask(
@@ -140,7 +142,7 @@ public interface ILinkedBankAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/linked_bank_accounts`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/linked_bank_accounts</c>, but is otherwise the
     /// same as <see cref="ILinkedBankAccountService.Create(LinkedBankAccountCreateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<LinkedBankAccountV1>> Create(
@@ -149,7 +151,7 @@ public interface ILinkedBankAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/linked_bank_accounts/{linked_bank_account_id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/linked_bank_accounts/{linked_bank_account_id}</c>, but is otherwise the
     /// same as <see cref="ILinkedBankAccountService.Update(LinkedBankAccountUpdateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<LinkedBankAccountV1>> Update(
@@ -165,7 +167,7 @@ public interface ILinkedBankAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/linked_bank_accounts`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/linked_bank_accounts</c>, but is otherwise the
     /// same as <see cref="ILinkedBankAccountService.List(LinkedBankAccountListParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<LinkedBankAccountListPage>> List(
@@ -174,7 +176,7 @@ public interface ILinkedBankAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `patch /v1/linked_bank_accounts/{linked_bank_account_id}/cancel`, but is otherwise the
+    /// Returns a raw HTTP response for <c>patch /v1/linked_bank_accounts/{linked_bank_account_id}/cancel</c>, but is otherwise the
     /// same as <see cref="ILinkedBankAccountService.Cancel(LinkedBankAccountCancelParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<LinkedBankAccountV1>> Cancel(
@@ -190,7 +192,7 @@ public interface ILinkedBankAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/linked_bank_accounts/{linked_bank_account_id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/linked_bank_accounts/{linked_bank_account_id}</c>, but is otherwise the
     /// same as <see cref="ILinkedBankAccountService.Get(LinkedBankAccountGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<LinkedBankAccountV1>> Get(
@@ -206,7 +208,7 @@ public interface ILinkedBankAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/linked_bank_accounts/{linked_bank_account_id}/unmask`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/linked_bank_accounts/{linked_bank_account_id}/unmask</c>, but is otherwise the
     /// same as <see cref="ILinkedBankAccountService.Unmask(LinkedBankAccountUnmaskParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<LinkedBankAccountUnmaskV1>> Unmask(

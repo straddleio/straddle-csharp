@@ -81,7 +81,7 @@ public interface ICapabilityRequestServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/accounts/{account_id}/capability_requests`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/accounts/{account_id}/capability_requests</c>, but is otherwise the
     /// same as <see cref="ICapabilityRequestService.Create(CapabilityRequestCreateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CapabilityRequestPagedV1>> Create(
@@ -97,7 +97,7 @@ public interface ICapabilityRequestServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/accounts/{account_id}/capability_requests`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/accounts/{account_id}/capability_requests</c>, but is otherwise the
     /// same as <see cref="ICapabilityRequestService.List(CapabilityRequestListParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CapabilityRequestListPage>> List(

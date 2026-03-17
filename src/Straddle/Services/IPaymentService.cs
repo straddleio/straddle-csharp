@@ -52,7 +52,7 @@ public interface IPaymentServiceWithRawResponse
     IPaymentServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/payments`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/payments</c>, but is otherwise the
     /// same as <see cref="IPaymentService.List(PaymentListParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaymentListPage>> List(

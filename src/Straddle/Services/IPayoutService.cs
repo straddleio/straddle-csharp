@@ -72,8 +72,8 @@ public interface IPayoutService
     );
 
     /// <summary>
-    /// Retrieves the details of an existing payout. Supply the unique payout `id`
-    /// to retrieve the corresponding payout information.
+    /// Retrieves the details of an existing payout. Supply the unique payout `id` to
+    /// retrieve the corresponding payout information.
     /// </summary>
     Task<PayoutV1> Get(PayoutGetParams parameters, CancellationToken cancellationToken = default);
 
@@ -85,8 +85,8 @@ public interface IPayoutService
     );
 
     /// <summary>
-    /// Hold a payout to prevent it from being processed. The status of the payout
-    /// must be `created`, `scheduled`, or `on_hold`.
+    /// Hold a payout to prevent it from being processed. The status of the payout must
+    /// be `created`, `scheduled`, or `on_hold`.
     /// </summary>
     Task<PayoutV1> Hold(PayoutHoldParams parameters, CancellationToken cancellationToken = default);
 
@@ -98,7 +98,8 @@ public interface IPayoutService
     );
 
     /// <summary>
-    /// Release a payout from a `hold` status to allow it to be rescheduled for processing.
+    /// Release a payout from a `hold` status to allow it to be rescheduled for
+    /// processing.
     /// </summary>
     Task<PayoutV1> Release(
         PayoutReleaseParams parameters,
@@ -142,7 +143,7 @@ public interface IPayoutServiceWithRawResponse
     IPayoutServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/payouts`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/payouts</c>, but is otherwise the
     /// same as <see cref="IPayoutService.Create(PayoutCreateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PayoutV1>> Create(
@@ -151,7 +152,7 @@ public interface IPayoutServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/payouts/{id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/payouts/{id}</c>, but is otherwise the
     /// same as <see cref="IPayoutService.Update(PayoutUpdateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PayoutV1>> Update(
@@ -167,7 +168,7 @@ public interface IPayoutServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/payouts/{id}/cancel`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/payouts/{id}/cancel</c>, but is otherwise the
     /// same as <see cref="IPayoutService.Cancel(PayoutCancelParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PayoutV1>> Cancel(
@@ -183,7 +184,7 @@ public interface IPayoutServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/payouts/{id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/payouts/{id}</c>, but is otherwise the
     /// same as <see cref="IPayoutService.Get(PayoutGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PayoutV1>> Get(
@@ -199,7 +200,7 @@ public interface IPayoutServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/payouts/{id}/hold`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/payouts/{id}/hold</c>, but is otherwise the
     /// same as <see cref="IPayoutService.Hold(PayoutHoldParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PayoutV1>> Hold(
@@ -215,7 +216,7 @@ public interface IPayoutServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/payouts/{id}/release`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/payouts/{id}/release</c>, but is otherwise the
     /// same as <see cref="IPayoutService.Release(PayoutReleaseParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PayoutV1>> Release(
@@ -231,7 +232,7 @@ public interface IPayoutServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/payouts/{id}/unmask`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/payouts/{id}/unmask</c>, but is otherwise the
     /// same as <see cref="IPayoutService.Unmask(PayoutUnmaskParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PayoutUnmaskResponse>> Unmask(

@@ -91,8 +91,8 @@ public record struct ClientOptions()
     public TimeSpan? Timeout { get; set; } = null;
 
     /// <summary>
-    /// Use your Straddle API Key in the Authorization header as Bearer <token> to
-    /// authorize API requests.
+    /// Use your Straddle API Key in the Authorization header as Bearer &lt;token&gt;
+    /// to authorize API requests.
     /// </summary>
     Lazy<string> _apiKey = new(() =>
         Environment.GetEnvironmentVariable("STRADDLE_API_KEY")
@@ -103,8 +103,8 @@ public record struct ClientOptions()
     );
 
     /// <summary>
-    /// Use your Straddle API Key in the Authorization header as Bearer <token> to
-    /// authorize API requests.
+    /// Use your Straddle API Key in the Authorization header as Bearer &lt;token&gt;
+    /// to authorize API requests.
     /// </summary>
     public string ApiKey
     {
