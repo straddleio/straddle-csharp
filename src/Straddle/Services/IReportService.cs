@@ -27,7 +27,7 @@ public interface IReportService
     IReportService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Sends a request to <c>post /v1/reports/total_customers_by_status<c/>.
+    /// Sends a request to <c>post /v1/reports/total_customers_by_status</c>.
     /// </summary>
     Task<ReportCreateTotalCustomersByStatusResponse> CreateTotalCustomersByStatus(
         ReportCreateTotalCustomersByStatusParams? parameters = null,
@@ -49,7 +49,7 @@ public interface IReportServiceWithRawResponse
     IReportServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/reports/total_customers_by_status`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/reports/total_customers_by_status</c>, but is otherwise the
     /// same as <see cref="IReportService.CreateTotalCustomersByStatus(ReportCreateTotalCustomersByStatusParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<ReportCreateTotalCustomersByStatusResponse>> CreateTotalCustomersByStatus(

@@ -64,9 +64,9 @@ public interface IReviewService
     );
 
     /// <summary>
-    /// Updates the decision of a paykey's review validation. This endpoint allows
-    /// you to refresh the outcome of a paykey's decision and is useful for correcting
-    /// or updating the status of a paykey's verification.
+    /// Updates the decision of a paykey's review validation. This endpoint allows you
+    /// to refresh the outcome of a paykey's decision and is useful for correcting or
+    /// updating the status of a paykey's verification.
     /// </summary>
     Task<PaykeyV1> RefreshReview(
         ReviewRefreshReviewParams parameters,
@@ -95,7 +95,7 @@ public interface IReviewServiceWithRawResponse
     IReviewServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `patch /v1/paykeys/{id}/review`, but is otherwise the
+    /// Returns a raw HTTP response for <c>patch /v1/paykeys/{id}/review</c>, but is otherwise the
     /// same as <see cref="IReviewService.Decision(ReviewDecisionParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyV1>> Decision(
@@ -111,7 +111,7 @@ public interface IReviewServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/paykeys/{id}/review`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/paykeys/{id}/review</c>, but is otherwise the
     /// same as <see cref="IReviewService.Get(ReviewGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<ReviewGetResponse>> Get(
@@ -127,7 +127,7 @@ public interface IReviewServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/paykeys/{id}/refresh_review`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/paykeys/{id}/refresh_review</c>, but is otherwise the
     /// same as <see cref="IReviewService.RefreshReview(ReviewRefreshReviewParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyV1>> RefreshReview(

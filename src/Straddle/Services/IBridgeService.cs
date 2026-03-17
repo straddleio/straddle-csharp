@@ -60,7 +60,7 @@ public interface IBridgeServiceWithRawResponse
     ILinkServiceWithRawResponse Link { get; }
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/bridge/initialize`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/bridge/initialize</c>, but is otherwise the
     /// same as <see cref="IBridgeService.Initialize(BridgeInitializeParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<BridgeTokenV1>> Initialize(

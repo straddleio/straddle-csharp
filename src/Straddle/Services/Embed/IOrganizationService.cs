@@ -33,7 +33,8 @@ public interface IOrganizationService
 
     /// <summary>
     /// Creates a new organization related to your Straddle integration. Organizations
-    /// can be used to group related accounts and manage permissions across multiple users.
+    /// can be used to group related accounts and manage permissions across multiple
+    /// users.
     /// </summary>
     Task<OrganizationV1> Create(
         OrganizationCreateParams parameters,
@@ -41,8 +42,8 @@ public interface IOrganizationService
     );
 
     /// <summary>
-    /// Retrieves a list of organizations associated with your Straddle integration.
-    /// The organizations are returned sorted by creation date, with the most recently
+    /// Retrieves a list of organizations associated with your Straddle integration. The
+    /// organizations are returned sorted by creation date, with the most recently
     /// created organizations appearing first. This endpoint supports advanced sorting
     /// and filtering options to help you find specific organizations.
     /// </summary>
@@ -83,7 +84,7 @@ public interface IOrganizationServiceWithRawResponse
     IOrganizationServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/organizations`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/organizations</c>, but is otherwise the
     /// same as <see cref="IOrganizationService.Create(OrganizationCreateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<OrganizationV1>> Create(
@@ -92,7 +93,7 @@ public interface IOrganizationServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/organizations`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/organizations</c>, but is otherwise the
     /// same as <see cref="IOrganizationService.List(OrganizationListParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<OrganizationListPage>> List(
@@ -101,7 +102,7 @@ public interface IOrganizationServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/organizations/{organization_id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/organizations/{organization_id}</c>, but is otherwise the
     /// same as <see cref="IOrganizationService.Get(OrganizationGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<OrganizationV1>> Get(
