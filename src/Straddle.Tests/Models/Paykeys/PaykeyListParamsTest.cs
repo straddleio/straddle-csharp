@@ -18,7 +18,6 @@ public class PaykeyListParamsTest : TestBase
             CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PageNumber = 0,
             PageSize = 0,
-            SearchText = "search_text",
             SortBy = SortBy.InstitutionName,
             SortOrder = SortOrder.Asc,
             Source = [Source.BankAccount],
@@ -32,7 +31,6 @@ public class PaykeyListParamsTest : TestBase
         string expectedCustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         int expectedPageNumber = 0;
         int expectedPageSize = 0;
-        string expectedSearchText = "search_text";
         ApiEnum<string, SortBy> expectedSortBy = SortBy.InstitutionName;
         ApiEnum<string, SortOrder> expectedSortOrder = SortOrder.Asc;
         List<ApiEnum<string, Source>> expectedSource = [Source.BankAccount];
@@ -45,7 +43,6 @@ public class PaykeyListParamsTest : TestBase
         Assert.Equal(expectedCustomerID, parameters.CustomerID);
         Assert.Equal(expectedPageNumber, parameters.PageNumber);
         Assert.Equal(expectedPageSize, parameters.PageSize);
-        Assert.Equal(expectedSearchText, parameters.SearchText);
         Assert.Equal(expectedSortBy, parameters.SortBy);
         Assert.Equal(expectedSortOrder, parameters.SortOrder);
         Assert.NotNull(parameters.Source);
@@ -77,8 +74,6 @@ public class PaykeyListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("page_number"));
         Assert.Null(parameters.PageSize);
         Assert.False(parameters.RawQueryData.ContainsKey("page_size"));
-        Assert.Null(parameters.SearchText);
-        Assert.False(parameters.RawQueryData.ContainsKey("search_text"));
         Assert.Null(parameters.SortBy);
         Assert.False(parameters.RawQueryData.ContainsKey("sort_by"));
         Assert.Null(parameters.SortOrder);
@@ -106,7 +101,6 @@ public class PaykeyListParamsTest : TestBase
             CustomerID = null,
             PageNumber = null,
             PageSize = null,
-            SearchText = null,
             SortBy = null,
             SortOrder = null,
             Source = null,
@@ -123,8 +117,6 @@ public class PaykeyListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("page_number"));
         Assert.Null(parameters.PageSize);
         Assert.False(parameters.RawQueryData.ContainsKey("page_size"));
-        Assert.Null(parameters.SearchText);
-        Assert.False(parameters.RawQueryData.ContainsKey("search_text"));
         Assert.Null(parameters.SortBy);
         Assert.False(parameters.RawQueryData.ContainsKey("sort_by"));
         Assert.Null(parameters.SortOrder);
@@ -151,7 +143,6 @@ public class PaykeyListParamsTest : TestBase
             CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PageNumber = 0,
             PageSize = 0,
-            SearchText = "search_text",
             SortBy = SortBy.InstitutionName,
             SortOrder = SortOrder.Asc,
             Source = [Source.BankAccount],
@@ -163,7 +154,7 @@ public class PaykeyListParamsTest : TestBase
 
         Assert.Equal(
             new Uri(
-                "https://sandbox.straddle.com/v1/paykeys?customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_number=0&page_size=0&search_text=search_text&sort_by=institution_name&sort_order=asc&source=bank_account&status=pending&unblock_eligible=true"
+                "https://sandbox.straddle.com/v1/paykeys?customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_number=0&page_size=0&sort_by=institution_name&sort_order=asc&source=bank_account&status=pending&unblock_eligible=true"
             ),
             url
         );
@@ -198,7 +189,6 @@ public class PaykeyListParamsTest : TestBase
             CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PageNumber = 0,
             PageSize = 0,
-            SearchText = "search_text",
             SortBy = SortBy.InstitutionName,
             SortOrder = SortOrder.Asc,
             Source = [Source.BankAccount],

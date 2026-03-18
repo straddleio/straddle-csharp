@@ -23,7 +23,6 @@ public class CapabilityRequestPagedV1Test : TestBase
                     AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Category = DataCategory.PaymentType,
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Enable = true,
                     Status = DataStatus.Active,
                     Type = DataType.Charges,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -56,7 +55,6 @@ public class CapabilityRequestPagedV1Test : TestBase
                 AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Category = DataCategory.PaymentType,
                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Enable = true,
                 Status = DataStatus.Active,
                 Type = DataType.Charges,
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -102,7 +100,6 @@ public class CapabilityRequestPagedV1Test : TestBase
                     AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Category = DataCategory.PaymentType,
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Enable = true,
                     Status = DataStatus.Active,
                     Type = DataType.Charges,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -149,7 +146,6 @@ public class CapabilityRequestPagedV1Test : TestBase
                     AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Category = DataCategory.PaymentType,
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Enable = true,
                     Status = DataStatus.Active,
                     Type = DataType.Charges,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -189,7 +185,6 @@ public class CapabilityRequestPagedV1Test : TestBase
                 AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Category = DataCategory.PaymentType,
                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                Enable = true,
                 Status = DataStatus.Active,
                 Type = DataType.Charges,
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -235,7 +230,6 @@ public class CapabilityRequestPagedV1Test : TestBase
                     AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Category = DataCategory.PaymentType,
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Enable = true,
                     Status = DataStatus.Active,
                     Type = DataType.Charges,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -276,7 +270,6 @@ public class CapabilityRequestPagedV1Test : TestBase
                     AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Category = DataCategory.PaymentType,
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                    Enable = true,
                     Status = DataStatus.Active,
                     Type = DataType.Charges,
                     UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -318,7 +311,6 @@ public class DataTest : TestBase
             AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Category = DataCategory.PaymentType,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Enable = true,
             Status = DataStatus.Active,
             Type = DataType.Charges,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -332,7 +324,6 @@ public class DataTest : TestBase
         string expectedAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         ApiEnum<string, DataCategory> expectedCategory = DataCategory.PaymentType;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        bool expectedEnable = true;
         ApiEnum<string, DataStatus> expectedStatus = DataStatus.Active;
         ApiEnum<string, DataType> expectedType = DataType.Charges;
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
@@ -345,7 +336,6 @@ public class DataTest : TestBase
         Assert.Equal(expectedAccountID, model.AccountID);
         Assert.Equal(expectedCategory, model.Category);
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
-        Assert.Equal(expectedEnable, model.Enable);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedType, model.Type);
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
@@ -368,7 +358,6 @@ public class DataTest : TestBase
             AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Category = DataCategory.PaymentType,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Enable = true,
             Status = DataStatus.Active,
             Type = DataType.Charges,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -393,7 +382,6 @@ public class DataTest : TestBase
             AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Category = DataCategory.PaymentType,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Enable = true,
             Status = DataStatus.Active,
             Type = DataType.Charges,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -411,7 +399,6 @@ public class DataTest : TestBase
         string expectedAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         ApiEnum<string, DataCategory> expectedCategory = DataCategory.PaymentType;
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        bool expectedEnable = true;
         ApiEnum<string, DataStatus> expectedStatus = DataStatus.Active;
         ApiEnum<string, DataType> expectedType = DataType.Charges;
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
@@ -424,7 +411,6 @@ public class DataTest : TestBase
         Assert.Equal(expectedAccountID, deserialized.AccountID);
         Assert.Equal(expectedCategory, deserialized.Category);
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
-        Assert.Equal(expectedEnable, deserialized.Enable);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedType, deserialized.Type);
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
@@ -447,7 +433,6 @@ public class DataTest : TestBase
             AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Category = DataCategory.PaymentType,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Enable = true,
             Status = DataStatus.Active,
             Type = DataType.Charges,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -469,7 +454,6 @@ public class DataTest : TestBase
             AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Category = DataCategory.PaymentType,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Enable = true,
             Status = DataStatus.Active,
             Type = DataType.Charges,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -488,7 +472,6 @@ public class DataTest : TestBase
             AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Category = DataCategory.PaymentType,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Enable = true,
             Status = DataStatus.Active,
             Type = DataType.Charges,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -506,7 +489,6 @@ public class DataTest : TestBase
             AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Category = DataCategory.PaymentType,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Enable = true,
             Status = DataStatus.Active,
             Type = DataType.Charges,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -527,7 +509,6 @@ public class DataTest : TestBase
             AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Category = DataCategory.PaymentType,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Enable = true,
             Status = DataStatus.Active,
             Type = DataType.Charges,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -547,7 +528,6 @@ public class DataTest : TestBase
             AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Category = DataCategory.PaymentType,
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            Enable = true,
             Status = DataStatus.Active,
             Type = DataType.Charges,
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),

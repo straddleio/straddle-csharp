@@ -164,19 +164,6 @@ public sealed record class Data : JsonModel
     }
 
     /// <summary>
-    /// Whether this capability request is to enable or disable the capability.
-    /// </summary>
-    public required bool Enable
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<bool>("enable");
-        }
-        init { this._rawData.Set("enable", value); }
-    }
-
-    /// <summary>
     /// The current status of the capability request.
     /// </summary>
     public required ApiEnum<string, DataStatus> Status
@@ -243,7 +230,6 @@ public sealed record class Data : JsonModel
         _ = this.AccountID;
         this.Category.Validate();
         _ = this.CreatedAt;
-        _ = this.Enable;
         this.Status.Validate();
         this.Type.Validate();
         _ = this.UpdatedAt;

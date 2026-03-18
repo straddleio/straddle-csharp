@@ -1273,8 +1273,6 @@ public enum AccountV1DataSettingsChargesFundingTime
     OneDay,
     TwoDay,
     ThreeDay,
-    FourDay,
-    FiveDay,
 }
 
 sealed class AccountV1DataSettingsChargesFundingTimeConverter
@@ -1293,8 +1291,6 @@ sealed class AccountV1DataSettingsChargesFundingTimeConverter
             "one_day" => AccountV1DataSettingsChargesFundingTime.OneDay,
             "two_day" => AccountV1DataSettingsChargesFundingTime.TwoDay,
             "three_day" => AccountV1DataSettingsChargesFundingTime.ThreeDay,
-            "four_day" => AccountV1DataSettingsChargesFundingTime.FourDay,
-            "five_day" => AccountV1DataSettingsChargesFundingTime.FiveDay,
             _ => (AccountV1DataSettingsChargesFundingTime)(-1),
         };
     }
@@ -1314,8 +1310,6 @@ sealed class AccountV1DataSettingsChargesFundingTimeConverter
                 AccountV1DataSettingsChargesFundingTime.OneDay => "one_day",
                 AccountV1DataSettingsChargesFundingTime.TwoDay => "two_day",
                 AccountV1DataSettingsChargesFundingTime.ThreeDay => "three_day",
-                AccountV1DataSettingsChargesFundingTime.FourDay => "four_day",
-                AccountV1DataSettingsChargesFundingTime.FiveDay => "five_day",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1472,8 +1466,6 @@ public enum AccountV1DataSettingsPayoutsFundingTime
     OneDay,
     TwoDay,
     ThreeDay,
-    FourDay,
-    FiveDay,
 }
 
 sealed class AccountV1DataSettingsPayoutsFundingTimeConverter
@@ -1492,8 +1484,6 @@ sealed class AccountV1DataSettingsPayoutsFundingTimeConverter
             "one_day" => AccountV1DataSettingsPayoutsFundingTime.OneDay,
             "two_day" => AccountV1DataSettingsPayoutsFundingTime.TwoDay,
             "three_day" => AccountV1DataSettingsPayoutsFundingTime.ThreeDay,
-            "four_day" => AccountV1DataSettingsPayoutsFundingTime.FourDay,
-            "five_day" => AccountV1DataSettingsPayoutsFundingTime.FiveDay,
             _ => (AccountV1DataSettingsPayoutsFundingTime)(-1),
         };
     }
@@ -1513,8 +1503,6 @@ sealed class AccountV1DataSettingsPayoutsFundingTimeConverter
                 AccountV1DataSettingsPayoutsFundingTime.OneDay => "one_day",
                 AccountV1DataSettingsPayoutsFundingTime.TwoDay => "two_day",
                 AccountV1DataSettingsPayoutsFundingTime.ThreeDay => "three_day",
-                AccountV1DataSettingsPayoutsFundingTime.FourDay => "four_day",
-                AccountV1DataSettingsPayoutsFundingTime.FiveDay => "five_day",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

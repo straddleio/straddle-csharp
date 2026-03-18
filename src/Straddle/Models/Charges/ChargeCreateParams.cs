@@ -360,32 +360,6 @@ public sealed record class Config : JsonModel
     }
 
     /// <summary>
-    /// Defines whether to automatically place this charge on hold after being created.
-    /// </summary>
-    public bool? AutoHold
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<bool>("auto_hold");
-        }
-        init { this._rawData.Set("auto_hold", value); }
-    }
-
-    /// <summary>
-    /// The reason the charge is being automatically held on creation.
-    /// </summary>
-    public string? AutoHoldMessage
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableClass<string>("auto_hold_message");
-        }
-        init { this._rawData.Set("auto_hold_message", value); }
-    }
-
-    /// <summary>
     /// Payment will simulate processing if not Standard.
     /// </summary>
     public ApiEnum<string, SandboxOutcome>? SandboxOutcome
@@ -412,8 +386,6 @@ public sealed record class Config : JsonModel
     public override void Validate()
     {
         this.BalanceCheck.Validate();
-        _ = this.AutoHold;
-        _ = this.AutoHoldMessage;
         this.SandboxOutcome?.Validate();
     }
 
