@@ -35,10 +35,13 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
+                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
+                        Zip = "zip",
+                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -140,10 +143,13 @@ public class AccountV1Test : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -254,10 +260,13 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
+                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
+                        Zip = "zip",
+                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -370,10 +379,13 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
+                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
+                        Zip = "zip",
+                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -482,10 +494,13 @@ public class AccountV1Test : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -596,10 +611,13 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
+                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
+                        Zip = "zip",
+                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -709,10 +727,13 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
+                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
+                        Zip = "zip",
+                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -825,10 +846,13 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -922,10 +946,13 @@ public class AccountV1DataTest : TestBase
             Website = "https://example.com",
             Address = new()
             {
+                Address1 = "address1",
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-1360",
                 State = "SE",
+                Zip = "zip",
+                Address2 = "address2",
                 Country = "country",
                 Line2 = "line2",
             },
@@ -1045,10 +1072,13 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1155,10 +1185,13 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1259,10 +1292,13 @@ public class AccountV1DataTest : TestBase
             Website = "https://example.com",
             Address = new()
             {
+                Address1 = "address1",
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-1360",
                 State = "SE",
+                Zip = "zip",
+                Address2 = "address2",
                 Country = "country",
                 Line2 = "line2",
             },
@@ -1382,10 +1418,13 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1616,10 +1655,13 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1723,10 +1765,13 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1823,10 +1868,13 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1935,10 +1983,13 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -2040,10 +2091,13 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -3301,6 +3355,8 @@ public class AccountV1DataSettingsChargesFundingTimeTest : TestBase
     [InlineData(AccountV1DataSettingsChargesFundingTime.OneDay)]
     [InlineData(AccountV1DataSettingsChargesFundingTime.TwoDay)]
     [InlineData(AccountV1DataSettingsChargesFundingTime.ThreeDay)]
+    [InlineData(AccountV1DataSettingsChargesFundingTime.FourDay)]
+    [InlineData(AccountV1DataSettingsChargesFundingTime.FiveDay)]
     public void Validation_Works(AccountV1DataSettingsChargesFundingTime rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -3325,6 +3381,8 @@ public class AccountV1DataSettingsChargesFundingTimeTest : TestBase
     [InlineData(AccountV1DataSettingsChargesFundingTime.OneDay)]
     [InlineData(AccountV1DataSettingsChargesFundingTime.TwoDay)]
     [InlineData(AccountV1DataSettingsChargesFundingTime.ThreeDay)]
+    [InlineData(AccountV1DataSettingsChargesFundingTime.FourDay)]
+    [InlineData(AccountV1DataSettingsChargesFundingTime.FiveDay)]
     public void SerializationRoundtrip_Works(AccountV1DataSettingsChargesFundingTime rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -3485,6 +3543,8 @@ public class AccountV1DataSettingsPayoutsFundingTimeTest : TestBase
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.OneDay)]
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.TwoDay)]
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.ThreeDay)]
+    [InlineData(AccountV1DataSettingsPayoutsFundingTime.FourDay)]
+    [InlineData(AccountV1DataSettingsPayoutsFundingTime.FiveDay)]
     public void Validation_Works(AccountV1DataSettingsPayoutsFundingTime rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -3509,6 +3569,8 @@ public class AccountV1DataSettingsPayoutsFundingTimeTest : TestBase
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.OneDay)]
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.TwoDay)]
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.ThreeDay)]
+    [InlineData(AccountV1DataSettingsPayoutsFundingTime.FourDay)]
+    [InlineData(AccountV1DataSettingsPayoutsFundingTime.FiveDay)]
     public void SerializationRoundtrip_Works(AccountV1DataSettingsPayoutsFundingTime rawValue)
     {
         // force implicit conversion because Theory can't do that for us

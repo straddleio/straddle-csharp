@@ -2053,6 +2053,8 @@ public class PaykeyUnmaskedV1DataStatusDetailsReasonTest : TestBase
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.RequireReview)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.WatchtowerReview)]
+    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.Validating)]
+    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.AutoHold)]
     public void Validation_Works(PaykeyUnmaskedV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2097,6 +2099,8 @@ public class PaykeyUnmaskedV1DataStatusDetailsReasonTest : TestBase
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.RequireReview)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.WatchtowerReview)]
+    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.Validating)]
+    [InlineData(PaykeyUnmaskedV1DataStatusDetailsReason.AutoHold)]
     public void SerializationRoundtrip_Works(PaykeyUnmaskedV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
