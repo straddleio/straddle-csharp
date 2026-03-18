@@ -704,6 +704,7 @@ public enum FundingEventSummaryPagedV1DataStatusDetailsReason
     BlockedBySystem,
     WatchtowerReview,
     Validating,
+    AutoHold,
 }
 
 sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
@@ -753,6 +754,7 @@ sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
             "watchtower_review" =>
                 FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview,
             "validating" => FundingEventSummaryPagedV1DataStatusDetailsReason.Validating,
+            "auto_hold" => FundingEventSummaryPagedV1DataStatusDetailsReason.AutoHold,
             _ => (FundingEventSummaryPagedV1DataStatusDetailsReason)(-1),
         };
     }
@@ -808,6 +810,7 @@ sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
                 FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview =>
                     "watchtower_review",
                 FundingEventSummaryPagedV1DataStatusDetailsReason.Validating => "validating",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

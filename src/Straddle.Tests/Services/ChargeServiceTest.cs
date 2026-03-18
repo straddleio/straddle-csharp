@@ -15,6 +15,8 @@ public class ChargeServiceTest : TestBase
                 Config = new()
                 {
                     BalanceCheck = BalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = SandboxOutcome.Standard,
                 },
                 ConsentType = ConsentType.Internet,

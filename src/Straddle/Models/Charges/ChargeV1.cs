@@ -568,6 +568,32 @@ public sealed record class DataConfig : JsonModel
     }
 
     /// <summary>
+    /// Defines whether to automatically place this charge on hold after being created.
+    /// </summary>
+    public bool? AutoHold
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("auto_hold");
+        }
+        init { this._rawData.Set("auto_hold", value); }
+    }
+
+    /// <summary>
+    /// The reason the charge is being automatically held on creation.
+    /// </summary>
+    public string? AutoHoldMessage
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("auto_hold_message");
+        }
+        init { this._rawData.Set("auto_hold_message", value); }
+    }
+
+    /// <summary>
     /// Payment will simulate processing if not Standard.
     /// </summary>
     public ApiEnum<string, DataConfigSandboxOutcome>? SandboxOutcome
@@ -594,6 +620,8 @@ public sealed record class DataConfig : JsonModel
     public override void Validate()
     {
         this.BalanceCheck.Validate();
+        _ = this.AutoHold;
+        _ = this.AutoHoldMessage;
         this.SandboxOutcome?.Validate();
     }
 
@@ -1040,6 +1068,7 @@ public enum Reason
     BlockedBySystem,
     WatchtowerReview,
     Validating,
+    AutoHold,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -1078,6 +1107,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "blocked_by_system" => Reason.BlockedBySystem,
             "watchtower_review" => Reason.WatchtowerReview,
             "validating" => Reason.Validating,
+            "auto_hold" => Reason.AutoHold,
             _ => (Reason)(-1),
         };
     }
@@ -1114,6 +1144,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.BlockedBySystem => "blocked_by_system",
                 Reason.WatchtowerReview => "watchtower_review",
                 Reason.Validating => "validating",
+                Reason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

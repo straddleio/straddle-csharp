@@ -21,6 +21,8 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -95,6 +97,8 @@ public class PayoutUnmaskResponseTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -179,6 +183,8 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -267,6 +273,8 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -348,6 +356,8 @@ public class PayoutUnmaskResponseTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -432,6 +442,8 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -514,6 +526,8 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -599,6 +613,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -664,6 +680,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
         int expectedAmount = 0;
         PayoutUnmaskResponseDataConfig expectedConfig = new()
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
         string expectedCurrency = "currency";
@@ -788,6 +806,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -867,6 +887,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -939,6 +961,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
         int expectedAmount = 0;
         PayoutUnmaskResponseDataConfig expectedConfig = new()
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
         string expectedCurrency = "currency";
@@ -1063,6 +1087,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1136,6 +1162,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1198,6 +1226,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1255,6 +1285,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1322,6 +1354,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1384,6 +1418,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1456,6 +1492,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1517,6 +1555,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1596,6 +1636,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1664,6 +1706,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1738,12 +1782,18 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
+        bool expectedAutoHold = true;
+        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, PayoutUnmaskResponseDataConfigSandboxOutcome> expectedSandboxOutcome =
             PayoutUnmaskResponseDataConfigSandboxOutcome.Standard;
 
+        Assert.Equal(expectedAutoHold, model.AutoHold);
+        Assert.Equal(expectedAutoHoldMessage, model.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, model.SandboxOutcome);
     }
 
@@ -1752,6 +1802,8 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1769,6 +1821,8 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1779,9 +1833,13 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        bool expectedAutoHold = true;
+        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, PayoutUnmaskResponseDataConfigSandboxOutcome> expectedSandboxOutcome =
             PayoutUnmaskResponseDataConfigSandboxOutcome.Standard;
 
+        Assert.Equal(expectedAutoHold, deserialized.AutoHold);
+        Assert.Equal(expectedAutoHoldMessage, deserialized.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, deserialized.SandboxOutcome);
     }
 
@@ -1790,6 +1848,8 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1799,7 +1859,11 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new PayoutUnmaskResponseDataConfig { };
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+        };
 
         Assert.Null(model.SandboxOutcome);
         Assert.False(model.RawData.ContainsKey("sandbox_outcome"));
@@ -1808,7 +1872,11 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new PayoutUnmaskResponseDataConfig { };
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+        };
 
         model.Validate();
     }
@@ -1818,6 +1886,9 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
         };
@@ -1831,8 +1902,67 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+        };
+
+        Assert.Null(model.AutoHold);
+        Assert.False(model.RawData.ContainsKey("auto_hold"));
+        Assert.Null(model.AutoHoldMessage);
+        Assert.False(model.RawData.ContainsKey("auto_hold_message"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+
+            AutoHold = null,
+            AutoHoldMessage = null,
+        };
+
+        Assert.Null(model.AutoHold);
+        Assert.True(model.RawData.ContainsKey("auto_hold"));
+        Assert.Null(model.AutoHoldMessage);
+        Assert.True(model.RawData.ContainsKey("auto_hold_message"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+
+            AutoHold = null,
+            AutoHoldMessage = null,
         };
 
         model.Validate();
@@ -1843,6 +1973,8 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -2271,6 +2403,7 @@ public class PayoutUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.Validating)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.AutoHold)]
     public void Validation_Works(PayoutUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2316,6 +2449,7 @@ public class PayoutUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.Validating)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.AutoHold)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

@@ -2059,6 +2059,7 @@ public class LinkCreateTanResponseDataStatusDetailsReasonTest : TestBase
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.BlockedBySystem)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.WatchtowerReview)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.Validating)]
+    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.AutoHold)]
     public void Validation_Works(LinkCreateTanResponseDataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2104,6 +2105,7 @@ public class LinkCreateTanResponseDataStatusDetailsReasonTest : TestBase
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.BlockedBySystem)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.WatchtowerReview)]
     [InlineData(LinkCreateTanResponseDataStatusDetailsReason.Validating)]
+    [InlineData(LinkCreateTanResponseDataStatusDetailsReason.AutoHold)]
     public void SerializationRoundtrip_Works(LinkCreateTanResponseDataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

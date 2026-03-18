@@ -580,6 +580,32 @@ public sealed record class ChargeUnmaskResponseDataConfig : JsonModel
     }
 
     /// <summary>
+    /// Defines whether to automatically place this charge on hold after being created.
+    /// </summary>
+    public bool? AutoHold
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("auto_hold");
+        }
+        init { this._rawData.Set("auto_hold", value); }
+    }
+
+    /// <summary>
+    /// The reason the charge is being automatically held on creation.
+    /// </summary>
+    public string? AutoHoldMessage
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("auto_hold_message");
+        }
+        init { this._rawData.Set("auto_hold_message", value); }
+    }
+
+    /// <summary>
     /// Payment will simulate processing if not Standard.
     /// </summary>
     public ApiEnum<string, ChargeUnmaskResponseDataConfigSandboxOutcome>? SandboxOutcome
@@ -606,6 +632,8 @@ public sealed record class ChargeUnmaskResponseDataConfig : JsonModel
     public override void Validate()
     {
         this.BalanceCheck.Validate();
+        _ = this.AutoHold;
+        _ = this.AutoHoldMessage;
         this.SandboxOutcome?.Validate();
     }
 
@@ -1160,6 +1188,7 @@ public enum ChargeUnmaskResponseDataStatusHistoryReason
     BlockedBySystem,
     WatchtowerReview,
     Validating,
+    AutoHold,
 }
 
 sealed class ChargeUnmaskResponseDataStatusHistoryReasonConverter
@@ -1202,6 +1231,7 @@ sealed class ChargeUnmaskResponseDataStatusHistoryReasonConverter
             "blocked_by_system" => ChargeUnmaskResponseDataStatusHistoryReason.BlockedBySystem,
             "watchtower_review" => ChargeUnmaskResponseDataStatusHistoryReason.WatchtowerReview,
             "validating" => ChargeUnmaskResponseDataStatusHistoryReason.Validating,
+            "auto_hold" => ChargeUnmaskResponseDataStatusHistoryReason.AutoHold,
             _ => (ChargeUnmaskResponseDataStatusHistoryReason)(-1),
         };
     }
@@ -1249,6 +1279,7 @@ sealed class ChargeUnmaskResponseDataStatusHistoryReasonConverter
                 ChargeUnmaskResponseDataStatusHistoryReason.BlockedBySystem => "blocked_by_system",
                 ChargeUnmaskResponseDataStatusHistoryReason.WatchtowerReview => "watchtower_review",
                 ChargeUnmaskResponseDataStatusHistoryReason.Validating => "validating",
+                ChargeUnmaskResponseDataStatusHistoryReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

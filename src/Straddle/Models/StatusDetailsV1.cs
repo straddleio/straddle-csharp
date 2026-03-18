@@ -155,6 +155,7 @@ public enum Reason
     BlockedBySystem,
     WatchtowerReview,
     Validating,
+    AutoHold,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -193,6 +194,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "blocked_by_system" => Reason.BlockedBySystem,
             "watchtower_review" => Reason.WatchtowerReview,
             "validating" => Reason.Validating,
+            "auto_hold" => Reason.AutoHold,
             _ => (Reason)(-1),
         };
     }
@@ -229,6 +231,7 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.BlockedBySystem => "blocked_by_system",
                 Reason.WatchtowerReview => "watchtower_review",
                 Reason.Validating => "validating",
+                Reason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

@@ -1237,6 +1237,7 @@ public class FundingEventSummaryPagedV1DataStatusDetailsReasonTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.Validating)]
+    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.AutoHold)]
     public void Validation_Works(FundingEventSummaryPagedV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1282,6 +1283,7 @@ public class FundingEventSummaryPagedV1DataStatusDetailsReasonTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.Validating)]
+    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.AutoHold)]
     public void SerializationRoundtrip_Works(
         FundingEventSummaryPagedV1DataStatusDetailsReason rawValue
     )

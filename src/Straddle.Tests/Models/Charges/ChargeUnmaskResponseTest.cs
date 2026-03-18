@@ -22,6 +22,8 @@ public class ChargeUnmaskResponseTest : TestBase
                 Config = new()
                 {
                     BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -98,6 +100,8 @@ public class ChargeUnmaskResponseTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -184,6 +188,8 @@ public class ChargeUnmaskResponseTest : TestBase
                 Config = new()
                 {
                     BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -274,6 +280,8 @@ public class ChargeUnmaskResponseTest : TestBase
                 Config = new()
                 {
                     BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -357,6 +365,8 @@ public class ChargeUnmaskResponseTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -443,6 +453,8 @@ public class ChargeUnmaskResponseTest : TestBase
                 Config = new()
                 {
                     BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -527,6 +539,8 @@ public class ChargeUnmaskResponseTest : TestBase
                 Config = new()
                 {
                     BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -614,6 +628,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -681,6 +697,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
         ChargeUnmaskResponseDataConfig expectedConfig = new()
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
         ApiEnum<string, ChargeUnmaskResponseDataConsentType> expectedConsentType =
@@ -809,6 +827,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -890,6 +910,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -964,6 +986,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
         ChargeUnmaskResponseDataConfig expectedConfig = new()
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
         ApiEnum<string, ChargeUnmaskResponseDataConsentType> expectedConsentType =
@@ -1092,6 +1116,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -1167,6 +1193,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -1231,6 +1259,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -1290,6 +1320,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -1359,6 +1391,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -1423,6 +1457,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -1495,6 +1531,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -1560,6 +1598,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -1637,6 +1677,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -1707,6 +1749,8 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Config = new()
             {
                 BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             ConsentType = ChargeUnmaskResponseDataConsentType.Internet,
@@ -1783,15 +1827,21 @@ public class ChargeUnmaskResponseDataConfigTest : TestBase
         var model = new ChargeUnmaskResponseDataConfig
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
         ApiEnum<string, ChargeUnmaskResponseDataConfigBalanceCheck> expectedBalanceCheck =
             ChargeUnmaskResponseDataConfigBalanceCheck.Required;
+        bool expectedAutoHold = true;
+        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, ChargeUnmaskResponseDataConfigSandboxOutcome> expectedSandboxOutcome =
             ChargeUnmaskResponseDataConfigSandboxOutcome.Standard;
 
         Assert.Equal(expectedBalanceCheck, model.BalanceCheck);
+        Assert.Equal(expectedAutoHold, model.AutoHold);
+        Assert.Equal(expectedAutoHoldMessage, model.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, model.SandboxOutcome);
     }
 
@@ -1801,6 +1851,8 @@ public class ChargeUnmaskResponseDataConfigTest : TestBase
         var model = new ChargeUnmaskResponseDataConfig
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1819,6 +1871,8 @@ public class ChargeUnmaskResponseDataConfigTest : TestBase
         var model = new ChargeUnmaskResponseDataConfig
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1831,10 +1885,14 @@ public class ChargeUnmaskResponseDataConfigTest : TestBase
 
         ApiEnum<string, ChargeUnmaskResponseDataConfigBalanceCheck> expectedBalanceCheck =
             ChargeUnmaskResponseDataConfigBalanceCheck.Required;
+        bool expectedAutoHold = true;
+        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, ChargeUnmaskResponseDataConfigSandboxOutcome> expectedSandboxOutcome =
             ChargeUnmaskResponseDataConfigSandboxOutcome.Standard;
 
         Assert.Equal(expectedBalanceCheck, deserialized.BalanceCheck);
+        Assert.Equal(expectedAutoHold, deserialized.AutoHold);
+        Assert.Equal(expectedAutoHoldMessage, deserialized.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, deserialized.SandboxOutcome);
     }
 
@@ -1844,6 +1902,8 @@ public class ChargeUnmaskResponseDataConfigTest : TestBase
         var model = new ChargeUnmaskResponseDataConfig
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1856,6 +1916,8 @@ public class ChargeUnmaskResponseDataConfigTest : TestBase
         var model = new ChargeUnmaskResponseDataConfig
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
         };
 
         Assert.Null(model.SandboxOutcome);
@@ -1868,6 +1930,8 @@ public class ChargeUnmaskResponseDataConfigTest : TestBase
         var model = new ChargeUnmaskResponseDataConfig
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
         };
 
         model.Validate();
@@ -1879,6 +1943,8 @@ public class ChargeUnmaskResponseDataConfigTest : TestBase
         var model = new ChargeUnmaskResponseDataConfig
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
 
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
@@ -1894,9 +1960,71 @@ public class ChargeUnmaskResponseDataConfigTest : TestBase
         var model = new ChargeUnmaskResponseDataConfig
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
 
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new ChargeUnmaskResponseDataConfig
+        {
+            BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
+        };
+
+        Assert.Null(model.AutoHold);
+        Assert.False(model.RawData.ContainsKey("auto_hold"));
+        Assert.Null(model.AutoHoldMessage);
+        Assert.False(model.RawData.ContainsKey("auto_hold_message"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new ChargeUnmaskResponseDataConfig
+        {
+            BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new ChargeUnmaskResponseDataConfig
+        {
+            BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
+
+            AutoHold = null,
+            AutoHoldMessage = null,
+        };
+
+        Assert.Null(model.AutoHold);
+        Assert.True(model.RawData.ContainsKey("auto_hold"));
+        Assert.Null(model.AutoHoldMessage);
+        Assert.True(model.RawData.ContainsKey("auto_hold_message"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new ChargeUnmaskResponseDataConfig
+        {
+            BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
+
+            AutoHold = null,
+            AutoHoldMessage = null,
         };
 
         model.Validate();
@@ -1908,6 +2036,8 @@ public class ChargeUnmaskResponseDataConfigTest : TestBase
         var model = new ChargeUnmaskResponseDataConfig
         {
             BalanceCheck = ChargeUnmaskResponseDataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = ChargeUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -2446,6 +2576,7 @@ public class ChargeUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.Validating)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.AutoHold)]
     public void Validation_Works(ChargeUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2491,6 +2622,7 @@ public class ChargeUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
     [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.Validating)]
+    [InlineData(ChargeUnmaskResponseDataStatusHistoryReason.AutoHold)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
