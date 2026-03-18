@@ -23,12 +23,7 @@ public class PayoutCreateParamsTest : TestBase
             ExternalID = "external_id",
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = SandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = SandboxOutcome.Standard },
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             CorrelationID = "Correlation-Id",
             IdempotencyKey = "xxxxxxxxxx",
@@ -43,12 +38,7 @@ public class PayoutCreateParamsTest : TestBase
         string expectedExternalID = "external_id";
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
-        Config expectedConfig = new()
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = SandboxOutcome.Standard,
-        };
+        Config expectedConfig = new() { SandboxOutcome = SandboxOutcome.Standard };
         Dictionary<string, string> expectedMetadata = new() { { "foo", "string" } };
         string expectedCorrelationID = "Correlation-Id";
         string expectedIdempotencyKey = "xxxxxxxxxx";
@@ -150,12 +140,7 @@ public class PayoutCreateParamsTest : TestBase
             ExternalID = "external_id",
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = SandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = SandboxOutcome.Standard },
             CorrelationID = "Correlation-Id",
             IdempotencyKey = "xxxxxxxxxx",
             RequestID = "Request-Id",
@@ -178,12 +163,7 @@ public class PayoutCreateParamsTest : TestBase
             ExternalID = "external_id",
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = SandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = SandboxOutcome.Standard },
             CorrelationID = "Correlation-Id",
             IdempotencyKey = "xxxxxxxxxx",
             RequestID = "Request-Id",
@@ -257,12 +237,7 @@ public class PayoutCreateParamsTest : TestBase
             ExternalID = "external_id",
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = SandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = SandboxOutcome.Standard },
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             CorrelationID = "Correlation-Id",
             IdempotencyKey = "xxxxxxxxxx",
@@ -281,31 +256,17 @@ public class ConfigTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new Config
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = SandboxOutcome.Standard,
-        };
+        var model = new Config { SandboxOutcome = SandboxOutcome.Standard };
 
-        bool expectedAutoHold = true;
-        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, SandboxOutcome> expectedSandboxOutcome = SandboxOutcome.Standard;
 
-        Assert.Equal(expectedAutoHold, model.AutoHold);
-        Assert.Equal(expectedAutoHoldMessage, model.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, model.SandboxOutcome);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new Config
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = SandboxOutcome.Standard,
-        };
+        var model = new Config { SandboxOutcome = SandboxOutcome.Standard };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Config>(json, ModelBase.SerializerOptions);
@@ -316,35 +277,21 @@ public class ConfigTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new Config
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = SandboxOutcome.Standard,
-        };
+        var model = new Config { SandboxOutcome = SandboxOutcome.Standard };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<Config>(element, ModelBase.SerializerOptions);
         Assert.NotNull(deserialized);
 
-        bool expectedAutoHold = true;
-        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, SandboxOutcome> expectedSandboxOutcome = SandboxOutcome.Standard;
 
-        Assert.Equal(expectedAutoHold, deserialized.AutoHold);
-        Assert.Equal(expectedAutoHoldMessage, deserialized.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, deserialized.SandboxOutcome);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new Config
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = SandboxOutcome.Standard,
-        };
+        var model = new Config { SandboxOutcome = SandboxOutcome.Standard };
 
         model.Validate();
     }
@@ -352,7 +299,7 @@ public class ConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Config { AutoHold = true, AutoHoldMessage = "auto_hold_message" };
+        var model = new Config { };
 
         Assert.Null(model.SandboxOutcome);
         Assert.False(model.RawData.ContainsKey("sandbox_outcome"));
@@ -361,7 +308,7 @@ public class ConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Config { AutoHold = true, AutoHoldMessage = "auto_hold_message" };
+        var model = new Config { };
 
         model.Validate();
     }
@@ -371,9 +318,6 @@ public class ConfigTest : TestBase
     {
         var model = new Config
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
         };
@@ -387,9 +331,6 @@ public class ConfigTest : TestBase
     {
         var model = new Config
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
         };
@@ -398,64 +339,9 @@ public class ConfigTest : TestBase
     }
 
     [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new Config { SandboxOutcome = SandboxOutcome.Standard };
-
-        Assert.Null(model.AutoHold);
-        Assert.False(model.RawData.ContainsKey("auto_hold"));
-        Assert.Null(model.AutoHoldMessage);
-        Assert.False(model.RawData.ContainsKey("auto_hold_message"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new Config { SandboxOutcome = SandboxOutcome.Standard };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new Config
-        {
-            SandboxOutcome = SandboxOutcome.Standard,
-
-            AutoHold = null,
-            AutoHoldMessage = null,
-        };
-
-        Assert.Null(model.AutoHold);
-        Assert.True(model.RawData.ContainsKey("auto_hold"));
-        Assert.Null(model.AutoHoldMessage);
-        Assert.True(model.RawData.ContainsKey("auto_hold_message"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new Config
-        {
-            SandboxOutcome = SandboxOutcome.Standard,
-
-            AutoHold = null,
-            AutoHoldMessage = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new Config
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = SandboxOutcome.Standard,
-        };
+        var model = new Config { SandboxOutcome = SandboxOutcome.Standard };
 
         Config copied = new(model);
 

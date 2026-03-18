@@ -1109,8 +1109,6 @@ public enum PaykeyUnmaskedV1DataStatusDetailsReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
-    Validating,
-    AutoHold,
 }
 
 sealed class PaykeyUnmaskedV1DataStatusDetailsReasonConverter
@@ -1149,8 +1147,6 @@ sealed class PaykeyUnmaskedV1DataStatusDetailsReasonConverter
             "require_review" => PaykeyUnmaskedV1DataStatusDetailsReason.RequireReview,
             "blocked_by_system" => PaykeyUnmaskedV1DataStatusDetailsReason.BlockedBySystem,
             "watchtower_review" => PaykeyUnmaskedV1DataStatusDetailsReason.WatchtowerReview,
-            "validating" => PaykeyUnmaskedV1DataStatusDetailsReason.Validating,
-            "auto_hold" => PaykeyUnmaskedV1DataStatusDetailsReason.AutoHold,
             _ => (PaykeyUnmaskedV1DataStatusDetailsReason)(-1),
         };
     }
@@ -1193,8 +1189,6 @@ sealed class PaykeyUnmaskedV1DataStatusDetailsReasonConverter
                 PaykeyUnmaskedV1DataStatusDetailsReason.RequireReview => "require_review",
                 PaykeyUnmaskedV1DataStatusDetailsReason.BlockedBySystem => "blocked_by_system",
                 PaykeyUnmaskedV1DataStatusDetailsReason.WatchtowerReview => "watchtower_review",
-                PaykeyUnmaskedV1DataStatusDetailsReason.Validating => "validating",
-                PaykeyUnmaskedV1DataStatusDetailsReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

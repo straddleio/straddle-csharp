@@ -575,7 +575,6 @@ public class StatusTest : TestBase
     [InlineData(Status.Pending)]
     [InlineData(Status.Paid)]
     [InlineData(Status.Reversed)]
-    [InlineData(Status.Validating)]
     public void Validation_Works(Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -604,7 +603,6 @@ public class StatusTest : TestBase
     [InlineData(Status.Pending)]
     [InlineData(Status.Paid)]
     [InlineData(Status.Reversed)]
-    [InlineData(Status.Validating)]
     public void SerializationRoundtrip_Works(Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -664,8 +662,6 @@ public class StatusReasonTest : TestBase
     [InlineData(StatusReason.RequireReview)]
     [InlineData(StatusReason.BlockedBySystem)]
     [InlineData(StatusReason.WatchtowerReview)]
-    [InlineData(StatusReason.Validating)]
-    [InlineData(StatusReason.AutoHold)]
     public void Validation_Works(StatusReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -711,8 +707,6 @@ public class StatusReasonTest : TestBase
     [InlineData(StatusReason.RequireReview)]
     [InlineData(StatusReason.BlockedBySystem)]
     [InlineData(StatusReason.WatchtowerReview)]
-    [InlineData(StatusReason.Validating)]
-    [InlineData(StatusReason.AutoHold)]
     public void SerializationRoundtrip_Works(StatusReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
