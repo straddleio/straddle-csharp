@@ -972,6 +972,7 @@ public class FundingEventSummaryPagedV1DataStatusTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatus.Pending)]
     [InlineData(FundingEventSummaryPagedV1DataStatus.Paid)]
     [InlineData(FundingEventSummaryPagedV1DataStatus.Reversed)]
+    [InlineData(FundingEventSummaryPagedV1DataStatus.Validating)]
     public void Validation_Works(FundingEventSummaryPagedV1DataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -999,6 +1000,7 @@ public class FundingEventSummaryPagedV1DataStatusTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatus.Pending)]
     [InlineData(FundingEventSummaryPagedV1DataStatus.Paid)]
     [InlineData(FundingEventSummaryPagedV1DataStatus.Reversed)]
+    [InlineData(FundingEventSummaryPagedV1DataStatus.Validating)]
     public void SerializationRoundtrip_Works(FundingEventSummaryPagedV1DataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1234,6 +1236,8 @@ public class FundingEventSummaryPagedV1DataStatusDetailsReasonTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.RequireReview)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview)]
+    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.Validating)]
+    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.AutoHold)]
     public void Validation_Works(FundingEventSummaryPagedV1DataStatusDetailsReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1278,6 +1282,8 @@ public class FundingEventSummaryPagedV1DataStatusDetailsReasonTest : TestBase
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.RequireReview)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.BlockedBySystem)]
     [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview)]
+    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.Validating)]
+    [InlineData(FundingEventSummaryPagedV1DataStatusDetailsReason.AutoHold)]
     public void SerializationRoundtrip_Works(
         FundingEventSummaryPagedV1DataStatusDetailsReason rawValue
     )
