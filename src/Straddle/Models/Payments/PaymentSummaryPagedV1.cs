@@ -351,6 +351,25 @@ public sealed record class Data : JsonModel
     }
 
     /// <summary>
+    /// Metadata for payment - only included if requested.
+    /// </summary>
+    public IReadOnlyDictionary<string, string>? Metadata
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<FrozenDictionary<string, string>>("metadata");
+        }
+        init
+        {
+            this._rawData.Set<FrozenDictionary<string, string>?>(
+                "metadata",
+                value == null ? null : FrozenDictionary.ToFrozenDictionary(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Information about the paykey used for the `charge` or `payout`.
     /// </summary>
     public PaykeyDetailsV1? PaykeyDetails
@@ -391,6 +410,7 @@ public sealed record class Data : JsonModel
         this.CustomerDetails?.Validate();
         _ = this.EffectiveAt;
         _ = this.FundingID;
+        _ = this.Metadata;
         this.PaykeyDetails?.Validate();
     }
 
@@ -490,6 +510,7 @@ public enum Status
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class StatusConverter : JsonConverter<Status>
@@ -510,6 +531,7 @@ sealed class StatusConverter : JsonConverter<Status>
             "pending" => Status.Pending,
             "paid" => Status.Paid,
             "reversed" => Status.Reversed,
+            "validating" => Status.Validating,
             _ => (Status)(-1),
         };
     }
@@ -528,6 +550,7 @@ sealed class StatusConverter : JsonConverter<Status>
                 Status.Pending => "pending",
                 Status.Paid => "paid",
                 Status.Reversed => "reversed",
+                Status.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
