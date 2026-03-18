@@ -19,12 +19,7 @@ public class PayoutV1Test : TestBase
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Amount = 10000,
-                Config = new()
-                {
-                    AutoHold = true,
-                    AutoHoldMessage = "auto_hold_message",
-                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
-                },
+                Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
                 Currency = "currency",
                 Description = "description",
                 Device = new("192.168.1.1"),
@@ -74,10 +69,6 @@ public class PayoutV1Test : TestBase
                 },
                 PaymentRail = PaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Unknown },
-                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -92,12 +83,7 @@ public class PayoutV1Test : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -147,10 +133,6 @@ public class PayoutV1Test : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -174,12 +156,7 @@ public class PayoutV1Test : TestBase
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Amount = 10000,
-                Config = new()
-                {
-                    AutoHold = true,
-                    AutoHoldMessage = "auto_hold_message",
-                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
-                },
+                Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
                 Currency = "currency",
                 Description = "description",
                 Device = new("192.168.1.1"),
@@ -229,10 +206,6 @@ public class PayoutV1Test : TestBase
                 },
                 PaymentRail = PaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Unknown },
-                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -258,12 +231,7 @@ public class PayoutV1Test : TestBase
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Amount = 10000,
-                Config = new()
-                {
-                    AutoHold = true,
-                    AutoHoldMessage = "auto_hold_message",
-                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
-                },
+                Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
                 Currency = "currency",
                 Description = "description",
                 Device = new("192.168.1.1"),
@@ -313,10 +281,6 @@ public class PayoutV1Test : TestBase
                 },
                 PaymentRail = PaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Unknown },
-                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -338,12 +302,7 @@ public class PayoutV1Test : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -393,10 +352,6 @@ public class PayoutV1Test : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -420,12 +375,7 @@ public class PayoutV1Test : TestBase
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Amount = 10000,
-                Config = new()
-                {
-                    AutoHold = true,
-                    AutoHoldMessage = "auto_hold_message",
-                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
-                },
+                Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
                 Currency = "currency",
                 Description = "description",
                 Device = new("192.168.1.1"),
@@ -475,10 +425,6 @@ public class PayoutV1Test : TestBase
                 },
                 PaymentRail = PaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Unknown },
-                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -501,12 +447,7 @@ public class PayoutV1Test : TestBase
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Amount = 10000,
-                Config = new()
-                {
-                    AutoHold = true,
-                    AutoHoldMessage = "auto_hold_message",
-                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
-                },
+                Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
                 Currency = "currency",
                 Description = "description",
                 Device = new("192.168.1.1"),
@@ -556,10 +497,6 @@ public class PayoutV1Test : TestBase
                 },
                 PaymentRail = PaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Unknown },
-                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -585,12 +522,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -640,21 +572,12 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         int expectedAmount = 10000;
-        DataConfig expectedConfig = new()
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = DataConfigSandboxOutcome.Standard,
-        };
+        DataConfig expectedConfig = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard };
         string expectedCurrency = "currency";
         string expectedDescription = "description";
         Models::DeviceInfoV1 expectedDevice = new("192.168.1.1");
@@ -704,10 +627,6 @@ public class DataTest : TestBase
         };
         ApiEnum<string, PaymentRail> expectedPaymentRail = PaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        Dictionary<string, ApiEnum<string, RelatedPaymentsItem>> expectedRelatedPayments = new()
-        {
-            { "foo", RelatedPaymentsItem.Unknown },
-        };
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, model.ID);
@@ -752,14 +671,6 @@ public class DataTest : TestBase
         Assert.Equal(expectedPaykeyDetails, model.PaykeyDetails);
         Assert.Equal(expectedPaymentRail, model.PaymentRail);
         Assert.Equal(expectedProcessedAt, model.ProcessedAt);
-        Assert.NotNull(model.RelatedPayments);
-        Assert.Equal(expectedRelatedPayments.Count, model.RelatedPayments.Count);
-        foreach (var item in expectedRelatedPayments)
-        {
-            Assert.True(model.RelatedPayments.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, model.RelatedPayments[item.Key]);
-        }
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
     }
 
@@ -770,12 +681,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -825,10 +731,6 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -845,12 +747,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -900,10 +797,6 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -913,12 +806,7 @@ public class DataTest : TestBase
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         int expectedAmount = 10000;
-        DataConfig expectedConfig = new()
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = DataConfigSandboxOutcome.Standard,
-        };
+        DataConfig expectedConfig = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard };
         string expectedCurrency = "currency";
         string expectedDescription = "description";
         Models::DeviceInfoV1 expectedDevice = new("192.168.1.1");
@@ -968,10 +856,6 @@ public class DataTest : TestBase
         };
         ApiEnum<string, PaymentRail> expectedPaymentRail = PaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        Dictionary<string, ApiEnum<string, RelatedPaymentsItem>> expectedRelatedPayments = new()
-        {
-            { "foo", RelatedPaymentsItem.Unknown },
-        };
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, deserialized.ID);
@@ -1016,14 +900,6 @@ public class DataTest : TestBase
         Assert.Equal(expectedPaykeyDetails, deserialized.PaykeyDetails);
         Assert.Equal(expectedPaymentRail, deserialized.PaymentRail);
         Assert.Equal(expectedProcessedAt, deserialized.ProcessedAt);
-        Assert.NotNull(deserialized.RelatedPayments);
-        Assert.Equal(expectedRelatedPayments.Count, deserialized.RelatedPayments.Count);
-        foreach (var item in expectedRelatedPayments)
-        {
-            Assert.True(deserialized.RelatedPayments.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, deserialized.RelatedPayments[item.Key]);
-        }
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
     }
 
@@ -1034,12 +910,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1089,10 +960,6 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1106,12 +973,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1145,10 +1007,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1167,12 +1025,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1206,10 +1059,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1223,12 +1072,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1262,10 +1106,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1289,12 +1129,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1328,10 +1163,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1350,12 +1181,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1411,8 +1237,6 @@ public class DataTest : TestBase
         Assert.False(model.RawData.ContainsKey("metadata"));
         Assert.Null(model.ProcessedAt);
         Assert.False(model.RawData.ContainsKey("processed_at"));
-        Assert.Null(model.RelatedPayments);
-        Assert.False(model.RawData.ContainsKey("related_payments"));
         Assert.Null(model.UpdatedAt);
         Assert.False(model.RawData.ContainsKey("updated_at"));
     }
@@ -1424,12 +1248,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1487,12 +1306,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1543,7 +1357,6 @@ public class DataTest : TestBase
             EffectiveAt = null,
             Metadata = null,
             ProcessedAt = null,
-            RelatedPayments = null,
             UpdatedAt = null,
         };
 
@@ -1555,8 +1368,6 @@ public class DataTest : TestBase
         Assert.True(model.RawData.ContainsKey("metadata"));
         Assert.Null(model.ProcessedAt);
         Assert.True(model.RawData.ContainsKey("processed_at"));
-        Assert.Null(model.RelatedPayments);
-        Assert.True(model.RawData.ContainsKey("related_payments"));
         Assert.Null(model.UpdatedAt);
         Assert.True(model.RawData.ContainsKey("updated_at"));
     }
@@ -1568,12 +1379,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1624,7 +1430,6 @@ public class DataTest : TestBase
             EffectiveAt = null,
             Metadata = null,
             ProcessedAt = null,
-            RelatedPayments = null,
             UpdatedAt = null,
         };
 
@@ -1638,12 +1443,7 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new()
-            {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
-                SandboxOutcome = DataConfigSandboxOutcome.Standard,
-            },
+            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1693,10 +1493,6 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1711,32 +1507,18 @@ public class DataConfigTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new DataConfig
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = DataConfigSandboxOutcome.Standard,
-        };
+        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
 
-        bool expectedAutoHold = true;
-        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, DataConfigSandboxOutcome> expectedSandboxOutcome =
             DataConfigSandboxOutcome.Standard;
 
-        Assert.Equal(expectedAutoHold, model.AutoHold);
-        Assert.Equal(expectedAutoHoldMessage, model.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, model.SandboxOutcome);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new DataConfig
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = DataConfigSandboxOutcome.Standard,
-        };
+        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<DataConfig>(
@@ -1750,12 +1532,7 @@ public class DataConfigTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new DataConfig
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = DataConfigSandboxOutcome.Standard,
-        };
+        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<DataConfig>(
@@ -1764,25 +1541,16 @@ public class DataConfigTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        bool expectedAutoHold = true;
-        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, DataConfigSandboxOutcome> expectedSandboxOutcome =
             DataConfigSandboxOutcome.Standard;
 
-        Assert.Equal(expectedAutoHold, deserialized.AutoHold);
-        Assert.Equal(expectedAutoHoldMessage, deserialized.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, deserialized.SandboxOutcome);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new DataConfig
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = DataConfigSandboxOutcome.Standard,
-        };
+        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
 
         model.Validate();
     }
@@ -1790,7 +1558,7 @@ public class DataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new DataConfig { AutoHold = true, AutoHoldMessage = "auto_hold_message" };
+        var model = new DataConfig { };
 
         Assert.Null(model.SandboxOutcome);
         Assert.False(model.RawData.ContainsKey("sandbox_outcome"));
@@ -1799,7 +1567,7 @@ public class DataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new DataConfig { AutoHold = true, AutoHoldMessage = "auto_hold_message" };
+        var model = new DataConfig { };
 
         model.Validate();
     }
@@ -1809,9 +1577,6 @@ public class DataConfigTest : TestBase
     {
         var model = new DataConfig
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
         };
@@ -1825,9 +1590,6 @@ public class DataConfigTest : TestBase
     {
         var model = new DataConfig
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
         };
@@ -1836,64 +1598,9 @@ public class DataConfigTest : TestBase
     }
 
     [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
-
-        Assert.Null(model.AutoHold);
-        Assert.False(model.RawData.ContainsKey("auto_hold"));
-        Assert.Null(model.AutoHoldMessage);
-        Assert.False(model.RawData.ContainsKey("auto_hold_message"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new DataConfig
-        {
-            SandboxOutcome = DataConfigSandboxOutcome.Standard,
-
-            AutoHold = null,
-            AutoHoldMessage = null,
-        };
-
-        Assert.Null(model.AutoHold);
-        Assert.True(model.RawData.ContainsKey("auto_hold"));
-        Assert.Null(model.AutoHoldMessage);
-        Assert.True(model.RawData.ContainsKey("auto_hold_message"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new DataConfig
-        {
-            SandboxOutcome = DataConfigSandboxOutcome.Standard,
-
-            AutoHold = null,
-            AutoHoldMessage = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
     public void CopyConstructor_Works()
     {
-        var model = new DataConfig
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-            SandboxOutcome = DataConfigSandboxOutcome.Standard,
-        };
+        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
 
         DataConfig copied = new(model);
 
@@ -1988,7 +1695,6 @@ public class StatusTest : TestBase
     [InlineData(Status.Pending)]
     [InlineData(Status.Paid)]
     [InlineData(Status.Reversed)]
-    [InlineData(Status.Validating)]
     public void Validation_Works(Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2017,7 +1723,6 @@ public class StatusTest : TestBase
     [InlineData(Status.Pending)]
     [InlineData(Status.Paid)]
     [InlineData(Status.Reversed)]
-    [InlineData(Status.Validating)]
     public void SerializationRoundtrip_Works(Status rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2263,8 +1968,6 @@ public class ReasonTest : TestBase
     [InlineData(Reason.RequireReview)]
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
-    [InlineData(Reason.Validating)]
-    [InlineData(Reason.AutoHold)]
     public void Validation_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2310,8 +2013,6 @@ public class ReasonTest : TestBase
     [InlineData(Reason.RequireReview)]
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
-    [InlineData(Reason.Validating)]
-    [InlineData(Reason.AutoHold)]
     public void SerializationRoundtrip_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2418,7 +2119,6 @@ public class StatusHistoryStatusTest : TestBase
     [InlineData(StatusHistoryStatus.Pending)]
     [InlineData(StatusHistoryStatus.Paid)]
     [InlineData(StatusHistoryStatus.Reversed)]
-    [InlineData(StatusHistoryStatus.Validating)]
     public void Validation_Works(StatusHistoryStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2447,7 +2147,6 @@ public class StatusHistoryStatusTest : TestBase
     [InlineData(StatusHistoryStatus.Pending)]
     [InlineData(StatusHistoryStatus.Paid)]
     [InlineData(StatusHistoryStatus.Reversed)]
-    [InlineData(StatusHistoryStatus.Validating)]
     public void SerializationRoundtrip_Works(StatusHistoryStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2527,68 +2226,6 @@ public class PaymentRailTest : TestBase
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PaymentRail>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-}
-
-public class RelatedPaymentsItemTest : TestBase
-{
-    [Theory]
-    [InlineData(RelatedPaymentsItem.Unknown)]
-    [InlineData(RelatedPaymentsItem.Original)]
-    [InlineData(RelatedPaymentsItem.Resubmit)]
-    [InlineData(RelatedPaymentsItem.Refund)]
-    public void Validation_Works(RelatedPaymentsItem rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, RelatedPaymentsItem> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(RelatedPaymentsItem.Unknown)]
-    [InlineData(RelatedPaymentsItem.Original)]
-    [InlineData(RelatedPaymentsItem.Resubmit)]
-    [InlineData(RelatedPaymentsItem.Refund)]
-    public void SerializationRoundtrip_Works(RelatedPaymentsItem rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, RelatedPaymentsItem> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
             json,
             ModelBase.SerializerOptions
         );
