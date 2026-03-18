@@ -496,7 +496,6 @@ public enum FundingEventSummaryPagedV1DataStatus
     Pending,
     Paid,
     Reversed,
-    Validating,
 }
 
 sealed class FundingEventSummaryPagedV1DataStatusConverter
@@ -518,7 +517,6 @@ sealed class FundingEventSummaryPagedV1DataStatusConverter
             "pending" => FundingEventSummaryPagedV1DataStatus.Pending,
             "paid" => FundingEventSummaryPagedV1DataStatus.Paid,
             "reversed" => FundingEventSummaryPagedV1DataStatus.Reversed,
-            "validating" => FundingEventSummaryPagedV1DataStatus.Validating,
             _ => (FundingEventSummaryPagedV1DataStatus)(-1),
         };
     }
@@ -541,7 +539,6 @@ sealed class FundingEventSummaryPagedV1DataStatusConverter
                 FundingEventSummaryPagedV1DataStatus.Pending => "pending",
                 FundingEventSummaryPagedV1DataStatus.Paid => "paid",
                 FundingEventSummaryPagedV1DataStatus.Reversed => "reversed",
-                FundingEventSummaryPagedV1DataStatus.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -703,8 +700,6 @@ public enum FundingEventSummaryPagedV1DataStatusDetailsReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
-    Validating,
-    AutoHold,
 }
 
 sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
@@ -753,8 +748,6 @@ sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
                 FundingEventSummaryPagedV1DataStatusDetailsReason.BlockedBySystem,
             "watchtower_review" =>
                 FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview,
-            "validating" => FundingEventSummaryPagedV1DataStatusDetailsReason.Validating,
-            "auto_hold" => FundingEventSummaryPagedV1DataStatusDetailsReason.AutoHold,
             _ => (FundingEventSummaryPagedV1DataStatusDetailsReason)(-1),
         };
     }
@@ -809,8 +802,6 @@ sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
                     "blocked_by_system",
                 FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview =>
                     "watchtower_review",
-                FundingEventSummaryPagedV1DataStatusDetailsReason.Validating => "validating",
-                FundingEventSummaryPagedV1DataStatusDetailsReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

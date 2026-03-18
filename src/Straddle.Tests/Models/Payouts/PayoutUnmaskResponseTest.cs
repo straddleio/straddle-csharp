@@ -21,8 +21,6 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
-                    AutoHold = true,
-                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -74,13 +72,6 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<
-                    string,
-                    ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-                >()
-                {
-                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -97,8 +88,6 @@ public class PayoutUnmaskResponseTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -150,13 +139,6 @@ public class PayoutUnmaskResponseTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -183,8 +165,6 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
-                    AutoHold = true,
-                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -236,13 +216,6 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<
-                    string,
-                    ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-                >()
-                {
-                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -273,8 +246,6 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
-                    AutoHold = true,
-                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -326,13 +297,6 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<
-                    string,
-                    ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-                >()
-                {
-                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -356,8 +320,6 @@ public class PayoutUnmaskResponseTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -409,13 +371,6 @@ public class PayoutUnmaskResponseTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -442,8 +397,6 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
-                    AutoHold = true,
-                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -495,13 +448,6 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<
-                    string,
-                    ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-                >()
-                {
-                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -526,8 +472,6 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
-                    AutoHold = true,
-                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -579,13 +523,6 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<
-                    string,
-                    ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-                >()
-                {
-                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-                },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -613,8 +550,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -666,13 +601,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -680,8 +608,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
         int expectedAmount = 0;
         PayoutUnmaskResponseDataConfig expectedConfig = new()
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
         string expectedCurrency = "currency";
@@ -735,13 +661,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
         ApiEnum<string, PayoutUnmaskResponseDataPaymentRail> expectedPaymentRail =
             PayoutUnmaskResponseDataPaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        Dictionary<
-            string,
-            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-        > expectedRelatedPayments = new()
-        {
-            { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-        };
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, model.ID);
@@ -786,14 +705,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Assert.Equal(expectedPaykeyDetails, model.PaykeyDetails);
         Assert.Equal(expectedPaymentRail, model.PaymentRail);
         Assert.Equal(expectedProcessedAt, model.ProcessedAt);
-        Assert.NotNull(model.RelatedPayments);
-        Assert.Equal(expectedRelatedPayments.Count, model.RelatedPayments.Count);
-        foreach (var item in expectedRelatedPayments)
-        {
-            Assert.True(model.RelatedPayments.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, model.RelatedPayments[item.Key]);
-        }
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
     }
 
@@ -806,8 +717,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -859,13 +768,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -887,8 +789,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -940,13 +840,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -961,8 +854,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
         int expectedAmount = 0;
         PayoutUnmaskResponseDataConfig expectedConfig = new()
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
         string expectedCurrency = "currency";
@@ -1016,13 +907,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
         ApiEnum<string, PayoutUnmaskResponseDataPaymentRail> expectedPaymentRail =
             PayoutUnmaskResponseDataPaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        Dictionary<
-            string,
-            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-        > expectedRelatedPayments = new()
-        {
-            { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-        };
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, deserialized.ID);
@@ -1067,14 +951,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Assert.Equal(expectedPaykeyDetails, deserialized.PaykeyDetails);
         Assert.Equal(expectedPaymentRail, deserialized.PaymentRail);
         Assert.Equal(expectedProcessedAt, deserialized.ProcessedAt);
-        Assert.NotNull(deserialized.RelatedPayments);
-        Assert.Equal(expectedRelatedPayments.Count, deserialized.RelatedPayments.Count);
-        foreach (var item in expectedRelatedPayments)
-        {
-            Assert.True(deserialized.RelatedPayments.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, deserialized.RelatedPayments[item.Key]);
-        }
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
     }
 
@@ -1087,8 +963,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1140,13 +1014,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1162,8 +1029,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1199,13 +1064,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1226,8 +1084,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1263,13 +1119,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1285,8 +1134,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1322,13 +1169,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1354,8 +1194,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1391,13 +1229,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1418,8 +1249,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1477,8 +1306,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Assert.False(model.RawData.ContainsKey("metadata"));
         Assert.Null(model.ProcessedAt);
         Assert.False(model.RawData.ContainsKey("processed_at"));
-        Assert.Null(model.RelatedPayments);
-        Assert.False(model.RawData.ContainsKey("related_payments"));
         Assert.Null(model.UpdatedAt);
         Assert.False(model.RawData.ContainsKey("updated_at"));
     }
@@ -1492,8 +1319,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1555,8 +1380,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1609,7 +1432,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = null,
             Metadata = null,
             ProcessedAt = null,
-            RelatedPayments = null,
             UpdatedAt = null,
         };
 
@@ -1621,8 +1443,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Assert.True(model.RawData.ContainsKey("metadata"));
         Assert.Null(model.ProcessedAt);
         Assert.True(model.RawData.ContainsKey("processed_at"));
-        Assert.Null(model.RelatedPayments);
-        Assert.True(model.RawData.ContainsKey("related_payments"));
         Assert.Null(model.UpdatedAt);
         Assert.True(model.RawData.ContainsKey("updated_at"));
     }
@@ -1636,8 +1456,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1690,7 +1508,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             EffectiveAt = null,
             Metadata = null,
             ProcessedAt = null,
-            RelatedPayments = null,
             UpdatedAt = null,
         };
 
@@ -1706,8 +1523,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1759,13 +1574,6 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
-            },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1782,18 +1590,12 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
-        bool expectedAutoHold = true;
-        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, PayoutUnmaskResponseDataConfigSandboxOutcome> expectedSandboxOutcome =
             PayoutUnmaskResponseDataConfigSandboxOutcome.Standard;
 
-        Assert.Equal(expectedAutoHold, model.AutoHold);
-        Assert.Equal(expectedAutoHoldMessage, model.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, model.SandboxOutcome);
     }
 
@@ -1802,8 +1604,6 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1821,8 +1621,6 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1833,13 +1631,9 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
         );
         Assert.NotNull(deserialized);
 
-        bool expectedAutoHold = true;
-        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, PayoutUnmaskResponseDataConfigSandboxOutcome> expectedSandboxOutcome =
             PayoutUnmaskResponseDataConfigSandboxOutcome.Standard;
 
-        Assert.Equal(expectedAutoHold, deserialized.AutoHold);
-        Assert.Equal(expectedAutoHoldMessage, deserialized.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, deserialized.SandboxOutcome);
     }
 
@@ -1848,8 +1642,6 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1859,11 +1651,7 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new PayoutUnmaskResponseDataConfig
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-        };
+        var model = new PayoutUnmaskResponseDataConfig { };
 
         Assert.Null(model.SandboxOutcome);
         Assert.False(model.RawData.ContainsKey("sandbox_outcome"));
@@ -1872,11 +1660,7 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new PayoutUnmaskResponseDataConfig
-        {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-        };
+        var model = new PayoutUnmaskResponseDataConfig { };
 
         model.Validate();
     }
@@ -1886,9 +1670,6 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
         };
@@ -1902,67 +1683,8 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new PayoutUnmaskResponseDataConfig
-        {
-            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
-        };
-
-        Assert.Null(model.AutoHold);
-        Assert.False(model.RawData.ContainsKey("auto_hold"));
-        Assert.Null(model.AutoHoldMessage);
-        Assert.False(model.RawData.ContainsKey("auto_hold_message"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new PayoutUnmaskResponseDataConfig
-        {
-            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new PayoutUnmaskResponseDataConfig
-        {
-            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
-
-            AutoHold = null,
-            AutoHoldMessage = null,
-        };
-
-        Assert.Null(model.AutoHold);
-        Assert.True(model.RawData.ContainsKey("auto_hold"));
-        Assert.Null(model.AutoHoldMessage);
-        Assert.True(model.RawData.ContainsKey("auto_hold_message"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new PayoutUnmaskResponseDataConfig
-        {
-            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
-
-            AutoHold = null,
-            AutoHoldMessage = null,
         };
 
         model.Validate();
@@ -1973,8 +1695,6 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -2123,7 +1843,6 @@ public class PayoutUnmaskResponseDataStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatus.Reversed)]
-    [InlineData(PayoutUnmaskResponseDataStatus.Validating)]
     public void Validation_Works(PayoutUnmaskResponseDataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2152,7 +1871,6 @@ public class PayoutUnmaskResponseDataStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatus.Reversed)]
-    [InlineData(PayoutUnmaskResponseDataStatus.Validating)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2402,8 +2120,6 @@ public class PayoutUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.RequireReview)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
-    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.Validating)]
-    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.AutoHold)]
     public void Validation_Works(PayoutUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2448,8 +2164,6 @@ public class PayoutUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.RequireReview)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
-    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.Validating)]
-    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.AutoHold)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2549,7 +2263,6 @@ public class PayoutUnmaskResponseDataStatusHistoryStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Reversed)]
-    [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Validating)]
     public void Validation_Works(PayoutUnmaskResponseDataStatusHistoryStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2577,7 +2290,6 @@ public class PayoutUnmaskResponseDataStatusHistoryStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Reversed)]
-    [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Validating)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataStatusHistoryStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2652,64 +2364,6 @@ public class PayoutUnmaskResponseDataPaymentRailTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, PayoutUnmaskResponseDataPaymentRail>
-        >(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(value, deserialized);
-    }
-}
-
-public class PayoutUnmaskResponseDataRelatedPaymentsItemTest : TestBase
-{
-    [Theory]
-    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown)]
-    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Original)]
-    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Resubmit)]
-    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Refund)]
-    public void Validation_Works(PayoutUnmaskResponseDataRelatedPaymentsItem rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<
-            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
-
-        Assert.NotNull(value);
-        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown)]
-    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Original)]
-    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Resubmit)]
-    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Refund)]
-    public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataRelatedPaymentsItem rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-        >(json, ModelBase.SerializerOptions);
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<
-            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
-        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
