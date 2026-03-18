@@ -1142,6 +1142,8 @@ public enum LinkCreateTanResponseDataStatusDetailsReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
+    AutoHold,
 }
 
 sealed class LinkCreateTanResponseDataStatusDetailsReasonConverter
@@ -1184,6 +1186,8 @@ sealed class LinkCreateTanResponseDataStatusDetailsReasonConverter
             "require_review" => LinkCreateTanResponseDataStatusDetailsReason.RequireReview,
             "blocked_by_system" => LinkCreateTanResponseDataStatusDetailsReason.BlockedBySystem,
             "watchtower_review" => LinkCreateTanResponseDataStatusDetailsReason.WatchtowerReview,
+            "validating" => LinkCreateTanResponseDataStatusDetailsReason.Validating,
+            "auto_hold" => LinkCreateTanResponseDataStatusDetailsReason.AutoHold,
             _ => (LinkCreateTanResponseDataStatusDetailsReason)(-1),
         };
     }
@@ -1231,6 +1235,8 @@ sealed class LinkCreateTanResponseDataStatusDetailsReasonConverter
                 LinkCreateTanResponseDataStatusDetailsReason.BlockedBySystem => "blocked_by_system",
                 LinkCreateTanResponseDataStatusDetailsReason.WatchtowerReview =>
                     "watchtower_review",
+                LinkCreateTanResponseDataStatusDetailsReason.Validating => "validating",
+                LinkCreateTanResponseDataStatusDetailsReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

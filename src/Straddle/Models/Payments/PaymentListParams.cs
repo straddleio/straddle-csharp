@@ -146,6 +146,27 @@ public record class PaymentListParams : ParamsBase
     }
 
     /// <summary>
+    /// Include the metadata for payments in the returned data.
+    /// </summary>
+    public bool? IncludeMetadata
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("include_metadata");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("include_metadata", value);
+        }
+    }
+
+    /// <summary>
     /// Search using a maximum `amount` of a `charge` or `payout`.
     /// </summary>
     public int? MaxAmount
@@ -840,6 +861,7 @@ public enum PaymentStatus
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class PaymentStatusConverter : JsonConverter<PaymentStatus>
@@ -860,6 +882,7 @@ sealed class PaymentStatusConverter : JsonConverter<PaymentStatus>
             "pending" => PaymentStatus.Pending,
             "paid" => PaymentStatus.Paid,
             "reversed" => PaymentStatus.Reversed,
+            "validating" => PaymentStatus.Validating,
             _ => (PaymentStatus)(-1),
         };
     }
@@ -882,6 +905,7 @@ sealed class PaymentStatusConverter : JsonConverter<PaymentStatus>
                 PaymentStatus.Pending => "pending",
                 PaymentStatus.Paid => "paid",
                 PaymentStatus.Reversed => "reversed",
+                PaymentStatus.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1062,6 +1086,8 @@ public enum StatusReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
+    AutoHold,
 }
 
 sealed class StatusReasonConverter : JsonConverter<StatusReason>
@@ -1099,6 +1125,8 @@ sealed class StatusReasonConverter : JsonConverter<StatusReason>
             "require_review" => StatusReason.RequireReview,
             "blocked_by_system" => StatusReason.BlockedBySystem,
             "watchtower_review" => StatusReason.WatchtowerReview,
+            "validating" => StatusReason.Validating,
+            "auto_hold" => StatusReason.AutoHold,
             _ => (StatusReason)(-1),
         };
     }
@@ -1138,6 +1166,8 @@ sealed class StatusReasonConverter : JsonConverter<StatusReason>
                 StatusReason.RequireReview => "require_review",
                 StatusReason.BlockedBySystem => "blocked_by_system",
                 StatusReason.WatchtowerReview => "watchtower_review",
+                StatusReason.Validating => "validating",
+                StatusReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
