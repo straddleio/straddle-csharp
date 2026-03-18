@@ -20,8 +20,6 @@ public class ChargeCreateParamsTest : TestBase
             Config = new()
             {
                 BalanceCheck = BalanceCheck.Required,
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = SandboxOutcome.Standard,
             },
             ConsentType = ConsentType.Internet,
@@ -42,8 +40,6 @@ public class ChargeCreateParamsTest : TestBase
         Config expectedConfig = new()
         {
             BalanceCheck = BalanceCheck.Required,
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = SandboxOutcome.Standard,
         };
         ApiEnum<string, ConsentType> expectedConsentType = ConsentType.Internet;
@@ -91,8 +87,6 @@ public class ChargeCreateParamsTest : TestBase
             Config = new()
             {
                 BalanceCheck = BalanceCheck.Required,
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = SandboxOutcome.Standard,
             },
             ConsentType = ConsentType.Internet,
@@ -124,8 +118,6 @@ public class ChargeCreateParamsTest : TestBase
             Config = new()
             {
                 BalanceCheck = BalanceCheck.Required,
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = SandboxOutcome.Standard,
             },
             ConsentType = ConsentType.Internet,
@@ -163,8 +155,6 @@ public class ChargeCreateParamsTest : TestBase
             Config = new()
             {
                 BalanceCheck = BalanceCheck.Required,
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = SandboxOutcome.Standard,
             },
             ConsentType = ConsentType.Internet,
@@ -193,8 +183,6 @@ public class ChargeCreateParamsTest : TestBase
             Config = new()
             {
                 BalanceCheck = BalanceCheck.Required,
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = SandboxOutcome.Standard,
             },
             ConsentType = ConsentType.Internet,
@@ -225,8 +213,6 @@ public class ChargeCreateParamsTest : TestBase
             Config = new()
             {
                 BalanceCheck = BalanceCheck.Required,
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = SandboxOutcome.Standard,
             },
             ConsentType = ConsentType.Internet,
@@ -253,8 +239,6 @@ public class ChargeCreateParamsTest : TestBase
             Config = new()
             {
                 BalanceCheck = BalanceCheck.Required,
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = SandboxOutcome.Standard,
             },
             ConsentType = ConsentType.Internet,
@@ -290,8 +274,6 @@ public class ChargeCreateParamsTest : TestBase
             Config = new()
             {
                 BalanceCheck = BalanceCheck.Required,
-                AutoHold = true,
-                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = SandboxOutcome.Standard,
             },
             ConsentType = ConsentType.Internet,
@@ -322,19 +304,13 @@ public class ConfigTest : TestBase
         var model = new Config
         {
             BalanceCheck = BalanceCheck.Required,
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = SandboxOutcome.Standard,
         };
 
         ApiEnum<string, BalanceCheck> expectedBalanceCheck = BalanceCheck.Required;
-        bool expectedAutoHold = true;
-        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, SandboxOutcome> expectedSandboxOutcome = SandboxOutcome.Standard;
 
         Assert.Equal(expectedBalanceCheck, model.BalanceCheck);
-        Assert.Equal(expectedAutoHold, model.AutoHold);
-        Assert.Equal(expectedAutoHoldMessage, model.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, model.SandboxOutcome);
     }
 
@@ -344,8 +320,6 @@ public class ConfigTest : TestBase
         var model = new Config
         {
             BalanceCheck = BalanceCheck.Required,
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = SandboxOutcome.Standard,
         };
 
@@ -361,8 +335,6 @@ public class ConfigTest : TestBase
         var model = new Config
         {
             BalanceCheck = BalanceCheck.Required,
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = SandboxOutcome.Standard,
         };
 
@@ -371,13 +343,9 @@ public class ConfigTest : TestBase
         Assert.NotNull(deserialized);
 
         ApiEnum<string, BalanceCheck> expectedBalanceCheck = BalanceCheck.Required;
-        bool expectedAutoHold = true;
-        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, SandboxOutcome> expectedSandboxOutcome = SandboxOutcome.Standard;
 
         Assert.Equal(expectedBalanceCheck, deserialized.BalanceCheck);
-        Assert.Equal(expectedAutoHold, deserialized.AutoHold);
-        Assert.Equal(expectedAutoHoldMessage, deserialized.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, deserialized.SandboxOutcome);
     }
 
@@ -387,8 +355,6 @@ public class ConfigTest : TestBase
         var model = new Config
         {
             BalanceCheck = BalanceCheck.Required,
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = SandboxOutcome.Standard,
         };
 
@@ -398,12 +364,7 @@ public class ConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new Config
-        {
-            BalanceCheck = BalanceCheck.Required,
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-        };
+        var model = new Config { BalanceCheck = BalanceCheck.Required };
 
         Assert.Null(model.SandboxOutcome);
         Assert.False(model.RawData.ContainsKey("sandbox_outcome"));
@@ -412,12 +373,7 @@ public class ConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new Config
-        {
-            BalanceCheck = BalanceCheck.Required,
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
-        };
+        var model = new Config { BalanceCheck = BalanceCheck.Required };
 
         model.Validate();
     }
@@ -428,8 +384,6 @@ public class ConfigTest : TestBase
         var model = new Config
         {
             BalanceCheck = BalanceCheck.Required,
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
 
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
@@ -445,71 +399,9 @@ public class ConfigTest : TestBase
         var model = new Config
         {
             BalanceCheck = BalanceCheck.Required,
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
 
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
-    {
-        var model = new Config
-        {
-            BalanceCheck = BalanceCheck.Required,
-            SandboxOutcome = SandboxOutcome.Standard,
-        };
-
-        Assert.Null(model.AutoHold);
-        Assert.False(model.RawData.ContainsKey("auto_hold"));
-        Assert.Null(model.AutoHoldMessage);
-        Assert.False(model.RawData.ContainsKey("auto_hold_message"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesUnsetValidation_Works()
-    {
-        var model = new Config
-        {
-            BalanceCheck = BalanceCheck.Required,
-            SandboxOutcome = SandboxOutcome.Standard,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
-    {
-        var model = new Config
-        {
-            BalanceCheck = BalanceCheck.Required,
-            SandboxOutcome = SandboxOutcome.Standard,
-
-            AutoHold = null,
-            AutoHoldMessage = null,
-        };
-
-        Assert.Null(model.AutoHold);
-        Assert.True(model.RawData.ContainsKey("auto_hold"));
-        Assert.Null(model.AutoHoldMessage);
-        Assert.True(model.RawData.ContainsKey("auto_hold_message"));
-    }
-
-    [Fact]
-    public void OptionalNullablePropertiesSetToNullValidation_Works()
-    {
-        var model = new Config
-        {
-            BalanceCheck = BalanceCheck.Required,
-            SandboxOutcome = SandboxOutcome.Standard,
-
-            AutoHold = null,
-            AutoHoldMessage = null,
         };
 
         model.Validate();
@@ -521,8 +413,6 @@ public class ConfigTest : TestBase
         var model = new Config
         {
             BalanceCheck = BalanceCheck.Required,
-            AutoHold = true,
-            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = SandboxOutcome.Standard,
         };
 
