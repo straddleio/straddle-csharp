@@ -19,7 +19,12 @@ public class PayoutV1Test : TestBase
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Amount = 10000,
-                Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+                Config = new()
+                {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
+                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
+                },
                 Currency = "currency",
                 Description = "description",
                 Device = new("192.168.1.1"),
@@ -87,7 +92,12 @@ public class PayoutV1Test : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -164,7 +174,12 @@ public class PayoutV1Test : TestBase
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Amount = 10000,
-                Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+                Config = new()
+                {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
+                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
+                },
                 Currency = "currency",
                 Description = "description",
                 Device = new("192.168.1.1"),
@@ -243,7 +258,12 @@ public class PayoutV1Test : TestBase
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Amount = 10000,
-                Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+                Config = new()
+                {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
+                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
+                },
                 Currency = "currency",
                 Description = "description",
                 Device = new("192.168.1.1"),
@@ -318,7 +338,12 @@ public class PayoutV1Test : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -395,7 +420,12 @@ public class PayoutV1Test : TestBase
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Amount = 10000,
-                Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+                Config = new()
+                {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
+                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
+                },
                 Currency = "currency",
                 Description = "description",
                 Device = new("192.168.1.1"),
@@ -471,7 +501,12 @@ public class PayoutV1Test : TestBase
             {
                 ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Amount = 10000,
-                Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+                Config = new()
+                {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
+                    SandboxOutcome = DataConfigSandboxOutcome.Standard,
+                },
                 Currency = "currency",
                 Description = "description",
                 Device = new("192.168.1.1"),
@@ -550,7 +585,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -609,7 +649,12 @@ public class DataTest : TestBase
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         int expectedAmount = 10000;
-        DataConfig expectedConfig = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard };
+        DataConfig expectedConfig = new()
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+        };
         string expectedCurrency = "currency";
         string expectedDescription = "description";
         Models::DeviceInfoV1 expectedDevice = new("192.168.1.1");
@@ -725,7 +770,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -795,7 +845,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -858,7 +913,12 @@ public class DataTest : TestBase
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         int expectedAmount = 10000;
-        DataConfig expectedConfig = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard };
+        DataConfig expectedConfig = new()
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+        };
         string expectedCurrency = "currency";
         string expectedDescription = "description";
         Models::DeviceInfoV1 expectedDevice = new("192.168.1.1");
@@ -974,7 +1034,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1041,7 +1106,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1097,7 +1167,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1148,7 +1223,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1209,7 +1289,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1265,7 +1350,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1334,7 +1424,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1392,7 +1487,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1468,7 +1568,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1533,7 +1638,12 @@ public class DataTest : TestBase
         {
             ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Amount = 10000,
-            Config = new() { SandboxOutcome = DataConfigSandboxOutcome.Standard },
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = DataConfigSandboxOutcome.Standard,
+            },
             Currency = "currency",
             Description = "description",
             Device = new("192.168.1.1"),
@@ -1601,18 +1711,32 @@ public class DataConfigTest : TestBase
     [Fact]
     public void FieldRoundtrip_Works()
     {
-        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
+        var model = new DataConfig
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+        };
 
+        bool expectedAutoHold = true;
+        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, DataConfigSandboxOutcome> expectedSandboxOutcome =
             DataConfigSandboxOutcome.Standard;
 
+        Assert.Equal(expectedAutoHold, model.AutoHold);
+        Assert.Equal(expectedAutoHoldMessage, model.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, model.SandboxOutcome);
     }
 
     [Fact]
     public void SerializationRoundtrip_Works()
     {
-        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
+        var model = new DataConfig
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+        };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<DataConfig>(
@@ -1626,7 +1750,12 @@ public class DataConfigTest : TestBase
     [Fact]
     public void FieldRoundtripThroughSerialization_Works()
     {
-        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
+        var model = new DataConfig
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+        };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<DataConfig>(
@@ -1635,16 +1764,25 @@ public class DataConfigTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        bool expectedAutoHold = true;
+        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, DataConfigSandboxOutcome> expectedSandboxOutcome =
             DataConfigSandboxOutcome.Standard;
 
+        Assert.Equal(expectedAutoHold, deserialized.AutoHold);
+        Assert.Equal(expectedAutoHoldMessage, deserialized.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, deserialized.SandboxOutcome);
     }
 
     [Fact]
     public void Validation_Works()
     {
-        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
+        var model = new DataConfig
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+        };
 
         model.Validate();
     }
@@ -1652,7 +1790,7 @@ public class DataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new DataConfig { };
+        var model = new DataConfig { AutoHold = true, AutoHoldMessage = "auto_hold_message" };
 
         Assert.Null(model.SandboxOutcome);
         Assert.False(model.RawData.ContainsKey("sandbox_outcome"));
@@ -1661,7 +1799,7 @@ public class DataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new DataConfig { };
+        var model = new DataConfig { AutoHold = true, AutoHoldMessage = "auto_hold_message" };
 
         model.Validate();
     }
@@ -1671,6 +1809,9 @@ public class DataConfigTest : TestBase
     {
         var model = new DataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
         };
@@ -1684,6 +1825,9 @@ public class DataConfigTest : TestBase
     {
         var model = new DataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
         };
@@ -1692,9 +1836,64 @@ public class DataConfigTest : TestBase
     }
 
     [Fact]
-    public void CopyConstructor_Works()
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
     {
         var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
+
+        Assert.Null(model.AutoHold);
+        Assert.False(model.RawData.ContainsKey("auto_hold"));
+        Assert.Null(model.AutoHoldMessage);
+        Assert.False(model.RawData.ContainsKey("auto_hold_message"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new DataConfig { SandboxOutcome = DataConfigSandboxOutcome.Standard };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new DataConfig
+        {
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+
+            AutoHold = null,
+            AutoHoldMessage = null,
+        };
+
+        Assert.Null(model.AutoHold);
+        Assert.True(model.RawData.ContainsKey("auto_hold"));
+        Assert.Null(model.AutoHoldMessage);
+        Assert.True(model.RawData.ContainsKey("auto_hold_message"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new DataConfig
+        {
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+
+            AutoHold = null,
+            AutoHoldMessage = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DataConfig
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+        };
 
         DataConfig copied = new(model);
 
@@ -2065,6 +2264,7 @@ public class ReasonTest : TestBase
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
     [InlineData(Reason.Validating)]
+    [InlineData(Reason.AutoHold)]
     public void Validation_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2111,6 +2311,7 @@ public class ReasonTest : TestBase
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
     [InlineData(Reason.Validating)]
+    [InlineData(Reason.AutoHold)]
     public void SerializationRoundtrip_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

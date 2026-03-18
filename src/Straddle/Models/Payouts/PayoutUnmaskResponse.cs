@@ -547,6 +547,32 @@ class PayoutUnmaskResponseDataFromRaw : IFromRawJson<PayoutUnmaskResponseData>
 public sealed record class PayoutUnmaskResponseDataConfig : JsonModel
 {
     /// <summary>
+    /// Defines whether to automatically place this charge on hold after being created.
+    /// </summary>
+    public bool? AutoHold
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("auto_hold");
+        }
+        init { this._rawData.Set("auto_hold", value); }
+    }
+
+    /// <summary>
+    /// The reason the payout is being automatically held on creation.
+    /// </summary>
+    public string? AutoHoldMessage
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("auto_hold_message");
+        }
+        init { this._rawData.Set("auto_hold_message", value); }
+    }
+
+    /// <summary>
     /// Payment will simulate processing if not Standard.
     /// </summary>
     public ApiEnum<string, PayoutUnmaskResponseDataConfigSandboxOutcome>? SandboxOutcome
@@ -572,6 +598,8 @@ public sealed record class PayoutUnmaskResponseDataConfig : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.AutoHold;
+        _ = this.AutoHoldMessage;
         this.SandboxOutcome?.Validate();
     }
 
@@ -1016,6 +1044,7 @@ public enum PayoutUnmaskResponseDataStatusHistoryReason
     BlockedBySystem,
     WatchtowerReview,
     Validating,
+    AutoHold,
 }
 
 sealed class PayoutUnmaskResponseDataStatusHistoryReasonConverter
@@ -1058,6 +1087,7 @@ sealed class PayoutUnmaskResponseDataStatusHistoryReasonConverter
             "blocked_by_system" => PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem,
             "watchtower_review" => PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview,
             "validating" => PayoutUnmaskResponseDataStatusHistoryReason.Validating,
+            "auto_hold" => PayoutUnmaskResponseDataStatusHistoryReason.AutoHold,
             _ => (PayoutUnmaskResponseDataStatusHistoryReason)(-1),
         };
     }
@@ -1105,6 +1135,7 @@ sealed class PayoutUnmaskResponseDataStatusHistoryReasonConverter
                 PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem => "blocked_by_system",
                 PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview => "watchtower_review",
                 PayoutUnmaskResponseDataStatusHistoryReason.Validating => "validating",
+                PayoutUnmaskResponseDataStatusHistoryReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

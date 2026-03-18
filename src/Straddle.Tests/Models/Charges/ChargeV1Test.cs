@@ -22,6 +22,8 @@ public class ChargeV1Test : TestBase
                 Config = new()
                 {
                     BalanceCheck = DataConfigBalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = DataConfigSandboxOutcome.Standard,
                 },
                 ConsentType = DataConsentType.Internet,
@@ -95,6 +97,8 @@ public class ChargeV1Test : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -177,6 +181,8 @@ public class ChargeV1Test : TestBase
                 Config = new()
                 {
                     BalanceCheck = DataConfigBalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = DataConfigSandboxOutcome.Standard,
                 },
                 ConsentType = DataConsentType.Internet,
@@ -261,6 +267,8 @@ public class ChargeV1Test : TestBase
                 Config = new()
                 {
                     BalanceCheck = DataConfigBalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = DataConfigSandboxOutcome.Standard,
                 },
                 ConsentType = DataConsentType.Internet,
@@ -341,6 +349,8 @@ public class ChargeV1Test : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -423,6 +433,8 @@ public class ChargeV1Test : TestBase
                 Config = new()
                 {
                     BalanceCheck = DataConfigBalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = DataConfigSandboxOutcome.Standard,
                 },
                 ConsentType = DataConsentType.Internet,
@@ -504,6 +516,8 @@ public class ChargeV1Test : TestBase
                 Config = new()
                 {
                     BalanceCheck = DataConfigBalanceCheck.Required,
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = DataConfigSandboxOutcome.Standard,
                 },
                 ConsentType = DataConsentType.Internet,
@@ -588,6 +602,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -652,6 +668,8 @@ public class DataTest : TestBase
         DataConfig expectedConfig = new()
         {
             BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = DataConfigSandboxOutcome.Standard,
         };
         ApiEnum<string, DataConsentType> expectedConsentType = DataConsentType.Internet;
@@ -774,6 +792,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -849,6 +869,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -917,6 +939,8 @@ public class DataTest : TestBase
         DataConfig expectedConfig = new()
         {
             BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = DataConfigSandboxOutcome.Standard,
         };
         ApiEnum<string, DataConsentType> expectedConsentType = DataConsentType.Internet;
@@ -1039,6 +1063,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -1111,6 +1137,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -1172,6 +1200,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -1228,6 +1258,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -1294,6 +1326,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -1355,6 +1389,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -1427,6 +1463,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -1492,6 +1530,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -1569,6 +1609,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -1639,6 +1681,8 @@ public class DataTest : TestBase
             Config = new()
             {
                 BalanceCheck = DataConfigBalanceCheck.Required,
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = DataConfigSandboxOutcome.Standard,
             },
             ConsentType = DataConsentType.Internet,
@@ -1712,15 +1756,21 @@ public class DataConfigTest : TestBase
         var model = new DataConfig
         {
             BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = DataConfigSandboxOutcome.Standard,
         };
 
         ApiEnum<string, DataConfigBalanceCheck> expectedBalanceCheck =
             DataConfigBalanceCheck.Required;
+        bool expectedAutoHold = true;
+        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, DataConfigSandboxOutcome> expectedSandboxOutcome =
             DataConfigSandboxOutcome.Standard;
 
         Assert.Equal(expectedBalanceCheck, model.BalanceCheck);
+        Assert.Equal(expectedAutoHold, model.AutoHold);
+        Assert.Equal(expectedAutoHoldMessage, model.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, model.SandboxOutcome);
     }
 
@@ -1730,6 +1780,8 @@ public class DataConfigTest : TestBase
         var model = new DataConfig
         {
             BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = DataConfigSandboxOutcome.Standard,
         };
 
@@ -1748,6 +1800,8 @@ public class DataConfigTest : TestBase
         var model = new DataConfig
         {
             BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = DataConfigSandboxOutcome.Standard,
         };
 
@@ -1760,10 +1814,14 @@ public class DataConfigTest : TestBase
 
         ApiEnum<string, DataConfigBalanceCheck> expectedBalanceCheck =
             DataConfigBalanceCheck.Required;
+        bool expectedAutoHold = true;
+        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, DataConfigSandboxOutcome> expectedSandboxOutcome =
             DataConfigSandboxOutcome.Standard;
 
         Assert.Equal(expectedBalanceCheck, deserialized.BalanceCheck);
+        Assert.Equal(expectedAutoHold, deserialized.AutoHold);
+        Assert.Equal(expectedAutoHoldMessage, deserialized.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, deserialized.SandboxOutcome);
     }
 
@@ -1773,6 +1831,8 @@ public class DataConfigTest : TestBase
         var model = new DataConfig
         {
             BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = DataConfigSandboxOutcome.Standard,
         };
 
@@ -1782,7 +1842,12 @@ public class DataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new DataConfig { BalanceCheck = DataConfigBalanceCheck.Required };
+        var model = new DataConfig
+        {
+            BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+        };
 
         Assert.Null(model.SandboxOutcome);
         Assert.False(model.RawData.ContainsKey("sandbox_outcome"));
@@ -1791,7 +1856,12 @@ public class DataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new DataConfig { BalanceCheck = DataConfigBalanceCheck.Required };
+        var model = new DataConfig
+        {
+            BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+        };
 
         model.Validate();
     }
@@ -1802,6 +1872,8 @@ public class DataConfigTest : TestBase
         var model = new DataConfig
         {
             BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
 
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
@@ -1817,9 +1889,71 @@ public class DataConfigTest : TestBase
         var model = new DataConfig
         {
             BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
 
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new DataConfig
+        {
+            BalanceCheck = DataConfigBalanceCheck.Required,
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+        };
+
+        Assert.Null(model.AutoHold);
+        Assert.False(model.RawData.ContainsKey("auto_hold"));
+        Assert.Null(model.AutoHoldMessage);
+        Assert.False(model.RawData.ContainsKey("auto_hold_message"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new DataConfig
+        {
+            BalanceCheck = DataConfigBalanceCheck.Required,
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new DataConfig
+        {
+            BalanceCheck = DataConfigBalanceCheck.Required,
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+
+            AutoHold = null,
+            AutoHoldMessage = null,
+        };
+
+        Assert.Null(model.AutoHold);
+        Assert.True(model.RawData.ContainsKey("auto_hold"));
+        Assert.Null(model.AutoHoldMessage);
+        Assert.True(model.RawData.ContainsKey("auto_hold_message"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new DataConfig
+        {
+            BalanceCheck = DataConfigBalanceCheck.Required,
+            SandboxOutcome = DataConfigSandboxOutcome.Standard,
+
+            AutoHold = null,
+            AutoHoldMessage = null,
         };
 
         model.Validate();
@@ -1831,6 +1965,8 @@ public class DataConfigTest : TestBase
         var model = new DataConfig
         {
             BalanceCheck = DataConfigBalanceCheck.Required,
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = DataConfigSandboxOutcome.Standard,
         };
 
@@ -2321,6 +2457,7 @@ public class ReasonTest : TestBase
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
     [InlineData(Reason.Validating)]
+    [InlineData(Reason.AutoHold)]
     public void Validation_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2367,6 +2504,7 @@ public class ReasonTest : TestBase
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
     [InlineData(Reason.Validating)]
+    [InlineData(Reason.AutoHold)]
     public void SerializationRoundtrip_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

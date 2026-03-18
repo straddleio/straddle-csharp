@@ -1087,6 +1087,7 @@ public enum StatusReason
     BlockedBySystem,
     WatchtowerReview,
     Validating,
+    AutoHold,
 }
 
 sealed class StatusReasonConverter : JsonConverter<StatusReason>
@@ -1125,6 +1126,7 @@ sealed class StatusReasonConverter : JsonConverter<StatusReason>
             "blocked_by_system" => StatusReason.BlockedBySystem,
             "watchtower_review" => StatusReason.WatchtowerReview,
             "validating" => StatusReason.Validating,
+            "auto_hold" => StatusReason.AutoHold,
             _ => (StatusReason)(-1),
         };
     }
@@ -1165,6 +1167,7 @@ sealed class StatusReasonConverter : JsonConverter<StatusReason>
                 StatusReason.BlockedBySystem => "blocked_by_system",
                 StatusReason.WatchtowerReview => "watchtower_review",
                 StatusReason.Validating => "validating",
+                StatusReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

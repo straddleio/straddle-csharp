@@ -665,6 +665,7 @@ public class StatusReasonTest : TestBase
     [InlineData(StatusReason.BlockedBySystem)]
     [InlineData(StatusReason.WatchtowerReview)]
     [InlineData(StatusReason.Validating)]
+    [InlineData(StatusReason.AutoHold)]
     public void Validation_Works(StatusReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -711,6 +712,7 @@ public class StatusReasonTest : TestBase
     [InlineData(StatusReason.BlockedBySystem)]
     [InlineData(StatusReason.WatchtowerReview)]
     [InlineData(StatusReason.Validating)]
+    [InlineData(StatusReason.AutoHold)]
     public void SerializationRoundtrip_Works(StatusReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
