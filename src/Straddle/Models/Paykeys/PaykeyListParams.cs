@@ -84,6 +84,27 @@ public record class PaykeyListParams : ParamsBase
         }
     }
 
+    /// <summary>
+    /// General search term to filter paykeys.
+    /// </summary>
+    public string? SearchText
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("search_text");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("search_text", value);
+        }
+    }
+
     public ApiEnum<string, SortBy>? SortBy
     {
         get
