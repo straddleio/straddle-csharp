@@ -1199,6 +1199,8 @@ public enum FundingTime
     OneDay,
     TwoDay,
     ThreeDay,
+    FourDay,
+    FiveDay,
 }
 
 sealed class FundingTimeConverter : JsonConverter<FundingTime>
@@ -1216,6 +1218,8 @@ sealed class FundingTimeConverter : JsonConverter<FundingTime>
             "one_day" => FundingTime.OneDay,
             "two_day" => FundingTime.TwoDay,
             "three_day" => FundingTime.ThreeDay,
+            "four_day" => FundingTime.FourDay,
+            "five_day" => FundingTime.FiveDay,
             _ => (FundingTime)(-1),
         };
     }
@@ -1235,6 +1239,8 @@ sealed class FundingTimeConverter : JsonConverter<FundingTime>
                 FundingTime.OneDay => "one_day",
                 FundingTime.TwoDay => "two_day",
                 FundingTime.ThreeDay => "three_day",
+                FundingTime.FourDay => "four_day",
+                FundingTime.FiveDay => "five_day",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1386,6 +1392,8 @@ public enum SettingsPayoutsFundingTime
     OneDay,
     TwoDay,
     ThreeDay,
+    FourDay,
+    FiveDay,
 }
 
 sealed class SettingsPayoutsFundingTimeConverter : JsonConverter<SettingsPayoutsFundingTime>
@@ -1403,6 +1411,8 @@ sealed class SettingsPayoutsFundingTimeConverter : JsonConverter<SettingsPayouts
             "one_day" => SettingsPayoutsFundingTime.OneDay,
             "two_day" => SettingsPayoutsFundingTime.TwoDay,
             "three_day" => SettingsPayoutsFundingTime.ThreeDay,
+            "four_day" => SettingsPayoutsFundingTime.FourDay,
+            "five_day" => SettingsPayoutsFundingTime.FiveDay,
             _ => (SettingsPayoutsFundingTime)(-1),
         };
     }
@@ -1422,6 +1432,8 @@ sealed class SettingsPayoutsFundingTimeConverter : JsonConverter<SettingsPayouts
                 SettingsPayoutsFundingTime.OneDay => "one_day",
                 SettingsPayoutsFundingTime.TwoDay => "two_day",
                 SettingsPayoutsFundingTime.ThreeDay => "three_day",
+                SettingsPayoutsFundingTime.FourDay => "four_day",
+                SettingsPayoutsFundingTime.FiveDay => "five_day",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
