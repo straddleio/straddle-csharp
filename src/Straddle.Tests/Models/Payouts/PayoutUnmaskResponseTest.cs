@@ -79,7 +79,7 @@ public class PayoutUnmaskResponseTest : TestBase
                     ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
                 >()
                 {
-                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
                 },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -155,7 +155,7 @@ public class PayoutUnmaskResponseTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -241,7 +241,7 @@ public class PayoutUnmaskResponseTest : TestBase
                     ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
                 >()
                 {
-                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
                 },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -331,7 +331,7 @@ public class PayoutUnmaskResponseTest : TestBase
                     ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
                 >()
                 {
-                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
                 },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -414,7 +414,7 @@ public class PayoutUnmaskResponseTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -500,7 +500,7 @@ public class PayoutUnmaskResponseTest : TestBase
                     ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
                 >()
                 {
-                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
                 },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -584,7 +584,7 @@ public class PayoutUnmaskResponseTest : TestBase
                     ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
                 >()
                 {
-                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                    { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
                 },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -671,7 +671,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -740,7 +740,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
             ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
         > expectedRelatedPayments = new()
         {
-            { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
         };
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
@@ -864,7 +864,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -945,7 +945,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -1021,7 +1021,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
             ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
         > expectedRelatedPayments = new()
         {
-            { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
         };
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
@@ -1145,7 +1145,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -1204,7 +1204,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -1268,7 +1268,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -1327,7 +1327,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
@@ -1396,7 +1396,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
@@ -1764,7 +1764,7 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", PayoutUnmaskResponseDataRelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -2661,7 +2661,6 @@ public class PayoutUnmaskResponseDataPaymentRailTest : TestBase
 public class PayoutUnmaskResponseDataRelatedPaymentsItemTest : TestBase
 {
     [Theory]
-    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown)]
     [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Original)]
     [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Resubmit)]
     [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Refund)]
@@ -2684,7 +2683,6 @@ public class PayoutUnmaskResponseDataRelatedPaymentsItemTest : TestBase
     }
 
     [Theory]
-    [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown)]
     [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Original)]
     [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Resubmit)]
     [InlineData(PayoutUnmaskResponseDataRelatedPaymentsItem.Refund)]

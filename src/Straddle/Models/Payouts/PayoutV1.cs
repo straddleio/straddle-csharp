@@ -1180,7 +1180,6 @@ sealed class PaymentRailConverter : JsonConverter<PaymentRail>
 [JsonConverter(typeof(RelatedPaymentsItemConverter))]
 public enum RelatedPaymentsItem
 {
-    Unknown,
     Original,
     Resubmit,
     Refund,
@@ -1196,7 +1195,6 @@ sealed class RelatedPaymentsItemConverter : JsonConverter<RelatedPaymentsItem>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "unknown" => RelatedPaymentsItem.Unknown,
             "original" => RelatedPaymentsItem.Original,
             "resubmit" => RelatedPaymentsItem.Resubmit,
             "refund" => RelatedPaymentsItem.Refund,
@@ -1214,7 +1212,6 @@ sealed class RelatedPaymentsItemConverter : JsonConverter<RelatedPaymentsItem>
             writer,
             value switch
             {
-                RelatedPaymentsItem.Unknown => "unknown",
                 RelatedPaymentsItem.Original => "original",
                 RelatedPaymentsItem.Resubmit => "resubmit",
                 RelatedPaymentsItem.Refund => "refund",
