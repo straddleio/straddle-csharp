@@ -82,7 +82,7 @@ public class ChargeUnmaskResponseTest : TestBase
                     ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
                 >()
                 {
-                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
                 },
             },
             Meta = new()
@@ -160,7 +160,7 @@ public class ChargeUnmaskResponseTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -248,7 +248,7 @@ public class ChargeUnmaskResponseTest : TestBase
                     ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
                 >()
                 {
-                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
                 },
             },
             Meta = new()
@@ -340,7 +340,7 @@ public class ChargeUnmaskResponseTest : TestBase
                     ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
                 >()
                 {
-                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
                 },
             },
             Meta = new()
@@ -425,7 +425,7 @@ public class ChargeUnmaskResponseTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -513,7 +513,7 @@ public class ChargeUnmaskResponseTest : TestBase
                     ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
                 >()
                 {
-                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
                 },
             },
             Meta = new()
@@ -599,7 +599,7 @@ public class ChargeUnmaskResponseTest : TestBase
                     ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
                 >()
                 {
-                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
                 },
             },
             Meta = new()
@@ -688,7 +688,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
         };
 
@@ -760,7 +760,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
             ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
         > expectedRelatedPayments = new()
         {
-            { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
         };
 
         Assert.Equal(expectedID, model.ID);
@@ -887,7 +887,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
         };
 
@@ -970,7 +970,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
         };
 
@@ -1049,7 +1049,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
             ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
         > expectedRelatedPayments = new()
         {
-            { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+            { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
         };
 
         Assert.Equal(expectedID, deserialized.ID);
@@ -1176,7 +1176,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
         };
 
@@ -1237,7 +1237,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
         };
 
@@ -1303,7 +1303,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
         };
 
@@ -1364,7 +1364,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
 
             // Null should be interpreted as omitted for these properties
@@ -1435,7 +1435,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
 
             // Null should be interpreted as omitted for these properties
@@ -1809,7 +1809,7 @@ public class ChargeUnmaskResponseDataTest : TestBase
                 ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
             >()
             {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown },
+                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
             },
         };
 
@@ -2834,7 +2834,6 @@ public class ChargeUnmaskResponseDataPaymentRailTest : TestBase
 public class ChargeUnmaskResponseDataRelatedPaymentsItemTest : TestBase
 {
     [Theory]
-    [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown)]
     [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Original)]
     [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Resubmit)]
     [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Refund)]
@@ -2857,7 +2856,6 @@ public class ChargeUnmaskResponseDataRelatedPaymentsItemTest : TestBase
     }
 
     [Theory]
-    [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Unknown)]
     [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Original)]
     [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Resubmit)]
     [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Refund)]

@@ -76,7 +76,7 @@ public class PayoutV1Test : TestBase
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
                 {
-                    { "foo", RelatedPaymentsItem.Unknown },
+                    { "foo", RelatedPaymentsItem.Original },
                 },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -149,7 +149,7 @@ public class PayoutV1Test : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -231,7 +231,7 @@ public class PayoutV1Test : TestBase
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
                 {
-                    { "foo", RelatedPaymentsItem.Unknown },
+                    { "foo", RelatedPaymentsItem.Original },
                 },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -315,7 +315,7 @@ public class PayoutV1Test : TestBase
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
                 {
-                    { "foo", RelatedPaymentsItem.Unknown },
+                    { "foo", RelatedPaymentsItem.Original },
                 },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -395,7 +395,7 @@ public class PayoutV1Test : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -477,7 +477,7 @@ public class PayoutV1Test : TestBase
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
                 {
-                    { "foo", RelatedPaymentsItem.Unknown },
+                    { "foo", RelatedPaymentsItem.Original },
                 },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -558,7 +558,7 @@ public class PayoutV1Test : TestBase
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
                 {
-                    { "foo", RelatedPaymentsItem.Unknown },
+                    { "foo", RelatedPaymentsItem.Original },
                 },
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
@@ -642,7 +642,7 @@ public class DataTest : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -706,7 +706,7 @@ public class DataTest : TestBase
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         Dictionary<string, ApiEnum<string, RelatedPaymentsItem>> expectedRelatedPayments = new()
         {
-            { "foo", RelatedPaymentsItem.Unknown },
+            { "foo", RelatedPaymentsItem.Original },
         };
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
@@ -827,7 +827,7 @@ public class DataTest : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -902,7 +902,7 @@ public class DataTest : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -970,7 +970,7 @@ public class DataTest : TestBase
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         Dictionary<string, ApiEnum<string, RelatedPaymentsItem>> expectedRelatedPayments = new()
         {
-            { "foo", RelatedPaymentsItem.Unknown },
+            { "foo", RelatedPaymentsItem.Original },
         };
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
@@ -1091,7 +1091,7 @@ public class DataTest : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -1147,7 +1147,7 @@ public class DataTest : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -1208,7 +1208,7 @@ public class DataTest : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -1264,7 +1264,7 @@ public class DataTest : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
@@ -1330,7 +1330,7 @@ public class DataTest : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
@@ -1695,7 +1695,7 @@ public class DataTest : TestBase
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
             {
-                { "foo", RelatedPaymentsItem.Unknown },
+                { "foo", RelatedPaymentsItem.Original },
             },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
@@ -2538,7 +2538,6 @@ public class PaymentRailTest : TestBase
 public class RelatedPaymentsItemTest : TestBase
 {
     [Theory]
-    [InlineData(RelatedPaymentsItem.Unknown)]
     [InlineData(RelatedPaymentsItem.Original)]
     [InlineData(RelatedPaymentsItem.Resubmit)]
     [InlineData(RelatedPaymentsItem.Refund)]
@@ -2562,7 +2561,6 @@ public class RelatedPaymentsItemTest : TestBase
     }
 
     [Theory]
-    [InlineData(RelatedPaymentsItem.Unknown)]
     [InlineData(RelatedPaymentsItem.Original)]
     [InlineData(RelatedPaymentsItem.Resubmit)]
     [InlineData(RelatedPaymentsItem.Refund)]

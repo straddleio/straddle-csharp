@@ -1320,7 +1320,6 @@ sealed class PayoutUnmaskResponseDataPaymentRailConverter
 [JsonConverter(typeof(PayoutUnmaskResponseDataRelatedPaymentsItemConverter))]
 public enum PayoutUnmaskResponseDataRelatedPaymentsItem
 {
-    Unknown,
     Original,
     Resubmit,
     Refund,
@@ -1337,7 +1336,6 @@ sealed class PayoutUnmaskResponseDataRelatedPaymentsItemConverter
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "unknown" => PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown,
             "original" => PayoutUnmaskResponseDataRelatedPaymentsItem.Original,
             "resubmit" => PayoutUnmaskResponseDataRelatedPaymentsItem.Resubmit,
             "refund" => PayoutUnmaskResponseDataRelatedPaymentsItem.Refund,
@@ -1355,7 +1353,6 @@ sealed class PayoutUnmaskResponseDataRelatedPaymentsItemConverter
             writer,
             value switch
             {
-                PayoutUnmaskResponseDataRelatedPaymentsItem.Unknown => "unknown",
                 PayoutUnmaskResponseDataRelatedPaymentsItem.Original => "original",
                 PayoutUnmaskResponseDataRelatedPaymentsItem.Resubmit => "resubmit",
                 PayoutUnmaskResponseDataRelatedPaymentsItem.Refund => "refund",
