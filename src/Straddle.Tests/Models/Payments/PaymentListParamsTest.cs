@@ -310,12 +310,12 @@ public class PaymentListParamsTest : TestBase
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             IncludeMetadata = true,
             MaxAmount = 0,
-            MaxCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            MaxEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            MaxCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
+            MaxEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             MaxPaymentDate = "2019-12-27",
             MinAmount = 0,
-            MinCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            MinEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            MinCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
+            MinEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             MinPaymentDate = "2019-12-27",
             PageNumber = 0,
             PageSize = 0,
@@ -333,11 +333,13 @@ public class PaymentListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/payments?customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&default_page_size=0&default_sort=created_at&default_sort_order=asc&external_id=external_id&funding_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&include_metadata=true&max_amount=0&max_created_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&max_effective_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&max_payment_date=2019-12-27&min_amount=0&min_created_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&min_effective_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&min_payment_date=2019-12-27&page_number=0&page_size=0&paykey=paykey&paykey_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&payment_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&payment_status=created&payment_type=charge&search_text=search_text&sort_by=created_at&sort_order=asc&status_reason=insufficient_funds&status_source=watchtower"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/payments?customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&default_page_size=0&default_sort=created_at&default_sort_order=asc&external_id=external_id&funding_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&include_metadata=true&max_amount=0&max_created_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&max_effective_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&max_payment_date=2019-12-27&min_amount=0&min_created_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&min_effective_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&min_payment_date=2019-12-27&page_number=0&page_size=0&paykey=paykey&paykey_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&payment_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&payment_status=created&payment_type=charge&search_text=search_text&sort_by=created_at&sort_order=asc&status_reason=insufficient_funds&status_source=watchtower"
+                ),
+                url
+            )
         );
     }
 

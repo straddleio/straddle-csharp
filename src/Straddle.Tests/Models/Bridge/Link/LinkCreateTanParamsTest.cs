@@ -194,7 +194,7 @@ public class LinkCreateTanParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://sandbox.straddle.com/v1/bridge/tan"), url);
+        Assert.True(TestBase.UrisEqual(new Uri("https://sandbox.straddle.com/v1/bridge/tan"), url));
     }
 
     [Fact]
