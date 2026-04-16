@@ -151,7 +151,9 @@ public class BridgeInitializeParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://sandbox.straddle.com/v1/bridge/initialize"), url);
+        Assert.True(
+            TestBase.UrisEqual(new Uri("https://sandbox.straddle.com/v1/bridge/initialize"), url)
+        );
     }
 
     [Fact]

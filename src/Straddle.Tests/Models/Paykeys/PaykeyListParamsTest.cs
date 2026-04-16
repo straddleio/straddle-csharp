@@ -164,8 +164,8 @@ public class PaykeyListParamsTest : TestBase
     {
         PaykeyListParams parameters = new()
         {
-            CreatedFrom = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            CreatedTo = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            CreatedFrom = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
+            CreatedTo = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PageNumber = 0,
             PageSize = 0,
@@ -179,11 +179,13 @@ public class PaykeyListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/paykeys?created_from=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_to=2019-12-27T18%3a11%3a19.117%2b00%3a00&customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_number=0&page_size=0&search_text=search_text&sort_by=institution_name&sort_order=asc&source=bank_account&status=pending&unblock_eligible=true"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/paykeys?created_from=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_to=2019-12-27T18%3a11%3a19.117%2b00%3a00&customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_number=0&page_size=0&search_text=search_text&sort_by=institution_name&sort_order=asc&source=bank_account&status=pending&unblock_eligible=true"
+                ),
+                url
+            )
         );
     }
 

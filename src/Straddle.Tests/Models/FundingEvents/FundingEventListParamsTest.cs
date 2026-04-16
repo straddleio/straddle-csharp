@@ -267,11 +267,13 @@ public class FundingEventListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/funding_events?created_from=2019-12-27&created_to=2019-12-27&direction=deposit&event_type=charge_deposit&page_number=0&page_size=0&search_text=search_text&sort_by=transfer_date&sort_order=asc&status=created&status_reason=insufficient_funds&status_source=watchtower&trace_id=trace_id&trace_number=trace_number"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/funding_events?created_from=2019-12-27&created_to=2019-12-27&direction=deposit&event_type=charge_deposit&page_number=0&page_size=0&search_text=search_text&sort_by=transfer_date&sort_order=asc&status=created&status_reason=insufficient_funds&status_source=watchtower&trace_id=trace_id&trace_number=trace_number"
+                ),
+                url
+            )
         );
     }
 

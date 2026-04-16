@@ -133,11 +133,13 @@ public class AccountListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/accounts?external_id=external_id&page_number=0&page_size=0&search_text=search_text&sort_by=sort_by&sort_order=asc&status=created&type=business"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/accounts?external_id=external_id&page_number=0&page_size=0&search_text=search_text&sort_by=sort_by&sort_order=asc&status=created&type=business"
+                ),
+                url
+            )
         );
     }
 

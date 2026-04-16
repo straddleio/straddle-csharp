@@ -64,9 +64,11 @@ public class ReportCreateTotalCustomersByStatusParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri("https://sandbox.straddle.com/v1/reports/total_customers_by_status"),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri("https://sandbox.straddle.com/v1/reports/total_customers_by_status"),
+                url
+            )
         );
     }
 
