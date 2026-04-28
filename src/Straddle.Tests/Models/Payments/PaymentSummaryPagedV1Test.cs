@@ -58,10 +58,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                         Label = "Bank of America ****1234",
                         Balance = 0,
                     },
-                    RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                    {
-                        { "foo", RelatedPaymentsItem.Original },
-                    },
                 },
             ],
             Meta = new()
@@ -121,10 +117,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Label = "Bank of America ****1234",
                     Balance = 0,
-                },
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Original },
                 },
             },
         ];
@@ -198,10 +190,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                         CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                         Label = "Bank of America ****1234",
                         Balance = 0,
-                    },
-                    RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                    {
-                        { "foo", RelatedPaymentsItem.Original },
                     },
                 },
             ],
@@ -277,10 +265,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                         Label = "Bank of America ****1234",
                         Balance = 0,
                     },
-                    RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                    {
-                        { "foo", RelatedPaymentsItem.Original },
-                    },
                 },
             ],
             Meta = new()
@@ -347,10 +331,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Label = "Bank of America ****1234",
                     Balance = 0,
-                },
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Original },
                 },
             },
         ];
@@ -425,10 +405,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                         Label = "Bank of America ****1234",
                         Balance = 0,
                     },
-                    RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                    {
-                        { "foo", RelatedPaymentsItem.Original },
-                    },
                 },
             ],
             Meta = new()
@@ -496,10 +472,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                         CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                         Label = "Bank of America ****1234",
                         Balance = 0,
-                    },
-                    RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                    {
-                        { "foo", RelatedPaymentsItem.Original },
                     },
                 },
             ],
@@ -570,10 +542,6 @@ public class DataTest : TestBase
                 Label = "Bank of America ****1234",
                 Balance = 0,
             },
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
         };
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
@@ -615,10 +583,6 @@ public class DataTest : TestBase
             Label = "Bank of America ****1234",
             Balance = 0,
         };
-        Dictionary<string, ApiEnum<string, RelatedPaymentsItem>> expectedRelatedPayments = new()
-        {
-            { "foo", RelatedPaymentsItem.Original },
-        };
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedAmount, model.Amount);
@@ -656,14 +620,6 @@ public class DataTest : TestBase
             Assert.Equal(value, model.Metadata[item.Key]);
         }
         Assert.Equal(expectedPaykeyDetails, model.PaykeyDetails);
-        Assert.NotNull(model.RelatedPayments);
-        Assert.Equal(expectedRelatedPayments.Count, model.RelatedPayments.Count);
-        foreach (var item in expectedRelatedPayments)
-        {
-            Assert.True(model.RelatedPayments.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, model.RelatedPayments[item.Key]);
-        }
     }
 
     [Fact]
@@ -709,10 +665,6 @@ public class DataTest : TestBase
                 CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Label = "Bank of America ****1234",
                 Balance = 0,
-            },
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
             },
         };
 
@@ -766,10 +718,6 @@ public class DataTest : TestBase
                 Label = "Bank of America ****1234",
                 Balance = 0,
             },
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -815,10 +763,6 @@ public class DataTest : TestBase
             Label = "Bank of America ****1234",
             Balance = 0,
         };
-        Dictionary<string, ApiEnum<string, RelatedPaymentsItem>> expectedRelatedPayments = new()
-        {
-            { "foo", RelatedPaymentsItem.Original },
-        };
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedAmount, deserialized.Amount);
@@ -856,14 +800,6 @@ public class DataTest : TestBase
             Assert.Equal(value, deserialized.Metadata[item.Key]);
         }
         Assert.Equal(expectedPaykeyDetails, deserialized.PaykeyDetails);
-        Assert.NotNull(deserialized.RelatedPayments);
-        Assert.Equal(expectedRelatedPayments.Count, deserialized.RelatedPayments.Count);
-        foreach (var item in expectedRelatedPayments)
-        {
-            Assert.True(deserialized.RelatedPayments.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, deserialized.RelatedPayments[item.Key]);
-        }
     }
 
     [Fact]
@@ -910,10 +846,6 @@ public class DataTest : TestBase
                 Label = "Bank of America ****1234",
                 Balance = 0,
             },
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
         };
 
         model.Validate();
@@ -948,10 +880,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
         };
 
         Assert.Null(model.CustomerDetails);
@@ -989,10 +917,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
         };
 
         model.Validate();
@@ -1027,10 +951,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
 
             // Null should be interpreted as omitted for these properties
             CustomerDetails = null,
@@ -1072,10 +992,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
 
             // Null should be interpreted as omitted for these properties
             CustomerDetails = null,
@@ -1134,8 +1050,6 @@ public class DataTest : TestBase
         Assert.False(model.RawData.ContainsKey("funding_id"));
         Assert.Null(model.Metadata);
         Assert.False(model.RawData.ContainsKey("metadata"));
-        Assert.Null(model.RelatedPayments);
-        Assert.False(model.RawData.ContainsKey("related_payments"));
     }
 
     [Fact]
@@ -1229,7 +1143,6 @@ public class DataTest : TestBase
             EffectiveAt = null,
             FundingID = null,
             Metadata = null,
-            RelatedPayments = null,
         };
 
         Assert.Null(model.EffectiveAt);
@@ -1238,8 +1151,6 @@ public class DataTest : TestBase
         Assert.True(model.RawData.ContainsKey("funding_id"));
         Assert.Null(model.Metadata);
         Assert.True(model.RawData.ContainsKey("metadata"));
-        Assert.Null(model.RelatedPayments);
-        Assert.True(model.RawData.ContainsKey("related_payments"));
     }
 
     [Fact]
@@ -1287,7 +1198,6 @@ public class DataTest : TestBase
             EffectiveAt = null,
             FundingID = null,
             Metadata = null,
-            RelatedPayments = null,
         };
 
         model.Validate();
@@ -1336,10 +1246,6 @@ public class DataTest : TestBase
                 CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Label = "Bank of America ****1234",
                 Balance = 0,
-            },
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
             },
         };
 
@@ -1471,66 +1377,6 @@ public class StatusTest : TestBase
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Status>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-}
-
-public class RelatedPaymentsItemTest : TestBase
-{
-    [Theory]
-    [InlineData(RelatedPaymentsItem.Original)]
-    [InlineData(RelatedPaymentsItem.Resubmit)]
-    [InlineData(RelatedPaymentsItem.Refund)]
-    public void Validation_Works(RelatedPaymentsItem rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, RelatedPaymentsItem> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(RelatedPaymentsItem.Original)]
-    [InlineData(RelatedPaymentsItem.Resubmit)]
-    [InlineData(RelatedPaymentsItem.Refund)]
-    public void SerializationRoundtrip_Works(RelatedPaymentsItem rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, RelatedPaymentsItem> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
             json,
             ModelBase.SerializerOptions
         );
