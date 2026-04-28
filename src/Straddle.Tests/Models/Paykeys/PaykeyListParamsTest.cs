@@ -15,6 +15,8 @@ public class PaykeyListParamsTest : TestBase
     {
         var parameters = new PaykeyListParams
         {
+            CreatedFrom = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            CreatedTo = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PageNumber = 0,
             PageSize = 0,
@@ -29,6 +31,8 @@ public class PaykeyListParamsTest : TestBase
             StraddleAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
+        DateTimeOffset expectedCreatedFrom = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedCreatedTo = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedCustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         int expectedPageNumber = 0;
         int expectedPageSize = 0;
@@ -42,6 +46,8 @@ public class PaykeyListParamsTest : TestBase
         string expectedRequestID = "Request-Id";
         string expectedStraddleAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
+        Assert.Equal(expectedCreatedFrom, parameters.CreatedFrom);
+        Assert.Equal(expectedCreatedTo, parameters.CreatedTo);
         Assert.Equal(expectedCustomerID, parameters.CustomerID);
         Assert.Equal(expectedPageNumber, parameters.PageNumber);
         Assert.Equal(expectedPageSize, parameters.PageSize);
@@ -71,6 +77,10 @@ public class PaykeyListParamsTest : TestBase
     {
         var parameters = new PaykeyListParams { };
 
+        Assert.Null(parameters.CreatedFrom);
+        Assert.False(parameters.RawQueryData.ContainsKey("created_from"));
+        Assert.Null(parameters.CreatedTo);
+        Assert.False(parameters.RawQueryData.ContainsKey("created_to"));
         Assert.Null(parameters.CustomerID);
         Assert.False(parameters.RawQueryData.ContainsKey("customer_id"));
         Assert.Null(parameters.PageNumber);
@@ -103,6 +113,8 @@ public class PaykeyListParamsTest : TestBase
         var parameters = new PaykeyListParams
         {
             // Null should be interpreted as omitted for these properties
+            CreatedFrom = null,
+            CreatedTo = null,
             CustomerID = null,
             PageNumber = null,
             PageSize = null,
@@ -117,6 +129,10 @@ public class PaykeyListParamsTest : TestBase
             StraddleAccountID = null,
         };
 
+        Assert.Null(parameters.CreatedFrom);
+        Assert.False(parameters.RawQueryData.ContainsKey("created_from"));
+        Assert.Null(parameters.CreatedTo);
+        Assert.False(parameters.RawQueryData.ContainsKey("created_to"));
         Assert.Null(parameters.CustomerID);
         Assert.False(parameters.RawQueryData.ContainsKey("customer_id"));
         Assert.Null(parameters.PageNumber);
@@ -148,6 +164,8 @@ public class PaykeyListParamsTest : TestBase
     {
         PaykeyListParams parameters = new()
         {
+            CreatedFrom = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
+            CreatedTo = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PageNumber = 0,
             PageSize = 0,
@@ -164,7 +182,7 @@ public class PaykeyListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://sandbox.straddle.com/v1/paykeys?customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_number=0&page_size=0&search_text=search_text&sort_by=institution_name&sort_order=asc&source=bank_account&status=pending&unblock_eligible=true"
+                    "https://sandbox.straddle.com/v1/paykeys?created_from=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_to=2019-12-27T18%3a11%3a19.117%2b00%3a00&customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_number=0&page_size=0&search_text=search_text&sort_by=institution_name&sort_order=asc&source=bank_account&status=pending&unblock_eligible=true"
                 ),
                 url
             )
@@ -197,6 +215,8 @@ public class PaykeyListParamsTest : TestBase
     {
         var parameters = new PaykeyListParams
         {
+            CreatedFrom = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            CreatedTo = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PageNumber = 0,
             PageSize = 0,

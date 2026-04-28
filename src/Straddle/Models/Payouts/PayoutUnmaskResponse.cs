@@ -236,6 +236,19 @@ public sealed record class PayoutUnmaskResponseData : JsonModel
     }
 
     /// <summary>
+    /// Is the payout a refund.
+    /// </summary>
+    public required bool Refund
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<bool>("refund");
+        }
+        init { this._rawData.Set("refund", value); }
+    }
+
+    /// <summary>
     /// The current status of the `charge` or `payout`.
     /// </summary>
     public required ApiEnum<string, PayoutUnmaskResponseDataStatus> Status
@@ -476,6 +489,7 @@ public sealed record class PayoutUnmaskResponseData : JsonModel
         _ = this.FundingIds;
         _ = this.Paykey;
         _ = this.PaymentDate;
+        _ = this.Refund;
         this.Status.Validate();
         this.StatusDetails.Validate();
         foreach (var item in this.StatusHistory)
