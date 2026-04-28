@@ -22,48 +22,6 @@ namespace Straddle.Models.Paykeys;
 public record class PaykeyListParams : ParamsBase
 {
     /// <summary>
-    /// Start date for filtering by creation date.
-    /// </summary>
-    public DateTimeOffset? CreatedFrom
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableStruct<DateTimeOffset>("created_from");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawQueryData.Set("created_from", value);
-        }
-    }
-
-    /// <summary>
-    /// End date for filtering by creation date.
-    /// </summary>
-    public DateTimeOffset? CreatedTo
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableStruct<DateTimeOffset>("created_to");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawQueryData.Set("created_to", value);
-        }
-    }
-
-    /// <summary>
     /// Filter paykeys by related customer ID.
     /// </summary>
     public string? CustomerID
