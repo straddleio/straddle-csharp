@@ -390,6 +390,27 @@ public sealed record class Data : JsonModel
         }
     }
 
+    /// <summary>
+    /// Related payments.
+    /// </summary>
+    public IReadOnlyDictionary<string, ApiEnum<string, RelatedPaymentsItem>>? RelatedPayments
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<
+                FrozenDictionary<string, ApiEnum<string, RelatedPaymentsItem>>
+            >("related_payments");
+        }
+        init
+        {
+            this._rawData.Set<FrozenDictionary<string, ApiEnum<string, RelatedPaymentsItem>>?>(
+                "related_payments",
+                value == null ? null : FrozenDictionary.ToFrozenDictionary(value)
+            );
+        }
+    }
+
     /// <inheritdoc/>
     public override void Validate()
     {
@@ -412,6 +433,13 @@ public sealed record class Data : JsonModel
         _ = this.FundingID;
         _ = this.Metadata;
         this.PaykeyDetails?.Validate();
+        if (this.RelatedPayments != null)
+        {
+            foreach (var item in this.RelatedPayments.Values)
+            {
+                item.Validate();
+            }
+        }
     }
 
     public Data() { }
@@ -457,6 +485,7 @@ public enum DataPaymentType
 {
     Charge,
     Payout,
+    Refund,
 }
 
 sealed class DataPaymentTypeConverter : JsonConverter<DataPaymentType>
@@ -471,6 +500,7 @@ sealed class DataPaymentTypeConverter : JsonConverter<DataPaymentType>
         {
             "charge" => DataPaymentType.Charge,
             "payout" => DataPaymentType.Payout,
+            "refund" => DataPaymentType.Refund,
             _ => (DataPaymentType)(-1),
         };
     }
@@ -487,6 +517,7 @@ sealed class DataPaymentTypeConverter : JsonConverter<DataPaymentType>
             {
                 DataPaymentType.Charge => "charge",
                 DataPaymentType.Payout => "payout",
+                DataPaymentType.Refund => "refund",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -551,6 +582,53 @@ sealed class StatusConverter : JsonConverter<Status>
                 Status.Paid => "paid",
                 Status.Reversed => "reversed",
                 Status.Validating => "validating",
+                _ => throw new StraddleInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(typeof(RelatedPaymentsItemConverter))]
+public enum RelatedPaymentsItem
+{
+    Original,
+    Resubmit,
+    Refund,
+}
+
+sealed class RelatedPaymentsItemConverter : JsonConverter<RelatedPaymentsItem>
+{
+    public override RelatedPaymentsItem Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "original" => RelatedPaymentsItem.Original,
+            "resubmit" => RelatedPaymentsItem.Resubmit,
+            "refund" => RelatedPaymentsItem.Refund,
+            _ => (RelatedPaymentsItem)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        RelatedPaymentsItem value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                RelatedPaymentsItem.Original => "original",
+                RelatedPaymentsItem.Resubmit => "resubmit",
+                RelatedPaymentsItem.Refund => "refund",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
