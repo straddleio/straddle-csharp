@@ -35,13 +35,10 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
-                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
-                        Zip = "zip",
-                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -143,13 +140,10 @@ public class AccountV1Test : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -260,13 +254,10 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
-                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
-                        Zip = "zip",
-                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -379,13 +370,10 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
-                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
-                        Zip = "zip",
-                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -494,13 +482,10 @@ public class AccountV1Test : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -611,13 +596,10 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
-                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
-                        Zip = "zip",
-                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -727,13 +709,10 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
-                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
-                        Zip = "zip",
-                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -846,13 +825,10 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -946,13 +922,10 @@ public class AccountV1DataTest : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-1360",
                 State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
                 Country = "country",
                 Line2 = "line2",
             },
@@ -1072,13 +1045,10 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1185,13 +1155,10 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1292,13 +1259,10 @@ public class AccountV1DataTest : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-1360",
                 State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
                 Country = "country",
                 Line2 = "line2",
             },
@@ -1418,13 +1382,10 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1655,13 +1616,10 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1765,13 +1723,10 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1868,13 +1823,10 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1983,13 +1935,10 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -2091,13 +2040,10 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },

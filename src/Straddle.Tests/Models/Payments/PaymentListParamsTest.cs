@@ -606,7 +606,6 @@ public class PaymentTypeTest : TestBase
     [Theory]
     [InlineData(PaymentType.Charge)]
     [InlineData(PaymentType.Payout)]
-    [InlineData(PaymentType.Refund)]
     public void Validation_Works(PaymentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -629,7 +628,6 @@ public class PaymentTypeTest : TestBase
     [Theory]
     [InlineData(PaymentType.Charge)]
     [InlineData(PaymentType.Payout)]
-    [InlineData(PaymentType.Refund)]
     public void SerializationRoundtrip_Works(PaymentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us

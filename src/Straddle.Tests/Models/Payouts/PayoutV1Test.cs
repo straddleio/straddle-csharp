@@ -32,7 +32,6 @@ public class PayoutV1Test : TestBase
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
-                Refund = true,
                 Status = Status.Created,
                 StatusDetails = new()
                 {
@@ -106,7 +105,6 @@ public class PayoutV1Test : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -189,7 +187,6 @@ public class PayoutV1Test : TestBase
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
-                Refund = true,
                 Status = Status.Created,
                 StatusDetails = new()
                 {
@@ -274,7 +271,6 @@ public class PayoutV1Test : TestBase
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
-                Refund = true,
                 Status = Status.Created,
                 StatusDetails = new()
                 {
@@ -355,7 +351,6 @@ public class PayoutV1Test : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -438,7 +433,6 @@ public class PayoutV1Test : TestBase
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
-                Refund = true,
                 Status = Status.Created,
                 StatusDetails = new()
                 {
@@ -520,7 +514,6 @@ public class PayoutV1Test : TestBase
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
-                Refund = true,
                 Status = Status.Created,
                 StatusDetails = new()
                 {
@@ -605,7 +598,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -670,7 +662,6 @@ public class DataTest : TestBase
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
-        bool expectedRefund = true;
         ApiEnum<string, Status> expectedStatus = Status.Created;
         Models::StatusDetailsV1 expectedStatusDetails = new()
         {
@@ -733,7 +724,6 @@ public class DataTest : TestBase
         }
         Assert.Equal(expectedPaykey, model.Paykey);
         Assert.Equal(expectedPaymentDate, model.PaymentDate);
-        Assert.Equal(expectedRefund, model.Refund);
         Assert.Equal(expectedStatus, model.Status);
         Assert.Equal(expectedStatusDetails, model.StatusDetails);
         Assert.Equal(expectedStatusHistory.Count, model.StatusHistory.Count);
@@ -793,7 +783,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -869,7 +858,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -938,7 +926,6 @@ public class DataTest : TestBase
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
-        bool expectedRefund = true;
         ApiEnum<string, Status> expectedStatus = Status.Created;
         Models::StatusDetailsV1 expectedStatusDetails = new()
         {
@@ -1001,7 +988,6 @@ public class DataTest : TestBase
         }
         Assert.Equal(expectedPaykey, deserialized.Paykey);
         Assert.Equal(expectedPaymentDate, deserialized.PaymentDate);
-        Assert.Equal(expectedRefund, deserialized.Refund);
         Assert.Equal(expectedStatus, deserialized.Status);
         Assert.Equal(expectedStatusDetails, deserialized.StatusDetails);
         Assert.Equal(expectedStatusHistory.Count, deserialized.StatusHistory.Count);
@@ -1061,7 +1047,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -1134,7 +1119,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -1196,7 +1180,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -1253,7 +1236,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -1320,7 +1302,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -1382,7 +1363,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -1457,7 +1437,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -1521,7 +1500,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -1603,7 +1581,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
@@ -1674,7 +1651,6 @@ public class DataTest : TestBase
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
-            Refund = true,
             Status = Status.Created,
             StatusDetails = new()
             {
