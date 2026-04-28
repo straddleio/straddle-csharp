@@ -923,7 +923,6 @@ public enum PaymentType
 {
     Charge,
     Payout,
-    Refund,
 }
 
 sealed class PaymentTypeConverter : JsonConverter<PaymentType>
@@ -938,7 +937,6 @@ sealed class PaymentTypeConverter : JsonConverter<PaymentType>
         {
             "charge" => PaymentType.Charge,
             "payout" => PaymentType.Payout,
-            "refund" => PaymentType.Refund,
             _ => (PaymentType)(-1),
         };
     }
@@ -955,7 +953,6 @@ sealed class PaymentTypeConverter : JsonConverter<PaymentType>
             {
                 PaymentType.Charge => "charge",
                 PaymentType.Payout => "payout",
-                PaymentType.Refund => "refund",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

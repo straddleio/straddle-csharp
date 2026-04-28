@@ -21,24 +21,6 @@ namespace Straddle.Models.Embed.Accounts;
 /// </summary>
 public record class AccountListParams : ParamsBase
 {
-    public string? ExternalID
-    {
-        get
-        {
-            this._rawQueryData.Freeze();
-            return this._rawQueryData.GetNullableClass<string>("external_id");
-        }
-        init
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            this._rawQueryData.Set("external_id", value);
-        }
-    }
-
     /// <summary>
     /// Results page number. Starts at page 1. Default value: 1
     /// </summary>
