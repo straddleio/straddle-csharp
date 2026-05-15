@@ -297,6 +297,8 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, FundingEvents::StatusSource>(),
             new ApiEnumConverter<string, Payments::DataPaymentType>(),
             new ApiEnumConverter<string, Payments::Status>(),
+            new ApiEnumConverter<string, Payments::RelatedPaymentPaymentType>(),
+            new ApiEnumConverter<string, Payments::Relationship>(),
             new ApiEnumConverter<string, Payments::MetaSortOrder>(),
             new ApiEnumConverter<string, Payments::ResponseType>(),
             new ApiEnumConverter<string, Payments::DefaultSort>(),

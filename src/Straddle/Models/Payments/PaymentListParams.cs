@@ -146,6 +146,48 @@ public record class PaymentListParams : ParamsBase
     }
 
     /// <summary>
+    /// Has the payment been refunded by an associated payout (only applicable to charges).
+    /// </summary>
+    public bool? HasRefund
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("has_refund");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("has_refund", value);
+        }
+    }
+
+    /// <summary>
+    /// Has the payment been resubmitted.
+    /// </summary>
+    public bool? HasResubmit
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("has_resubmit");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("has_resubmit", value);
+        }
+    }
+
+    /// <summary>
     /// Include the metadata for payments in the returned data.
     /// </summary>
     public bool? IncludeMetadata
@@ -163,6 +205,48 @@ public record class PaymentListParams : ParamsBase
             }
 
             this._rawQueryData.Set("include_metadata", value);
+        }
+    }
+
+    /// <summary>
+    /// Is the payment a refund of an original charge (only applicable to payouts).
+    /// </summary>
+    public bool? IsRefund
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("is_refund");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("is_refund", value);
+        }
+    }
+
+    /// <summary>
+    /// Is the payment a resubmit of an original payment.
+    /// </summary>
+    public bool? IsResubmit
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("is_resubmit");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("is_resubmit", value);
         }
     }
 
