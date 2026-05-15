@@ -210,6 +210,45 @@ public sealed record class Data : JsonModel
     }
 
     /// <summary>
+    /// Has the payout been resubmitted.
+    /// </summary>
+    public required bool HasResubmit
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<bool>("has_resubmit");
+        }
+        init { this._rawData.Set("has_resubmit", value); }
+    }
+
+    /// <summary>
+    /// Is the payout a refund of an original charge.
+    /// </summary>
+    public required bool IsRefund
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<bool>("is_refund");
+        }
+        init { this._rawData.Set("is_refund", value); }
+    }
+
+    /// <summary>
+    /// Is the payout a resubmit of an original payout.
+    /// </summary>
+    public required bool IsResubmit
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<bool>("is_resubmit");
+        }
+        init { this._rawData.Set("is_resubmit", value); }
+    }
+
+    /// <summary>
     /// Value of the `paykey` used for the payout.
     /// </summary>
     public required string Paykey
@@ -468,6 +507,9 @@ public sealed record class Data : JsonModel
         this.Device.Validate();
         _ = this.ExternalID;
         _ = this.FundingIds;
+        _ = this.HasResubmit;
+        _ = this.IsRefund;
+        _ = this.IsResubmit;
         _ = this.Paykey;
         _ = this.PaymentDate;
         this.Status.Validate();

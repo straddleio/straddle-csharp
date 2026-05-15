@@ -30,6 +30,9 @@ public class PayoutV1Test : TestBase
                 Device = new("192.168.1.1"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasResubmit = true,
+                IsRefund = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = Status.Created,
@@ -103,6 +106,9 @@ public class PayoutV1Test : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -185,6 +191,9 @@ public class PayoutV1Test : TestBase
                 Device = new("192.168.1.1"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasResubmit = true,
+                IsRefund = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = Status.Created,
@@ -269,6 +278,9 @@ public class PayoutV1Test : TestBase
                 Device = new("192.168.1.1"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasResubmit = true,
+                IsRefund = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = Status.Created,
@@ -349,6 +361,9 @@ public class PayoutV1Test : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -431,6 +446,9 @@ public class PayoutV1Test : TestBase
                 Device = new("192.168.1.1"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasResubmit = true,
+                IsRefund = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = Status.Created,
@@ -512,6 +530,9 @@ public class PayoutV1Test : TestBase
                 Device = new("192.168.1.1"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasResubmit = true,
+                IsRefund = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = Status.Created,
@@ -596,6 +617,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -660,6 +684,9 @@ public class DataTest : TestBase
         Models::DeviceInfoV1 expectedDevice = new("192.168.1.1");
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
+        bool expectedHasResubmit = true;
+        bool expectedIsRefund = true;
+        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, Status> expectedStatus = Status.Created;
@@ -722,6 +749,9 @@ public class DataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], model.FundingIds[i]);
         }
+        Assert.Equal(expectedHasResubmit, model.HasResubmit);
+        Assert.Equal(expectedIsRefund, model.IsRefund);
+        Assert.Equal(expectedIsResubmit, model.IsResubmit);
         Assert.Equal(expectedPaykey, model.Paykey);
         Assert.Equal(expectedPaymentDate, model.PaymentDate);
         Assert.Equal(expectedStatus, model.Status);
@@ -781,6 +811,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -856,6 +889,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -924,6 +960,9 @@ public class DataTest : TestBase
         Models::DeviceInfoV1 expectedDevice = new("192.168.1.1");
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
+        bool expectedHasResubmit = true;
+        bool expectedIsRefund = true;
+        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, Status> expectedStatus = Status.Created;
@@ -986,6 +1025,9 @@ public class DataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], deserialized.FundingIds[i]);
         }
+        Assert.Equal(expectedHasResubmit, deserialized.HasResubmit);
+        Assert.Equal(expectedIsRefund, deserialized.IsRefund);
+        Assert.Equal(expectedIsResubmit, deserialized.IsResubmit);
         Assert.Equal(expectedPaykey, deserialized.Paykey);
         Assert.Equal(expectedPaymentDate, deserialized.PaymentDate);
         Assert.Equal(expectedStatus, deserialized.Status);
@@ -1045,6 +1087,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1117,6 +1162,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1178,6 +1226,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1234,6 +1285,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1300,6 +1354,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1361,6 +1418,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1435,6 +1495,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1498,6 +1561,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1579,6 +1645,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1649,6 +1718,9 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
