@@ -238,45 +238,6 @@ public sealed record class Data : JsonModel
     }
 
     /// <summary>
-    /// Has the charge been refunded by an associated payout.
-    /// </summary>
-    public required bool HasRefund
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<bool>("has_refund");
-        }
-        init { this._rawData.Set("has_refund", value); }
-    }
-
-    /// <summary>
-    /// Has the charge been resubmitted.
-    /// </summary>
-    public required bool HasResubmit
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<bool>("has_resubmit");
-        }
-        init { this._rawData.Set("has_resubmit", value); }
-    }
-
-    /// <summary>
-    /// Is the charge a resubmit of an original charge.
-    /// </summary>
-    public required bool IsResubmit
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<bool>("is_resubmit");
-        }
-        init { this._rawData.Set("is_resubmit", value); }
-    }
-
-    /// <summary>
     /// Value of the `paykey` used for the charge.
     /// </summary>
     public required string Paykey
@@ -494,20 +455,20 @@ public sealed record class Data : JsonModel
     /// <summary>
     /// Related payments.
     /// </summary>
-    public IReadOnlyDictionary<string, ApiEnum<string, RelatedPaymentsItem>>? RelatedPayments
+    public IReadOnlyList<RelatedPayment>? RelatedPayments
     {
         get
         {
             this._rawData.Freeze();
-            return this._rawData.GetNullableClass<
-                FrozenDictionary<string, ApiEnum<string, RelatedPaymentsItem>>
-            >("related_payments");
+            return this._rawData.GetNullableStruct<ImmutableArray<RelatedPayment>>(
+                "related_payments"
+            );
         }
         init
         {
-            this._rawData.Set<FrozenDictionary<string, ApiEnum<string, RelatedPaymentsItem>>?>(
+            this._rawData.Set<ImmutableArray<RelatedPayment>?>(
                 "related_payments",
-                value == null ? null : FrozenDictionary.ToFrozenDictionary(value)
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
             );
         }
     }
@@ -525,9 +486,6 @@ public sealed record class Data : JsonModel
         this.Device.Validate();
         _ = this.ExternalID;
         _ = this.FundingIds;
-        _ = this.HasRefund;
-        _ = this.HasResubmit;
-        _ = this.IsResubmit;
         _ = this.Paykey;
         _ = this.PaymentDate;
         this.Status.Validate();
@@ -544,12 +502,9 @@ public sealed record class Data : JsonModel
         this.PaykeyDetails?.Validate();
         this.PaymentRail?.Validate();
         _ = this.ProcessedAt;
-        if (this.RelatedPayments != null)
+        foreach (var item in this.RelatedPayments ?? [])
         {
-            foreach (var item in this.RelatedPayments.Values)
-            {
-                item.Validate();
-            }
+            item.Validate();
         }
     }
 
@@ -1361,17 +1316,101 @@ sealed class PaymentRailConverter : JsonConverter<PaymentRail>
     }
 }
 
-[JsonConverter(typeof(RelatedPaymentsItemConverter))]
-public enum RelatedPaymentsItem
+[JsonConverter(typeof(JsonModelConverter<RelatedPayment, RelatedPaymentFromRaw>))]
+public sealed record class RelatedPayment : JsonModel
 {
-    Original,
-    Resubmit,
-    Refund,
+    /// <summary>
+    /// The ID of the related payment.
+    /// </summary>
+    public required string ID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("id");
+        }
+        init { this._rawData.Set("id", value); }
+    }
+
+    /// <summary>
+    /// The type of payment.
+    /// </summary>
+    public required ApiEnum<string, PaymentType> PaymentType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, PaymentType>>("payment_type");
+        }
+        init { this._rawData.Set("payment_type", value); }
+    }
+
+    public required ApiEnum<string, Relationship> Relationship
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<ApiEnum<string, Relationship>>("relationship");
+        }
+        init { this._rawData.Set("relationship", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.ID;
+        this.PaymentType.Validate();
+        this.Relationship.Validate();
+    }
+
+    public RelatedPayment() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public RelatedPayment(RelatedPayment relatedPayment)
+        : base(relatedPayment) { }
+#pragma warning restore CS8618
+
+    public RelatedPayment(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    RelatedPayment(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="RelatedPaymentFromRaw.FromRawUnchecked"/>
+    public static RelatedPayment FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
 }
 
-sealed class RelatedPaymentsItemConverter : JsonConverter<RelatedPaymentsItem>
+class RelatedPaymentFromRaw : IFromRawJson<RelatedPayment>
 {
-    public override RelatedPaymentsItem Read(
+    /// <inheritdoc/>
+    public RelatedPayment FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
+        RelatedPayment.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The type of payment.
+/// </summary>
+[JsonConverter(typeof(PaymentTypeConverter))]
+public enum PaymentType
+{
+    Charge,
+    Payout,
+}
+
+sealed class PaymentTypeConverter : JsonConverter<PaymentType>
+{
+    public override PaymentType Read(
         ref Utf8JsonReader reader,
         Type typeToConvert,
         JsonSerializerOptions options
@@ -1379,16 +1418,15 @@ sealed class RelatedPaymentsItemConverter : JsonConverter<RelatedPaymentsItem>
     {
         return JsonSerializer.Deserialize<string>(ref reader, options) switch
         {
-            "original" => RelatedPaymentsItem.Original,
-            "resubmit" => RelatedPaymentsItem.Resubmit,
-            "refund" => RelatedPaymentsItem.Refund,
-            _ => (RelatedPaymentsItem)(-1),
+            "charge" => PaymentType.Charge,
+            "payout" => PaymentType.Payout,
+            _ => (PaymentType)(-1),
         };
     }
 
     public override void Write(
         Utf8JsonWriter writer,
-        RelatedPaymentsItem value,
+        PaymentType value,
         JsonSerializerOptions options
     )
     {
@@ -1396,9 +1434,55 @@ sealed class RelatedPaymentsItemConverter : JsonConverter<RelatedPaymentsItem>
             writer,
             value switch
             {
-                RelatedPaymentsItem.Original => "original",
-                RelatedPaymentsItem.Resubmit => "resubmit",
-                RelatedPaymentsItem.Refund => "refund",
+                PaymentType.Charge => "charge",
+                PaymentType.Payout => "payout",
+                _ => throw new StraddleInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(typeof(RelationshipConverter))]
+public enum Relationship
+{
+    Original,
+    Resubmit,
+    Refund,
+}
+
+sealed class RelationshipConverter : JsonConverter<Relationship>
+{
+    public override Relationship Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "original" => Relationship.Original,
+            "resubmit" => Relationship.Resubmit,
+            "refund" => Relationship.Refund,
+            _ => (Relationship)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        Relationship value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                Relationship.Original => "original",
+                Relationship.Resubmit => "resubmit",
+                Relationship.Refund => "refund",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
