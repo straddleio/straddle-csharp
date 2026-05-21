@@ -26,10 +26,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     Description = "Invoice payment for 100 widgets",
                     ExternalID = "external_id",
                     FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                    HasRefund = true,
-                    HasResubmit = true,
-                    IsRefund = true,
-                    IsResubmit = true,
                     Paykey = "paykey",
                     PaymentDate = "2019-12-27",
                     PaymentType = DataPaymentType.Charge,
@@ -62,15 +58,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                         Label = "Bank of America ****1234",
                         Balance = 0,
                     },
-                    RelatedPayments =
-                    [
-                        new()
-                        {
-                            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                            PaymentType = RelatedPaymentPaymentType.Charge,
-                            Relationship = Relationship.Original,
-                        },
-                    ],
                 },
             ],
             Meta = new()
@@ -99,10 +86,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                 Description = "Invoice payment for 100 widgets",
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasRefund = true,
-                HasResubmit = true,
-                IsRefund = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 PaymentType = DataPaymentType.Charge,
@@ -135,15 +118,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     Label = "Bank of America ****1234",
                     Balance = 0,
                 },
-                RelatedPayments =
-                [
-                    new()
-                    {
-                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                        PaymentType = RelatedPaymentPaymentType.Charge,
-                        Relationship = Relationship.Original,
-                    },
-                ],
             },
         ];
         Meta expectedMeta = new()
@@ -185,10 +159,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     Description = "Invoice payment for 100 widgets",
                     ExternalID = "external_id",
                     FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                    HasRefund = true,
-                    HasResubmit = true,
-                    IsRefund = true,
-                    IsResubmit = true,
                     Paykey = "paykey",
                     PaymentDate = "2019-12-27",
                     PaymentType = DataPaymentType.Charge,
@@ -221,15 +191,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                         Label = "Bank of America ****1234",
                         Balance = 0,
                     },
-                    RelatedPayments =
-                    [
-                        new()
-                        {
-                            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                            PaymentType = RelatedPaymentPaymentType.Charge,
-                            Relationship = Relationship.Original,
-                        },
-                    ],
                 },
             ],
             Meta = new()
@@ -272,10 +233,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     Description = "Invoice payment for 100 widgets",
                     ExternalID = "external_id",
                     FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                    HasRefund = true,
-                    HasResubmit = true,
-                    IsRefund = true,
-                    IsResubmit = true,
                     Paykey = "paykey",
                     PaymentDate = "2019-12-27",
                     PaymentType = DataPaymentType.Charge,
@@ -308,15 +265,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                         Label = "Bank of America ****1234",
                         Balance = 0,
                     },
-                    RelatedPayments =
-                    [
-                        new()
-                        {
-                            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                            PaymentType = RelatedPaymentPaymentType.Charge,
-                            Relationship = Relationship.Original,
-                        },
-                    ],
                 },
             ],
             Meta = new()
@@ -352,10 +300,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                 Description = "Invoice payment for 100 widgets",
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasRefund = true,
-                HasResubmit = true,
-                IsRefund = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 PaymentType = DataPaymentType.Charge,
@@ -388,15 +332,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     Label = "Bank of America ****1234",
                     Balance = 0,
                 },
-                RelatedPayments =
-                [
-                    new()
-                    {
-                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                        PaymentType = RelatedPaymentPaymentType.Charge,
-                        Relationship = Relationship.Original,
-                    },
-                ],
             },
         ];
         Meta expectedMeta = new()
@@ -438,10 +373,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     Description = "Invoice payment for 100 widgets",
                     ExternalID = "external_id",
                     FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                    HasRefund = true,
-                    HasResubmit = true,
-                    IsRefund = true,
-                    IsResubmit = true,
                     Paykey = "paykey",
                     PaymentDate = "2019-12-27",
                     PaymentType = DataPaymentType.Charge,
@@ -474,15 +405,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                         Label = "Bank of America ****1234",
                         Balance = 0,
                     },
-                    RelatedPayments =
-                    [
-                        new()
-                        {
-                            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                            PaymentType = RelatedPaymentPaymentType.Charge,
-                            Relationship = Relationship.Original,
-                        },
-                    ],
                 },
             ],
             Meta = new()
@@ -519,10 +441,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                     Description = "Invoice payment for 100 widgets",
                     ExternalID = "external_id",
                     FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                    HasRefund = true,
-                    HasResubmit = true,
-                    IsRefund = true,
-                    IsResubmit = true,
                     Paykey = "paykey",
                     PaymentDate = "2019-12-27",
                     PaymentType = DataPaymentType.Charge,
@@ -555,15 +473,6 @@ public class PaymentSummaryPagedV1Test : TestBase
                         Label = "Bank of America ****1234",
                         Balance = 0,
                     },
-                    RelatedPayments =
-                    [
-                        new()
-                        {
-                            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                            PaymentType = RelatedPaymentPaymentType.Charge,
-                            Relationship = Relationship.Original,
-                        },
-                    ],
                 },
             ],
             Meta = new()
@@ -601,10 +510,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -637,15 +542,6 @@ public class DataTest : TestBase
                 Label = "Bank of America ****1234",
                 Balance = 0,
             },
-            RelatedPayments =
-            [
-                new()
-                {
-                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    PaymentType = RelatedPaymentPaymentType.Charge,
-                    Relationship = Relationship.Original,
-                },
-            ],
         };
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
@@ -655,10 +551,6 @@ public class DataTest : TestBase
         string expectedDescription = "Invoice payment for 100 widgets";
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
-        bool expectedHasRefund = true;
-        bool expectedHasResubmit = true;
-        bool expectedIsRefund = true;
-        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, DataPaymentType> expectedPaymentType = DataPaymentType.Charge;
@@ -691,15 +583,6 @@ public class DataTest : TestBase
             Label = "Bank of America ****1234",
             Balance = 0,
         };
-        List<RelatedPayment> expectedRelatedPayments =
-        [
-            new()
-            {
-                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                PaymentType = RelatedPaymentPaymentType.Charge,
-                Relationship = Relationship.Original,
-            },
-        ];
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedAmount, model.Amount);
@@ -712,10 +595,6 @@ public class DataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], model.FundingIds[i]);
         }
-        Assert.Equal(expectedHasRefund, model.HasRefund);
-        Assert.Equal(expectedHasResubmit, model.HasResubmit);
-        Assert.Equal(expectedIsRefund, model.IsRefund);
-        Assert.Equal(expectedIsResubmit, model.IsResubmit);
         Assert.Equal(expectedPaykey, model.Paykey);
         Assert.Equal(expectedPaymentDate, model.PaymentDate);
         Assert.Equal(expectedPaymentType, model.PaymentType);
@@ -741,12 +620,6 @@ public class DataTest : TestBase
             Assert.Equal(value, model.Metadata[item.Key]);
         }
         Assert.Equal(expectedPaykeyDetails, model.PaykeyDetails);
-        Assert.NotNull(model.RelatedPayments);
-        Assert.Equal(expectedRelatedPayments.Count, model.RelatedPayments.Count);
-        for (int i = 0; i < expectedRelatedPayments.Count; i++)
-        {
-            Assert.Equal(expectedRelatedPayments[i], model.RelatedPayments[i]);
-        }
     }
 
     [Fact]
@@ -761,10 +634,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -797,15 +666,6 @@ public class DataTest : TestBase
                 Label = "Bank of America ****1234",
                 Balance = 0,
             },
-            RelatedPayments =
-            [
-                new()
-                {
-                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    PaymentType = RelatedPaymentPaymentType.Charge,
-                    Relationship = Relationship.Original,
-                },
-            ],
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -826,10 +686,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -862,15 +718,6 @@ public class DataTest : TestBase
                 Label = "Bank of America ****1234",
                 Balance = 0,
             },
-            RelatedPayments =
-            [
-                new()
-                {
-                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    PaymentType = RelatedPaymentPaymentType.Charge,
-                    Relationship = Relationship.Original,
-                },
-            ],
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -884,10 +731,6 @@ public class DataTest : TestBase
         string expectedDescription = "Invoice payment for 100 widgets";
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
-        bool expectedHasRefund = true;
-        bool expectedHasResubmit = true;
-        bool expectedIsRefund = true;
-        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, DataPaymentType> expectedPaymentType = DataPaymentType.Charge;
@@ -920,15 +763,6 @@ public class DataTest : TestBase
             Label = "Bank of America ****1234",
             Balance = 0,
         };
-        List<RelatedPayment> expectedRelatedPayments =
-        [
-            new()
-            {
-                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                PaymentType = RelatedPaymentPaymentType.Charge,
-                Relationship = Relationship.Original,
-            },
-        ];
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedAmount, deserialized.Amount);
@@ -941,10 +775,6 @@ public class DataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], deserialized.FundingIds[i]);
         }
-        Assert.Equal(expectedHasRefund, deserialized.HasRefund);
-        Assert.Equal(expectedHasResubmit, deserialized.HasResubmit);
-        Assert.Equal(expectedIsRefund, deserialized.IsRefund);
-        Assert.Equal(expectedIsResubmit, deserialized.IsResubmit);
         Assert.Equal(expectedPaykey, deserialized.Paykey);
         Assert.Equal(expectedPaymentDate, deserialized.PaymentDate);
         Assert.Equal(expectedPaymentType, deserialized.PaymentType);
@@ -970,12 +800,6 @@ public class DataTest : TestBase
             Assert.Equal(value, deserialized.Metadata[item.Key]);
         }
         Assert.Equal(expectedPaykeyDetails, deserialized.PaykeyDetails);
-        Assert.NotNull(deserialized.RelatedPayments);
-        Assert.Equal(expectedRelatedPayments.Count, deserialized.RelatedPayments.Count);
-        for (int i = 0; i < expectedRelatedPayments.Count; i++)
-        {
-            Assert.Equal(expectedRelatedPayments[i], deserialized.RelatedPayments[i]);
-        }
     }
 
     [Fact]
@@ -990,10 +814,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -1026,15 +846,6 @@ public class DataTest : TestBase
                 Label = "Bank of America ****1234",
                 Balance = 0,
             },
-            RelatedPayments =
-            [
-                new()
-                {
-                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    PaymentType = RelatedPaymentPaymentType.Charge,
-                    Relationship = Relationship.Original,
-                },
-            ],
         };
 
         model.Validate();
@@ -1052,10 +863,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -1073,15 +880,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
-            RelatedPayments =
-            [
-                new()
-                {
-                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    PaymentType = RelatedPaymentPaymentType.Charge,
-                    Relationship = Relationship.Original,
-                },
-            ],
         };
 
         Assert.Null(model.CustomerDetails);
@@ -1102,10 +900,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -1123,15 +917,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
-            RelatedPayments =
-            [
-                new()
-                {
-                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    PaymentType = RelatedPaymentPaymentType.Charge,
-                    Relationship = Relationship.Original,
-                },
-            ],
         };
 
         model.Validate();
@@ -1149,10 +934,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -1170,15 +951,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
-            RelatedPayments =
-            [
-                new()
-                {
-                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    PaymentType = RelatedPaymentPaymentType.Charge,
-                    Relationship = Relationship.Original,
-                },
-            ],
 
             // Null should be interpreted as omitted for these properties
             CustomerDetails = null,
@@ -1203,10 +975,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -1224,15 +992,6 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
-            RelatedPayments =
-            [
-                new()
-                {
-                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    PaymentType = RelatedPaymentPaymentType.Charge,
-                    Relationship = Relationship.Original,
-                },
-            ],
 
             // Null should be interpreted as omitted for these properties
             CustomerDetails = null,
@@ -1254,10 +1013,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -1295,8 +1050,6 @@ public class DataTest : TestBase
         Assert.False(model.RawData.ContainsKey("funding_id"));
         Assert.Null(model.Metadata);
         Assert.False(model.RawData.ContainsKey("metadata"));
-        Assert.Null(model.RelatedPayments);
-        Assert.False(model.RawData.ContainsKey("related_payments"));
     }
 
     [Fact]
@@ -1311,10 +1064,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -1361,10 +1110,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -1398,7 +1143,6 @@ public class DataTest : TestBase
             EffectiveAt = null,
             FundingID = null,
             Metadata = null,
-            RelatedPayments = null,
         };
 
         Assert.Null(model.EffectiveAt);
@@ -1407,8 +1151,6 @@ public class DataTest : TestBase
         Assert.True(model.RawData.ContainsKey("funding_id"));
         Assert.Null(model.Metadata);
         Assert.True(model.RawData.ContainsKey("metadata"));
-        Assert.Null(model.RelatedPayments);
-        Assert.True(model.RawData.ContainsKey("related_payments"));
     }
 
     [Fact]
@@ -1423,10 +1165,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -1460,7 +1198,6 @@ public class DataTest : TestBase
             EffectiveAt = null,
             FundingID = null,
             Metadata = null,
-            RelatedPayments = null,
         };
 
         model.Validate();
@@ -1478,10 +1215,6 @@ public class DataTest : TestBase
             Description = "Invoice payment for 100 widgets",
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             PaymentType = DataPaymentType.Charge,
@@ -1514,15 +1247,6 @@ public class DataTest : TestBase
                 Label = "Bank of America ****1234",
                 Balance = 0,
             },
-            RelatedPayments =
-            [
-                new()
-                {
-                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-                    PaymentType = RelatedPaymentPaymentType.Charge,
-                    Relationship = Relationship.Original,
-                },
-            ],
         };
 
         Data copied = new(model);
@@ -1653,221 +1377,6 @@ public class StatusTest : TestBase
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Status>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-}
-
-public class RelatedPaymentTest : TestBase
-{
-    [Fact]
-    public void FieldRoundtrip_Works()
-    {
-        var model = new RelatedPayment
-        {
-            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PaymentType = RelatedPaymentPaymentType.Charge,
-            Relationship = Relationship.Original,
-        };
-
-        string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        ApiEnum<string, RelatedPaymentPaymentType> expectedPaymentType =
-            RelatedPaymentPaymentType.Charge;
-        ApiEnum<string, Relationship> expectedRelationship = Relationship.Original;
-
-        Assert.Equal(expectedID, model.ID);
-        Assert.Equal(expectedPaymentType, model.PaymentType);
-        Assert.Equal(expectedRelationship, model.Relationship);
-    }
-
-    [Fact]
-    public void SerializationRoundtrip_Works()
-    {
-        var model = new RelatedPayment
-        {
-            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PaymentType = RelatedPaymentPaymentType.Charge,
-            Relationship = Relationship.Original,
-        };
-
-        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<RelatedPayment>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(model, deserialized);
-    }
-
-    [Fact]
-    public void FieldRoundtripThroughSerialization_Works()
-    {
-        var model = new RelatedPayment
-        {
-            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PaymentType = RelatedPaymentPaymentType.Charge,
-            Relationship = Relationship.Original,
-        };
-
-        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<RelatedPayment>(
-            element,
-            ModelBase.SerializerOptions
-        );
-        Assert.NotNull(deserialized);
-
-        string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
-        ApiEnum<string, RelatedPaymentPaymentType> expectedPaymentType =
-            RelatedPaymentPaymentType.Charge;
-        ApiEnum<string, Relationship> expectedRelationship = Relationship.Original;
-
-        Assert.Equal(expectedID, deserialized.ID);
-        Assert.Equal(expectedPaymentType, deserialized.PaymentType);
-        Assert.Equal(expectedRelationship, deserialized.Relationship);
-    }
-
-    [Fact]
-    public void Validation_Works()
-    {
-        var model = new RelatedPayment
-        {
-            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PaymentType = RelatedPaymentPaymentType.Charge,
-            Relationship = Relationship.Original,
-        };
-
-        model.Validate();
-    }
-
-    [Fact]
-    public void CopyConstructor_Works()
-    {
-        var model = new RelatedPayment
-        {
-            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-            PaymentType = RelatedPaymentPaymentType.Charge,
-            Relationship = Relationship.Original,
-        };
-
-        RelatedPayment copied = new(model);
-
-        Assert.Equal(model, copied);
-    }
-}
-
-public class RelatedPaymentPaymentTypeTest : TestBase
-{
-    [Theory]
-    [InlineData(RelatedPaymentPaymentType.Charge)]
-    [InlineData(RelatedPaymentPaymentType.Payout)]
-    public void Validation_Works(RelatedPaymentPaymentType rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, RelatedPaymentPaymentType> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentPaymentType>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(RelatedPaymentPaymentType.Charge)]
-    [InlineData(RelatedPaymentPaymentType.Payout)]
-    public void SerializationRoundtrip_Works(RelatedPaymentPaymentType rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, RelatedPaymentPaymentType> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentPaymentType>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentPaymentType>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentPaymentType>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-}
-
-public class RelationshipTest : TestBase
-{
-    [Theory]
-    [InlineData(Relationship.Original)]
-    [InlineData(Relationship.Resubmit)]
-    [InlineData(Relationship.Refund)]
-    public void Validation_Works(Relationship rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Relationship> value = rawValue;
-        value.Validate();
-    }
-
-    [Fact]
-    public void InvalidEnumValidationThrows_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Relationship>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-
-        Assert.NotNull(value);
-        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
-    }
-
-    [Theory]
-    [InlineData(Relationship.Original)]
-    [InlineData(Relationship.Resubmit)]
-    [InlineData(Relationship.Refund)]
-    public void SerializationRoundtrip_Works(Relationship rawValue)
-    {
-        // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, Relationship> value = rawValue;
-
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Relationship>>(
-            json,
-            ModelBase.SerializerOptions
-        );
-
-        Assert.Equal(value, deserialized);
-    }
-
-    [Fact]
-    public void InvalidEnumSerializationRoundtrip_Works()
-    {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, Relationship>>(
-            JsonSerializer.SerializeToElement("invalid value"),
-            ModelBase.SerializerOptions
-        );
-        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Relationship>>(
             json,
             ModelBase.SerializerOptions
         );

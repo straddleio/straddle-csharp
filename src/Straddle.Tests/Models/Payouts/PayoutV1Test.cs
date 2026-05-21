@@ -30,9 +30,6 @@ public class PayoutV1Test : TestBase
                 Device = new("192.168.1.1"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasResubmit = true,
-                IsRefund = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = Status.Created,
@@ -77,10 +74,15 @@ public class PayoutV1Test : TestBase
                 },
                 PaymentRail = PaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Original },
-                },
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = PaymentType.Charge,
+                        Relationship = Relationship.Original,
+                    },
+                ],
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -106,9 +108,6 @@ public class PayoutV1Test : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -153,10 +152,15 @@ public class PayoutV1Test : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -191,9 +195,6 @@ public class PayoutV1Test : TestBase
                 Device = new("192.168.1.1"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasResubmit = true,
-                IsRefund = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = Status.Created,
@@ -238,10 +239,15 @@ public class PayoutV1Test : TestBase
                 },
                 PaymentRail = PaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Original },
-                },
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = PaymentType.Charge,
+                        Relationship = Relationship.Original,
+                    },
+                ],
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -278,9 +284,6 @@ public class PayoutV1Test : TestBase
                 Device = new("192.168.1.1"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasResubmit = true,
-                IsRefund = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = Status.Created,
@@ -325,10 +328,15 @@ public class PayoutV1Test : TestBase
                 },
                 PaymentRail = PaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Original },
-                },
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = PaymentType.Charge,
+                        Relationship = Relationship.Original,
+                    },
+                ],
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -361,9 +369,6 @@ public class PayoutV1Test : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -408,10 +413,15 @@ public class PayoutV1Test : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -446,9 +456,6 @@ public class PayoutV1Test : TestBase
                 Device = new("192.168.1.1"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasResubmit = true,
-                IsRefund = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = Status.Created,
@@ -493,10 +500,15 @@ public class PayoutV1Test : TestBase
                 },
                 PaymentRail = PaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Original },
-                },
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = PaymentType.Charge,
+                        Relationship = Relationship.Original,
+                    },
+                ],
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -530,9 +542,6 @@ public class PayoutV1Test : TestBase
                 Device = new("192.168.1.1"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasResubmit = true,
-                IsRefund = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = Status.Created,
@@ -577,10 +586,15 @@ public class PayoutV1Test : TestBase
                 },
                 PaymentRail = PaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-                {
-                    { "foo", RelatedPaymentsItem.Original },
-                },
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = PaymentType.Charge,
+                        Relationship = Relationship.Original,
+                    },
+                ],
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -617,9 +631,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -664,10 +675,15 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -684,9 +700,6 @@ public class DataTest : TestBase
         Models::DeviceInfoV1 expectedDevice = new("192.168.1.1");
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
-        bool expectedHasResubmit = true;
-        bool expectedIsRefund = true;
-        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, Status> expectedStatus = Status.Created;
@@ -731,10 +744,15 @@ public class DataTest : TestBase
         };
         ApiEnum<string, PaymentRail> expectedPaymentRail = PaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        Dictionary<string, ApiEnum<string, RelatedPaymentsItem>> expectedRelatedPayments = new()
-        {
-            { "foo", RelatedPaymentsItem.Original },
-        };
+        List<RelatedPayment> expectedRelatedPayments =
+        [
+            new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                PaymentType = PaymentType.Charge,
+                Relationship = Relationship.Original,
+            },
+        ];
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, model.ID);
@@ -749,9 +767,6 @@ public class DataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], model.FundingIds[i]);
         }
-        Assert.Equal(expectedHasResubmit, model.HasResubmit);
-        Assert.Equal(expectedIsRefund, model.IsRefund);
-        Assert.Equal(expectedIsResubmit, model.IsResubmit);
         Assert.Equal(expectedPaykey, model.Paykey);
         Assert.Equal(expectedPaymentDate, model.PaymentDate);
         Assert.Equal(expectedStatus, model.Status);
@@ -784,11 +799,9 @@ public class DataTest : TestBase
         Assert.Equal(expectedProcessedAt, model.ProcessedAt);
         Assert.NotNull(model.RelatedPayments);
         Assert.Equal(expectedRelatedPayments.Count, model.RelatedPayments.Count);
-        foreach (var item in expectedRelatedPayments)
+        for (int i = 0; i < expectedRelatedPayments.Count; i++)
         {
-            Assert.True(model.RelatedPayments.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, model.RelatedPayments[item.Key]);
+            Assert.Equal(expectedRelatedPayments[i], model.RelatedPayments[i]);
         }
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
     }
@@ -811,9 +824,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -858,10 +868,15 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -889,9 +904,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -936,10 +948,15 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -960,9 +977,6 @@ public class DataTest : TestBase
         Models::DeviceInfoV1 expectedDevice = new("192.168.1.1");
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
-        bool expectedHasResubmit = true;
-        bool expectedIsRefund = true;
-        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, Status> expectedStatus = Status.Created;
@@ -1007,10 +1021,15 @@ public class DataTest : TestBase
         };
         ApiEnum<string, PaymentRail> expectedPaymentRail = PaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        Dictionary<string, ApiEnum<string, RelatedPaymentsItem>> expectedRelatedPayments = new()
-        {
-            { "foo", RelatedPaymentsItem.Original },
-        };
+        List<RelatedPayment> expectedRelatedPayments =
+        [
+            new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                PaymentType = PaymentType.Charge,
+                Relationship = Relationship.Original,
+            },
+        ];
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, deserialized.ID);
@@ -1025,9 +1044,6 @@ public class DataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], deserialized.FundingIds[i]);
         }
-        Assert.Equal(expectedHasResubmit, deserialized.HasResubmit);
-        Assert.Equal(expectedIsRefund, deserialized.IsRefund);
-        Assert.Equal(expectedIsResubmit, deserialized.IsResubmit);
         Assert.Equal(expectedPaykey, deserialized.Paykey);
         Assert.Equal(expectedPaymentDate, deserialized.PaymentDate);
         Assert.Equal(expectedStatus, deserialized.Status);
@@ -1060,11 +1076,9 @@ public class DataTest : TestBase
         Assert.Equal(expectedProcessedAt, deserialized.ProcessedAt);
         Assert.NotNull(deserialized.RelatedPayments);
         Assert.Equal(expectedRelatedPayments.Count, deserialized.RelatedPayments.Count);
-        foreach (var item in expectedRelatedPayments)
+        for (int i = 0; i < expectedRelatedPayments.Count; i++)
         {
-            Assert.True(deserialized.RelatedPayments.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, deserialized.RelatedPayments[item.Key]);
+            Assert.Equal(expectedRelatedPayments[i], deserialized.RelatedPayments[i]);
         }
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
     }
@@ -1087,9 +1101,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1134,10 +1145,15 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1162,9 +1178,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1193,10 +1206,15 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1226,9 +1244,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1257,10 +1272,15 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1285,9 +1305,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1316,10 +1333,15 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1354,9 +1376,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1385,10 +1404,15 @@ public class DataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1418,9 +1442,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1495,9 +1516,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1561,9 +1579,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1645,9 +1660,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1718,9 +1730,6 @@ public class DataTest : TestBase
             Device = new("192.168.1.1"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasResubmit = true,
-            IsRefund = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = Status.Created,
@@ -1765,10 +1774,15 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<string, ApiEnum<string, RelatedPaymentsItem>>()
-            {
-                { "foo", RelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PaymentType.Charge,
+                    Relationship = Relationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -2607,23 +2621,117 @@ public class PaymentRailTest : TestBase
     }
 }
 
-public class RelatedPaymentsItemTest : TestBase
+public class RelatedPaymentTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new RelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = PaymentType.Charge,
+            Relationship = Relationship.Original,
+        };
+
+        string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        ApiEnum<string, PaymentType> expectedPaymentType = PaymentType.Charge;
+        ApiEnum<string, Relationship> expectedRelationship = Relationship.Original;
+
+        Assert.Equal(expectedID, model.ID);
+        Assert.Equal(expectedPaymentType, model.PaymentType);
+        Assert.Equal(expectedRelationship, model.Relationship);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new RelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = PaymentType.Charge,
+            Relationship = Relationship.Original,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<RelatedPayment>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new RelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = PaymentType.Charge,
+            Relationship = Relationship.Original,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<RelatedPayment>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        ApiEnum<string, PaymentType> expectedPaymentType = PaymentType.Charge;
+        ApiEnum<string, Relationship> expectedRelationship = Relationship.Original;
+
+        Assert.Equal(expectedID, deserialized.ID);
+        Assert.Equal(expectedPaymentType, deserialized.PaymentType);
+        Assert.Equal(expectedRelationship, deserialized.Relationship);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new RelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = PaymentType.Charge,
+            Relationship = Relationship.Original,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = PaymentType.Charge,
+            Relationship = Relationship.Original,
+        };
+
+        RelatedPayment copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class PaymentTypeTest : TestBase
 {
     [Theory]
-    [InlineData(RelatedPaymentsItem.Original)]
-    [InlineData(RelatedPaymentsItem.Resubmit)]
-    [InlineData(RelatedPaymentsItem.Refund)]
-    public void Validation_Works(RelatedPaymentsItem rawValue)
+    [InlineData(PaymentType.Charge)]
+    [InlineData(PaymentType.Payout)]
+    public void Validation_Works(PaymentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, RelatedPaymentsItem> value = rawValue;
+        ApiEnum<string, PaymentType> value = rawValue;
         value.Validate();
     }
 
     [Fact]
     public void InvalidEnumValidationThrows_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PaymentType>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
@@ -2633,16 +2741,15 @@ public class RelatedPaymentsItemTest : TestBase
     }
 
     [Theory]
-    [InlineData(RelatedPaymentsItem.Original)]
-    [InlineData(RelatedPaymentsItem.Resubmit)]
-    [InlineData(RelatedPaymentsItem.Refund)]
-    public void SerializationRoundtrip_Works(RelatedPaymentsItem rawValue)
+    [InlineData(PaymentType.Charge)]
+    [InlineData(PaymentType.Payout)]
+    public void SerializationRoundtrip_Works(PaymentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, RelatedPaymentsItem> value = rawValue;
+        ApiEnum<string, PaymentType> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PaymentType>>(
             json,
             ModelBase.SerializerOptions
         );
@@ -2653,12 +2760,72 @@ public class RelatedPaymentsItemTest : TestBase
     [Fact]
     public void InvalidEnumSerializationRoundtrip_Works()
     {
-        var value = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
+        var value = JsonSerializer.Deserialize<ApiEnum<string, PaymentType>>(
             JsonSerializer.SerializeToElement("invalid value"),
             ModelBase.SerializerOptions
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
-        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, RelatedPaymentsItem>>(
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, PaymentType>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class RelationshipTest : TestBase
+{
+    [Theory]
+    [InlineData(Relationship.Original)]
+    [InlineData(Relationship.Resubmit)]
+    [InlineData(Relationship.Refund)]
+    public void Validation_Works(Relationship rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Relationship> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Relationship>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(Relationship.Original)]
+    [InlineData(Relationship.Resubmit)]
+    [InlineData(Relationship.Refund)]
+    public void SerializationRoundtrip_Works(Relationship rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, Relationship> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Relationship>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, Relationship>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, Relationship>>(
             json,
             ModelBase.SerializerOptions
         );

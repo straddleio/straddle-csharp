@@ -14,7 +14,6 @@ public class AccountListParamsTest : TestBase
     {
         var parameters = new Accounts::AccountListParams
         {
-            ExternalID = "external_id",
             PageNumber = 0,
             PageSize = 0,
             SearchText = "search_text",
@@ -26,7 +25,6 @@ public class AccountListParamsTest : TestBase
             RequestID = "request-id",
         };
 
-        string expectedExternalID = "external_id";
         int expectedPageNumber = 0;
         int expectedPageSize = 0;
         string expectedSearchText = "search_text";
@@ -37,7 +35,6 @@ public class AccountListParamsTest : TestBase
         string expectedCorrelationID = "correlation-id";
         string expectedRequestID = "request-id";
 
-        Assert.Equal(expectedExternalID, parameters.ExternalID);
         Assert.Equal(expectedPageNumber, parameters.PageNumber);
         Assert.Equal(expectedPageSize, parameters.PageSize);
         Assert.Equal(expectedSearchText, parameters.SearchText);
@@ -54,8 +51,6 @@ public class AccountListParamsTest : TestBase
     {
         var parameters = new Accounts::AccountListParams { };
 
-        Assert.Null(parameters.ExternalID);
-        Assert.False(parameters.RawQueryData.ContainsKey("external_id"));
         Assert.Null(parameters.PageNumber);
         Assert.False(parameters.RawQueryData.ContainsKey("page_number"));
         Assert.Null(parameters.PageSize);
@@ -82,7 +77,6 @@ public class AccountListParamsTest : TestBase
         var parameters = new Accounts::AccountListParams
         {
             // Null should be interpreted as omitted for these properties
-            ExternalID = null,
             PageNumber = null,
             PageSize = null,
             SearchText = null,
@@ -94,8 +88,6 @@ public class AccountListParamsTest : TestBase
             RequestID = null,
         };
 
-        Assert.Null(parameters.ExternalID);
-        Assert.False(parameters.RawQueryData.ContainsKey("external_id"));
         Assert.Null(parameters.PageNumber);
         Assert.False(parameters.RawQueryData.ContainsKey("page_number"));
         Assert.Null(parameters.PageSize);
@@ -121,7 +113,6 @@ public class AccountListParamsTest : TestBase
     {
         Accounts::AccountListParams parameters = new()
         {
-            ExternalID = "external_id",
             PageNumber = 0,
             PageSize = 0,
             SearchText = "search_text",
@@ -136,7 +127,7 @@ public class AccountListParamsTest : TestBase
         Assert.True(
             TestBase.UrisEqual(
                 new Uri(
-                    "https://sandbox.straddle.com/v1/accounts?external_id=external_id&page_number=0&page_size=0&search_text=search_text&sort_by=sort_by&sort_order=asc&status=created&type=business"
+                    "https://sandbox.straddle.com/v1/accounts?page_number=0&page_size=0&search_text=search_text&sort_by=sort_by&sort_order=asc&status=created&type=business"
                 ),
                 url
             )
@@ -164,7 +155,6 @@ public class AccountListParamsTest : TestBase
     {
         var parameters = new Accounts::AccountListParams
         {
-            ExternalID = "external_id",
             PageNumber = 0,
             PageSize = 0,
             SearchText = "search_text",

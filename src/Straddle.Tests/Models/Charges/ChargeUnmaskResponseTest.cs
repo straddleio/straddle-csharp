@@ -33,9 +33,6 @@ public class ChargeUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasRefund = true,
-                HasResubmit = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = ChargeUnmaskResponseDataStatus.Created,
@@ -80,13 +77,15 @@ public class ChargeUnmaskResponseTest : TestBase
                 },
                 PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<
-                    string,
-                    ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-                >()
-                {
-                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-                },
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                        Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                    },
+                ],
             },
             Meta = new()
             {
@@ -114,9 +113,6 @@ public class ChargeUnmaskResponseTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -161,13 +157,15 @@ public class ChargeUnmaskResponseTest : TestBase
             },
             PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
         };
         Models::ResponseMetadata expectedMeta = new()
         {
@@ -205,9 +203,6 @@ public class ChargeUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasRefund = true,
-                HasResubmit = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = ChargeUnmaskResponseDataStatus.Created,
@@ -252,13 +247,15 @@ public class ChargeUnmaskResponseTest : TestBase
                 },
                 PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<
-                    string,
-                    ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-                >()
-                {
-                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-                },
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                        Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                    },
+                ],
             },
             Meta = new()
             {
@@ -300,9 +297,6 @@ public class ChargeUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasRefund = true,
-                HasResubmit = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = ChargeUnmaskResponseDataStatus.Created,
@@ -347,13 +341,15 @@ public class ChargeUnmaskResponseTest : TestBase
                 },
                 PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<
-                    string,
-                    ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-                >()
-                {
-                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-                },
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                        Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                    },
+                ],
             },
             Meta = new()
             {
@@ -388,9 +384,6 @@ public class ChargeUnmaskResponseTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -435,13 +428,15 @@ public class ChargeUnmaskResponseTest : TestBase
             },
             PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
         };
         Models::ResponseMetadata expectedMeta = new()
         {
@@ -479,9 +474,6 @@ public class ChargeUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasRefund = true,
-                HasResubmit = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = ChargeUnmaskResponseDataStatus.Created,
@@ -526,13 +518,15 @@ public class ChargeUnmaskResponseTest : TestBase
                 },
                 PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<
-                    string,
-                    ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-                >()
-                {
-                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-                },
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                        Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                    },
+                ],
             },
             Meta = new()
             {
@@ -568,9 +562,6 @@ public class ChargeUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-                HasRefund = true,
-                HasResubmit = true,
-                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = ChargeUnmaskResponseDataStatus.Created,
@@ -615,13 +606,15 @@ public class ChargeUnmaskResponseTest : TestBase
                 },
                 PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-                RelatedPayments = new Dictionary<
-                    string,
-                    ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-                >()
-                {
-                    { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-                },
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                        Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                    },
+                ],
             },
             Meta = new()
             {
@@ -660,9 +653,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -707,13 +697,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
             },
             PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
         };
 
         string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
@@ -733,9 +725,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
         Device expectedDevice = new("ip_address");
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
-        bool expectedHasRefund = true;
-        bool expectedHasResubmit = true;
-        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, ChargeUnmaskResponseDataStatus> expectedStatus =
@@ -782,13 +771,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
         ApiEnum<string, ChargeUnmaskResponseDataPaymentRail> expectedPaymentRail =
             ChargeUnmaskResponseDataPaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        Dictionary<
-            string,
-            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-        > expectedRelatedPayments = new()
-        {
-            { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-        };
+        List<ChargeUnmaskResponseDataRelatedPayment> expectedRelatedPayments =
+        [
+            new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+            },
+        ];
 
         Assert.Equal(expectedID, model.ID);
         Assert.Equal(expectedAmount, model.Amount);
@@ -804,9 +795,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], model.FundingIds[i]);
         }
-        Assert.Equal(expectedHasRefund, model.HasRefund);
-        Assert.Equal(expectedHasResubmit, model.HasResubmit);
-        Assert.Equal(expectedIsResubmit, model.IsResubmit);
         Assert.Equal(expectedPaykey, model.Paykey);
         Assert.Equal(expectedPaymentDate, model.PaymentDate);
         Assert.Equal(expectedStatus, model.Status);
@@ -839,11 +827,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
         Assert.Equal(expectedProcessedAt, model.ProcessedAt);
         Assert.NotNull(model.RelatedPayments);
         Assert.Equal(expectedRelatedPayments.Count, model.RelatedPayments.Count);
-        foreach (var item in expectedRelatedPayments)
+        for (int i = 0; i < expectedRelatedPayments.Count; i++)
         {
-            Assert.True(model.RelatedPayments.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, model.RelatedPayments[item.Key]);
+            Assert.Equal(expectedRelatedPayments[i], model.RelatedPayments[i]);
         }
     }
 
@@ -868,9 +854,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -915,13 +898,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
             },
             PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
         };
 
         string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -954,9 +939,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1001,13 +983,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
             },
             PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
         };
 
         string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
@@ -1034,9 +1018,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
         Device expectedDevice = new("ip_address");
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
-        bool expectedHasRefund = true;
-        bool expectedHasResubmit = true;
-        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, ChargeUnmaskResponseDataStatus> expectedStatus =
@@ -1083,13 +1064,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
         ApiEnum<string, ChargeUnmaskResponseDataPaymentRail> expectedPaymentRail =
             ChargeUnmaskResponseDataPaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
-        Dictionary<
-            string,
-            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-        > expectedRelatedPayments = new()
-        {
-            { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-        };
+        List<ChargeUnmaskResponseDataRelatedPayment> expectedRelatedPayments =
+        [
+            new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+            },
+        ];
 
         Assert.Equal(expectedID, deserialized.ID);
         Assert.Equal(expectedAmount, deserialized.Amount);
@@ -1105,9 +1088,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], deserialized.FundingIds[i]);
         }
-        Assert.Equal(expectedHasRefund, deserialized.HasRefund);
-        Assert.Equal(expectedHasResubmit, deserialized.HasResubmit);
-        Assert.Equal(expectedIsResubmit, deserialized.IsResubmit);
         Assert.Equal(expectedPaykey, deserialized.Paykey);
         Assert.Equal(expectedPaymentDate, deserialized.PaymentDate);
         Assert.Equal(expectedStatus, deserialized.Status);
@@ -1140,11 +1120,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
         Assert.Equal(expectedProcessedAt, deserialized.ProcessedAt);
         Assert.NotNull(deserialized.RelatedPayments);
         Assert.Equal(expectedRelatedPayments.Count, deserialized.RelatedPayments.Count);
-        foreach (var item in expectedRelatedPayments)
+        for (int i = 0; i < expectedRelatedPayments.Count; i++)
         {
-            Assert.True(deserialized.RelatedPayments.TryGetValue(item.Key, out var value));
-
-            Assert.Equal(value, deserialized.RelatedPayments[item.Key]);
+            Assert.Equal(expectedRelatedPayments[i], deserialized.RelatedPayments[i]);
         }
     }
 
@@ -1169,9 +1147,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1216,13 +1191,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
             },
             PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
         };
 
         model.Validate();
@@ -1249,9 +1226,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1280,13 +1254,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
         };
 
         Assert.Null(model.CustomerDetails);
@@ -1318,9 +1294,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1349,13 +1322,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
         };
 
         model.Validate();
@@ -1382,9 +1357,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1413,13 +1385,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
 
             // Null should be interpreted as omitted for these properties
             CustomerDetails = null,
@@ -1456,9 +1430,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1487,13 +1458,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
 
             // Null should be interpreted as omitted for these properties
             CustomerDetails = null,
@@ -1525,9 +1498,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1602,9 +1572,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1672,9 +1639,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1754,9 +1718,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1829,9 +1790,6 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
-            HasRefund = true,
-            HasResubmit = true,
-            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1876,13 +1834,15 @@ public class ChargeUnmaskResponseDataTest : TestBase
             },
             PaymentRail = ChargeUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            RelatedPayments = new Dictionary<
-                string,
-                ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
-            >()
-            {
-                { "foo", ChargeUnmaskResponseDataRelatedPaymentsItem.Original },
-            },
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
         };
 
         ChargeUnmaskResponseData copied = new(model);
@@ -2903,16 +2863,114 @@ public class ChargeUnmaskResponseDataPaymentRailTest : TestBase
     }
 }
 
-public class ChargeUnmaskResponseDataRelatedPaymentsItemTest : TestBase
+public class ChargeUnmaskResponseDataRelatedPaymentTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new ChargeUnmaskResponseDataRelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+        };
+
+        string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentPaymentType> expectedPaymentType =
+            ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge;
+        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentRelationship> expectedRelationship =
+            ChargeUnmaskResponseDataRelatedPaymentRelationship.Original;
+
+        Assert.Equal(expectedID, model.ID);
+        Assert.Equal(expectedPaymentType, model.PaymentType);
+        Assert.Equal(expectedRelationship, model.Relationship);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new ChargeUnmaskResponseDataRelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ChargeUnmaskResponseDataRelatedPayment>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new ChargeUnmaskResponseDataRelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ChargeUnmaskResponseDataRelatedPayment>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentPaymentType> expectedPaymentType =
+            ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge;
+        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentRelationship> expectedRelationship =
+            ChargeUnmaskResponseDataRelatedPaymentRelationship.Original;
+
+        Assert.Equal(expectedID, deserialized.ID);
+        Assert.Equal(expectedPaymentType, deserialized.PaymentType);
+        Assert.Equal(expectedRelationship, deserialized.Relationship);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new ChargeUnmaskResponseDataRelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new ChargeUnmaskResponseDataRelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            Relationship = ChargeUnmaskResponseDataRelatedPaymentRelationship.Original,
+        };
+
+        ChargeUnmaskResponseDataRelatedPayment copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class ChargeUnmaskResponseDataRelatedPaymentPaymentTypeTest : TestBase
 {
     [Theory]
-    [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Original)]
-    [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Resubmit)]
-    [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Refund)]
-    public void Validation_Works(ChargeUnmaskResponseDataRelatedPaymentsItem rawValue)
+    [InlineData(ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge)]
+    [InlineData(ChargeUnmaskResponseDataRelatedPaymentPaymentType.Payout)]
+    public void Validation_Works(ChargeUnmaskResponseDataRelatedPaymentPaymentType rawValue)
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem> value = rawValue;
+        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentPaymentType> value = rawValue;
         value.Validate();
     }
 
@@ -2920,7 +2978,7 @@ public class ChargeUnmaskResponseDataRelatedPaymentsItemTest : TestBase
     public void InvalidEnumValidationThrows_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
+            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentPaymentType>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
 
         Assert.NotNull(value);
@@ -2928,17 +2986,18 @@ public class ChargeUnmaskResponseDataRelatedPaymentsItemTest : TestBase
     }
 
     [Theory]
-    [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Original)]
-    [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Resubmit)]
-    [InlineData(ChargeUnmaskResponseDataRelatedPaymentsItem.Refund)]
-    public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataRelatedPaymentsItem rawValue)
+    [InlineData(ChargeUnmaskResponseDataRelatedPaymentPaymentType.Charge)]
+    [InlineData(ChargeUnmaskResponseDataRelatedPaymentPaymentType.Payout)]
+    public void SerializationRoundtrip_Works(
+        ChargeUnmaskResponseDataRelatedPaymentPaymentType rawValue
+    )
     {
         // force implicit conversion because Theory can't do that for us
-        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem> value = rawValue;
+        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentPaymentType> value = rawValue;
 
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
+            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentPaymentType>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
@@ -2948,11 +3007,69 @@ public class ChargeUnmaskResponseDataRelatedPaymentsItemTest : TestBase
     public void InvalidEnumSerializationRoundtrip_Works()
     {
         var value = JsonSerializer.Deserialize<
-            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
+            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentPaymentType>
         >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
-            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentsItem>
+            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentPaymentType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class ChargeUnmaskResponseDataRelatedPaymentRelationshipTest : TestBase
+{
+    [Theory]
+    [InlineData(ChargeUnmaskResponseDataRelatedPaymentRelationship.Original)]
+    [InlineData(ChargeUnmaskResponseDataRelatedPaymentRelationship.Resubmit)]
+    [InlineData(ChargeUnmaskResponseDataRelatedPaymentRelationship.Refund)]
+    public void Validation_Works(ChargeUnmaskResponseDataRelatedPaymentRelationship rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentRelationship> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentRelationship>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(ChargeUnmaskResponseDataRelatedPaymentRelationship.Original)]
+    [InlineData(ChargeUnmaskResponseDataRelatedPaymentRelationship.Resubmit)]
+    [InlineData(ChargeUnmaskResponseDataRelatedPaymentRelationship.Refund)]
+    public void SerializationRoundtrip_Works(
+        ChargeUnmaskResponseDataRelatedPaymentRelationship rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentRelationship> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentRelationship>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentRelationship>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, ChargeUnmaskResponseDataRelatedPaymentRelationship>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
