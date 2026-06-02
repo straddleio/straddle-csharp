@@ -33,6 +33,9 @@ public class ChargeUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasRefund = true,
+                HasResubmit = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = ChargeUnmaskResponseDataStatus.Created,
@@ -113,6 +116,9 @@ public class ChargeUnmaskResponseTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -203,6 +209,9 @@ public class ChargeUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasRefund = true,
+                HasResubmit = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = ChargeUnmaskResponseDataStatus.Created,
@@ -297,6 +306,9 @@ public class ChargeUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasRefund = true,
+                HasResubmit = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = ChargeUnmaskResponseDataStatus.Created,
@@ -384,6 +396,9 @@ public class ChargeUnmaskResponseTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -474,6 +489,9 @@ public class ChargeUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasRefund = true,
+                HasResubmit = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = ChargeUnmaskResponseDataStatus.Created,
@@ -562,6 +580,9 @@ public class ChargeUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasRefund = true,
+                HasResubmit = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = ChargeUnmaskResponseDataStatus.Created,
@@ -653,6 +674,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -725,6 +749,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
         Device expectedDevice = new("ip_address");
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
+        bool expectedHasRefund = true;
+        bool expectedHasResubmit = true;
+        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, ChargeUnmaskResponseDataStatus> expectedStatus =
@@ -795,6 +822,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], model.FundingIds[i]);
         }
+        Assert.Equal(expectedHasRefund, model.HasRefund);
+        Assert.Equal(expectedHasResubmit, model.HasResubmit);
+        Assert.Equal(expectedIsResubmit, model.IsResubmit);
         Assert.Equal(expectedPaykey, model.Paykey);
         Assert.Equal(expectedPaymentDate, model.PaymentDate);
         Assert.Equal(expectedStatus, model.Status);
@@ -854,6 +884,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -939,6 +972,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1018,6 +1054,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
         Device expectedDevice = new("ip_address");
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
+        bool expectedHasRefund = true;
+        bool expectedHasResubmit = true;
+        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, ChargeUnmaskResponseDataStatus> expectedStatus =
@@ -1088,6 +1127,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], deserialized.FundingIds[i]);
         }
+        Assert.Equal(expectedHasRefund, deserialized.HasRefund);
+        Assert.Equal(expectedHasResubmit, deserialized.HasResubmit);
+        Assert.Equal(expectedIsResubmit, deserialized.IsResubmit);
         Assert.Equal(expectedPaykey, deserialized.Paykey);
         Assert.Equal(expectedPaymentDate, deserialized.PaymentDate);
         Assert.Equal(expectedStatus, deserialized.Status);
@@ -1147,6 +1189,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1226,6 +1271,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1294,6 +1342,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1357,6 +1408,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1430,6 +1484,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1498,6 +1555,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1572,6 +1632,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1639,6 +1702,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1718,6 +1784,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
@@ -1790,6 +1859,9 @@ public class ChargeUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasRefund = true,
+            HasResubmit = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = ChargeUnmaskResponseDataStatus.Created,
