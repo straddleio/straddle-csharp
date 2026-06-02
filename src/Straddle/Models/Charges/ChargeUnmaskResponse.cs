@@ -240,45 +240,6 @@ public sealed record class ChargeUnmaskResponseData : JsonModel
     }
 
     /// <summary>
-    /// Has the charge been refunded by an associated payout.
-    /// </summary>
-    public required bool HasRefund
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<bool>("has_refund");
-        }
-        init { this._rawData.Set("has_refund", value); }
-    }
-
-    /// <summary>
-    /// Has the charge been resubmitted.
-    /// </summary>
-    public required bool HasResubmit
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<bool>("has_resubmit");
-        }
-        init { this._rawData.Set("has_resubmit", value); }
-    }
-
-    /// <summary>
-    /// Is the charge a resubmit of an original charge.
-    /// </summary>
-    public required bool IsResubmit
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<bool>("is_resubmit");
-        }
-        init { this._rawData.Set("is_resubmit", value); }
-    }
-
-    /// <summary>
     /// Paykey.
     /// </summary>
     public required string Paykey
@@ -523,9 +484,6 @@ public sealed record class ChargeUnmaskResponseData : JsonModel
         this.Device.Validate();
         _ = this.ExternalID;
         _ = this.FundingIds;
-        _ = this.HasRefund;
-        _ = this.HasResubmit;
-        _ = this.IsResubmit;
         _ = this.Paykey;
         _ = this.PaymentDate;
         this.Status.Validate();
