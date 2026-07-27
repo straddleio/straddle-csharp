@@ -69,6 +69,17 @@ public class ChargeV1Test : TestBase
                     Name = "Ron Swanson",
                     Phone = "+1234567890",
                 },
+                Documents =
+                [
+                    new()
+                    {
+                        DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        DocumentName = "document_name",
+                        DocumentSize = 0,
+                        DocumentType = DocumentType.PaymentAuthorization,
+                        UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                ],
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
@@ -152,6 +163,17 @@ public class ChargeV1Test : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -244,6 +266,17 @@ public class ChargeV1Test : TestBase
                     Name = "Ron Swanson",
                     Phone = "+1234567890",
                 },
+                Documents =
+                [
+                    new()
+                    {
+                        DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        DocumentName = "document_name",
+                        DocumentSize = 0,
+                        DocumentType = DocumentType.PaymentAuthorization,
+                        UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                ],
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
@@ -338,6 +371,17 @@ public class ChargeV1Test : TestBase
                     Name = "Ron Swanson",
                     Phone = "+1234567890",
                 },
+                Documents =
+                [
+                    new()
+                    {
+                        DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        DocumentName = "document_name",
+                        DocumentSize = 0,
+                        DocumentType = DocumentType.PaymentAuthorization,
+                        UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                ],
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
@@ -428,6 +472,17 @@ public class ChargeV1Test : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -520,6 +575,17 @@ public class ChargeV1Test : TestBase
                     Name = "Ron Swanson",
                     Phone = "+1234567890",
                 },
+                Documents =
+                [
+                    new()
+                    {
+                        DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        DocumentName = "document_name",
+                        DocumentSize = 0,
+                        DocumentType = DocumentType.PaymentAuthorization,
+                        UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                ],
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
@@ -611,6 +677,17 @@ public class ChargeV1Test : TestBase
                     Name = "Ron Swanson",
                     Phone = "+1234567890",
                 },
+                Documents =
+                [
+                    new()
+                    {
+                        DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        DocumentName = "document_name",
+                        DocumentSize = 0,
+                        DocumentType = DocumentType.PaymentAuthorization,
+                        UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                ],
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
@@ -705,6 +782,17 @@ public class DataTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -779,6 +867,17 @@ public class DataTest : TestBase
             Name = "Ron Swanson",
             Phone = "+1234567890",
         };
+        List<Document> expectedDocuments =
+        [
+            new()
+            {
+                DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                DocumentName = "document_name",
+                DocumentSize = 0,
+                DocumentType = DocumentType.PaymentAuthorization,
+                UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+        ];
         DateTimeOffset expectedEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         Dictionary<string, string> expectedMetadata = new() { { "foo", "string" } };
         Models::PaykeyDetailsV1 expectedPaykeyDetails = new()
@@ -835,6 +934,12 @@ public class DataTest : TestBase
         }
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
         Assert.Equal(expectedCustomerDetails, model.CustomerDetails);
+        Assert.NotNull(model.Documents);
+        Assert.Equal(expectedDocuments.Count, model.Documents.Count);
+        for (int i = 0; i < expectedDocuments.Count; i++)
+        {
+            Assert.Equal(expectedDocuments[i], model.Documents[i]);
+        }
         Assert.Equal(expectedEffectiveAt, model.EffectiveAt);
         Assert.NotNull(model.Metadata);
         Assert.Equal(expectedMetadata.Count, model.Metadata.Count);
@@ -912,6 +1017,17 @@ public class DataTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -997,6 +1113,17 @@ public class DataTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -1075,6 +1202,17 @@ public class DataTest : TestBase
             Name = "Ron Swanson",
             Phone = "+1234567890",
         };
+        List<Document> expectedDocuments =
+        [
+            new()
+            {
+                DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                DocumentName = "document_name",
+                DocumentSize = 0,
+                DocumentType = DocumentType.PaymentAuthorization,
+                UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+        ];
         DateTimeOffset expectedEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         Dictionary<string, string> expectedMetadata = new() { { "foo", "string" } };
         Models::PaykeyDetailsV1 expectedPaykeyDetails = new()
@@ -1131,6 +1269,12 @@ public class DataTest : TestBase
         }
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
         Assert.Equal(expectedCustomerDetails, deserialized.CustomerDetails);
+        Assert.NotNull(deserialized.Documents);
+        Assert.Equal(expectedDocuments.Count, deserialized.Documents.Count);
+        for (int i = 0; i < expectedDocuments.Count; i++)
+        {
+            Assert.Equal(expectedDocuments[i], deserialized.Documents[i]);
+        }
         Assert.Equal(expectedEffectiveAt, deserialized.EffectiveAt);
         Assert.NotNull(deserialized.Metadata);
         Assert.Equal(expectedMetadata.Count, deserialized.Metadata.Count);
@@ -1208,6 +1352,17 @@ public class DataTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -1282,6 +1437,17 @@ public class DataTest : TestBase
             ],
             TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -1353,6 +1519,17 @@ public class DataTest : TestBase
             ],
             TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -1419,6 +1596,17 @@ public class DataTest : TestBase
             ],
             TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -1495,6 +1683,17 @@ public class DataTest : TestBase
             ],
             TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
@@ -1584,6 +1783,8 @@ public class DataTest : TestBase
             PaymentRail = PaymentRail.Ach,
         };
 
+        Assert.Null(model.Documents);
+        Assert.False(model.RawData.ContainsKey("documents"));
         Assert.Null(model.EffectiveAt);
         Assert.False(model.RawData.ContainsKey("effective_at"));
         Assert.Null(model.Metadata);
@@ -1730,12 +1931,15 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
 
+            Documents = null,
             EffectiveAt = null,
             Metadata = null,
             ProcessedAt = null,
             RelatedPayments = null,
         };
 
+        Assert.Null(model.Documents);
+        Assert.True(model.RawData.ContainsKey("documents"));
         Assert.Null(model.EffectiveAt);
         Assert.True(model.RawData.ContainsKey("effective_at"));
         Assert.Null(model.Metadata);
@@ -1812,6 +2016,7 @@ public class DataTest : TestBase
             },
             PaymentRail = PaymentRail.Ach,
 
+            Documents = null,
             EffectiveAt = null,
             Metadata = null,
             ProcessedAt = null,
@@ -1878,6 +2083,17 @@ public class DataTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType = DocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -2822,6 +3038,172 @@ public class StatusHistoryStatusTest : TestBase
         );
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<ApiEnum<string, StatusHistoryStatus>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class DocumentTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new Document
+        {
+            DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            DocumentName = "document_name",
+            DocumentSize = 0,
+            DocumentType = DocumentType.PaymentAuthorization,
+            UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        string expectedDocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        string expectedDocumentName = "document_name";
+        long expectedDocumentSize = 0;
+        ApiEnum<string, DocumentType> expectedDocumentType = DocumentType.PaymentAuthorization;
+        DateTimeOffset expectedUploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+
+        Assert.Equal(expectedDocumentID, model.DocumentID);
+        Assert.Equal(expectedDocumentName, model.DocumentName);
+        Assert.Equal(expectedDocumentSize, model.DocumentSize);
+        Assert.Equal(expectedDocumentType, model.DocumentType);
+        Assert.Equal(expectedUploadedAt, model.UploadedAt);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new Document
+        {
+            DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            DocumentName = "document_name",
+            DocumentSize = 0,
+            DocumentType = DocumentType.PaymentAuthorization,
+            UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Document>(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new Document
+        {
+            DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            DocumentName = "document_name",
+            DocumentSize = 0,
+            DocumentType = DocumentType.PaymentAuthorization,
+            UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<Document>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedDocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        string expectedDocumentName = "document_name";
+        long expectedDocumentSize = 0;
+        ApiEnum<string, DocumentType> expectedDocumentType = DocumentType.PaymentAuthorization;
+        DateTimeOffset expectedUploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+
+        Assert.Equal(expectedDocumentID, deserialized.DocumentID);
+        Assert.Equal(expectedDocumentName, deserialized.DocumentName);
+        Assert.Equal(expectedDocumentSize, deserialized.DocumentSize);
+        Assert.Equal(expectedDocumentType, deserialized.DocumentType);
+        Assert.Equal(expectedUploadedAt, deserialized.UploadedAt);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new Document
+        {
+            DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            DocumentName = "document_name",
+            DocumentSize = 0,
+            DocumentType = DocumentType.PaymentAuthorization,
+            UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Document
+        {
+            DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            DocumentName = "document_name",
+            DocumentSize = 0,
+            DocumentType = DocumentType.PaymentAuthorization,
+            UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        Document copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class DocumentTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(DocumentType.PaymentAuthorization)]
+    public void Validation_Works(DocumentType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, DocumentType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, DocumentType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+
+        Assert.NotNull(value);
+        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(DocumentType.PaymentAuthorization)]
+    public void SerializationRoundtrip_Works(DocumentType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, DocumentType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, DocumentType>>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<ApiEnum<string, DocumentType>>(
+            JsonSerializer.SerializeToElement("invalid value"),
+            ModelBase.SerializerOptions
+        );
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<ApiEnum<string, DocumentType>>(
             json,
             ModelBase.SerializerOptions
         );
