@@ -253,6 +253,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Charges::Reason>(),
             new ApiEnumConverter<string, Charges::Source>(),
             new ApiEnumConverter<string, Charges::StatusHistoryStatus>(),
+            new ApiEnumConverter<string, Charges::DocumentType>(),
             new ApiEnumConverter<string, Charges::PaymentRail>(),
             new ApiEnumConverter<string, Charges::PaymentType>(),
             new ApiEnumConverter<string, Charges::Relationship>(),
@@ -264,6 +265,7 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataStatusHistoryReason>(),
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataStatusHistorySource>(),
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataStatusHistoryStatus>(),
+            new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataDocumentDocumentType>(),
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataPaymentRail>(),
             new ApiEnumConverter<
                 string,
