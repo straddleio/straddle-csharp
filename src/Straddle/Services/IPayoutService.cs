@@ -127,6 +127,22 @@ public interface IPayoutService
         PayoutUnmaskParams? parameters = null,
         CancellationToken cancellationToken = default
     );
+
+    /// <summary>
+    /// Uploads a document as proof of authorization for a payout. Uploading again adds
+    /// another entry to documents rather than replacing the previous one.
+    /// </summary>
+    Task<PayoutV1> UploadAuthorizationDocument(
+        PayoutUploadAuthorizationDocumentParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="UploadAuthorizationDocument(PayoutUploadAuthorizationDocumentParams, CancellationToken)"/>
+    Task<PayoutV1> UploadAuthorizationDocument(
+        string id,
+        PayoutUploadAuthorizationDocumentParams parameters,
+        CancellationToken cancellationToken = default
+    );
 }
 
 /// <summary>
@@ -244,6 +260,22 @@ public interface IPayoutServiceWithRawResponse
     Task<HttpResponse<PayoutUnmaskResponse>> Unmask(
         string id,
         PayoutUnmaskParams? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Returns a raw HTTP response for <c>post /v1/payouts/{id}/authorization</c>, but is otherwise the
+    /// same as <see cref="IPayoutService.UploadAuthorizationDocument(PayoutUploadAuthorizationDocumentParams, CancellationToken)"/>.
+    /// </summary>
+    Task<HttpResponse<PayoutV1>> UploadAuthorizationDocument(
+        PayoutUploadAuthorizationDocumentParams parameters,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <inheritdoc cref="UploadAuthorizationDocument(PayoutUploadAuthorizationDocumentParams, CancellationToken)"/>
+    Task<HttpResponse<PayoutV1>> UploadAuthorizationDocument(
+        string id,
+        PayoutUploadAuthorizationDocumentParams parameters,
         CancellationToken cancellationToken = default
     );
 }
