@@ -1,3 +1,4 @@
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Straddle.Tests.Services;
@@ -92,5 +93,16 @@ public class PayoutServiceTest : TestBase
             TestContext.Current.CancellationToken
         );
         response.Validate();
+    }
+
+    [Fact]
+    public async Task UploadAuthorizationDocument_Works()
+    {
+        var payoutV1 = await this.client.Payouts.UploadAuthorizationDocument(
+            "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            new() { File = Encoding.UTF8.GetBytes("Example data") },
+            TestContext.Current.CancellationToken
+        );
+        payoutV1.Validate();
     }
 }
