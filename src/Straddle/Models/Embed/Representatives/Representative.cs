@@ -405,8 +405,8 @@ public sealed record class DataRelationship : JsonModel
     }
 
     /// <summary>
-    /// Whether the representative owns any percentage of of the equity interests
-    /// of the legal entity.
+    /// Whether the representative owns any percentage of the equity interests of
+    /// the legal entity.
     /// </summary>
     public required bool Owner
     {
