@@ -324,7 +324,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Payouts::Reason>(),
             new ApiEnumConverter<string, Payouts::Source>(),
             new ApiEnumConverter<string, Payouts::StatusHistoryStatus>(),
-            new ApiEnumConverter<string, Payouts::DocumentType>(),
             new ApiEnumConverter<string, Payouts::PaymentRail>(),
             new ApiEnumConverter<string, Payouts::PaymentType>(),
             new ApiEnumConverter<string, Payouts::Relationship>(),
@@ -334,7 +333,6 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataStatusHistoryReason>(),
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataStatusHistorySource>(),
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataStatusHistoryStatus>(),
-            new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataDocumentDocumentType>(),
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataPaymentRail>(),
             new ApiEnumConverter<
                 string,

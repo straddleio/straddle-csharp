@@ -374,26 +374,6 @@ public sealed record class Data : JsonModel
     }
 
     /// <summary>
-    /// Documents uploaded for this payout (e.g. proof of authorization), in the order
-    /// they were uploaded.
-    /// </summary>
-    public IReadOnlyList<Document>? Documents
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNullableStruct<ImmutableArray<Document>>("documents");
-        }
-        init
-        {
-            this._rawData.Set<ImmutableArray<Document>?>(
-                "documents",
-                value == null ? null : ImmutableArray.ToImmutableArray(value)
-            );
-        }
-    }
-
-    /// <summary>
     /// The actual date on which the payment occurred. For payouts, this is the date
     /// the funds were sent from your bank account.
     /// </summary>
@@ -541,10 +521,6 @@ public sealed record class Data : JsonModel
         _ = this.TraceIds;
         _ = this.CreatedAt;
         this.CustomerDetails?.Validate();
-        foreach (var item in this.Documents ?? [])
-        {
-            item.Validate();
-        }
         _ = this.EffectiveAt;
         _ = this.Metadata;
         this.PaykeyDetails?.Validate();
@@ -1187,157 +1163,6 @@ sealed class StatusHistoryStatusConverter : JsonConverter<StatusHistoryStatus>
                 StatusHistoryStatus.Paid => "paid",
                 StatusHistoryStatus.Reversed => "reversed",
                 StatusHistoryStatus.Validating => "validating",
-                _ => throw new StraddleInvalidDataException(
-                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
-                ),
-            },
-            options
-        );
-    }
-}
-
-[JsonConverter(typeof(JsonModelConverter<Document, DocumentFromRaw>))]
-public sealed record class Document : JsonModel
-{
-    /// <summary>
-    /// Unique identifier for this document.
-    /// </summary>
-    public required string DocumentID
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("document_id");
-        }
-        init { this._rawData.Set("document_id", value); }
-    }
-
-    /// <summary>
-    /// The file name of this document as uploaded.
-    /// </summary>
-    public required string DocumentName
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<string>("document_name");
-        }
-        init { this._rawData.Set("document_name", value); }
-    }
-
-    /// <summary>
-    /// The size of this document in bytes.
-    /// </summary>
-    public required long DocumentSize
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<long>("document_size");
-        }
-        init { this._rawData.Set("document_size", value); }
-    }
-
-    public required ApiEnum<string, DocumentType> DocumentType
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullClass<ApiEnum<string, DocumentType>>("document_type");
-        }
-        init { this._rawData.Set("document_type", value); }
-    }
-
-    /// <summary>
-    /// The UTC timestamp when this document was uploaded.
-    /// </summary>
-    public required DateTimeOffset UploadedAt
-    {
-        get
-        {
-            this._rawData.Freeze();
-            return this._rawData.GetNotNullStruct<DateTimeOffset>("uploaded_at");
-        }
-        init { this._rawData.Set("uploaded_at", value); }
-    }
-
-    /// <inheritdoc/>
-    public override void Validate()
-    {
-        _ = this.DocumentID;
-        _ = this.DocumentName;
-        _ = this.DocumentSize;
-        this.DocumentType.Validate();
-        _ = this.UploadedAt;
-    }
-
-    public Document() { }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    public Document(Document document)
-        : base(document) { }
-#pragma warning restore CS8618
-
-    public Document(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-
-#pragma warning disable CS8618
-    [SetsRequiredMembers]
-    Document(FrozenDictionary<string, JsonElement> rawData)
-    {
-        this._rawData = new(rawData);
-    }
-#pragma warning restore CS8618
-
-    /// <inheritdoc cref="DocumentFromRaw.FromRawUnchecked"/>
-    public static Document FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData)
-    {
-        return new(FrozenDictionary.ToFrozenDictionary(rawData));
-    }
-}
-
-class DocumentFromRaw : IFromRawJson<Document>
-{
-    /// <inheritdoc/>
-    public Document FromRawUnchecked(IReadOnlyDictionary<string, JsonElement> rawData) =>
-        Document.FromRawUnchecked(rawData);
-}
-
-[JsonConverter(typeof(DocumentTypeConverter))]
-public enum DocumentType
-{
-    PaymentAuthorization,
-}
-
-sealed class DocumentTypeConverter : JsonConverter<DocumentType>
-{
-    public override DocumentType Read(
-        ref Utf8JsonReader reader,
-        Type typeToConvert,
-        JsonSerializerOptions options
-    )
-    {
-        return JsonSerializer.Deserialize<string>(ref reader, options) switch
-        {
-            "payment_authorization" => DocumentType.PaymentAuthorization,
-            _ => (DocumentType)(-1),
-        };
-    }
-
-    public override void Write(
-        Utf8JsonWriter writer,
-        DocumentType value,
-        JsonSerializerOptions options
-    )
-    {
-        JsonSerializer.Serialize(
-            writer,
-            value switch
-            {
-                DocumentType.PaymentAuthorization => "payment_authorization",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
