@@ -374,6 +374,28 @@ public sealed record class PayoutUnmaskResponseData : JsonModel
     }
 
     /// <summary>
+    /// Documents uploaded for this payout (e.g. proof of authorization), in the order
+    /// they were uploaded.
+    /// </summary>
+    public IReadOnlyList<PayoutUnmaskResponseDataDocument>? Documents
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<PayoutUnmaskResponseDataDocument>
+            >("documents");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<PayoutUnmaskResponseDataDocument>?>(
+                "documents",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Effective at.
     /// </summary>
     public DateTimeOffset? EffectiveAt
@@ -518,6 +540,10 @@ public sealed record class PayoutUnmaskResponseData : JsonModel
         _ = this.TraceIds;
         _ = this.CreatedAt;
         this.CustomerDetails?.Validate();
+        foreach (var item in this.Documents ?? [])
+        {
+            item.Validate();
+        }
         _ = this.EffectiveAt;
         _ = this.Metadata;
         this.PaykeyDetails?.Validate();
@@ -1293,6 +1319,172 @@ sealed class PayoutUnmaskResponseDataStatusHistoryStatusConverter
                 PayoutUnmaskResponseDataStatusHistoryStatus.Paid => "paid",
                 PayoutUnmaskResponseDataStatusHistoryStatus.Reversed => "reversed",
                 PayoutUnmaskResponseDataStatusHistoryStatus.Validating => "validating",
+                _ => throw new StraddleInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        PayoutUnmaskResponseDataDocument,
+        PayoutUnmaskResponseDataDocumentFromRaw
+    >)
+)]
+public sealed record class PayoutUnmaskResponseDataDocument : JsonModel
+{
+    /// <summary>
+    /// Unique identifier for this document.
+    /// </summary>
+    public required string DocumentID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("document_id");
+        }
+        init { this._rawData.Set("document_id", value); }
+    }
+
+    /// <summary>
+    /// The file name of this document as uploaded.
+    /// </summary>
+    public required string DocumentName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("document_name");
+        }
+        init { this._rawData.Set("document_name", value); }
+    }
+
+    /// <summary>
+    /// The size of this document in bytes.
+    /// </summary>
+    public required long DocumentSize
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("document_size");
+        }
+        init { this._rawData.Set("document_size", value); }
+    }
+
+    public required ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType> DocumentType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType>
+            >("document_type");
+        }
+        init { this._rawData.Set("document_type", value); }
+    }
+
+    /// <summary>
+    /// The UTC timestamp when this document was uploaded.
+    /// </summary>
+    public required DateTimeOffset UploadedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<DateTimeOffset>("uploaded_at");
+        }
+        init { this._rawData.Set("uploaded_at", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.DocumentID;
+        _ = this.DocumentName;
+        _ = this.DocumentSize;
+        this.DocumentType.Validate();
+        _ = this.UploadedAt;
+    }
+
+    public PayoutUnmaskResponseDataDocument() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public PayoutUnmaskResponseDataDocument(
+        PayoutUnmaskResponseDataDocument payoutUnmaskResponseDataDocument
+    )
+        : base(payoutUnmaskResponseDataDocument) { }
+#pragma warning restore CS8618
+
+    public PayoutUnmaskResponseDataDocument(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    PayoutUnmaskResponseDataDocument(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="PayoutUnmaskResponseDataDocumentFromRaw.FromRawUnchecked"/>
+    public static PayoutUnmaskResponseDataDocument FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class PayoutUnmaskResponseDataDocumentFromRaw : IFromRawJson<PayoutUnmaskResponseDataDocument>
+{
+    /// <inheritdoc/>
+    public PayoutUnmaskResponseDataDocument FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => PayoutUnmaskResponseDataDocument.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(typeof(PayoutUnmaskResponseDataDocumentDocumentTypeConverter))]
+public enum PayoutUnmaskResponseDataDocumentDocumentType
+{
+    PaymentAuthorization,
+}
+
+sealed class PayoutUnmaskResponseDataDocumentDocumentTypeConverter
+    : JsonConverter<PayoutUnmaskResponseDataDocumentDocumentType>
+{
+    public override PayoutUnmaskResponseDataDocumentDocumentType Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "payment_authorization" =>
+                PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+            _ => (PayoutUnmaskResponseDataDocumentDocumentType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        PayoutUnmaskResponseDataDocumentDocumentType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization =>
+                    "payment_authorization",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
