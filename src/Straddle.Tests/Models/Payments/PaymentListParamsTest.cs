@@ -21,14 +21,21 @@ public class PaymentListParamsTest : TestBase
             DefaultSortOrder = DefaultSortOrder.Asc,
             ExternalID = "external_id",
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            HasRefund = true,
+            HasResubmit = true,
+            IncludeMetadata = true,
+            IsRefund = true,
+            IsResubmit = true,
             MaxAmount = 0,
             MaxCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             MaxEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             MaxPaymentDate = "2019-12-27",
+            MaxUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             MinAmount = 0,
             MinCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             MinEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             MinPaymentDate = "2019-12-27",
+            MinUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             PageNumber = 0,
             PageSize = 0,
             Paykey = "paykey",
@@ -52,14 +59,21 @@ public class PaymentListParamsTest : TestBase
         ApiEnum<string, DefaultSortOrder> expectedDefaultSortOrder = DefaultSortOrder.Asc;
         string expectedExternalID = "external_id";
         string expectedFundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        bool expectedHasRefund = true;
+        bool expectedHasResubmit = true;
+        bool expectedIncludeMetadata = true;
+        bool expectedIsRefund = true;
+        bool expectedIsResubmit = true;
         int expectedMaxAmount = 0;
         DateTimeOffset expectedMaxCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedMaxEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedMaxPaymentDate = "2019-12-27";
+        DateTimeOffset expectedMaxUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         int expectedMinAmount = 0;
         DateTimeOffset expectedMinCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         DateTimeOffset expectedMinEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedMinPaymentDate = "2019-12-27";
+        DateTimeOffset expectedMinUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         int expectedPageNumber = 0;
         int expectedPageSize = 0;
         string expectedPaykey = "paykey";
@@ -82,14 +96,21 @@ public class PaymentListParamsTest : TestBase
         Assert.Equal(expectedDefaultSortOrder, parameters.DefaultSortOrder);
         Assert.Equal(expectedExternalID, parameters.ExternalID);
         Assert.Equal(expectedFundingID, parameters.FundingID);
+        Assert.Equal(expectedHasRefund, parameters.HasRefund);
+        Assert.Equal(expectedHasResubmit, parameters.HasResubmit);
+        Assert.Equal(expectedIncludeMetadata, parameters.IncludeMetadata);
+        Assert.Equal(expectedIsRefund, parameters.IsRefund);
+        Assert.Equal(expectedIsResubmit, parameters.IsResubmit);
         Assert.Equal(expectedMaxAmount, parameters.MaxAmount);
         Assert.Equal(expectedMaxCreatedAt, parameters.MaxCreatedAt);
         Assert.Equal(expectedMaxEffectiveAt, parameters.MaxEffectiveAt);
         Assert.Equal(expectedMaxPaymentDate, parameters.MaxPaymentDate);
+        Assert.Equal(expectedMaxUpdatedAt, parameters.MaxUpdatedAt);
         Assert.Equal(expectedMinAmount, parameters.MinAmount);
         Assert.Equal(expectedMinCreatedAt, parameters.MinCreatedAt);
         Assert.Equal(expectedMinEffectiveAt, parameters.MinEffectiveAt);
         Assert.Equal(expectedMinPaymentDate, parameters.MinPaymentDate);
+        Assert.Equal(expectedMinUpdatedAt, parameters.MinUpdatedAt);
         Assert.Equal(expectedPageNumber, parameters.PageNumber);
         Assert.Equal(expectedPageSize, parameters.PageSize);
         Assert.Equal(expectedPaykey, parameters.Paykey);
@@ -144,6 +165,16 @@ public class PaymentListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("external_id"));
         Assert.Null(parameters.FundingID);
         Assert.False(parameters.RawQueryData.ContainsKey("funding_id"));
+        Assert.Null(parameters.HasRefund);
+        Assert.False(parameters.RawQueryData.ContainsKey("has_refund"));
+        Assert.Null(parameters.HasResubmit);
+        Assert.False(parameters.RawQueryData.ContainsKey("has_resubmit"));
+        Assert.Null(parameters.IncludeMetadata);
+        Assert.False(parameters.RawQueryData.ContainsKey("include_metadata"));
+        Assert.Null(parameters.IsRefund);
+        Assert.False(parameters.RawQueryData.ContainsKey("is_refund"));
+        Assert.Null(parameters.IsResubmit);
+        Assert.False(parameters.RawQueryData.ContainsKey("is_resubmit"));
         Assert.Null(parameters.MaxAmount);
         Assert.False(parameters.RawQueryData.ContainsKey("max_amount"));
         Assert.Null(parameters.MaxCreatedAt);
@@ -152,6 +183,8 @@ public class PaymentListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("max_effective_at"));
         Assert.Null(parameters.MaxPaymentDate);
         Assert.False(parameters.RawQueryData.ContainsKey("max_payment_date"));
+        Assert.Null(parameters.MaxUpdatedAt);
+        Assert.False(parameters.RawQueryData.ContainsKey("max_updated_at"));
         Assert.Null(parameters.MinAmount);
         Assert.False(parameters.RawQueryData.ContainsKey("min_amount"));
         Assert.Null(parameters.MinCreatedAt);
@@ -160,6 +193,8 @@ public class PaymentListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("min_effective_at"));
         Assert.Null(parameters.MinPaymentDate);
         Assert.False(parameters.RawQueryData.ContainsKey("min_payment_date"));
+        Assert.Null(parameters.MinUpdatedAt);
+        Assert.False(parameters.RawQueryData.ContainsKey("min_updated_at"));
         Assert.Null(parameters.PageNumber);
         Assert.False(parameters.RawQueryData.ContainsKey("page_number"));
         Assert.Null(parameters.PageSize);
@@ -204,14 +239,21 @@ public class PaymentListParamsTest : TestBase
             DefaultSortOrder = null,
             ExternalID = null,
             FundingID = null,
+            HasRefund = null,
+            HasResubmit = null,
+            IncludeMetadata = null,
+            IsRefund = null,
+            IsResubmit = null,
             MaxAmount = null,
             MaxCreatedAt = null,
             MaxEffectiveAt = null,
             MaxPaymentDate = null,
+            MaxUpdatedAt = null,
             MinAmount = null,
             MinCreatedAt = null,
             MinEffectiveAt = null,
             MinPaymentDate = null,
+            MinUpdatedAt = null,
             PageNumber = null,
             PageSize = null,
             Paykey = null,
@@ -241,6 +283,16 @@ public class PaymentListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("external_id"));
         Assert.Null(parameters.FundingID);
         Assert.False(parameters.RawQueryData.ContainsKey("funding_id"));
+        Assert.Null(parameters.HasRefund);
+        Assert.False(parameters.RawQueryData.ContainsKey("has_refund"));
+        Assert.Null(parameters.HasResubmit);
+        Assert.False(parameters.RawQueryData.ContainsKey("has_resubmit"));
+        Assert.Null(parameters.IncludeMetadata);
+        Assert.False(parameters.RawQueryData.ContainsKey("include_metadata"));
+        Assert.Null(parameters.IsRefund);
+        Assert.False(parameters.RawQueryData.ContainsKey("is_refund"));
+        Assert.Null(parameters.IsResubmit);
+        Assert.False(parameters.RawQueryData.ContainsKey("is_resubmit"));
         Assert.Null(parameters.MaxAmount);
         Assert.False(parameters.RawQueryData.ContainsKey("max_amount"));
         Assert.Null(parameters.MaxCreatedAt);
@@ -249,6 +301,8 @@ public class PaymentListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("max_effective_at"));
         Assert.Null(parameters.MaxPaymentDate);
         Assert.False(parameters.RawQueryData.ContainsKey("max_payment_date"));
+        Assert.Null(parameters.MaxUpdatedAt);
+        Assert.False(parameters.RawQueryData.ContainsKey("max_updated_at"));
         Assert.Null(parameters.MinAmount);
         Assert.False(parameters.RawQueryData.ContainsKey("min_amount"));
         Assert.Null(parameters.MinCreatedAt);
@@ -257,6 +311,8 @@ public class PaymentListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("min_effective_at"));
         Assert.Null(parameters.MinPaymentDate);
         Assert.False(parameters.RawQueryData.ContainsKey("min_payment_date"));
+        Assert.Null(parameters.MinUpdatedAt);
+        Assert.False(parameters.RawQueryData.ContainsKey("min_updated_at"));
         Assert.Null(parameters.PageNumber);
         Assert.False(parameters.RawQueryData.ContainsKey("page_number"));
         Assert.Null(parameters.PageSize);
@@ -300,14 +356,21 @@ public class PaymentListParamsTest : TestBase
             DefaultSortOrder = DefaultSortOrder.Asc,
             ExternalID = "external_id",
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            HasRefund = true,
+            HasResubmit = true,
+            IncludeMetadata = true,
+            IsRefund = true,
+            IsResubmit = true,
             MaxAmount = 0,
-            MaxCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            MaxEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            MaxCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
+            MaxEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             MaxPaymentDate = "2019-12-27",
+            MaxUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             MinAmount = 0,
-            MinCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
-            MinEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            MinCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
+            MinEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             MinPaymentDate = "2019-12-27",
+            MinUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             PageNumber = 0,
             PageSize = 0,
             Paykey = "paykey",
@@ -324,11 +387,13 @@ public class PaymentListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/payments?customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&default_page_size=0&default_sort=created_at&default_sort_order=asc&external_id=external_id&funding_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&max_amount=0&max_created_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&max_effective_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&max_payment_date=2019-12-27&min_amount=0&min_created_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&min_effective_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&min_payment_date=2019-12-27&page_number=0&page_size=0&paykey=paykey&paykey_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&payment_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&payment_status=created&payment_type=charge&search_text=search_text&sort_by=created_at&sort_order=asc&status_reason=insufficient_funds&status_source=watchtower"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/payments?customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&default_page_size=0&default_sort=created_at&default_sort_order=asc&external_id=external_id&funding_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&has_refund=true&has_resubmit=true&include_metadata=true&is_refund=true&is_resubmit=true&max_amount=0&max_created_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&max_effective_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&max_payment_date=2019-12-27&max_updated_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&min_amount=0&min_created_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&min_effective_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&min_payment_date=2019-12-27&min_updated_at=2019-12-27T18%3a11%3a19.117%2b00%3a00&page_number=0&page_size=0&paykey=paykey&paykey_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&payment_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&payment_status=created&payment_type=charge&search_text=search_text&sort_by=created_at&sort_order=asc&status_reason=insufficient_funds&status_source=watchtower"
+                ),
+                url
+            )
         );
     }
 
@@ -364,14 +429,21 @@ public class PaymentListParamsTest : TestBase
             DefaultSortOrder = DefaultSortOrder.Asc,
             ExternalID = "external_id",
             FundingID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            HasRefund = true,
+            HasResubmit = true,
+            IncludeMetadata = true,
+            IsRefund = true,
+            IsResubmit = true,
             MaxAmount = 0,
             MaxCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             MaxEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             MaxPaymentDate = "2019-12-27",
+            MaxUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             MinAmount = 0,
             MinCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             MinEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             MinPaymentDate = "2019-12-27",
+            MinUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             PageNumber = 0,
             PageSize = 0,
             Paykey = "paykey",
@@ -403,6 +475,7 @@ public class DefaultSortTest : TestBase
     [InlineData(DefaultSort.EffectiveAt)]
     [InlineData(DefaultSort.ID)]
     [InlineData(DefaultSort.Amount)]
+    [InlineData(DefaultSort.UpdatedAt)]
     public void Validation_Works(DefaultSort rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -428,6 +501,7 @@ public class DefaultSortTest : TestBase
     [InlineData(DefaultSort.EffectiveAt)]
     [InlineData(DefaultSort.ID)]
     [InlineData(DefaultSort.Amount)]
+    [InlineData(DefaultSort.UpdatedAt)]
     public void SerializationRoundtrip_Works(DefaultSort rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -528,6 +602,7 @@ public class PaymentStatusTest : TestBase
     [InlineData(PaymentStatus.Pending)]
     [InlineData(PaymentStatus.Paid)]
     [InlineData(PaymentStatus.Reversed)]
+    [InlineData(PaymentStatus.Validating)]
     public void Validation_Works(PaymentStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -556,6 +631,7 @@ public class PaymentStatusTest : TestBase
     [InlineData(PaymentStatus.Pending)]
     [InlineData(PaymentStatus.Paid)]
     [InlineData(PaymentStatus.Reversed)]
+    [InlineData(PaymentStatus.Validating)]
     public void SerializationRoundtrip_Works(PaymentStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -653,6 +729,7 @@ public class SortByTest : TestBase
     [InlineData(SortBy.EffectiveAt)]
     [InlineData(SortBy.ID)]
     [InlineData(SortBy.Amount)]
+    [InlineData(SortBy.UpdatedAt)]
     public void Validation_Works(SortBy rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -678,6 +755,7 @@ public class SortByTest : TestBase
     [InlineData(SortBy.EffectiveAt)]
     [InlineData(SortBy.ID)]
     [InlineData(SortBy.Amount)]
+    [InlineData(SortBy.UpdatedAt)]
     public void SerializationRoundtrip_Works(SortBy rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -795,6 +873,8 @@ public class StatusReasonTest : TestBase
     [InlineData(StatusReason.RequireReview)]
     [InlineData(StatusReason.BlockedBySystem)]
     [InlineData(StatusReason.WatchtowerReview)]
+    [InlineData(StatusReason.Validating)]
+    [InlineData(StatusReason.AutoHold)]
     public void Validation_Works(StatusReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -840,6 +920,8 @@ public class StatusReasonTest : TestBase
     [InlineData(StatusReason.RequireReview)]
     [InlineData(StatusReason.BlockedBySystem)]
     [InlineData(StatusReason.WatchtowerReview)]
+    [InlineData(StatusReason.Validating)]
+    [InlineData(StatusReason.AutoHold)]
     public void SerializationRoundtrip_Works(StatusReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

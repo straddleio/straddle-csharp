@@ -8,9 +8,15 @@ using Straddle.Models.Paykeys;
 namespace Straddle.Services.Bridge;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Bridge provides a comprehensive suite of tools for connecting customer bank accounts.
+/// Use it to generate secure widget sessions for instant account verification, accept
+/// tokens from major providers like Plaid and Finicity, or verify accounts directly
+/// via our API. Bridge handles all sensitive banking credentials and ensures secure,
+/// compliant connections with support for 90% of US bank accounts.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface ILinkService
 {
@@ -28,9 +34,9 @@ public interface ILinkService
     ILinkService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Use Bridge to create a new paykey using a bank routing and account number
-    /// as the source. This endpoint allows you to create a secure payment token linked
-    /// to a specific bank account.
+    /// Use Bridge to create a new paykey using a bank routing and account number as the
+    /// source. This endpoint allows you to create a secure payment token linked to a
+    /// specific bank account.
     /// </summary>
     Task<PaykeyV1> BankAccount(
         LinkBankAccountParams parameters,
@@ -48,7 +54,7 @@ public interface ILinkService
     );
 
     /// <summary>
-    /// Sends a request to <c>post /v1/bridge/tan<c/>.
+    /// Sends a request to <c>post /v1/bridge/tan</c>.
     /// </summary>
     Task<LinkCreateTanResponse> CreateTan(
         LinkCreateTanParams parameters,
@@ -77,7 +83,7 @@ public interface ILinkServiceWithRawResponse
     ILinkServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/bridge/bank_account`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/bridge/bank_account</c>, but is otherwise the
     /// same as <see cref="ILinkService.BankAccount(LinkBankAccountParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyV1>> BankAccount(
@@ -86,7 +92,7 @@ public interface ILinkServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/bridge/quiltt`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/bridge/quiltt</c>, but is otherwise the
     /// same as <see cref="ILinkService.CreatePaykey(LinkCreatePaykeyParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<LinkCreatePaykeyResponse>> CreatePaykey(
@@ -95,7 +101,7 @@ public interface ILinkServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/bridge/tan`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/bridge/tan</c>, but is otherwise the
     /// same as <see cref="ILinkService.CreateTan(LinkCreateTanParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<LinkCreateTanResponse>> CreateTan(
@@ -104,7 +110,7 @@ public interface ILinkServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/bridge/plaid`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/bridge/plaid</c>, but is otherwise the
     /// same as <see cref="ILinkService.Plaid(LinkPlaidParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyV1>> Plaid(

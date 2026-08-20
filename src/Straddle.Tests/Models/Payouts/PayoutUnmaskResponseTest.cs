@@ -21,6 +21,8 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -28,6 +30,9 @@ public class PayoutUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasResubmit = true,
+                IsRefund = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = PayoutUnmaskResponseDataStatus.Created,
@@ -61,6 +66,18 @@ public class PayoutUnmaskResponseTest : TestBase
                     Name = "Ron Swanson",
                     Phone = "+1234567890",
                 },
+                Documents =
+                [
+                    new()
+                    {
+                        DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        DocumentName = "document_name",
+                        DocumentSize = 0,
+                        DocumentType =
+                            PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                        UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                ],
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
@@ -72,6 +89,15 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                        Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                    },
+                ],
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -88,6 +114,8 @@ public class PayoutUnmaskResponseTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -95,6 +123,9 @@ public class PayoutUnmaskResponseTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -128,6 +159,18 @@ public class PayoutUnmaskResponseTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -139,6 +182,15 @@ public class PayoutUnmaskResponseTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -165,6 +217,8 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -172,6 +226,9 @@ public class PayoutUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasResubmit = true,
+                IsRefund = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = PayoutUnmaskResponseDataStatus.Created,
@@ -205,6 +262,18 @@ public class PayoutUnmaskResponseTest : TestBase
                     Name = "Ron Swanson",
                     Phone = "+1234567890",
                 },
+                Documents =
+                [
+                    new()
+                    {
+                        DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        DocumentName = "document_name",
+                        DocumentSize = 0,
+                        DocumentType =
+                            PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                        UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                ],
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
@@ -216,6 +285,15 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                        Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                    },
+                ],
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -246,6 +324,8 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -253,6 +333,9 @@ public class PayoutUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasResubmit = true,
+                IsRefund = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = PayoutUnmaskResponseDataStatus.Created,
@@ -286,6 +369,18 @@ public class PayoutUnmaskResponseTest : TestBase
                     Name = "Ron Swanson",
                     Phone = "+1234567890",
                 },
+                Documents =
+                [
+                    new()
+                    {
+                        DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        DocumentName = "document_name",
+                        DocumentSize = 0,
+                        DocumentType =
+                            PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                        UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                ],
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
@@ -297,6 +392,15 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                        Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                    },
+                ],
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -320,6 +424,8 @@ public class PayoutUnmaskResponseTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -327,6 +433,9 @@ public class PayoutUnmaskResponseTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -360,6 +469,18 @@ public class PayoutUnmaskResponseTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -371,6 +492,15 @@ public class PayoutUnmaskResponseTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
         Models::ResponseMetadata expectedMeta = new()
@@ -397,6 +527,8 @@ public class PayoutUnmaskResponseTest : TestBase
                 Amount = 0,
                 Config = new()
                 {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
                     SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
                 },
                 Currency = "currency",
@@ -404,6 +536,9 @@ public class PayoutUnmaskResponseTest : TestBase
                 Device = new("ip_address"),
                 ExternalID = "external_id",
                 FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasResubmit = true,
+                IsRefund = true,
+                IsResubmit = true,
                 Paykey = "paykey",
                 PaymentDate = "2019-12-27",
                 Status = PayoutUnmaskResponseDataStatus.Created,
@@ -437,6 +572,18 @@ public class PayoutUnmaskResponseTest : TestBase
                     Name = "Ron Swanson",
                     Phone = "+1234567890",
                 },
+                Documents =
+                [
+                    new()
+                    {
+                        DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        DocumentName = "document_name",
+                        DocumentSize = 0,
+                        DocumentType =
+                            PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                        UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                ],
                 EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 Metadata = new Dictionary<string, string>() { { "foo", "string" } },
                 PaykeyDetails = new()
@@ -448,6 +595,15 @@ public class PayoutUnmaskResponseTest : TestBase
                 },
                 PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
                 ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                        Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                    },
+                ],
                 UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             },
             Meta = new()
@@ -459,6 +615,109 @@ public class PayoutUnmaskResponseTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PayoutUnmaskResponse
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Amount = 0,
+                Config = new()
+                {
+                    AutoHold = true,
+                    AutoHoldMessage = "auto_hold_message",
+                    SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+                },
+                Currency = "currency",
+                Description = "description",
+                Device = new("ip_address"),
+                ExternalID = "external_id",
+                FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+                HasResubmit = true,
+                IsRefund = true,
+                IsResubmit = true,
+                Paykey = "paykey",
+                PaymentDate = "2019-12-27",
+                Status = PayoutUnmaskResponseDataStatus.Created,
+                StatusDetails = new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Payment successfully created and awaiting validation.",
+                    Reason = Models::Reason.InsufficientFunds,
+                    Source = Models::Source.System,
+                    Code = null,
+                },
+                StatusHistory =
+                [
+                    new()
+                    {
+                        ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                        Message = "Payment successfully created and awaiting validation.",
+                        Reason = PayoutUnmaskResponseDataStatusHistoryReason.InsufficientFunds,
+                        Source = PayoutUnmaskResponseDataStatusHistorySource.Watchtower,
+                        Status = PayoutUnmaskResponseDataStatusHistoryStatus.Created,
+                        Code = null,
+                    },
+                ],
+                TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                CustomerDetails = new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    CustomerType = Models::CustomerType.Individual,
+                    Email = "ron@swanson.com",
+                    Name = "Ron Swanson",
+                    Phone = "+1234567890",
+                },
+                Documents =
+                [
+                    new()
+                    {
+                        DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        DocumentName = "document_name",
+                        DocumentSize = 0,
+                        DocumentType =
+                            PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                        UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    },
+                ],
+                EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+                PaykeyDetails = new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    Label = "Bank of America ****1234",
+                    Balance = 0,
+                },
+                PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
+                ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                RelatedPayments =
+                [
+                    new()
+                    {
+                        ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                        Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                    },
+                ],
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = PayoutUnmaskResponseResponseType.Object,
+        };
+
+        PayoutUnmaskResponse copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -473,6 +732,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -480,6 +741,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -513,6 +777,18 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -524,6 +800,15 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -531,6 +816,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
         int expectedAmount = 0;
         PayoutUnmaskResponseDataConfig expectedConfig = new()
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
         string expectedCurrency = "currency";
@@ -538,6 +825,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Device expectedDevice = new("ip_address");
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
+        bool expectedHasResubmit = true;
+        bool expectedIsRefund = true;
+        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, PayoutUnmaskResponseDataStatus> expectedStatus =
@@ -572,6 +862,17 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Name = "Ron Swanson",
             Phone = "+1234567890",
         };
+        List<PayoutUnmaskResponseDataDocument> expectedDocuments =
+        [
+            new()
+            {
+                DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                DocumentName = "document_name",
+                DocumentSize = 0,
+                DocumentType = PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+        ];
         DateTimeOffset expectedEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         Dictionary<string, string> expectedMetadata = new() { { "foo", "string" } };
         Models::PaykeyDetailsV1 expectedPaykeyDetails = new()
@@ -584,6 +885,15 @@ public class PayoutUnmaskResponseDataTest : TestBase
         ApiEnum<string, PayoutUnmaskResponseDataPaymentRail> expectedPaymentRail =
             PayoutUnmaskResponseDataPaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        List<PayoutUnmaskResponseDataRelatedPayment> expectedRelatedPayments =
+        [
+            new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+            },
+        ];
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, model.ID);
@@ -598,6 +908,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], model.FundingIds[i]);
         }
+        Assert.Equal(expectedHasResubmit, model.HasResubmit);
+        Assert.Equal(expectedIsRefund, model.IsRefund);
+        Assert.Equal(expectedIsResubmit, model.IsResubmit);
         Assert.Equal(expectedPaykey, model.Paykey);
         Assert.Equal(expectedPaymentDate, model.PaymentDate);
         Assert.Equal(expectedStatus, model.Status);
@@ -616,6 +929,12 @@ public class PayoutUnmaskResponseDataTest : TestBase
         }
         Assert.Equal(expectedCreatedAt, model.CreatedAt);
         Assert.Equal(expectedCustomerDetails, model.CustomerDetails);
+        Assert.NotNull(model.Documents);
+        Assert.Equal(expectedDocuments.Count, model.Documents.Count);
+        for (int i = 0; i < expectedDocuments.Count; i++)
+        {
+            Assert.Equal(expectedDocuments[i], model.Documents[i]);
+        }
         Assert.Equal(expectedEffectiveAt, model.EffectiveAt);
         Assert.NotNull(model.Metadata);
         Assert.Equal(expectedMetadata.Count, model.Metadata.Count);
@@ -628,6 +947,12 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Assert.Equal(expectedPaykeyDetails, model.PaykeyDetails);
         Assert.Equal(expectedPaymentRail, model.PaymentRail);
         Assert.Equal(expectedProcessedAt, model.ProcessedAt);
+        Assert.NotNull(model.RelatedPayments);
+        Assert.Equal(expectedRelatedPayments.Count, model.RelatedPayments.Count);
+        for (int i = 0; i < expectedRelatedPayments.Count; i++)
+        {
+            Assert.Equal(expectedRelatedPayments[i], model.RelatedPayments[i]);
+        }
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
     }
 
@@ -640,6 +965,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -647,6 +974,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -680,6 +1010,18 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -691,6 +1033,15 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -712,6 +1063,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -719,6 +1072,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -752,6 +1108,18 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -763,6 +1131,15 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -777,6 +1154,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
         int expectedAmount = 0;
         PayoutUnmaskResponseDataConfig expectedConfig = new()
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
         string expectedCurrency = "currency";
@@ -784,6 +1163,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Device expectedDevice = new("ip_address");
         string expectedExternalID = "external_id";
         List<string> expectedFundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"];
+        bool expectedHasResubmit = true;
+        bool expectedIsRefund = true;
+        bool expectedIsResubmit = true;
         string expectedPaykey = "paykey";
         string expectedPaymentDate = "2019-12-27";
         ApiEnum<string, PayoutUnmaskResponseDataStatus> expectedStatus =
@@ -818,6 +1200,17 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Name = "Ron Swanson",
             Phone = "+1234567890",
         };
+        List<PayoutUnmaskResponseDataDocument> expectedDocuments =
+        [
+            new()
+            {
+                DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                DocumentName = "document_name",
+                DocumentSize = 0,
+                DocumentType = PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+        ];
         DateTimeOffset expectedEffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         Dictionary<string, string> expectedMetadata = new() { { "foo", "string" } };
         Models::PaykeyDetailsV1 expectedPaykeyDetails = new()
@@ -830,6 +1223,15 @@ public class PayoutUnmaskResponseDataTest : TestBase
         ApiEnum<string, PayoutUnmaskResponseDataPaymentRail> expectedPaymentRail =
             PayoutUnmaskResponseDataPaymentRail.Ach;
         DateTimeOffset expectedProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        List<PayoutUnmaskResponseDataRelatedPayment> expectedRelatedPayments =
+        [
+            new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+            },
+        ];
         DateTimeOffset expectedUpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
 
         Assert.Equal(expectedID, deserialized.ID);
@@ -844,6 +1246,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
         {
             Assert.Equal(expectedFundingIds[i], deserialized.FundingIds[i]);
         }
+        Assert.Equal(expectedHasResubmit, deserialized.HasResubmit);
+        Assert.Equal(expectedIsRefund, deserialized.IsRefund);
+        Assert.Equal(expectedIsResubmit, deserialized.IsResubmit);
         Assert.Equal(expectedPaykey, deserialized.Paykey);
         Assert.Equal(expectedPaymentDate, deserialized.PaymentDate);
         Assert.Equal(expectedStatus, deserialized.Status);
@@ -862,6 +1267,12 @@ public class PayoutUnmaskResponseDataTest : TestBase
         }
         Assert.Equal(expectedCreatedAt, deserialized.CreatedAt);
         Assert.Equal(expectedCustomerDetails, deserialized.CustomerDetails);
+        Assert.NotNull(deserialized.Documents);
+        Assert.Equal(expectedDocuments.Count, deserialized.Documents.Count);
+        for (int i = 0; i < expectedDocuments.Count; i++)
+        {
+            Assert.Equal(expectedDocuments[i], deserialized.Documents[i]);
+        }
         Assert.Equal(expectedEffectiveAt, deserialized.EffectiveAt);
         Assert.NotNull(deserialized.Metadata);
         Assert.Equal(expectedMetadata.Count, deserialized.Metadata.Count);
@@ -874,6 +1285,12 @@ public class PayoutUnmaskResponseDataTest : TestBase
         Assert.Equal(expectedPaykeyDetails, deserialized.PaykeyDetails);
         Assert.Equal(expectedPaymentRail, deserialized.PaymentRail);
         Assert.Equal(expectedProcessedAt, deserialized.ProcessedAt);
+        Assert.NotNull(deserialized.RelatedPayments);
+        Assert.Equal(expectedRelatedPayments.Count, deserialized.RelatedPayments.Count);
+        for (int i = 0; i < expectedRelatedPayments.Count; i++)
+        {
+            Assert.Equal(expectedRelatedPayments[i], deserialized.RelatedPayments[i]);
+        }
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
     }
 
@@ -886,6 +1303,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -893,6 +1312,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -926,6 +1348,18 @@ public class PayoutUnmaskResponseDataTest : TestBase
                 Name = "Ron Swanson",
                 Phone = "+1234567890",
             },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             PaykeyDetails = new()
@@ -937,6 +1371,15 @@ public class PayoutUnmaskResponseDataTest : TestBase
             },
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -952,6 +1395,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -959,6 +1404,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -984,9 +1432,30 @@ public class PayoutUnmaskResponseDataTest : TestBase
             ],
             TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1007,6 +1476,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1014,6 +1485,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -1039,9 +1513,30 @@ public class PayoutUnmaskResponseDataTest : TestBase
             ],
             TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1057,6 +1552,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1064,6 +1561,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -1089,9 +1589,30 @@ public class PayoutUnmaskResponseDataTest : TestBase
             ],
             TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1117,6 +1638,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1124,6 +1647,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -1149,9 +1675,30 @@ public class PayoutUnmaskResponseDataTest : TestBase
             ],
             TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
             EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             Metadata = new Dictionary<string, string>() { { "foo", "string" } },
             ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1172,6 +1719,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1179,6 +1728,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -1223,12 +1775,16 @@ public class PayoutUnmaskResponseDataTest : TestBase
 
         Assert.Null(model.CreatedAt);
         Assert.False(model.RawData.ContainsKey("created_at"));
+        Assert.Null(model.Documents);
+        Assert.False(model.RawData.ContainsKey("documents"));
         Assert.Null(model.EffectiveAt);
         Assert.False(model.RawData.ContainsKey("effective_at"));
         Assert.Null(model.Metadata);
         Assert.False(model.RawData.ContainsKey("metadata"));
         Assert.Null(model.ProcessedAt);
         Assert.False(model.RawData.ContainsKey("processed_at"));
+        Assert.Null(model.RelatedPayments);
+        Assert.False(model.RawData.ContainsKey("related_payments"));
         Assert.Null(model.UpdatedAt);
         Assert.False(model.RawData.ContainsKey("updated_at"));
     }
@@ -1242,6 +1798,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1249,6 +1807,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -1303,6 +1864,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1310,6 +1873,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -1352,20 +1918,26 @@ public class PayoutUnmaskResponseDataTest : TestBase
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
 
             CreatedAt = null,
+            Documents = null,
             EffectiveAt = null,
             Metadata = null,
             ProcessedAt = null,
+            RelatedPayments = null,
             UpdatedAt = null,
         };
 
         Assert.Null(model.CreatedAt);
         Assert.True(model.RawData.ContainsKey("created_at"));
+        Assert.Null(model.Documents);
+        Assert.True(model.RawData.ContainsKey("documents"));
         Assert.Null(model.EffectiveAt);
         Assert.True(model.RawData.ContainsKey("effective_at"));
         Assert.Null(model.Metadata);
         Assert.True(model.RawData.ContainsKey("metadata"));
         Assert.Null(model.ProcessedAt);
         Assert.True(model.RawData.ContainsKey("processed_at"));
+        Assert.Null(model.RelatedPayments);
+        Assert.True(model.RawData.ContainsKey("related_payments"));
         Assert.Null(model.UpdatedAt);
         Assert.True(model.RawData.ContainsKey("updated_at"));
     }
@@ -1379,6 +1951,8 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Amount = 0,
             Config = new()
             {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
                 SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
             },
             Currency = "currency",
@@ -1386,6 +1960,9 @@ public class PayoutUnmaskResponseDataTest : TestBase
             Device = new("ip_address"),
             ExternalID = "external_id",
             FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
             Paykey = "paykey",
             PaymentDate = "2019-12-27",
             Status = PayoutUnmaskResponseDataStatus.Created,
@@ -1428,13 +2005,109 @@ public class PayoutUnmaskResponseDataTest : TestBase
             PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
 
             CreatedAt = null,
+            Documents = null,
             EffectiveAt = null,
             Metadata = null,
             ProcessedAt = null,
+            RelatedPayments = null,
             UpdatedAt = null,
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PayoutUnmaskResponseData
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Amount = 0,
+            Config = new()
+            {
+                AutoHold = true,
+                AutoHoldMessage = "auto_hold_message",
+                SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+            },
+            Currency = "currency",
+            Description = "description",
+            Device = new("ip_address"),
+            ExternalID = "external_id",
+            FundingIds = ["182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"],
+            HasResubmit = true,
+            IsRefund = true,
+            IsResubmit = true,
+            Paykey = "paykey",
+            PaymentDate = "2019-12-27",
+            Status = PayoutUnmaskResponseDataStatus.Created,
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Payment successfully created and awaiting validation.",
+                Reason = Models::Reason.InsufficientFunds,
+                Source = Models::Source.System,
+                Code = null,
+            },
+            StatusHistory =
+            [
+                new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Payment successfully created and awaiting validation.",
+                    Reason = PayoutUnmaskResponseDataStatusHistoryReason.InsufficientFunds,
+                    Source = PayoutUnmaskResponseDataStatusHistorySource.Watchtower,
+                    Status = PayoutUnmaskResponseDataStatusHistoryStatus.Created,
+                    Code = null,
+                },
+            ],
+            TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            CustomerDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CustomerType = Models::CustomerType.Individual,
+                Email = "ron@swanson.com",
+                Name = "Ron Swanson",
+                Phone = "+1234567890",
+            },
+            Documents =
+            [
+                new()
+                {
+                    DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    DocumentName = "document_name",
+                    DocumentSize = 0,
+                    DocumentType =
+                        PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+                    UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                },
+            ],
+            EffectiveAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            PaykeyDetails = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Label = "Bank of America ****1234",
+                Balance = 0,
+            },
+            PaymentRail = PayoutUnmaskResponseDataPaymentRail.Ach,
+            ProcessedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            RelatedPayments =
+            [
+                new()
+                {
+                    ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+                    Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+                },
+            ],
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        PayoutUnmaskResponseData copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1445,12 +2118,18 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
+        bool expectedAutoHold = true;
+        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, PayoutUnmaskResponseDataConfigSandboxOutcome> expectedSandboxOutcome =
             PayoutUnmaskResponseDataConfigSandboxOutcome.Standard;
 
+        Assert.Equal(expectedAutoHold, model.AutoHold);
+        Assert.Equal(expectedAutoHoldMessage, model.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, model.SandboxOutcome);
     }
 
@@ -1459,6 +2138,8 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1476,6 +2157,8 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1486,9 +2169,13 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
         );
         Assert.NotNull(deserialized);
 
+        bool expectedAutoHold = true;
+        string expectedAutoHoldMessage = "auto_hold_message";
         ApiEnum<string, PayoutUnmaskResponseDataConfigSandboxOutcome> expectedSandboxOutcome =
             PayoutUnmaskResponseDataConfigSandboxOutcome.Standard;
 
+        Assert.Equal(expectedAutoHold, deserialized.AutoHold);
+        Assert.Equal(expectedAutoHoldMessage, deserialized.AutoHoldMessage);
         Assert.Equal(expectedSandboxOutcome, deserialized.SandboxOutcome);
     }
 
@@ -1497,6 +2184,8 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
             SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
         };
 
@@ -1506,7 +2195,11 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetAreNotSet_Works()
     {
-        var model = new PayoutUnmaskResponseDataConfig { };
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+        };
 
         Assert.Null(model.SandboxOutcome);
         Assert.False(model.RawData.ContainsKey("sandbox_outcome"));
@@ -1515,7 +2208,11 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     [Fact]
     public void OptionalNonNullablePropertiesUnsetValidation_Works()
     {
-        var model = new PayoutUnmaskResponseDataConfig { };
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+        };
 
         model.Validate();
     }
@@ -1525,6 +2222,9 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
         };
@@ -1538,11 +2238,85 @@ public class PayoutUnmaskResponseDataConfigTest : TestBase
     {
         var model = new PayoutUnmaskResponseDataConfig
         {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+
             // Null should be interpreted as omitted for these properties
             SandboxOutcome = null,
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetAreNotSet_Works()
+    {
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+        };
+
+        Assert.Null(model.AutoHold);
+        Assert.False(model.RawData.ContainsKey("auto_hold"));
+        Assert.Null(model.AutoHoldMessage);
+        Assert.False(model.RawData.ContainsKey("auto_hold_message"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesUnsetValidation_Works()
+    {
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullAreSetToNull_Works()
+    {
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+
+            AutoHold = null,
+            AutoHoldMessage = null,
+        };
+
+        Assert.Null(model.AutoHold);
+        Assert.True(model.RawData.ContainsKey("auto_hold"));
+        Assert.Null(model.AutoHoldMessage);
+        Assert.True(model.RawData.ContainsKey("auto_hold_message"));
+    }
+
+    [Fact]
+    public void OptionalNullablePropertiesSetToNullValidation_Works()
+    {
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+
+            AutoHold = null,
+            AutoHoldMessage = null,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PayoutUnmaskResponseDataConfig
+        {
+            AutoHold = true,
+            AutoHoldMessage = "auto_hold_message",
+            SandboxOutcome = PayoutUnmaskResponseDataConfigSandboxOutcome.Standard,
+        };
+
+        PayoutUnmaskResponseDataConfig copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -1560,6 +2334,8 @@ public class PayoutUnmaskResponseDataConfigSandboxOutcomeTest : TestBase
     [InlineData(PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute)]
     [InlineData(PayoutUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount)]
     [InlineData(PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount)]
+    [InlineData(PayoutUnmaskResponseDataConfigSandboxOutcome.FailedNotAuthorized)]
+    [InlineData(PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedNotAuthorized)]
     public void Validation_Works(PayoutUnmaskResponseDataConfigSandboxOutcome rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1590,6 +2366,8 @@ public class PayoutUnmaskResponseDataConfigSandboxOutcomeTest : TestBase
     [InlineData(PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute)]
     [InlineData(PayoutUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount)]
     [InlineData(PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount)]
+    [InlineData(PayoutUnmaskResponseDataConfigSandboxOutcome.FailedNotAuthorized)]
+    [InlineData(PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedNotAuthorized)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataConfigSandboxOutcome rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1662,6 +2440,16 @@ public class DeviceTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Device { IPAddress = "ip_address" };
+
+        Device copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PayoutUnmaskResponseDataStatusTest : TestBase
@@ -1675,6 +2463,7 @@ public class PayoutUnmaskResponseDataStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatus.Reversed)]
+    [InlineData(PayoutUnmaskResponseDataStatus.Validating)]
     public void Validation_Works(PayoutUnmaskResponseDataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1703,6 +2492,7 @@ public class PayoutUnmaskResponseDataStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatus.Reversed)]
+    [InlineData(PayoutUnmaskResponseDataStatus.Validating)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1904,6 +2694,24 @@ public class PayoutUnmaskResponseDataStatusHistoryTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PayoutUnmaskResponseDataStatusHistory
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Payment successfully created and awaiting validation.",
+            Reason = PayoutUnmaskResponseDataStatusHistoryReason.InsufficientFunds,
+            Source = PayoutUnmaskResponseDataStatusHistorySource.Watchtower,
+            Status = PayoutUnmaskResponseDataStatusHistoryStatus.Created,
+            Code = null,
+        };
+
+        PayoutUnmaskResponseDataStatusHistory copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class PayoutUnmaskResponseDataStatusHistoryReasonTest : TestBase
@@ -1934,6 +2742,8 @@ public class PayoutUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.RequireReview)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.Validating)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.AutoHold)]
     public void Validation_Works(PayoutUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1978,6 +2788,8 @@ public class PayoutUnmaskResponseDataStatusHistoryReasonTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.RequireReview)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.Validating)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryReason.AutoHold)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataStatusHistoryReason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2077,6 +2889,7 @@ public class PayoutUnmaskResponseDataStatusHistoryStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Reversed)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Validating)]
     public void Validation_Works(PayoutUnmaskResponseDataStatusHistoryStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2104,6 +2917,7 @@ public class PayoutUnmaskResponseDataStatusHistoryStatusTest : TestBase
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Pending)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Paid)]
     [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Reversed)]
+    [InlineData(PayoutUnmaskResponseDataStatusHistoryStatus.Validating)]
     public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataStatusHistoryStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2126,6 +2940,173 @@ public class PayoutUnmaskResponseDataStatusHistoryStatusTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, PayoutUnmaskResponseDataStatusHistoryStatus>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class PayoutUnmaskResponseDataDocumentTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new PayoutUnmaskResponseDataDocument
+        {
+            DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            DocumentName = "document_name",
+            DocumentSize = 0,
+            DocumentType = PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+            UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        string expectedDocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        string expectedDocumentName = "document_name";
+        long expectedDocumentSize = 0;
+        ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType> expectedDocumentType =
+            PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization;
+        DateTimeOffset expectedUploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+
+        Assert.Equal(expectedDocumentID, model.DocumentID);
+        Assert.Equal(expectedDocumentName, model.DocumentName);
+        Assert.Equal(expectedDocumentSize, model.DocumentSize);
+        Assert.Equal(expectedDocumentType, model.DocumentType);
+        Assert.Equal(expectedUploadedAt, model.UploadedAt);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new PayoutUnmaskResponseDataDocument
+        {
+            DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            DocumentName = "document_name",
+            DocumentSize = 0,
+            DocumentType = PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+            UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<PayoutUnmaskResponseDataDocument>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new PayoutUnmaskResponseDataDocument
+        {
+            DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            DocumentName = "document_name",
+            DocumentSize = 0,
+            DocumentType = PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+            UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<PayoutUnmaskResponseDataDocument>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedDocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        string expectedDocumentName = "document_name";
+        long expectedDocumentSize = 0;
+        ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType> expectedDocumentType =
+            PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization;
+        DateTimeOffset expectedUploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+
+        Assert.Equal(expectedDocumentID, deserialized.DocumentID);
+        Assert.Equal(expectedDocumentName, deserialized.DocumentName);
+        Assert.Equal(expectedDocumentSize, deserialized.DocumentSize);
+        Assert.Equal(expectedDocumentType, deserialized.DocumentType);
+        Assert.Equal(expectedUploadedAt, deserialized.UploadedAt);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new PayoutUnmaskResponseDataDocument
+        {
+            DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            DocumentName = "document_name",
+            DocumentSize = 0,
+            DocumentType = PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+            UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PayoutUnmaskResponseDataDocument
+        {
+            DocumentID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            DocumentName = "document_name",
+            DocumentSize = 0,
+            DocumentType = PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+            UploadedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        PayoutUnmaskResponseDataDocument copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class PayoutUnmaskResponseDataDocumentDocumentTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization)]
+    public void Validation_Works(PayoutUnmaskResponseDataDocumentDocumentType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization)]
+    public void SerializationRoundtrip_Works(PayoutUnmaskResponseDataDocumentDocumentType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);
@@ -2178,6 +3159,219 @@ public class PayoutUnmaskResponseDataPaymentRailTest : TestBase
         string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
         var deserialized = JsonSerializer.Deserialize<
             ApiEnum<string, PayoutUnmaskResponseDataPaymentRail>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class PayoutUnmaskResponseDataRelatedPaymentTest : TestBase
+{
+    [Fact]
+    public void FieldRoundtrip_Works()
+    {
+        var model = new PayoutUnmaskResponseDataRelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+        };
+
+        string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentPaymentType> expectedPaymentType =
+            PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge;
+        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentRelationship> expectedRelationship =
+            PayoutUnmaskResponseDataRelatedPaymentRelationship.Original;
+
+        Assert.Equal(expectedID, model.ID);
+        Assert.Equal(expectedPaymentType, model.PaymentType);
+        Assert.Equal(expectedRelationship, model.Relationship);
+    }
+
+    [Fact]
+    public void SerializationRoundtrip_Works()
+    {
+        var model = new PayoutUnmaskResponseDataRelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+        };
+
+        string json = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<PayoutUnmaskResponseDataRelatedPayment>(
+            json,
+            ModelBase.SerializerOptions
+        );
+
+        Assert.Equal(model, deserialized);
+    }
+
+    [Fact]
+    public void FieldRoundtripThroughSerialization_Works()
+    {
+        var model = new PayoutUnmaskResponseDataRelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+        };
+
+        string element = JsonSerializer.Serialize(model, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<PayoutUnmaskResponseDataRelatedPayment>(
+            element,
+            ModelBase.SerializerOptions
+        );
+        Assert.NotNull(deserialized);
+
+        string expectedID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
+        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentPaymentType> expectedPaymentType =
+            PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge;
+        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentRelationship> expectedRelationship =
+            PayoutUnmaskResponseDataRelatedPaymentRelationship.Original;
+
+        Assert.Equal(expectedID, deserialized.ID);
+        Assert.Equal(expectedPaymentType, deserialized.PaymentType);
+        Assert.Equal(expectedRelationship, deserialized.Relationship);
+    }
+
+    [Fact]
+    public void Validation_Works()
+    {
+        var model = new PayoutUnmaskResponseDataRelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+        };
+
+        model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new PayoutUnmaskResponseDataRelatedPayment
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            PaymentType = PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            Relationship = PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+        };
+
+        PayoutUnmaskResponseDataRelatedPayment copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
+}
+
+public class PayoutUnmaskResponseDataRelatedPaymentPaymentTypeTest : TestBase
+{
+    [Theory]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentPaymentType.Payout)]
+    public void Validation_Works(PayoutUnmaskResponseDataRelatedPaymentPaymentType rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentPaymentType> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentPaymentType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentPaymentType.Payout)]
+    public void SerializationRoundtrip_Works(
+        PayoutUnmaskResponseDataRelatedPaymentPaymentType rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentPaymentType> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentPaymentType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentPaymentType>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentPaymentType>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+}
+
+public class PayoutUnmaskResponseDataRelatedPaymentRelationshipTest : TestBase
+{
+    [Theory]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentRelationship.Original)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentRelationship.Resubmit)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentRelationship.Refund)]
+    public void Validation_Works(PayoutUnmaskResponseDataRelatedPaymentRelationship rawValue)
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentRelationship> value = rawValue;
+        value.Validate();
+    }
+
+    [Fact]
+    public void InvalidEnumValidationThrows_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentRelationship>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+
+        Assert.NotNull(value);
+        Assert.Throws<StraddleInvalidDataException>(() => value.Validate());
+    }
+
+    [Theory]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentRelationship.Original)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentRelationship.Resubmit)]
+    [InlineData(PayoutUnmaskResponseDataRelatedPaymentRelationship.Refund)]
+    public void SerializationRoundtrip_Works(
+        PayoutUnmaskResponseDataRelatedPaymentRelationship rawValue
+    )
+    {
+        // force implicit conversion because Theory can't do that for us
+        ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentRelationship> value = rawValue;
+
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentRelationship>
+        >(json, ModelBase.SerializerOptions);
+
+        Assert.Equal(value, deserialized);
+    }
+
+    [Fact]
+    public void InvalidEnumSerializationRoundtrip_Works()
+    {
+        var value = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentRelationship>
+        >(JsonSerializer.SerializeToElement("invalid value"), ModelBase.SerializerOptions);
+        string json = JsonSerializer.Serialize(value, ModelBase.SerializerOptions);
+        var deserialized = JsonSerializer.Deserialize<
+            ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentRelationship>
         >(json, ModelBase.SerializerOptions);
 
         Assert.Equal(value, deserialized);

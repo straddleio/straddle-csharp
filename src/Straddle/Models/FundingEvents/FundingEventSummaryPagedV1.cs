@@ -74,8 +74,11 @@ public sealed record class FundingEventSummaryPagedV1 : JsonModel
 
     public FundingEventSummaryPagedV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public FundingEventSummaryPagedV1(FundingEventSummaryPagedV1 fundingEventSummaryPagedV1)
         : base(fundingEventSummaryPagedV1) { }
+#pragma warning restore CS8618
 
     public FundingEventSummaryPagedV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -339,10 +342,13 @@ public sealed record class FundingEventSummaryPagedV1Data : JsonModel
 
     public FundingEventSummaryPagedV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public FundingEventSummaryPagedV1Data(
         FundingEventSummaryPagedV1Data fundingEventSummaryPagedV1Data
     )
         : base(fundingEventSummaryPagedV1Data) { }
+#pragma warning restore CS8618
 
     public FundingEventSummaryPagedV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -490,6 +496,7 @@ public enum FundingEventSummaryPagedV1DataStatus
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class FundingEventSummaryPagedV1DataStatusConverter
@@ -511,6 +518,7 @@ sealed class FundingEventSummaryPagedV1DataStatusConverter
             "pending" => FundingEventSummaryPagedV1DataStatus.Pending,
             "paid" => FundingEventSummaryPagedV1DataStatus.Paid,
             "reversed" => FundingEventSummaryPagedV1DataStatus.Reversed,
+            "validating" => FundingEventSummaryPagedV1DataStatus.Validating,
             _ => (FundingEventSummaryPagedV1DataStatus)(-1),
         };
     }
@@ -533,6 +541,7 @@ sealed class FundingEventSummaryPagedV1DataStatusConverter
                 FundingEventSummaryPagedV1DataStatus.Pending => "pending",
                 FundingEventSummaryPagedV1DataStatus.Paid => "paid",
                 FundingEventSummaryPagedV1DataStatus.Reversed => "reversed",
+                FundingEventSummaryPagedV1DataStatus.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -625,10 +634,13 @@ public sealed record class FundingEventSummaryPagedV1DataStatusDetails : JsonMod
 
     public FundingEventSummaryPagedV1DataStatusDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public FundingEventSummaryPagedV1DataStatusDetails(
         FundingEventSummaryPagedV1DataStatusDetails fundingEventSummaryPagedV1DataStatusDetails
     )
         : base(fundingEventSummaryPagedV1DataStatusDetails) { }
+#pragma warning restore CS8618
 
     public FundingEventSummaryPagedV1DataStatusDetails(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -691,6 +703,8 @@ public enum FundingEventSummaryPagedV1DataStatusDetailsReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
+    AutoHold,
 }
 
 sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
@@ -739,6 +753,8 @@ sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
                 FundingEventSummaryPagedV1DataStatusDetailsReason.BlockedBySystem,
             "watchtower_review" =>
                 FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview,
+            "validating" => FundingEventSummaryPagedV1DataStatusDetailsReason.Validating,
+            "auto_hold" => FundingEventSummaryPagedV1DataStatusDetailsReason.AutoHold,
             _ => (FundingEventSummaryPagedV1DataStatusDetailsReason)(-1),
         };
     }
@@ -793,6 +809,8 @@ sealed class FundingEventSummaryPagedV1DataStatusDetailsReasonConverter
                     "blocked_by_system",
                 FundingEventSummaryPagedV1DataStatusDetailsReason.WatchtowerReview =>
                     "watchtower_review",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.Validating => "validating",
+                FundingEventSummaryPagedV1DataStatusDetailsReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -987,8 +1005,11 @@ public sealed record class Meta : JsonModel
 
     public Meta() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Meta(Meta meta)
         : base(meta) { }
+#pragma warning restore CS8618
 
     public Meta(IReadOnlyDictionary<string, JsonElement> rawData)
     {

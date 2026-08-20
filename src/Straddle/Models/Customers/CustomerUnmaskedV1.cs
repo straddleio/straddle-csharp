@@ -64,8 +64,11 @@ public sealed record class CustomerUnmaskedV1 : JsonModel
 
     public CustomerUnmaskedV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUnmaskedV1(CustomerUnmaskedV1 customerUnmaskedV1)
         : base(customerUnmaskedV1) { }
+#pragma warning restore CS8618
 
     public CustomerUnmaskedV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -321,8 +324,11 @@ public sealed record class CustomerUnmaskedV1Data : JsonModel
 
     public CustomerUnmaskedV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUnmaskedV1Data(CustomerUnmaskedV1Data customerUnmaskedV1Data)
         : base(customerUnmaskedV1Data) { }
+#pragma warning restore CS8618
 
     public CustomerUnmaskedV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -499,7 +505,7 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
     /// type <see cref="CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile"/>.
     ///
-    /// <para>Consider using <see cref="Switch"> or <see cref="Match"> if you need to handle every variant.</para>
+    /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
@@ -523,7 +529,7 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
     /// type <see cref="CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile"/>.
     ///
-    /// <para>Consider using <see cref="Switch"> or <see cref="Match"> if you need to handle every variant.</para>
+    /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
@@ -546,7 +552,7 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
     /// <summary>
     /// Calls the function parameter corresponding to the variant the instance was constructed with.
     ///
-    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Match">
+    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Match"/>
     /// if you need your function parameters to return something.</para>
     ///
     /// <exception cref="StraddleInvalidDataException">
@@ -557,8 +563,8 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
     /// <example>
     /// <code>
     /// instance.Switch(
-    ///     (CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile value) => {...},
-    ///     (CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile value) => {...}
+    ///     (CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile value) =&gt; {...},
+    ///     (CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -587,7 +593,7 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
     /// Calls the function parameter corresponding to the variant the instance was constructed with and
     /// returns its result.
     ///
-    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Switch">
+    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Switch"/>
     /// if you don't need your function parameters to return a value.</para>
     ///
     /// <exception cref="StraddleInvalidDataException">
@@ -598,8 +604,8 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
     /// <example>
     /// <code>
     /// var result = instance.Match(
-    ///     (CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile value) => {...},
-    ///     (CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile value) => {...}
+    ///     (CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile value) =&gt; {...},
+    ///     (CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -655,10 +661,10 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
         this.Switch((individual) => individual.Validate(), (business) => business.Validate());
     }
 
-    public virtual bool Equals(CustomerUnmaskedV1DataComplianceProfile? other)
-    {
-        return other != null && JsonElement.DeepEquals(this.Json, other.Json);
-    }
+    public virtual bool Equals(CustomerUnmaskedV1DataComplianceProfile? other) =>
+        other != null
+        && this.VariantIndex() == other.VariantIndex()
+        && JsonElement.DeepEquals(this.Json, other.Json);
 
     public override int GetHashCode()
     {
@@ -666,7 +672,20 @@ public record class CustomerUnmaskedV1DataComplianceProfile : ModelBase
     }
 
     public override string ToString() =>
-        JsonSerializer.Serialize(this._element, ModelBase.ToStringSerializerOptions);
+        JsonSerializer.Serialize(
+            FriendlyJsonPrinter.PrintValue(this.Json),
+            ModelBase.ToStringSerializerOptions
+        );
+
+    int VariantIndex()
+    {
+        return this.Value switch
+        {
+            CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile _ => 0,
+            CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile _ => 1,
+            _ => -1,
+        };
+    }
 }
 
 sealed class CustomerUnmaskedV1DataComplianceProfileConverter
@@ -776,10 +795,13 @@ public sealed record class CustomerUnmaskedV1DataComplianceProfileIndividualComp
 
     public CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile(
         CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile customerUnmaskedV1DataComplianceProfileIndividualComplianceProfile
     )
         : base(customerUnmaskedV1DataComplianceProfileIndividualComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -907,10 +929,13 @@ public sealed record class CustomerUnmaskedV1DataComplianceProfileBusinessCompli
 
     public CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile(
         CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile customerUnmaskedV1DataComplianceProfileBusinessComplianceProfile
     )
         : base(customerUnmaskedV1DataComplianceProfileBusinessComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -996,10 +1021,13 @@ public sealed record class CustomerUnmaskedV1DataComplianceProfileBusinessCompli
 
     public CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfileRepresentative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfileRepresentative(
         CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfileRepresentative customerUnmaskedV1DataComplianceProfileBusinessComplianceProfileRepresentative
     )
         : base(customerUnmaskedV1DataComplianceProfileBusinessComplianceProfileRepresentative) { }
+#pragma warning restore CS8618
 
     public CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfileRepresentative(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -1102,8 +1130,11 @@ public sealed record class CustomerUnmaskedV1DataConfig : JsonModel
 
     public CustomerUnmaskedV1DataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUnmaskedV1DataConfig(CustomerUnmaskedV1DataConfig customerUnmaskedV1DataConfig)
         : base(customerUnmaskedV1DataConfig) { }
+#pragma warning restore CS8618
 
     public CustomerUnmaskedV1DataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {

@@ -165,11 +165,13 @@ public class LinkedBankAccountUpdateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/linked_bank_accounts/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/linked_bank_accounts/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                ),
+                url
+            )
         );
     }
 
@@ -299,5 +301,20 @@ public class LinkedBankAccountUpdateParamsBankAccountTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkedBankAccountUpdateParamsBankAccount
+        {
+            AccountHolder = "account_holder",
+            AccountNumber = "account_number",
+            RoutingNumber = "xxxxxxxxx",
+        };
+
+        LinkedBankAccountUpdateParamsBankAccount copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }

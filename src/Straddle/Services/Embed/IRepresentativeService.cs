@@ -7,9 +7,16 @@ using Straddle.Models.Embed.Representatives;
 namespace Straddle.Services.Embed;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Representatives are individuals who have legal authority or significant responsibility
+/// within a business entity associated with a Straddle account. Each representative
+/// undergoes automated verification as part of KYC/KYB compliance. Use representatives
+/// to collect and verify beneficial owners, control persons, and authorized signers
+/// required for account onboarding. Representatives also determine who can legally
+/// operate the account and make important changes.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IRepresentativeService
 {
@@ -28,8 +35,8 @@ public interface IRepresentativeService
 
     /// <summary>
     /// Creates a new representative associated with an account. Representatives are
-    /// individuals who have legal authority or significant responsibility within
-    /// the business.
+    /// individuals who have legal authority or significant responsibility within the
+    /// business.
     /// </summary>
     Task<Representative> Create(
         RepresentativeCreateParams parameters,
@@ -38,8 +45,8 @@ public interface IRepresentativeService
 
     /// <summary>
     /// Updates an existing representative's information. This can be used to update
-    /// personal details, contact information, or the relationship to the account
-    /// or organization.
+    /// personal details, contact information, or the relationship to the account or
+    /// organization.
     /// </summary>
     Task<Representative> Update(
         RepresentativeUpdateParams parameters,
@@ -54,10 +61,10 @@ public interface IRepresentativeService
     );
 
     /// <summary>
-    /// Returns a list of representatives associated with a specific account or organization.
-    /// The representatives are returned sorted by creation date, with the most recently
-    /// created representatives appearing first. This endpoint supports advanced
-    /// sorting and filtering options.
+    /// Returns a list of representatives associated with a specific account or
+    /// organization. The representatives are returned sorted by creation date, with the
+    /// most recently created representatives appearing first. This endpoint supports
+    /// advanced sorting and filtering options.
     /// </summary>
     Task<RepresentativeListPage> List(
         RepresentativeListParams? parameters = null,
@@ -65,8 +72,9 @@ public interface IRepresentativeService
     );
 
     /// <summary>
-    /// Retrieves the details of an existing representative. Supply the unique representative
-    /// ID, and Straddle will return the corresponding representative information.
+    /// Retrieves the details of an existing representative. Supply the unique
+    /// representative ID, and Straddle will return the corresponding representative
+    /// information.
     /// </summary>
     Task<Representative> Get(
         RepresentativeGetParams parameters,
@@ -113,7 +121,7 @@ public interface IRepresentativeServiceWithRawResponse
     IRepresentativeServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/representatives`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/representatives</c>, but is otherwise the
     /// same as <see cref="IRepresentativeService.Create(RepresentativeCreateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<Representative>> Create(
@@ -122,7 +130,7 @@ public interface IRepresentativeServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/representatives/{representative_id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/representatives/{representative_id}</c>, but is otherwise the
     /// same as <see cref="IRepresentativeService.Update(RepresentativeUpdateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<Representative>> Update(
@@ -138,7 +146,7 @@ public interface IRepresentativeServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/representatives`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/representatives</c>, but is otherwise the
     /// same as <see cref="IRepresentativeService.List(RepresentativeListParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<RepresentativeListPage>> List(
@@ -147,7 +155,7 @@ public interface IRepresentativeServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/representatives/{representative_id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/representatives/{representative_id}</c>, but is otherwise the
     /// same as <see cref="IRepresentativeService.Get(RepresentativeGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<Representative>> Get(
@@ -163,7 +171,7 @@ public interface IRepresentativeServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/representatives/{representative_id}/unmask`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/representatives/{representative_id}/unmask</c>, but is otherwise the
     /// same as <see cref="IRepresentativeService.Unmask(RepresentativeUnmaskParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<Representative>> Unmask(

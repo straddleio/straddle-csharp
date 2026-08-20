@@ -54,4 +54,14 @@ public class DeviceInfoV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new DeviceInfoV1 { IPAddress = "192.168.1.1" };
+
+        DeviceInfoV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }

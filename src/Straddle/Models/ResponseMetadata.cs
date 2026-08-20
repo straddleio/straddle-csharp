@@ -49,8 +49,11 @@ public sealed record class ResponseMetadata : JsonModel
 
     public ResponseMetadata() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public ResponseMetadata(ResponseMetadata responseMetadata)
         : base(responseMetadata) { }
+#pragma warning restore CS8618
 
     public ResponseMetadata(IReadOnlyDictionary<string, JsonElement> rawData)
     {

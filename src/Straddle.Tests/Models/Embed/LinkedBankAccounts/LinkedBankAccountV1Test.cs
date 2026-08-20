@@ -262,6 +262,50 @@ public class LinkedBankAccountV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkedBankAccountV1
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                BankAccount = new()
+                {
+                    AccountHolder = "account_holder",
+                    AccountMask = "account_mask",
+                    InstitutionName = "institution_name",
+                    RoutingNumber = "routing_number",
+                },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Purposes = [LinkedBankAccountV1DataPurpose.Charges],
+                Status = LinkedBankAccountV1DataStatus.Created,
+                StatusDetail = new()
+                {
+                    Code = "code",
+                    Message = "message",
+                    Reason = LinkedBankAccountV1DataStatusDetailReason.Unverified,
+                    Source = LinkedBankAccountV1DataStatusDetailSource.Watchtower,
+                },
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Description = "description",
+                Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                PlatformID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = LinkedBankAccountV1ResponseType.Object,
+        };
+
+        LinkedBankAccountV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class LinkedBankAccountV1DataTest : TestBase
@@ -646,6 +690,41 @@ public class LinkedBankAccountV1DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkedBankAccountV1Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            AccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            BankAccount = new()
+            {
+                AccountHolder = "account_holder",
+                AccountMask = "account_mask",
+                InstitutionName = "institution_name",
+                RoutingNumber = "routing_number",
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Purposes = [LinkedBankAccountV1DataPurpose.Charges],
+            Status = LinkedBankAccountV1DataStatus.Created,
+            StatusDetail = new()
+            {
+                Code = "code",
+                Message = "message",
+                Reason = LinkedBankAccountV1DataStatusDetailReason.Unverified,
+                Source = LinkedBankAccountV1DataStatusDetailSource.Watchtower,
+            },
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Description = "description",
+            Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlatformID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+        };
+
+        LinkedBankAccountV1Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class LinkedBankAccountV1DataBankAccountTest : TestBase
@@ -733,6 +812,22 @@ public class LinkedBankAccountV1DataBankAccountTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkedBankAccountV1DataBankAccount
+        {
+            AccountHolder = "account_holder",
+            AccountMask = "account_mask",
+            InstitutionName = "institution_name",
+            RoutingNumber = "routing_number",
+        };
+
+        LinkedBankAccountV1DataBankAccount copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -947,6 +1042,22 @@ public class LinkedBankAccountV1DataStatusDetailTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkedBankAccountV1DataStatusDetail
+        {
+            Code = "code",
+            Message = "message",
+            Reason = LinkedBankAccountV1DataStatusDetailReason.Unverified,
+            Source = LinkedBankAccountV1DataStatusDetailSource.Watchtower,
+        };
+
+        LinkedBankAccountV1DataStatusDetail copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

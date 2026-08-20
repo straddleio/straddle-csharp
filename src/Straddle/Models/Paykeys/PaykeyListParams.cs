@@ -22,6 +22,48 @@ namespace Straddle.Models.Paykeys;
 public record class PaykeyListParams : ParamsBase
 {
     /// <summary>
+    /// Start date for filtering by creation date.
+    /// </summary>
+    public DateTimeOffset? CreatedFrom
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<DateTimeOffset>("created_from");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("created_from", value);
+        }
+    }
+
+    /// <summary>
+    /// End date for filtering by creation date.
+    /// </summary>
+    public DateTimeOffset? CreatedTo
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<DateTimeOffset>("created_to");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("created_to", value);
+        }
+    }
+
+    /// <summary>
     /// Filter paykeys by related customer ID.
     /// </summary>
     public string? CustomerID
@@ -81,6 +123,27 @@ public record class PaykeyListParams : ParamsBase
             }
 
             this._rawQueryData.Set("page_size", value);
+        }
+    }
+
+    /// <summary>
+    /// General search term to filter paykeys.
+    /// </summary>
+    public string? SearchText
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableClass<string>("search_text");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("search_text", value);
         }
     }
 
@@ -172,6 +235,30 @@ public record class PaykeyListParams : ParamsBase
         }
     }
 
+    /// <summary>
+    /// Filter paykeys by unblock eligibility. When true, returns only blocked paykeys
+    /// eligible for client-initiated unblocking (blocked due to R29 returns and not
+    /// previously unblocked). When false, returns only blocked paykeys that are
+    /// not eligible for unblocking.
+    /// </summary>
+    public bool? UnblockEligible
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("unblock_eligible");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("unblock_eligible", value);
+        }
+    }
+
     public string? CorrelationID
     {
         get
@@ -255,7 +342,7 @@ public record class PaykeyListParams : ParamsBase
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="IFromRawJson.FromRawUnchecked"/>
+    /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
     public static PaykeyListParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
@@ -269,11 +356,17 @@ public record class PaykeyListParams : ParamsBase
 
     public override string ToString() =>
         JsonSerializer.Serialize(
-            new Dictionary<string, object?>()
-            {
-                ["HeaderData"] = this._rawHeaderData.Freeze(),
-                ["QueryData"] = this._rawQueryData.Freeze(),
-            },
+            FriendlyJsonPrinter.PrintValue(
+                new Dictionary<string, JsonElement>()
+                {
+                    ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
+                    ),
+                    ["QueryData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawQueryData.Freeze())
+                    ),
+                }
+            ),
             ModelBase.ToStringSerializerOptions
         );
 

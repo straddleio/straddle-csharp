@@ -8,9 +8,16 @@ using Straddle.Models.Customers.Review;
 namespace Straddle.Services.Customers;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Customers represent the end users who send or receive payments through your integration.
+/// Each customer undergoes automatic identity verification and fraud screening upon
+/// creation. Use customers to track payment history, manage bank account connections,
+/// and maintain a secure record of all transactions associated with a user. Customers
+/// can be either individuals or businesses with appropriate compliance checks for
+/// each type.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IReviewService
 {
@@ -28,10 +35,10 @@ public interface IReviewService
     IReviewService WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Updates the status of a customer's identity decision. This endpoint allows
-    /// you to modify the outcome of a customer risk screening and is useful for correcting
-    /// or updating the status of a customer's verification. Note that this endpoint
-    /// is only available for customers with a current status of `review`.
+    /// Updates the status of a customer's identity decision. This endpoint allows you
+    /// to modify the outcome of a customer risk screening and is useful for correcting
+    /// or updating the status of a customer's verification. Note that this endpoint is
+    /// only available for customers with a current status of `review`.
     /// </summary>
     Task<CustomerV1> Decision(
         ReviewDecisionParams parameters,
@@ -46,11 +53,11 @@ public interface IReviewService
     );
 
     /// <summary>
-    /// Retrieves and analyzes the results of a customer's identity validation and
-    /// fraud score. This endpoint provides a comprehensive breakdown of the validation
+    /// Retrieves and analyzes the results of a customer's identity validation and fraud
+    /// score. This endpoint provides a comprehensive breakdown of the validation
     /// outcome, including: - Risk and correlation scores - Reason codes for the
-    /// decision - Results of watchlist screening - Any network alerts detected Use
-    /// this endpoint to gain insights into the verification process and make informed
+    /// decision - Results of watchlist screening - Any network alerts detected Use this
+    /// endpoint to gain insights into the verification process and make informed
     /// decisions about customer onboarding.
     /// </summary>
     Task<CustomerReviewV1> Get(
@@ -67,8 +74,8 @@ public interface IReviewService
 
     /// <summary>
     /// Updates the decision of a customer's identity validation. This endpoint allows
-    /// you to modify the outcome of a customer decision and is useful for correcting
-    /// or updating the status of a customer's verification.
+    /// you to modify the outcome of a customer decision and is useful for correcting or
+    /// updating the status of a customer's verification.
     /// </summary>
     Task<CustomerV1> RefreshReview(
         ReviewRefreshReviewParams parameters,
@@ -97,7 +104,7 @@ public interface IReviewServiceWithRawResponse
     IReviewServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `patch /v1/customers/{id}/review`, but is otherwise the
+    /// Returns a raw HTTP response for <c>patch /v1/customers/{id}/review</c>, but is otherwise the
     /// same as <see cref="IReviewService.Decision(ReviewDecisionParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CustomerV1>> Decision(
@@ -113,7 +120,7 @@ public interface IReviewServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/customers/{id}/review`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/customers/{id}/review</c>, but is otherwise the
     /// same as <see cref="IReviewService.Get(ReviewGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CustomerReviewV1>> Get(
@@ -129,7 +136,7 @@ public interface IReviewServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/customers/{id}/refresh_review`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/customers/{id}/refresh_review</c>, but is otherwise the
     /// same as <see cref="IReviewService.RefreshReview(ReviewRefreshReviewParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CustomerV1>> RefreshReview(

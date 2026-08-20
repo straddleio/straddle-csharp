@@ -7,7 +7,7 @@ namespace Straddle.Core;
 /// <summary>
 /// A class representing the SDK client configuration.
 /// </summary>
-public struct ClientOptions()
+public record struct ClientOptions()
 {
     /// <summary>
     /// The default value used for <see cref="MaxRetries"/>.
@@ -21,8 +21,16 @@ public struct ClientOptions()
 
     /// <summary>
     /// The HTTP client to use for making requests in the SDK.
+    ///
+    /// <para>Note: The HttpClient has a built-in timeout, which defaults to 100 seconds.
+    /// When passing a custom HttpClient, this timeout may conflict with the SDK's
+    /// own timeout handler and cause premature cancellation.</para>
     /// </summary>
-    public HttpClient HttpClient { get; set; } = new();
+    public HttpClient HttpClient { get; set; } =
+        new(new HttpClientHandler() { AutomaticDecompression = DecompressionMethods.Available })
+        {
+            Timeout = global::System.Threading.Timeout.InfiniteTimeSpan,
+        };
 
     Lazy<string> _baseUrl = new(() =>
         Environment.GetEnvironmentVariable("STRADDLE_BASE_URL") ?? EnvironmentUrl.Sandbox
@@ -78,7 +86,7 @@ public struct ClientOptions()
     /// <para>Defaults to 2 when null. Set to 0 to
     /// disable retries, which also ignores API instructions to retry.</para>
     /// </summary>
-    public int? MaxRetries { get; set; }
+    public int? MaxRetries { get; set; } = null;
 
     /// <summary>
     /// Sets the maximum time allowed for a complete HTTP call, not including retries.
@@ -88,11 +96,11 @@ public struct ClientOptions()
     ///
     /// <para>Defaults to <c>TimeSpan.FromMinutes(1)</c> when null.</para>
     /// </summary>
-    public TimeSpan? Timeout { get; set; }
+    public TimeSpan? Timeout { get; set; } = null;
 
     /// <summary>
-    /// Use your Straddle API Key in the Authorization header as Bearer <token> to
-    /// authorize API requests.
+    /// Use your Straddle API Key in the Authorization header as Bearer &lt;token&gt;
+    /// to authorize API requests.
     /// </summary>
     Lazy<string> _apiKey = new(() =>
         Environment.GetEnvironmentVariable("STRADDLE_API_KEY")
@@ -103,8 +111,8 @@ public struct ClientOptions()
     );
 
     /// <summary>
-    /// Use your Straddle API Key in the Authorization header as Bearer <token> to
-    /// authorize API requests.
+    /// Use your Straddle API Key in the Authorization header as Bearer &lt;token&gt;
+    /// to authorize API requests.
     /// </summary>
     public string ApiKey
     {

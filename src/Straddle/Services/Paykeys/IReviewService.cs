@@ -8,9 +8,15 @@ using Straddle.Models.Paykeys.Review;
 namespace Straddle.Services.Paykeys;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Paykeys are secure tokens that link verified customer identities to their bank
+/// accounts. Each Paykey includes built-in balance checking, fraud detection through
+/// LSTM machine learning models, and can be reused for subscriptions and recurring
+/// payments without storing sensitive data. Paykeys eliminate fraud by ensuring
+/// the person initiating payment owns the funding account.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IReviewService
 {
@@ -58,9 +64,9 @@ public interface IReviewService
     );
 
     /// <summary>
-    /// Updates the decision of a paykey's review validation. This endpoint allows
-    /// you to refresh the outcome of a paykey's decision and is useful for correcting
-    /// or updating the status of a paykey's verification.
+    /// Updates the decision of a paykey's review validation. This endpoint allows you
+    /// to refresh the outcome of a paykey's decision and is useful for correcting or
+    /// updating the status of a paykey's verification.
     /// </summary>
     Task<PaykeyV1> RefreshReview(
         ReviewRefreshReviewParams parameters,
@@ -89,7 +95,7 @@ public interface IReviewServiceWithRawResponse
     IReviewServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `patch /v1/paykeys/{id}/review`, but is otherwise the
+    /// Returns a raw HTTP response for <c>patch /v1/paykeys/{id}/review</c>, but is otherwise the
     /// same as <see cref="IReviewService.Decision(ReviewDecisionParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyV1>> Decision(
@@ -105,7 +111,7 @@ public interface IReviewServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/paykeys/{id}/review`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/paykeys/{id}/review</c>, but is otherwise the
     /// same as <see cref="IReviewService.Get(ReviewGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<ReviewGetResponse>> Get(
@@ -121,7 +127,7 @@ public interface IReviewServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/paykeys/{id}/refresh_review`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/paykeys/{id}/refresh_review</c>, but is otherwise the
     /// same as <see cref="IReviewService.RefreshReview(ReviewRefreshReviewParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyV1>> RefreshReview(

@@ -63,8 +63,11 @@ public sealed record class PaykeyRevealResponse : JsonModel
 
     public PaykeyRevealResponse() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyRevealResponse(PaykeyRevealResponse paykeyRevealResponse)
         : base(paykeyRevealResponse) { }
+#pragma warning restore CS8618
 
     public PaykeyRevealResponse(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -354,8 +357,11 @@ public sealed record class PaykeyRevealResponseData : JsonModel
 
     public PaykeyRevealResponseData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyRevealResponseData(PaykeyRevealResponseData paykeyRevealResponseData)
         : base(paykeyRevealResponseData) { }
+#pragma warning restore CS8618
 
     public PaykeyRevealResponseData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -444,10 +450,13 @@ public sealed record class PaykeyRevealResponseDataConfig : JsonModel
 
     public PaykeyRevealResponseDataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyRevealResponseDataConfig(
         PaykeyRevealResponseDataConfig paykeyRevealResponseDataConfig
     )
         : base(paykeyRevealResponseDataConfig) { }
+#pragma warning restore CS8618
 
     public PaykeyRevealResponseDataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -746,10 +755,13 @@ public sealed record class PaykeyRevealResponseDataBalance : JsonModel
 
     public PaykeyRevealResponseDataBalance() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyRevealResponseDataBalance(
         PaykeyRevealResponseDataBalance paykeyRevealResponseDataBalance
     )
         : base(paykeyRevealResponseDataBalance) { }
+#pragma warning restore CS8618
 
     public PaykeyRevealResponseDataBalance(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -895,10 +907,13 @@ public sealed record class PaykeyRevealResponseDataBankData : JsonModel
 
     public PaykeyRevealResponseDataBankData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyRevealResponseDataBankData(
         PaykeyRevealResponseDataBankData paykeyRevealResponseDataBankData
     )
         : base(paykeyRevealResponseDataBankData) { }
+#pragma warning restore CS8618
 
     public PaykeyRevealResponseDataBankData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1058,10 +1073,13 @@ public sealed record class PaykeyRevealResponseDataStatusDetails : JsonModel
 
     public PaykeyRevealResponseDataStatusDetails() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaykeyRevealResponseDataStatusDetails(
         PaykeyRevealResponseDataStatusDetails paykeyRevealResponseDataStatusDetails
     )
         : base(paykeyRevealResponseDataStatusDetails) { }
+#pragma warning restore CS8618
 
     public PaykeyRevealResponseDataStatusDetails(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1122,6 +1140,8 @@ public enum PaykeyRevealResponseDataStatusDetailsReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
+    AutoHold,
 }
 
 sealed class PaykeyRevealResponseDataStatusDetailsReasonConverter
@@ -1163,6 +1183,8 @@ sealed class PaykeyRevealResponseDataStatusDetailsReasonConverter
             "require_review" => PaykeyRevealResponseDataStatusDetailsReason.RequireReview,
             "blocked_by_system" => PaykeyRevealResponseDataStatusDetailsReason.BlockedBySystem,
             "watchtower_review" => PaykeyRevealResponseDataStatusDetailsReason.WatchtowerReview,
+            "validating" => PaykeyRevealResponseDataStatusDetailsReason.Validating,
+            "auto_hold" => PaykeyRevealResponseDataStatusDetailsReason.AutoHold,
             _ => (PaykeyRevealResponseDataStatusDetailsReason)(-1),
         };
     }
@@ -1209,6 +1231,8 @@ sealed class PaykeyRevealResponseDataStatusDetailsReasonConverter
                 PaykeyRevealResponseDataStatusDetailsReason.RequireReview => "require_review",
                 PaykeyRevealResponseDataStatusDetailsReason.BlockedBySystem => "blocked_by_system",
                 PaykeyRevealResponseDataStatusDetailsReason.WatchtowerReview => "watchtower_review",
+                PaykeyRevealResponseDataStatusDetailsReason.Validating => "validating",
+                PaykeyRevealResponseDataStatusDetailsReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

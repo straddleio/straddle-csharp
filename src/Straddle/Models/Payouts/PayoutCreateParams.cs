@@ -265,7 +265,7 @@ public record class PayoutCreateParams : ParamsBase
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="IFromRawJson.FromRawUnchecked"/>
+    /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
     public static PayoutCreateParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
@@ -281,12 +281,18 @@ public record class PayoutCreateParams : ParamsBase
 
     public override string ToString() =>
         JsonSerializer.Serialize(
-            new Dictionary<string, object?>()
-            {
-                ["HeaderData"] = this._rawHeaderData.Freeze(),
-                ["QueryData"] = this._rawQueryData.Freeze(),
-                ["BodyData"] = this._rawBodyData.Freeze(),
-            },
+            FriendlyJsonPrinter.PrintValue(
+                new Dictionary<string, JsonElement>()
+                {
+                    ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
+                    ),
+                    ["QueryData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawQueryData.Freeze())
+                    ),
+                    ["BodyData"] = FriendlyJsonPrinter.PrintValue(this._rawBodyData.Freeze()),
+                }
+            ),
             ModelBase.ToStringSerializerOptions
         );
 
@@ -337,6 +343,32 @@ public record class PayoutCreateParams : ParamsBase
 public sealed record class Config : JsonModel
 {
     /// <summary>
+    /// Defines whether to automatically place this charge on hold after being created.
+    /// </summary>
+    public bool? AutoHold
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("auto_hold");
+        }
+        init { this._rawData.Set("auto_hold", value); }
+    }
+
+    /// <summary>
+    /// The reason the payout is being automatically held on creation.
+    /// </summary>
+    public string? AutoHoldMessage
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("auto_hold_message");
+        }
+        init { this._rawData.Set("auto_hold_message", value); }
+    }
+
+    /// <summary>
     /// Payment will simulate processing if not Standard.
     /// </summary>
     public ApiEnum<string, SandboxOutcome>? SandboxOutcome
@@ -362,13 +394,18 @@ public sealed record class Config : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.AutoHold;
+        _ = this.AutoHoldMessage;
         this.SandboxOutcome?.Validate();
     }
 
     public Config() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Config(Config config)
         : base(config) { }
+#pragma warning restore CS8618
 
     public Config(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -414,6 +451,8 @@ public enum SandboxOutcome
     ReversedCustomerDispute,
     FailedClosedBankAccount,
     ReversedClosedBankAccount,
+    FailedNotAuthorized,
+    ReversedNotAuthorized,
 }
 
 sealed class SandboxOutcomeConverter : JsonConverter<SandboxOutcome>
@@ -437,6 +476,8 @@ sealed class SandboxOutcomeConverter : JsonConverter<SandboxOutcome>
             "reversed_customer_dispute" => SandboxOutcome.ReversedCustomerDispute,
             "failed_closed_bank_account" => SandboxOutcome.FailedClosedBankAccount,
             "reversed_closed_bank_account" => SandboxOutcome.ReversedClosedBankAccount,
+            "failed_not_authorized" => SandboxOutcome.FailedNotAuthorized,
+            "reversed_not_authorized" => SandboxOutcome.ReversedNotAuthorized,
             _ => (SandboxOutcome)(-1),
         };
     }
@@ -462,6 +503,8 @@ sealed class SandboxOutcomeConverter : JsonConverter<SandboxOutcome>
                 SandboxOutcome.ReversedCustomerDispute => "reversed_customer_dispute",
                 SandboxOutcome.FailedClosedBankAccount => "failed_closed_bank_account",
                 SandboxOutcome.ReversedClosedBankAccount => "reversed_closed_bank_account",
+                SandboxOutcome.FailedNotAuthorized => "failed_not_authorized",
+                SandboxOutcome.ReversedNotAuthorized => "reversed_not_authorized",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

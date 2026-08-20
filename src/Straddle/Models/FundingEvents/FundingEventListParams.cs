@@ -358,7 +358,7 @@ public record class FundingEventListParams : ParamsBase
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="IFromRawJson.FromRawUnchecked"/>
+    /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
     public static FundingEventListParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
@@ -372,11 +372,17 @@ public record class FundingEventListParams : ParamsBase
 
     public override string ToString() =>
         JsonSerializer.Serialize(
-            new Dictionary<string, object?>()
-            {
-                ["HeaderData"] = this._rawHeaderData.Freeze(),
-                ["QueryData"] = this._rawQueryData.Freeze(),
-            },
+            FriendlyJsonPrinter.PrintValue(
+                new Dictionary<string, JsonElement>()
+                {
+                    ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
+                    ),
+                    ["QueryData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawQueryData.Freeze())
+                    ),
+                }
+            ),
             ModelBase.ToStringSerializerOptions
         );
 
@@ -620,6 +626,7 @@ public enum Status
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class StatusConverter : JsonConverter<Status>
@@ -640,6 +647,7 @@ sealed class StatusConverter : JsonConverter<Status>
             "pending" => Status.Pending,
             "paid" => Status.Paid,
             "reversed" => Status.Reversed,
+            "validating" => Status.Validating,
             _ => (Status)(-1),
         };
     }
@@ -658,6 +666,7 @@ sealed class StatusConverter : JsonConverter<Status>
                 Status.Pending => "pending",
                 Status.Paid => "paid",
                 Status.Reversed => "reversed",
+                Status.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -695,6 +704,8 @@ public enum StatusReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
+    AutoHold,
 }
 
 sealed class StatusReasonConverter : JsonConverter<StatusReason>
@@ -732,6 +743,8 @@ sealed class StatusReasonConverter : JsonConverter<StatusReason>
             "require_review" => StatusReason.RequireReview,
             "blocked_by_system" => StatusReason.BlockedBySystem,
             "watchtower_review" => StatusReason.WatchtowerReview,
+            "validating" => StatusReason.Validating,
+            "auto_hold" => StatusReason.AutoHold,
             _ => (StatusReason)(-1),
         };
     }
@@ -771,6 +784,8 @@ sealed class StatusReasonConverter : JsonConverter<StatusReason>
                 StatusReason.RequireReview => "require_review",
                 StatusReason.BlockedBySystem => "blocked_by_system",
                 StatusReason.WatchtowerReview => "watchtower_review",
+                StatusReason.Validating => "validating",
+                StatusReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

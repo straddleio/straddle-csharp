@@ -304,6 +304,57 @@ public class CustomerUnmaskedV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerUnmaskedV1
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Email = "ron.swanson@pawnee.com",
+                Name = "Ron Swanson",
+                Phone = "+12128675309",
+                Status = CustomerUnmaskedV1DataStatus.Pending,
+                Type = CustomerUnmaskedV1DataType.Individual,
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Address = new()
+                {
+                    Address1 = "123 Main St",
+                    City = "Anytown",
+                    State = "CA",
+                    Zip = "12345",
+                    Address2 = "Apt 1",
+                },
+                ComplianceProfile =
+                    new CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile()
+                    {
+                        Dob = "1969-04-20",
+                        Ssn = "123-45-6789",
+                    },
+                Config = new()
+                {
+                    ProcessingMethod = CustomerUnmaskedV1DataConfigProcessingMethod.Inline,
+                    SandboxOutcome = CustomerUnmaskedV1DataConfigSandboxOutcome.Standard,
+                },
+                Device = new("192.168.1.1"),
+                ExternalID = "external_id",
+                Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = CustomerUnmaskedV1ResponseType.Object,
+        };
+
+        CustomerUnmaskedV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerUnmaskedV1DataTest : TestBase
@@ -856,6 +907,48 @@ public class CustomerUnmaskedV1DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerUnmaskedV1Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Email = "ron.swanson@pawnee.com",
+            Name = "Ron Swanson",
+            Phone = "+12128675309",
+            Status = CustomerUnmaskedV1DataStatus.Pending,
+            Type = CustomerUnmaskedV1DataType.Individual,
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Address = new()
+            {
+                Address1 = "123 Main St",
+                City = "Anytown",
+                State = "CA",
+                Zip = "12345",
+                Address2 = "Apt 1",
+            },
+            ComplianceProfile =
+                new CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile()
+                {
+                    Dob = "1969-04-20",
+                    Ssn = "123-45-6789",
+                },
+            Config = new()
+            {
+                ProcessingMethod = CustomerUnmaskedV1DataConfigProcessingMethod.Inline,
+                SandboxOutcome = CustomerUnmaskedV1DataConfigSandboxOutcome.Standard,
+            },
+            Device = new("192.168.1.1"),
+            ExternalID = "external_id",
+            Metadata = new Dictionary<string, string>() { { "foo", "string" } },
+        };
+
+        CustomerUnmaskedV1Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerUnmaskedV1DataStatusTest : TestBase
@@ -1133,6 +1226,20 @@ public class CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfileT
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile
+        {
+            Dob = "1969-04-20",
+            Ssn = "123-45-6789",
+        };
+
+        CustomerUnmaskedV1DataComplianceProfileIndividualComplianceProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfileTest : TestBase
@@ -1341,6 +1448,30 @@ public class CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfileTes
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile
+        {
+            Ein = "12-3456789",
+            LegalBusinessName = "Acme Corp LLC",
+            Representatives =
+            [
+                new()
+                {
+                    Name = "name",
+                    Email = "email",
+                    Phone = "phone",
+                },
+            ],
+            Website = "https://example.com",
+        };
+
+        CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfileRepresentativeTest
@@ -1488,6 +1619,24 @@ public class CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfileRep
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model =
+            new CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfileRepresentative
+            {
+                Name = "name",
+                Email = "email",
+                Phone = "phone",
+            };
+
+        CustomerUnmaskedV1DataComplianceProfileBusinessComplianceProfileRepresentative copied = new(
+            model
+        );
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerUnmaskedV1DataConfigTest : TestBase
@@ -1611,6 +1760,20 @@ public class CustomerUnmaskedV1DataConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerUnmaskedV1DataConfig
+        {
+            ProcessingMethod = CustomerUnmaskedV1DataConfigProcessingMethod.Inline,
+            SandboxOutcome = CustomerUnmaskedV1DataConfigSandboxOutcome.Standard,
+        };
+
+        CustomerUnmaskedV1DataConfig copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

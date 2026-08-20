@@ -253,38 +253,48 @@ public record class CustomerUpdateParams : ParamsBase
     CustomerUpdateParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData,
-        FrozenDictionary<string, JsonElement> rawBodyData
+        FrozenDictionary<string, JsonElement> rawBodyData,
+        string id
     )
     {
         this._rawHeaderData = new(rawHeaderData);
         this._rawQueryData = new(rawQueryData);
         this._rawBodyData = new(rawBodyData);
+        this.ID = id;
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="IFromRawJson.FromRawUnchecked"/>
+    /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
     public static CustomerUpdateParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
-        IReadOnlyDictionary<string, JsonElement> rawBodyData
+        IReadOnlyDictionary<string, JsonElement> rawBodyData,
+        string id
     )
     {
         return new(
             FrozenDictionary.ToFrozenDictionary(rawHeaderData),
             FrozenDictionary.ToFrozenDictionary(rawQueryData),
-            FrozenDictionary.ToFrozenDictionary(rawBodyData)
+            FrozenDictionary.ToFrozenDictionary(rawBodyData),
+            id
         );
     }
 
     public override string ToString() =>
         JsonSerializer.Serialize(
-            new Dictionary<string, object?>()
-            {
-                ["ID"] = this.ID,
-                ["HeaderData"] = this._rawHeaderData.Freeze(),
-                ["QueryData"] = this._rawQueryData.Freeze(),
-                ["BodyData"] = this._rawBodyData.Freeze(),
-            },
+            FriendlyJsonPrinter.PrintValue(
+                new Dictionary<string, JsonElement>()
+                {
+                    ["ID"] = JsonSerializer.SerializeToElement(this.ID),
+                    ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
+                    ),
+                    ["QueryData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawQueryData.Freeze())
+                    ),
+                    ["BodyData"] = FriendlyJsonPrinter.PrintValue(this._rawBodyData.Freeze()),
+                }
+            ),
             ModelBase.ToStringSerializerOptions
         );
 
@@ -431,7 +441,7 @@ public record class CustomerUpdateParamsComplianceProfile : ModelBase
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
     /// type <see cref="CustomerUpdateParamsComplianceProfileIndividualComplianceProfile"/>.
     ///
-    /// <para>Consider using <see cref="Switch"> or <see cref="Match"> if you need to handle every variant.</para>
+    /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
@@ -455,7 +465,7 @@ public record class CustomerUpdateParamsComplianceProfile : ModelBase
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
     /// type <see cref="CustomerUpdateParamsComplianceProfileBusinessComplianceProfile"/>.
     ///
-    /// <para>Consider using <see cref="Switch"> or <see cref="Match"> if you need to handle every variant.</para>
+    /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
@@ -478,7 +488,7 @@ public record class CustomerUpdateParamsComplianceProfile : ModelBase
     /// <summary>
     /// Calls the function parameter corresponding to the variant the instance was constructed with.
     ///
-    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Match">
+    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Match"/>
     /// if you need your function parameters to return something.</para>
     ///
     /// <exception cref="StraddleInvalidDataException">
@@ -489,8 +499,8 @@ public record class CustomerUpdateParamsComplianceProfile : ModelBase
     /// <example>
     /// <code>
     /// instance.Switch(
-    ///     (CustomerUpdateParamsComplianceProfileIndividualComplianceProfile value) => {...},
-    ///     (CustomerUpdateParamsComplianceProfileBusinessComplianceProfile value) => {...}
+    ///     (CustomerUpdateParamsComplianceProfileIndividualComplianceProfile value) =&gt; {...},
+    ///     (CustomerUpdateParamsComplianceProfileBusinessComplianceProfile value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -519,7 +529,7 @@ public record class CustomerUpdateParamsComplianceProfile : ModelBase
     /// Calls the function parameter corresponding to the variant the instance was constructed with and
     /// returns its result.
     ///
-    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Switch">
+    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Switch"/>
     /// if you don't need your function parameters to return a value.</para>
     ///
     /// <exception cref="StraddleInvalidDataException">
@@ -530,8 +540,8 @@ public record class CustomerUpdateParamsComplianceProfile : ModelBase
     /// <example>
     /// <code>
     /// var result = instance.Match(
-    ///     (CustomerUpdateParamsComplianceProfileIndividualComplianceProfile value) => {...},
-    ///     (CustomerUpdateParamsComplianceProfileBusinessComplianceProfile value) => {...}
+    ///     (CustomerUpdateParamsComplianceProfileIndividualComplianceProfile value) =&gt; {...},
+    ///     (CustomerUpdateParamsComplianceProfileBusinessComplianceProfile value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -585,10 +595,10 @@ public record class CustomerUpdateParamsComplianceProfile : ModelBase
         this.Switch((individual) => individual.Validate(), (business) => business.Validate());
     }
 
-    public virtual bool Equals(CustomerUpdateParamsComplianceProfile? other)
-    {
-        return other != null && JsonElement.DeepEquals(this.Json, other.Json);
-    }
+    public virtual bool Equals(CustomerUpdateParamsComplianceProfile? other) =>
+        other != null
+        && this.VariantIndex() == other.VariantIndex()
+        && JsonElement.DeepEquals(this.Json, other.Json);
 
     public override int GetHashCode()
     {
@@ -596,7 +606,20 @@ public record class CustomerUpdateParamsComplianceProfile : ModelBase
     }
 
     public override string ToString() =>
-        JsonSerializer.Serialize(this._element, ModelBase.ToStringSerializerOptions);
+        JsonSerializer.Serialize(
+            FriendlyJsonPrinter.PrintValue(this.Json),
+            ModelBase.ToStringSerializerOptions
+        );
+
+    int VariantIndex()
+    {
+        return this.Value switch
+        {
+            CustomerUpdateParamsComplianceProfileIndividualComplianceProfile _ => 0,
+            CustomerUpdateParamsComplianceProfileBusinessComplianceProfile _ => 1,
+            _ => -1,
+        };
+    }
 }
 
 sealed class CustomerUpdateParamsComplianceProfileConverter
@@ -706,10 +729,13 @@ public sealed record class CustomerUpdateParamsComplianceProfileIndividualCompli
 
     public CustomerUpdateParamsComplianceProfileIndividualComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUpdateParamsComplianceProfileIndividualComplianceProfile(
         CustomerUpdateParamsComplianceProfileIndividualComplianceProfile customerUpdateParamsComplianceProfileIndividualComplianceProfile
     )
         : base(customerUpdateParamsComplianceProfileIndividualComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerUpdateParamsComplianceProfileIndividualComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -834,10 +860,13 @@ public sealed record class CustomerUpdateParamsComplianceProfileBusinessComplian
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfile(
         CustomerUpdateParamsComplianceProfileBusinessComplianceProfile customerUpdateParamsComplianceProfileBusinessComplianceProfile
     )
         : base(customerUpdateParamsComplianceProfileBusinessComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -923,10 +952,13 @@ public sealed record class CustomerUpdateParamsComplianceProfileBusinessComplian
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative(
         CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative customerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative
     )
         : base(customerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative) { }
+#pragma warning restore CS8618
 
     public CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative(
         IReadOnlyDictionary<string, JsonElement> rawData

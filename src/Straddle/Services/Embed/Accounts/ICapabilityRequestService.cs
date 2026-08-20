@@ -7,9 +7,14 @@ using Straddle.Models.Embed.Accounts.CapabilityRequests;
 namespace Straddle.Services.Embed.Accounts;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Capabilities enable specific features and services for an Account. Use capability
+/// requests to unlock higher processing limits, new payment types, or additional
+/// platform features as your users' businesses grow. Track approval status and manage
+/// documentation requirements through a single interface.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface ICapabilityRequestService
 {
@@ -76,7 +81,7 @@ public interface ICapabilityRequestServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/accounts/{account_id}/capability_requests`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/accounts/{account_id}/capability_requests</c>, but is otherwise the
     /// same as <see cref="ICapabilityRequestService.Create(CapabilityRequestCreateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CapabilityRequestPagedV1>> Create(
@@ -92,7 +97,7 @@ public interface ICapabilityRequestServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/accounts/{account_id}/capability_requests`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/accounts/{account_id}/capability_requests</c>, but is otherwise the
     /// same as <see cref="ICapabilityRequestService.List(CapabilityRequestListParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CapabilityRequestListPage>> List(

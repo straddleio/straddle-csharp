@@ -251,11 +251,13 @@ public class CustomerUpdateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/customers/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/customers/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                ),
+                url
+            )
         );
     }
 
@@ -546,6 +548,20 @@ public class CustomerUpdateParamsComplianceProfileIndividualComplianceProfileTes
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerUpdateParamsComplianceProfileIndividualComplianceProfile
+        {
+            Dob = "1969-04-20",
+            Ssn = "123-45-6789",
+        };
+
+        CustomerUpdateParamsComplianceProfileIndividualComplianceProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerUpdateParamsComplianceProfileBusinessComplianceProfileTest : TestBase
@@ -754,6 +770,30 @@ public class CustomerUpdateParamsComplianceProfileBusinessComplianceProfileTest 
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerUpdateParamsComplianceProfileBusinessComplianceProfile
+        {
+            Ein = "12-3456789",
+            LegalBusinessName = "Acme Corp LLC",
+            Representatives =
+            [
+                new()
+                {
+                    Name = "name",
+                    Email = "email",
+                    Phone = "phone",
+                },
+            ],
+            Website = "https://example.com",
+        };
+
+        CustomerUpdateParamsComplianceProfileBusinessComplianceProfile copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentativeTest
@@ -892,5 +932,22 @@ public class CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepre
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative
+        {
+            Name = "name",
+            Email = "email",
+            Phone = "phone",
+        };
+
+        CustomerUpdateParamsComplianceProfileBusinessComplianceProfileRepresentative copied = new(
+            model
+        );
+
+        Assert.Equal(model, copied);
     }
 }

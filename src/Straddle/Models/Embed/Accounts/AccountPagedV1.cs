@@ -68,8 +68,11 @@ public sealed record class AccountPagedV1 : JsonModel
 
     public AccountPagedV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public AccountPagedV1(AccountPagedV1 accountPagedV1)
         : base(accountPagedV1) { }
+#pragma warning restore CS8618
 
     public AccountPagedV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -330,8 +333,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -531,8 +537,11 @@ public sealed record class StatusDetail : JsonModel
 
     public StatusDetail() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public StatusDetail(StatusDetail statusDetail)
         : base(statusDetail) { }
+#pragma warning restore CS8618
 
     public StatusDetail(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -749,8 +758,11 @@ public sealed record class Capabilities : JsonModel
 
     public Capabilities() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Capabilities(Capabilities capabilities)
         : base(capabilities) { }
+#pragma warning restore CS8618
 
     public Capabilities(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -818,8 +830,11 @@ public sealed record class ConsentTypes : JsonModel
 
     public ConsentTypes() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public ConsentTypes(ConsentTypes consentTypes)
         : base(consentTypes) { }
+#pragma warning restore CS8618
 
     public ConsentTypes(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -880,8 +895,11 @@ public sealed record class CustomerTypes : JsonModel
 
     public CustomerTypes() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerTypes(CustomerTypes customerTypes)
         : base(customerTypes) { }
+#pragma warning restore CS8618
 
     public CustomerTypes(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -942,8 +960,11 @@ public sealed record class PaymentTypes : JsonModel
 
     public PaymentTypes() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PaymentTypes(PaymentTypes paymentTypes)
         : base(paymentTypes) { }
+#pragma warning restore CS8618
 
     public PaymentTypes(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1004,8 +1025,11 @@ public sealed record class Settings : JsonModel
 
     public Settings() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Settings(Settings settings)
         : base(settings) { }
+#pragma warning restore CS8618
 
     public Settings(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1130,8 +1154,11 @@ public sealed record class SettingsCharges : JsonModel
 
     public SettingsCharges() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public SettingsCharges(SettingsCharges settingsCharges)
         : base(settingsCharges) { }
+#pragma warning restore CS8618
 
     public SettingsCharges(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1172,6 +1199,8 @@ public enum FundingTime
     OneDay,
     TwoDay,
     ThreeDay,
+    FourDay,
+    FiveDay,
 }
 
 sealed class FundingTimeConverter : JsonConverter<FundingTime>
@@ -1189,6 +1218,8 @@ sealed class FundingTimeConverter : JsonConverter<FundingTime>
             "one_day" => FundingTime.OneDay,
             "two_day" => FundingTime.TwoDay,
             "three_day" => FundingTime.ThreeDay,
+            "four_day" => FundingTime.FourDay,
+            "five_day" => FundingTime.FiveDay,
             _ => (FundingTime)(-1),
         };
     }
@@ -1208,6 +1239,8 @@ sealed class FundingTimeConverter : JsonConverter<FundingTime>
                 FundingTime.OneDay => "one_day",
                 FundingTime.TwoDay => "two_day",
                 FundingTime.ThreeDay => "three_day",
+                FundingTime.FourDay => "four_day",
+                FundingTime.FiveDay => "five_day",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1314,8 +1347,11 @@ public sealed record class SettingsPayouts : JsonModel
 
     public SettingsPayouts() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public SettingsPayouts(SettingsPayouts settingsPayouts)
         : base(settingsPayouts) { }
+#pragma warning restore CS8618
 
     public SettingsPayouts(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1356,6 +1392,8 @@ public enum SettingsPayoutsFundingTime
     OneDay,
     TwoDay,
     ThreeDay,
+    FourDay,
+    FiveDay,
 }
 
 sealed class SettingsPayoutsFundingTimeConverter : JsonConverter<SettingsPayoutsFundingTime>
@@ -1373,6 +1411,8 @@ sealed class SettingsPayoutsFundingTimeConverter : JsonConverter<SettingsPayouts
             "one_day" => SettingsPayoutsFundingTime.OneDay,
             "two_day" => SettingsPayoutsFundingTime.TwoDay,
             "three_day" => SettingsPayoutsFundingTime.ThreeDay,
+            "four_day" => SettingsPayoutsFundingTime.FourDay,
+            "five_day" => SettingsPayoutsFundingTime.FiveDay,
             _ => (SettingsPayoutsFundingTime)(-1),
         };
     }
@@ -1392,6 +1432,8 @@ sealed class SettingsPayoutsFundingTimeConverter : JsonConverter<SettingsPayouts
                 SettingsPayoutsFundingTime.OneDay => "one_day",
                 SettingsPayoutsFundingTime.TwoDay => "two_day",
                 SettingsPayoutsFundingTime.ThreeDay => "three_day",
+                SettingsPayoutsFundingTime.FourDay => "four_day",
+                SettingsPayoutsFundingTime.FiveDay => "five_day",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

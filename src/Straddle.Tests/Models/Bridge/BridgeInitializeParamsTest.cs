@@ -151,7 +151,9 @@ public class BridgeInitializeParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://sandbox.straddle.com/v1/bridge/initialize"), url);
+        Assert.True(
+            TestBase.UrisEqual(new Uri("https://sandbox.straddle.com/v1/bridge/initialize"), url)
+        );
     }
 
     [Fact]
@@ -313,6 +315,20 @@ public class ConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Config
+        {
+            ProcessingMethod = ProcessingMethod.Inline,
+            SandboxOutcome = SandboxOutcome.Standard,
+        };
+
+        Config copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

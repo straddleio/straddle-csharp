@@ -8,9 +8,15 @@ using Straddle.Services.Embed.Accounts;
 namespace Straddle.Services.Embed;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Accounts represent businesses using Straddle through your platform. Each account
+/// must complete automated verification before processing payments. Use accounts
+/// to manage your users' payment capabilities, track verification status, and control
+/// access to features. Accounts can be instantly created in sandbox and require
+/// additional verification for production access.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IAccountService
 {
@@ -30,8 +36,8 @@ public interface IAccountService
     ICapabilityRequestService CapabilityRequests { get; }
 
     /// <summary>
-    /// Creates a new account associated with your Straddle platform integration.
-    /// This endpoint allows you to set up an account with specified details, including
+    /// Creates a new account associated with your Straddle platform integration. This
+    /// endpoint allows you to set up an account with specified details, including
     /// business information and access levels.
     /// </summary>
     Task<AccountV1> Create(
@@ -58,8 +64,8 @@ public interface IAccountService
     /// <summary>
     /// Returns a list of accounts associated with your Straddle platform integration.
     /// The accounts are returned sorted by creation date, with the most recently
-    /// created accounts appearing first. This endpoint supports advanced sorting
-    /// and filtering options.
+    /// created accounts appearing first. This endpoint supports advanced sorting and
+    /// filtering options.
     /// </summary>
     Task<AccountListPage> List(
         AccountListParams? parameters = null,
@@ -67,8 +73,8 @@ public interface IAccountService
     );
 
     /// <summary>
-    /// Retrieves the details of an account that has previously been created. Supply
-    /// the unique account ID that was returned from your previous request, and Straddle
+    /// Retrieves the details of an account that has previously been created. Supply the
+    /// unique account ID that was returned from your previous request, and Straddle
     /// will return the corresponding account information.
     /// </summary>
     Task<AccountV1> Get(AccountGetParams parameters, CancellationToken cancellationToken = default);
@@ -81,9 +87,9 @@ public interface IAccountService
     );
 
     /// <summary>
-    /// Initiates the onboarding process for a new account. This endpoint can only
-    /// be used for accounts where at least one representative and one bank account
-    /// have already been created.
+    /// Initiates the onboarding process for a new account. This endpoint can only be
+    /// used for accounts where at least one representative and one bank account have
+    /// already been created.
     /// </summary>
     Task<AccountV1> Onboard(
         AccountOnboardParams parameters,
@@ -98,8 +104,8 @@ public interface IAccountService
     );
 
     /// <summary>
-    /// Simulate the status transitions for sandbox accounts. This endpoint can only
-    /// be used for sandbox accounts.
+    /// Simulate the status transitions for sandbox accounts. This endpoint can only be
+    /// used for sandbox accounts.
     /// </summary>
     Task<AccountV1> Simulate(
         AccountSimulateParams parameters,
@@ -130,7 +136,7 @@ public interface IAccountServiceWithRawResponse
     ICapabilityRequestServiceWithRawResponse CapabilityRequests { get; }
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/accounts`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/accounts</c>, but is otherwise the
     /// same as <see cref="IAccountService.Create(AccountCreateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<AccountV1>> Create(
@@ -139,7 +145,7 @@ public interface IAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/accounts/{account_id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/accounts/{account_id}</c>, but is otherwise the
     /// same as <see cref="IAccountService.Update(AccountUpdateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<AccountV1>> Update(
@@ -155,7 +161,7 @@ public interface IAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/accounts`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/accounts</c>, but is otherwise the
     /// same as <see cref="IAccountService.List(AccountListParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<AccountListPage>> List(
@@ -164,7 +170,7 @@ public interface IAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/accounts/{account_id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/accounts/{account_id}</c>, but is otherwise the
     /// same as <see cref="IAccountService.Get(AccountGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<AccountV1>> Get(
@@ -180,7 +186,7 @@ public interface IAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/accounts/{account_id}/onboard`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/accounts/{account_id}/onboard</c>, but is otherwise the
     /// same as <see cref="IAccountService.Onboard(AccountOnboardParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<AccountV1>> Onboard(
@@ -196,7 +202,7 @@ public interface IAccountServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/accounts/{account_id}/simulate`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/accounts/{account_id}/simulate</c>, but is otherwise the
     /// same as <see cref="IAccountService.Simulate(AccountSimulateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<AccountV1>> Simulate(

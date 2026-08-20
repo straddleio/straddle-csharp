@@ -181,6 +181,28 @@ public sealed class PayoutService : IPayoutService
 
         return this.Unmask(parameters with { ID = id }, cancellationToken);
     }
+
+    /// <inheritdoc/>
+    public async Task<PayoutV1> UploadAuthorizationDocument(
+        PayoutUploadAuthorizationDocumentParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        using var response = await this
+            .WithRawResponse.UploadAuthorizationDocument(parameters, cancellationToken)
+            .ConfigureAwait(false);
+        return await response.Deserialize(cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <inheritdoc/>
+    public Task<PayoutV1> UploadAuthorizationDocument(
+        string id,
+        PayoutUploadAuthorizationDocumentParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        return this.UploadAuthorizationDocument(parameters with { ID = id }, cancellationToken);
+    }
 }
 
 /// <inheritdoc/>
@@ -475,5 +497,46 @@ public sealed class PayoutServiceWithRawResponse : IPayoutServiceWithRawResponse
         parameters ??= new();
 
         return this.Unmask(parameters with { ID = id }, cancellationToken);
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponse<PayoutV1>> UploadAuthorizationDocument(
+        PayoutUploadAuthorizationDocumentParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        if (parameters.ID == null)
+        {
+            throw new StraddleInvalidDataException("'parameters.ID' cannot be null");
+        }
+
+        HttpRequest<PayoutUploadAuthorizationDocumentParams> request = new()
+        {
+            Method = HttpMethod.Post,
+            Params = parameters,
+        };
+        var response = await this._client.Execute(request, cancellationToken).ConfigureAwait(false);
+        return new(
+            response,
+            async (token) =>
+            {
+                var payoutV1 = await response.Deserialize<PayoutV1>(token).ConfigureAwait(false);
+                if (this._client.ResponseValidation)
+                {
+                    payoutV1.Validate();
+                }
+                return payoutV1;
+            }
+        );
+    }
+
+    /// <inheritdoc/>
+    public Task<HttpResponse<PayoutV1>> UploadAuthorizationDocument(
+        string id,
+        PayoutUploadAuthorizationDocumentParams parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        return this.UploadAuthorizationDocument(parameters with { ID = id }, cancellationToken);
     }
 }

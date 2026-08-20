@@ -177,7 +177,9 @@ public class LinkCreatePaykeyParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://sandbox.straddle.com/v1/bridge/quiltt"), url);
+        Assert.True(
+            TestBase.UrisEqual(new Uri("https://sandbox.straddle.com/v1/bridge/quiltt"), url)
+        );
     }
 
     [Fact]
@@ -352,6 +354,20 @@ public class LinkCreatePaykeyParamsConfigTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new LinkCreatePaykeyParamsConfig
+        {
+            ProcessingMethod = LinkCreatePaykeyParamsConfigProcessingMethod.Inline,
+            SandboxOutcome = LinkCreatePaykeyParamsConfigSandboxOutcome.Standard,
+        };
+
+        LinkCreatePaykeyParamsConfig copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 

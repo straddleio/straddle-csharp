@@ -148,38 +148,50 @@ public record class LinkedBankAccountUpdateParams : ParamsBase
     LinkedBankAccountUpdateParams(
         FrozenDictionary<string, JsonElement> rawHeaderData,
         FrozenDictionary<string, JsonElement> rawQueryData,
-        FrozenDictionary<string, JsonElement> rawBodyData
+        FrozenDictionary<string, JsonElement> rawBodyData,
+        string linkedBankAccountID
     )
     {
         this._rawHeaderData = new(rawHeaderData);
         this._rawQueryData = new(rawQueryData);
         this._rawBodyData = new(rawBodyData);
+        this.LinkedBankAccountID = linkedBankAccountID;
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="IFromRawJson.FromRawUnchecked"/>
+    /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
     public static LinkedBankAccountUpdateParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
-        IReadOnlyDictionary<string, JsonElement> rawBodyData
+        IReadOnlyDictionary<string, JsonElement> rawBodyData,
+        string linkedBankAccountID
     )
     {
         return new(
             FrozenDictionary.ToFrozenDictionary(rawHeaderData),
             FrozenDictionary.ToFrozenDictionary(rawQueryData),
-            FrozenDictionary.ToFrozenDictionary(rawBodyData)
+            FrozenDictionary.ToFrozenDictionary(rawBodyData),
+            linkedBankAccountID
         );
     }
 
     public override string ToString() =>
         JsonSerializer.Serialize(
-            new Dictionary<string, object?>()
-            {
-                ["LinkedBankAccountID"] = this.LinkedBankAccountID,
-                ["HeaderData"] = this._rawHeaderData.Freeze(),
-                ["QueryData"] = this._rawQueryData.Freeze(),
-                ["BodyData"] = this._rawBodyData.Freeze(),
-            },
+            FriendlyJsonPrinter.PrintValue(
+                new Dictionary<string, JsonElement>()
+                {
+                    ["LinkedBankAccountID"] = JsonSerializer.SerializeToElement(
+                        this.LinkedBankAccountID
+                    ),
+                    ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
+                    ),
+                    ["QueryData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawQueryData.Freeze())
+                    ),
+                    ["BodyData"] = FriendlyJsonPrinter.PrintValue(this._rawBodyData.Freeze()),
+                }
+            ),
             ModelBase.ToStringSerializerOptions
         );
 
@@ -291,10 +303,13 @@ public sealed record class LinkedBankAccountUpdateParamsBankAccount : JsonModel
 
     public LinkedBankAccountUpdateParamsBankAccount() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkedBankAccountUpdateParamsBankAccount(
         LinkedBankAccountUpdateParamsBankAccount linkedBankAccountUpdateParamsBankAccount
     )
         : base(linkedBankAccountUpdateParamsBankAccount) { }
+#pragma warning restore CS8618
 
     public LinkedBankAccountUpdateParamsBankAccount(
         IReadOnlyDictionary<string, JsonElement> rawData

@@ -19,15 +19,12 @@ public class AccountUpdateParamsTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -61,15 +58,12 @@ public class AccountUpdateParamsTest : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             Industry = new()
@@ -123,15 +117,12 @@ public class AccountUpdateParamsTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -175,15 +166,12 @@ public class AccountUpdateParamsTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -232,15 +220,12 @@ public class AccountUpdateParamsTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -283,15 +268,12 @@ public class AccountUpdateParamsTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -337,15 +319,12 @@ public class AccountUpdateParamsTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -369,11 +348,13 @@ public class AccountUpdateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/accounts/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/accounts/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                ),
+                url
+            )
         );
     }
 
@@ -390,15 +371,12 @@ public class AccountUpdateParamsTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -442,15 +420,12 @@ public class AccountUpdateParamsTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()

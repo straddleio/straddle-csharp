@@ -164,6 +164,23 @@ public class TermsOfServiceV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new TermsOfServiceV1
+        {
+            AcceptedDate = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            AgreementType = AgreementType.Embedded,
+            AgreementUrl = "agreement_url",
+            AcceptedIP = "accepted_ip",
+            AcceptedUserAgent = "accepted_user_agent",
+        };
+
+        TermsOfServiceV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class AgreementTypeTest : TestBase

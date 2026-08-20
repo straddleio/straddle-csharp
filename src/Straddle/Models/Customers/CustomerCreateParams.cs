@@ -278,7 +278,7 @@ public record class CustomerCreateParams : ParamsBase
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="IFromRawJson.FromRawUnchecked"/>
+    /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
     public static CustomerCreateParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
@@ -294,12 +294,18 @@ public record class CustomerCreateParams : ParamsBase
 
     public override string ToString() =>
         JsonSerializer.Serialize(
-            new Dictionary<string, object?>()
-            {
-                ["HeaderData"] = this._rawHeaderData.Freeze(),
-                ["QueryData"] = this._rawQueryData.Freeze(),
-                ["BodyData"] = this._rawBodyData.Freeze(),
-            },
+            FriendlyJsonPrinter.PrintValue(
+                new Dictionary<string, JsonElement>()
+                {
+                    ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
+                    ),
+                    ["QueryData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawQueryData.Freeze())
+                    ),
+                    ["BodyData"] = FriendlyJsonPrinter.PrintValue(this._rawBodyData.Freeze()),
+                }
+            ),
             ModelBase.ToStringSerializerOptions
         );
 
@@ -433,7 +439,7 @@ public record class ComplianceProfile : ModelBase
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
     /// type <see cref="IndividualComplianceProfile"/>.
     ///
-    /// <para>Consider using <see cref="Switch"> or <see cref="Match"> if you need to handle every variant.</para>
+    /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
@@ -454,7 +460,7 @@ public record class ComplianceProfile : ModelBase
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
     /// type <see cref="BusinessComplianceProfile"/>.
     ///
-    /// <para>Consider using <see cref="Switch"> or <see cref="Match"> if you need to handle every variant.</para>
+    /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
@@ -474,7 +480,7 @@ public record class ComplianceProfile : ModelBase
     /// <summary>
     /// Calls the function parameter corresponding to the variant the instance was constructed with.
     ///
-    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Match">
+    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Match"/>
     /// if you need your function parameters to return something.</para>
     ///
     /// <exception cref="StraddleInvalidDataException">
@@ -485,8 +491,8 @@ public record class ComplianceProfile : ModelBase
     /// <example>
     /// <code>
     /// instance.Switch(
-    ///     (IndividualComplianceProfile value) => {...},
-    ///     (BusinessComplianceProfile value) => {...}
+    ///     (IndividualComplianceProfile value) =&gt; {...},
+    ///     (BusinessComplianceProfile value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -515,7 +521,7 @@ public record class ComplianceProfile : ModelBase
     /// Calls the function parameter corresponding to the variant the instance was constructed with and
     /// returns its result.
     ///
-    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Switch">
+    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Switch"/>
     /// if you don't need your function parameters to return a value.</para>
     ///
     /// <exception cref="StraddleInvalidDataException">
@@ -526,8 +532,8 @@ public record class ComplianceProfile : ModelBase
     /// <example>
     /// <code>
     /// var result = instance.Match(
-    ///     (IndividualComplianceProfile value) => {...},
-    ///     (BusinessComplianceProfile value) => {...}
+    ///     (IndividualComplianceProfile value) =&gt; {...},
+    ///     (BusinessComplianceProfile value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -574,10 +580,10 @@ public record class ComplianceProfile : ModelBase
         this.Switch((individual) => individual.Validate(), (business) => business.Validate());
     }
 
-    public virtual bool Equals(ComplianceProfile? other)
-    {
-        return other != null && JsonElement.DeepEquals(this.Json, other.Json);
-    }
+    public virtual bool Equals(ComplianceProfile? other) =>
+        other != null
+        && this.VariantIndex() == other.VariantIndex()
+        && JsonElement.DeepEquals(this.Json, other.Json);
 
     public override int GetHashCode()
     {
@@ -585,7 +591,20 @@ public record class ComplianceProfile : ModelBase
     }
 
     public override string ToString() =>
-        JsonSerializer.Serialize(this._element, ModelBase.ToStringSerializerOptions);
+        JsonSerializer.Serialize(
+            FriendlyJsonPrinter.PrintValue(this.Json),
+            ModelBase.ToStringSerializerOptions
+        );
+
+    int VariantIndex()
+    {
+        return this.Value switch
+        {
+            IndividualComplianceProfile _ => 0,
+            BusinessComplianceProfile _ => 1,
+            _ => -1,
+        };
+    }
 }
 
 sealed class ComplianceProfileConverter : JsonConverter<ComplianceProfile?>
@@ -688,8 +707,11 @@ public sealed record class IndividualComplianceProfile : JsonModel
 
     public IndividualComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public IndividualComplianceProfile(IndividualComplianceProfile individualComplianceProfile)
         : base(individualComplianceProfile) { }
+#pragma warning restore CS8618
 
     public IndividualComplianceProfile(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -805,8 +827,11 @@ public sealed record class BusinessComplianceProfile : JsonModel
 
     public BusinessComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public BusinessComplianceProfile(BusinessComplianceProfile businessComplianceProfile)
         : base(businessComplianceProfile) { }
+#pragma warning restore CS8618
 
     public BusinessComplianceProfile(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -881,8 +906,11 @@ public sealed record class Representative : JsonModel
 
     public Representative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Representative(Representative representative)
         : base(representative) { }
+#pragma warning restore CS8618
 
     public Representative(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -970,8 +998,11 @@ public sealed record class Config : JsonModel
 
     public Config() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Config(Config config)
         : base(config) { }
+#pragma warning restore CS8618
 
     public Config(IReadOnlyDictionary<string, JsonElement> rawData)
     {

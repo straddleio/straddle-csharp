@@ -8,9 +8,16 @@ using Straddle.Services.Customers;
 namespace Straddle.Services;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Customers represent the end users who send or receive payments through your integration.
+/// Each customer undergoes automatic identity verification and fraud screening upon
+/// creation. Use customers to track payment history, manage bank account connections,
+/// and maintain a secure record of all transactions associated with a user. Customers
+/// can be either individuals or businesses with appropriate compliance checks for
+/// each type.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface ICustomerService
 {
@@ -30,9 +37,9 @@ public interface ICustomerService
     IReviewService Review { get; }
 
     /// <summary>
-    /// Creates a new customer record and automatically initiates identity, fraud,
-    /// and risk assessment scores. This endpoint allows you to create a customer
-    /// profile and associate it with paykeys and payments.
+    /// Creates a new customer record and automatically initiates identity, fraud, and
+    /// risk assessment scores. This endpoint allows you to create a customer profile
+    /// and associate it with paykeys and payments.
     /// </summary>
     Task<CustomerV1> Create(
         CustomerCreateParams parameters,
@@ -57,9 +64,9 @@ public interface ICustomerService
 
     /// <summary>
     /// Lists or searches customers connected to your account. All supported query
-    /// parameters are optional. If none are provided, the response will include
-    /// all customers connected to your account. This endpoint supports advanced
-    /// sorting and filtering options.
+    /// parameters are optional. If none are provided, the response will include all
+    /// customers connected to your account. This endpoint supports advanced sorting and
+    /// filtering options.
     /// </summary>
     Task<CustomerListPage> List(
         CustomerListParams? parameters = null,
@@ -68,7 +75,8 @@ public interface ICustomerService
 
     /// <summary>
     /// Permanently removes a customer record from Straddle. This action cannot be
-    /// undone and should only be used to satisfy regulatory requirements or for privacy compliance.
+    /// undone and should only be used to satisfy regulatory requirements or for privacy
+    /// compliance.
     /// </summary>
     Task<CustomerV1> Delete(
         CustomerDeleteParams parameters,
@@ -83,9 +91,9 @@ public interface ICustomerService
     );
 
     /// <summary>
-    /// Retrieves the details of an existing customer. Supply the unique customer
-    /// ID that was returned from your 'create customer' request, and Straddle will
-    /// return the corresponding customer information.
+    /// Retrieves the details of an existing customer. Supply the unique customer ID
+    /// that was returned from your 'create customer' request, and Straddle will return
+    /// the corresponding customer information.
     /// </summary>
     Task<CustomerV1> Get(
         CustomerGetParams parameters,
@@ -103,7 +111,8 @@ public interface ICustomerService
     /// Retrieves the unmasked details, including PII, of an existing customer. Supply
     /// the unique customer ID that was returned from your 'create customer' request,
     /// and Straddle will return the corresponding customer information. This endpoint
-    /// needs to be enabled by Straddle and should only be used when absolutely necessary.
+    /// needs to be enabled by Straddle and should only be used when absolutely
+    /// necessary.
     /// </summary>
     Task<CustomerUnmaskedV1> Unmasked(
         CustomerUnmaskedParams parameters,
@@ -134,7 +143,7 @@ public interface ICustomerServiceWithRawResponse
     IReviewServiceWithRawResponse Review { get; }
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/customers`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/customers</c>, but is otherwise the
     /// same as <see cref="ICustomerService.Create(CustomerCreateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CustomerV1>> Create(
@@ -143,7 +152,7 @@ public interface ICustomerServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/customers/{id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/customers/{id}</c>, but is otherwise the
     /// same as <see cref="ICustomerService.Update(CustomerUpdateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CustomerV1>> Update(
@@ -159,7 +168,7 @@ public interface ICustomerServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/customers`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/customers</c>, but is otherwise the
     /// same as <see cref="ICustomerService.List(CustomerListParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CustomerListPage>> List(
@@ -168,7 +177,7 @@ public interface ICustomerServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `delete /v1/customers/{id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>delete /v1/customers/{id}</c>, but is otherwise the
     /// same as <see cref="ICustomerService.Delete(CustomerDeleteParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CustomerV1>> Delete(
@@ -184,7 +193,7 @@ public interface ICustomerServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/customers/{id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/customers/{id}</c>, but is otherwise the
     /// same as <see cref="ICustomerService.Get(CustomerGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CustomerV1>> Get(
@@ -200,7 +209,7 @@ public interface ICustomerServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/customers/{id}/unmasked`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/customers/{id}/unmasked</c>, but is otherwise the
     /// same as <see cref="ICustomerService.Unmasked(CustomerUnmaskedParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<CustomerUnmaskedV1>> Unmasked(

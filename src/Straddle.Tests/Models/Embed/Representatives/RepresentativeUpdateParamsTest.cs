@@ -237,11 +237,13 @@ public class RepresentativeUpdateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/representatives/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/representatives/182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"
+                ),
+                url
+            )
         );
     }
 
@@ -468,5 +470,22 @@ public class RepresentativeUpdateParamsRelationshipTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new RepresentativeUpdateParamsRelationship
+        {
+            Control = true,
+            Owner = true,
+            Primary = true,
+            PercentOwnership = 0,
+            Title = "title",
+        };
+
+        RepresentativeUpdateParamsRelationship copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }

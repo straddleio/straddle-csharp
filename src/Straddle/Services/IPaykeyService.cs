@@ -8,9 +8,15 @@ using Straddle.Services.Paykeys;
 namespace Straddle.Services;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Paykeys are secure tokens that link verified customer identities to their bank
+/// accounts. Each Paykey includes built-in balance checking, fraud detection through
+/// LSTM machine learning models, and can be reused for subscriptions and recurring
+/// payments without storing sensitive data. Paykeys eliminate fraud by ensuring
+/// the person initiating payment owns the funding account.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IPaykeyService
 {
@@ -39,7 +45,7 @@ public interface IPaykeyService
     );
 
     /// <summary>
-    /// Sends a request to <c>put /v1/paykeys/{id}/cancel<c/>.
+    /// Sends a request to <c>put /v1/paykeys/{id}/cancel</c>.
     /// </summary>
     Task<PaykeyV1> Cancel(
         PaykeyCancelParams parameters,
@@ -54,8 +60,8 @@ public interface IPaykeyService
     );
 
     /// <summary>
-    /// Retrieves the details of an existing paykey. Supply the unique paykey `id`
-    /// and Straddle will return the corresponding paykey record , including the `paykey`
+    /// Retrieves the details of an existing paykey. Supply the unique paykey `id` and
+    /// Straddle will return the corresponding paykey record , including the `paykey`
     /// token value and masked bank account details.
     /// </summary>
     Task<PaykeyV1> Get(PaykeyGetParams parameters, CancellationToken cancellationToken = default);
@@ -68,9 +74,9 @@ public interface IPaykeyService
     );
 
     /// <summary>
-    /// Retrieves the details of a paykey that has previously been created, including
-    /// unmasked bank account fields. Supply the unique paykey ID that was returned
-    /// from your previous request, and Straddle will return the corresponding paykey information.
+    /// Retrieves the details of a paykey that has previously been created. Supply the
+    /// unique paykey ID that was returned from your previous request, and Straddle will
+    /// return the corresponding paykey information including the unmasked token.
     /// </summary>
     Task<PaykeyRevealResponse> Reveal(
         PaykeyRevealParams parameters,
@@ -86,9 +92,9 @@ public interface IPaykeyService
 
     /// <summary>
     /// Retrieves the unmasked details of an existing paykey. Supply the unique paykey
-    /// `id` and Straddle will return the corresponding paykey record, including
-    /// the unmasked bank account details. This endpoint needs to be enabled by Straddle
-    /// for your account and should only be used when absolutely necessary.
+    /// `id` and Straddle will return the corresponding paykey record, including the
+    /// unmasked bank account details. This endpoint needs to be enabled by Straddle for
+    /// your account and should only be used when absolutely necessary.
     /// </summary>
     Task<PaykeyUnmaskedV1> Unmasked(
         PaykeyUnmaskedParams parameters,
@@ -135,7 +141,7 @@ public interface IPaykeyServiceWithRawResponse
     IReviewServiceWithRawResponse Review { get; }
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/paykeys`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/paykeys</c>, but is otherwise the
     /// same as <see cref="IPaykeyService.List(PaykeyListParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyListPage>> List(
@@ -144,7 +150,7 @@ public interface IPaykeyServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/paykeys/{id}/cancel`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/paykeys/{id}/cancel</c>, but is otherwise the
     /// same as <see cref="IPaykeyService.Cancel(PaykeyCancelParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyV1>> Cancel(
@@ -160,7 +166,7 @@ public interface IPaykeyServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/paykeys/{id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/paykeys/{id}</c>, but is otherwise the
     /// same as <see cref="IPaykeyService.Get(PaykeyGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyV1>> Get(
@@ -176,7 +182,7 @@ public interface IPaykeyServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/paykeys/{id}/reveal`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/paykeys/{id}/reveal</c>, but is otherwise the
     /// same as <see cref="IPaykeyService.Reveal(PaykeyRevealParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyRevealResponse>> Reveal(
@@ -192,7 +198,7 @@ public interface IPaykeyServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/paykeys/{id}/unmasked`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/paykeys/{id}/unmasked</c>, but is otherwise the
     /// same as <see cref="IPaykeyService.Unmasked(PaykeyUnmaskedParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyUnmaskedV1>> Unmasked(
@@ -208,7 +214,7 @@ public interface IPaykeyServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/paykeys/{id}/refresh_balance`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/paykeys/{id}/refresh_balance</c>, but is otherwise the
     /// same as <see cref="IPaykeyService.UpdateBalance(PaykeyUpdateBalanceParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaykeyV1>> UpdateBalance(

@@ -64,8 +64,11 @@ public sealed record class PayoutUnmaskResponse : JsonModel
 
     public PayoutUnmaskResponse() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PayoutUnmaskResponse(PayoutUnmaskResponse payoutUnmaskResponse)
         : base(payoutUnmaskResponse) { }
+#pragma warning restore CS8618
 
     public PayoutUnmaskResponse(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -207,6 +210,45 @@ public sealed record class PayoutUnmaskResponseData : JsonModel
     }
 
     /// <summary>
+    /// Has the payout been resubmitted.
+    /// </summary>
+    public required bool HasResubmit
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<bool>("has_resubmit");
+        }
+        init { this._rawData.Set("has_resubmit", value); }
+    }
+
+    /// <summary>
+    /// Is the payout a refund of an original charge.
+    /// </summary>
+    public required bool IsRefund
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<bool>("is_refund");
+        }
+        init { this._rawData.Set("is_refund", value); }
+    }
+
+    /// <summary>
+    /// Is the payout a resubmit of an original payout.
+    /// </summary>
+    public required bool IsResubmit
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<bool>("is_resubmit");
+        }
+        init { this._rawData.Set("is_resubmit", value); }
+    }
+
+    /// <summary>
     /// Paykey.
     /// </summary>
     public required string Paykey
@@ -332,6 +374,28 @@ public sealed record class PayoutUnmaskResponseData : JsonModel
     }
 
     /// <summary>
+    /// Documents uploaded for this payout (e.g. proof of authorization), in the order
+    /// they were uploaded.
+    /// </summary>
+    public IReadOnlyList<PayoutUnmaskResponseDataDocument>? Documents
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<PayoutUnmaskResponseDataDocument>
+            >("documents");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<PayoutUnmaskResponseDataDocument>?>(
+                "documents",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Effective at.
     /// </summary>
     public DateTimeOffset? EffectiveAt
@@ -418,6 +482,27 @@ public sealed record class PayoutUnmaskResponseData : JsonModel
     }
 
     /// <summary>
+    /// Related payments.
+    /// </summary>
+    public IReadOnlyList<PayoutUnmaskResponseDataRelatedPayment>? RelatedPayments
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<
+                ImmutableArray<PayoutUnmaskResponseDataRelatedPayment>
+            >("related_payments");
+        }
+        init
+        {
+            this._rawData.Set<ImmutableArray<PayoutUnmaskResponseDataRelatedPayment>?>(
+                "related_payments",
+                value == null ? null : ImmutableArray.ToImmutableArray(value)
+            );
+        }
+    }
+
+    /// <summary>
     /// Updated at.
     /// </summary>
     public DateTimeOffset? UpdatedAt
@@ -441,6 +526,9 @@ public sealed record class PayoutUnmaskResponseData : JsonModel
         this.Device.Validate();
         _ = this.ExternalID;
         _ = this.FundingIds;
+        _ = this.HasResubmit;
+        _ = this.IsRefund;
+        _ = this.IsResubmit;
         _ = this.Paykey;
         _ = this.PaymentDate;
         this.Status.Validate();
@@ -452,18 +540,29 @@ public sealed record class PayoutUnmaskResponseData : JsonModel
         _ = this.TraceIds;
         _ = this.CreatedAt;
         this.CustomerDetails?.Validate();
+        foreach (var item in this.Documents ?? [])
+        {
+            item.Validate();
+        }
         _ = this.EffectiveAt;
         _ = this.Metadata;
         this.PaykeyDetails?.Validate();
         this.PaymentRail?.Validate();
         _ = this.ProcessedAt;
+        foreach (var item in this.RelatedPayments ?? [])
+        {
+            item.Validate();
+        }
         _ = this.UpdatedAt;
     }
 
     public PayoutUnmaskResponseData() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PayoutUnmaskResponseData(PayoutUnmaskResponseData payoutUnmaskResponseData)
         : base(payoutUnmaskResponseData) { }
+#pragma warning restore CS8618
 
     public PayoutUnmaskResponseData(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -504,6 +603,32 @@ class PayoutUnmaskResponseDataFromRaw : IFromRawJson<PayoutUnmaskResponseData>
 public sealed record class PayoutUnmaskResponseDataConfig : JsonModel
 {
     /// <summary>
+    /// Defines whether to automatically place this charge on hold after being created.
+    /// </summary>
+    public bool? AutoHold
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableStruct<bool>("auto_hold");
+        }
+        init { this._rawData.Set("auto_hold", value); }
+    }
+
+    /// <summary>
+    /// The reason the payout is being automatically held on creation.
+    /// </summary>
+    public string? AutoHoldMessage
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("auto_hold_message");
+        }
+        init { this._rawData.Set("auto_hold_message", value); }
+    }
+
+    /// <summary>
     /// Payment will simulate processing if not Standard.
     /// </summary>
     public ApiEnum<string, PayoutUnmaskResponseDataConfigSandboxOutcome>? SandboxOutcome
@@ -529,15 +654,20 @@ public sealed record class PayoutUnmaskResponseDataConfig : JsonModel
     /// <inheritdoc/>
     public override void Validate()
     {
+        _ = this.AutoHold;
+        _ = this.AutoHoldMessage;
         this.SandboxOutcome?.Validate();
     }
 
     public PayoutUnmaskResponseDataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PayoutUnmaskResponseDataConfig(
         PayoutUnmaskResponseDataConfig payoutUnmaskResponseDataConfig
     )
         : base(payoutUnmaskResponseDataConfig) { }
+#pragma warning restore CS8618
 
     public PayoutUnmaskResponseDataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -586,6 +716,8 @@ public enum PayoutUnmaskResponseDataConfigSandboxOutcome
     ReversedCustomerDispute,
     FailedClosedBankAccount,
     ReversedClosedBankAccount,
+    FailedNotAuthorized,
+    ReversedNotAuthorized,
 }
 
 sealed class PayoutUnmaskResponseDataConfigSandboxOutcomeConverter
@@ -618,6 +750,10 @@ sealed class PayoutUnmaskResponseDataConfigSandboxOutcomeConverter
                 PayoutUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount,
             "reversed_closed_bank_account" =>
                 PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount,
+            "failed_not_authorized" =>
+                PayoutUnmaskResponseDataConfigSandboxOutcome.FailedNotAuthorized,
+            "reversed_not_authorized" =>
+                PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedNotAuthorized,
             _ => (PayoutUnmaskResponseDataConfigSandboxOutcome)(-1),
         };
     }
@@ -652,6 +788,10 @@ sealed class PayoutUnmaskResponseDataConfigSandboxOutcomeConverter
                     "failed_closed_bank_account",
                 PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount =>
                     "reversed_closed_bank_account",
+                PayoutUnmaskResponseDataConfigSandboxOutcome.FailedNotAuthorized =>
+                    "failed_not_authorized",
+                PayoutUnmaskResponseDataConfigSandboxOutcome.ReversedNotAuthorized =>
+                    "reversed_not_authorized",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -685,8 +825,11 @@ public sealed record class Device : JsonModel
 
     public Device() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Device(Device device)
         : base(device) { }
+#pragma warning restore CS8618
 
     public Device(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -736,6 +879,7 @@ public enum PayoutUnmaskResponseDataStatus
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class PayoutUnmaskResponseDataStatusConverter : JsonConverter<PayoutUnmaskResponseDataStatus>
@@ -756,6 +900,7 @@ sealed class PayoutUnmaskResponseDataStatusConverter : JsonConverter<PayoutUnmas
             "pending" => PayoutUnmaskResponseDataStatus.Pending,
             "paid" => PayoutUnmaskResponseDataStatus.Paid,
             "reversed" => PayoutUnmaskResponseDataStatus.Reversed,
+            "validating" => PayoutUnmaskResponseDataStatus.Validating,
             _ => (PayoutUnmaskResponseDataStatus)(-1),
         };
     }
@@ -778,6 +923,7 @@ sealed class PayoutUnmaskResponseDataStatusConverter : JsonConverter<PayoutUnmas
                 PayoutUnmaskResponseDataStatus.Pending => "pending",
                 PayoutUnmaskResponseDataStatus.Paid => "paid",
                 PayoutUnmaskResponseDataStatus.Reversed => "reversed",
+                PayoutUnmaskResponseDataStatus.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -893,10 +1039,13 @@ public sealed record class PayoutUnmaskResponseDataStatusHistory : JsonModel
 
     public PayoutUnmaskResponseDataStatusHistory() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public PayoutUnmaskResponseDataStatusHistory(
         PayoutUnmaskResponseDataStatusHistory payoutUnmaskResponseDataStatusHistory
     )
         : base(payoutUnmaskResponseDataStatusHistory) { }
+#pragma warning restore CS8618
 
     public PayoutUnmaskResponseDataStatusHistory(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -960,6 +1109,8 @@ public enum PayoutUnmaskResponseDataStatusHistoryReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
+    AutoHold,
 }
 
 sealed class PayoutUnmaskResponseDataStatusHistoryReasonConverter
@@ -1001,6 +1152,8 @@ sealed class PayoutUnmaskResponseDataStatusHistoryReasonConverter
             "require_review" => PayoutUnmaskResponseDataStatusHistoryReason.RequireReview,
             "blocked_by_system" => PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem,
             "watchtower_review" => PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview,
+            "validating" => PayoutUnmaskResponseDataStatusHistoryReason.Validating,
+            "auto_hold" => PayoutUnmaskResponseDataStatusHistoryReason.AutoHold,
             _ => (PayoutUnmaskResponseDataStatusHistoryReason)(-1),
         };
     }
@@ -1047,6 +1200,8 @@ sealed class PayoutUnmaskResponseDataStatusHistoryReasonConverter
                 PayoutUnmaskResponseDataStatusHistoryReason.RequireReview => "require_review",
                 PayoutUnmaskResponseDataStatusHistoryReason.BlockedBySystem => "blocked_by_system",
                 PayoutUnmaskResponseDataStatusHistoryReason.WatchtowerReview => "watchtower_review",
+                PayoutUnmaskResponseDataStatusHistoryReason.Validating => "validating",
+                PayoutUnmaskResponseDataStatusHistoryReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1128,6 +1283,7 @@ public enum PayoutUnmaskResponseDataStatusHistoryStatus
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class PayoutUnmaskResponseDataStatusHistoryStatusConverter
@@ -1149,6 +1305,7 @@ sealed class PayoutUnmaskResponseDataStatusHistoryStatusConverter
             "pending" => PayoutUnmaskResponseDataStatusHistoryStatus.Pending,
             "paid" => PayoutUnmaskResponseDataStatusHistoryStatus.Paid,
             "reversed" => PayoutUnmaskResponseDataStatusHistoryStatus.Reversed,
+            "validating" => PayoutUnmaskResponseDataStatusHistoryStatus.Validating,
             _ => (PayoutUnmaskResponseDataStatusHistoryStatus)(-1),
         };
     }
@@ -1171,6 +1328,173 @@ sealed class PayoutUnmaskResponseDataStatusHistoryStatusConverter
                 PayoutUnmaskResponseDataStatusHistoryStatus.Pending => "pending",
                 PayoutUnmaskResponseDataStatusHistoryStatus.Paid => "paid",
                 PayoutUnmaskResponseDataStatusHistoryStatus.Reversed => "reversed",
+                PayoutUnmaskResponseDataStatusHistoryStatus.Validating => "validating",
+                _ => throw new StraddleInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        PayoutUnmaskResponseDataDocument,
+        PayoutUnmaskResponseDataDocumentFromRaw
+    >)
+)]
+public sealed record class PayoutUnmaskResponseDataDocument : JsonModel
+{
+    /// <summary>
+    /// Unique identifier for this document.
+    /// </summary>
+    public required string DocumentID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("document_id");
+        }
+        init { this._rawData.Set("document_id", value); }
+    }
+
+    /// <summary>
+    /// The file name of this document as uploaded.
+    /// </summary>
+    public required string DocumentName
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("document_name");
+        }
+        init { this._rawData.Set("document_name", value); }
+    }
+
+    /// <summary>
+    /// The size of this document in bytes.
+    /// </summary>
+    public required long DocumentSize
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<long>("document_size");
+        }
+        init { this._rawData.Set("document_size", value); }
+    }
+
+    public required ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType> DocumentType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, PayoutUnmaskResponseDataDocumentDocumentType>
+            >("document_type");
+        }
+        init { this._rawData.Set("document_type", value); }
+    }
+
+    /// <summary>
+    /// The UTC timestamp when this document was uploaded.
+    /// </summary>
+    public required DateTimeOffset UploadedAt
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullStruct<DateTimeOffset>("uploaded_at");
+        }
+        init { this._rawData.Set("uploaded_at", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.DocumentID;
+        _ = this.DocumentName;
+        _ = this.DocumentSize;
+        this.DocumentType.Validate();
+        _ = this.UploadedAt;
+    }
+
+    public PayoutUnmaskResponseDataDocument() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public PayoutUnmaskResponseDataDocument(
+        PayoutUnmaskResponseDataDocument payoutUnmaskResponseDataDocument
+    )
+        : base(payoutUnmaskResponseDataDocument) { }
+#pragma warning restore CS8618
+
+    public PayoutUnmaskResponseDataDocument(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    PayoutUnmaskResponseDataDocument(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="PayoutUnmaskResponseDataDocumentFromRaw.FromRawUnchecked"/>
+    public static PayoutUnmaskResponseDataDocument FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class PayoutUnmaskResponseDataDocumentFromRaw : IFromRawJson<PayoutUnmaskResponseDataDocument>
+{
+    /// <inheritdoc/>
+    public PayoutUnmaskResponseDataDocument FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => PayoutUnmaskResponseDataDocument.FromRawUnchecked(rawData);
+}
+
+[JsonConverter(typeof(PayoutUnmaskResponseDataDocumentDocumentTypeConverter))]
+public enum PayoutUnmaskResponseDataDocumentDocumentType
+{
+    PaymentAuthorization,
+}
+
+sealed class PayoutUnmaskResponseDataDocumentDocumentTypeConverter
+    : JsonConverter<PayoutUnmaskResponseDataDocumentDocumentType>
+{
+    public override PayoutUnmaskResponseDataDocumentDocumentType Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "payment_authorization" =>
+                PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization,
+            _ => (PayoutUnmaskResponseDataDocumentDocumentType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        PayoutUnmaskResponseDataDocumentDocumentType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                PayoutUnmaskResponseDataDocumentDocumentType.PaymentAuthorization =>
+                    "payment_authorization",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1216,6 +1540,199 @@ sealed class PayoutUnmaskResponseDataPaymentRailConverter
             value switch
             {
                 PayoutUnmaskResponseDataPaymentRail.Ach => "ach",
+                _ => throw new StraddleInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(
+    typeof(JsonModelConverter<
+        PayoutUnmaskResponseDataRelatedPayment,
+        PayoutUnmaskResponseDataRelatedPaymentFromRaw
+    >)
+)]
+public sealed record class PayoutUnmaskResponseDataRelatedPayment : JsonModel
+{
+    /// <summary>
+    /// The ID of the related payment.
+    /// </summary>
+    public required string ID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<string>("id");
+        }
+        init { this._rawData.Set("id", value); }
+    }
+
+    /// <summary>
+    /// The type of payment.
+    /// </summary>
+    public required ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentPaymentType> PaymentType
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentPaymentType>
+            >("payment_type");
+        }
+        init { this._rawData.Set("payment_type", value); }
+    }
+
+    public required ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentRelationship> Relationship
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNotNullClass<
+                ApiEnum<string, PayoutUnmaskResponseDataRelatedPaymentRelationship>
+            >("relationship");
+        }
+        init { this._rawData.Set("relationship", value); }
+    }
+
+    /// <inheritdoc/>
+    public override void Validate()
+    {
+        _ = this.ID;
+        this.PaymentType.Validate();
+        this.Relationship.Validate();
+    }
+
+    public PayoutUnmaskResponseDataRelatedPayment() { }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    public PayoutUnmaskResponseDataRelatedPayment(
+        PayoutUnmaskResponseDataRelatedPayment payoutUnmaskResponseDataRelatedPayment
+    )
+        : base(payoutUnmaskResponseDataRelatedPayment) { }
+#pragma warning restore CS8618
+
+    public PayoutUnmaskResponseDataRelatedPayment(IReadOnlyDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
+    PayoutUnmaskResponseDataRelatedPayment(FrozenDictionary<string, JsonElement> rawData)
+    {
+        this._rawData = new(rawData);
+    }
+#pragma warning restore CS8618
+
+    /// <inheritdoc cref="PayoutUnmaskResponseDataRelatedPaymentFromRaw.FromRawUnchecked"/>
+    public static PayoutUnmaskResponseDataRelatedPayment FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    )
+    {
+        return new(FrozenDictionary.ToFrozenDictionary(rawData));
+    }
+}
+
+class PayoutUnmaskResponseDataRelatedPaymentFromRaw
+    : IFromRawJson<PayoutUnmaskResponseDataRelatedPayment>
+{
+    /// <inheritdoc/>
+    public PayoutUnmaskResponseDataRelatedPayment FromRawUnchecked(
+        IReadOnlyDictionary<string, JsonElement> rawData
+    ) => PayoutUnmaskResponseDataRelatedPayment.FromRawUnchecked(rawData);
+}
+
+/// <summary>
+/// The type of payment.
+/// </summary>
+[JsonConverter(typeof(PayoutUnmaskResponseDataRelatedPaymentPaymentTypeConverter))]
+public enum PayoutUnmaskResponseDataRelatedPaymentPaymentType
+{
+    Charge,
+    Payout,
+}
+
+sealed class PayoutUnmaskResponseDataRelatedPaymentPaymentTypeConverter
+    : JsonConverter<PayoutUnmaskResponseDataRelatedPaymentPaymentType>
+{
+    public override PayoutUnmaskResponseDataRelatedPaymentPaymentType Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "charge" => PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge,
+            "payout" => PayoutUnmaskResponseDataRelatedPaymentPaymentType.Payout,
+            _ => (PayoutUnmaskResponseDataRelatedPaymentPaymentType)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        PayoutUnmaskResponseDataRelatedPaymentPaymentType value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                PayoutUnmaskResponseDataRelatedPaymentPaymentType.Charge => "charge",
+                PayoutUnmaskResponseDataRelatedPaymentPaymentType.Payout => "payout",
+                _ => throw new StraddleInvalidDataException(
+                    string.Format("Invalid value '{0}' in {1}", value, nameof(value))
+                ),
+            },
+            options
+        );
+    }
+}
+
+[JsonConverter(typeof(PayoutUnmaskResponseDataRelatedPaymentRelationshipConverter))]
+public enum PayoutUnmaskResponseDataRelatedPaymentRelationship
+{
+    Original,
+    Resubmit,
+    Refund,
+}
+
+sealed class PayoutUnmaskResponseDataRelatedPaymentRelationshipConverter
+    : JsonConverter<PayoutUnmaskResponseDataRelatedPaymentRelationship>
+{
+    public override PayoutUnmaskResponseDataRelatedPaymentRelationship Read(
+        ref Utf8JsonReader reader,
+        Type typeToConvert,
+        JsonSerializerOptions options
+    )
+    {
+        return JsonSerializer.Deserialize<string>(ref reader, options) switch
+        {
+            "original" => PayoutUnmaskResponseDataRelatedPaymentRelationship.Original,
+            "resubmit" => PayoutUnmaskResponseDataRelatedPaymentRelationship.Resubmit,
+            "refund" => PayoutUnmaskResponseDataRelatedPaymentRelationship.Refund,
+            _ => (PayoutUnmaskResponseDataRelatedPaymentRelationship)(-1),
+        };
+    }
+
+    public override void Write(
+        Utf8JsonWriter writer,
+        PayoutUnmaskResponseDataRelatedPaymentRelationship value,
+        JsonSerializerOptions options
+    )
+    {
+        JsonSerializer.Serialize(
+            writer,
+            value switch
+            {
+                PayoutUnmaskResponseDataRelatedPaymentRelationship.Original => "original",
+                PayoutUnmaskResponseDataRelatedPaymentRelationship.Resubmit => "resubmit",
+                PayoutUnmaskResponseDataRelatedPaymentRelationship.Refund => "refund",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

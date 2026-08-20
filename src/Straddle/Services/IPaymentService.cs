@@ -7,9 +7,11 @@ using Straddle.Models.Payments;
 namespace Straddle.Services;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Payments provide endpoints to filter both Charges and Payouts with multiple different parameters.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IPaymentService
 {
@@ -50,7 +52,7 @@ public interface IPaymentServiceWithRawResponse
     IPaymentServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/payments`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/payments</c>, but is otherwise the
     /// same as <see cref="IPaymentService.List(PaymentListParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<PaymentListPage>> List(

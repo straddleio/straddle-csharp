@@ -7,9 +7,15 @@ using Straddle.Models.Charges;
 namespace Straddle.Services;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Charges represent attempts to debit money from a customer's bank account using
+/// a Paykey. Each charge includes automatic balance verification, real-time fraud
+/// screening, and multi-rail optimization and detailed status tracking throughout
+/// the payment lifecycle. Use charges to accept bank payments with confidence knowing
+/// every transaction is protected.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IChargeService
 {
@@ -67,8 +73,8 @@ public interface IChargeService
     );
 
     /// <summary>
-    /// Retrieves the details of an existing charge. Supply the unique charge `id`,
-    /// and Straddle will return the corresponding charge information.
+    /// Retrieves the details of an existing charge. Supply the unique charge `id`, and
+    /// Straddle will return the corresponding charge information.
     /// </summary>
     Task<ChargeV1> Get(ChargeGetParams parameters, CancellationToken cancellationToken = default);
 
@@ -80,8 +86,8 @@ public interface IChargeService
     );
 
     /// <summary>
-    /// Place a charge on hold to prevent it from being originated for processing.
-    /// The status of the charge must be `created` or `scheduled`.
+    /// Place a charge on hold to prevent it from being originated for processing. The
+    /// status of the charge must be `created` or `scheduled`.
     /// </summary>
     Task<ChargeV1> Hold(ChargeHoldParams parameters, CancellationToken cancellationToken = default);
 
@@ -93,7 +99,8 @@ public interface IChargeService
     );
 
     /// <summary>
-    /// Release a charge from an `on_hold` status to allow it to be rescheduled for processing.
+    /// Release a charge from an `on_hold` status to allow it to be rescheduled for
+    /// processing.
     /// </summary>
     Task<ChargeV1> Release(
         ChargeReleaseParams parameters,
@@ -137,7 +144,7 @@ public interface IChargeServiceWithRawResponse
     IChargeServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/charges`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/charges</c>, but is otherwise the
     /// same as <see cref="IChargeService.Create(ChargeCreateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<ChargeV1>> Create(
@@ -146,7 +153,7 @@ public interface IChargeServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/charges/{id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/charges/{id}</c>, but is otherwise the
     /// same as <see cref="IChargeService.Update(ChargeUpdateParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<ChargeV1>> Update(
@@ -162,7 +169,7 @@ public interface IChargeServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/charges/{id}/cancel`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/charges/{id}/cancel</c>, but is otherwise the
     /// same as <see cref="IChargeService.Cancel(ChargeCancelParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<ChargeV1>> Cancel(
@@ -178,7 +185,7 @@ public interface IChargeServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/charges/{id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/charges/{id}</c>, but is otherwise the
     /// same as <see cref="IChargeService.Get(ChargeGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<ChargeV1>> Get(
@@ -194,7 +201,7 @@ public interface IChargeServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/charges/{id}/hold`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/charges/{id}/hold</c>, but is otherwise the
     /// same as <see cref="IChargeService.Hold(ChargeHoldParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<ChargeV1>> Hold(
@@ -210,7 +217,7 @@ public interface IChargeServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `put /v1/charges/{id}/release`, but is otherwise the
+    /// Returns a raw HTTP response for <c>put /v1/charges/{id}/release</c>, but is otherwise the
     /// same as <see cref="IChargeService.Release(ChargeReleaseParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<ChargeV1>> Release(
@@ -226,7 +233,7 @@ public interface IChargeServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/charges/{id}/unmask`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/charges/{id}/unmask</c>, but is otherwise the
     /// same as <see cref="IChargeService.Unmask(ChargeUnmaskParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<ChargeUnmaskResponse>> Unmask(

@@ -213,7 +213,7 @@ public record class LinkCreatePaykeyParams : ParamsBase
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="IFromRawJson.FromRawUnchecked"/>
+    /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
     public static LinkCreatePaykeyParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData,
@@ -229,12 +229,18 @@ public record class LinkCreatePaykeyParams : ParamsBase
 
     public override string ToString() =>
         JsonSerializer.Serialize(
-            new Dictionary<string, object?>()
-            {
-                ["HeaderData"] = this._rawHeaderData.Freeze(),
-                ["QueryData"] = this._rawQueryData.Freeze(),
-                ["BodyData"] = this._rawBodyData.Freeze(),
-            },
+            FriendlyJsonPrinter.PrintValue(
+                new Dictionary<string, JsonElement>()
+                {
+                    ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
+                    ),
+                    ["QueryData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawQueryData.Freeze())
+                    ),
+                    ["BodyData"] = FriendlyJsonPrinter.PrintValue(this._rawBodyData.Freeze()),
+                }
+            ),
             ModelBase.ToStringSerializerOptions
         );
 
@@ -335,8 +341,11 @@ public sealed record class LinkCreatePaykeyParamsConfig : JsonModel
 
     public LinkCreatePaykeyParamsConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public LinkCreatePaykeyParamsConfig(LinkCreatePaykeyParamsConfig linkCreatePaykeyParamsConfig)
         : base(linkCreatePaykeyParamsConfig) { }
+#pragma warning restore CS8618
 
     public LinkCreatePaykeyParamsConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {

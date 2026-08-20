@@ -237,7 +237,9 @@ public class RepresentativeCreateParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://sandbox.straddle.com/v1/representatives"), url);
+        Assert.True(
+            TestBase.UrisEqual(new Uri("https://sandbox.straddle.com/v1/representatives"), url)
+        );
     }
 
     [Fact]
@@ -463,5 +465,22 @@ public class RelationshipTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Relationship
+        {
+            Control = true,
+            Owner = true,
+            Primary = true,
+            PercentOwnership = 0,
+            Title = "title",
+        };
+
+        Relationship copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }

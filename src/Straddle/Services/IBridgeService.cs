@@ -8,9 +8,15 @@ using Straddle.Services.Bridge;
 namespace Straddle.Services;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Bridge provides a comprehensive suite of tools for connecting customer bank accounts.
+/// Use it to generate secure widget sessions for instant account verification, accept
+/// tokens from major providers like Plaid and Finicity, or verify accounts directly
+/// via our API. Bridge handles all sensitive banking credentials and ensures secure,
+/// compliant connections with support for 90% of US bank accounts.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IBridgeService
 {
@@ -54,7 +60,7 @@ public interface IBridgeServiceWithRawResponse
     ILinkServiceWithRawResponse Link { get; }
 
     /// <summary>
-    /// Returns a raw HTTP response for `post /v1/bridge/initialize`, but is otherwise the
+    /// Returns a raw HTTP response for <c>post /v1/bridge/initialize</c>, but is otherwise the
     /// same as <see cref="IBridgeService.Initialize(BridgeInitializeParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<BridgeTokenV1>> Initialize(

@@ -90,8 +90,11 @@ public sealed record class StatusDetailsV1 : JsonModel
 
     public StatusDetailsV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public StatusDetailsV1(StatusDetailsV1 statusDetailsV1)
         : base(statusDetailsV1) { }
+#pragma warning restore CS8618
 
     public StatusDetailsV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -151,6 +154,8 @@ public enum Reason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
+    AutoHold,
 }
 
 sealed class ReasonConverter : JsonConverter<Reason>
@@ -188,6 +193,8 @@ sealed class ReasonConverter : JsonConverter<Reason>
             "require_review" => Reason.RequireReview,
             "blocked_by_system" => Reason.BlockedBySystem,
             "watchtower_review" => Reason.WatchtowerReview,
+            "validating" => Reason.Validating,
+            "auto_hold" => Reason.AutoHold,
             _ => (Reason)(-1),
         };
     }
@@ -223,6 +230,8 @@ sealed class ReasonConverter : JsonConverter<Reason>
                 Reason.RequireReview => "require_review",
                 Reason.BlockedBySystem => "blocked_by_system",
                 Reason.WatchtowerReview => "watchtower_review",
+                Reason.Validating => "validating",
+                Reason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

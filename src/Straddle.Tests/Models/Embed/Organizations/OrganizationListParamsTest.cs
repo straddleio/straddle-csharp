@@ -115,11 +115,13 @@ public class OrganizationListParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/organizations?external_id=external_id&name=name&page_number=0&page_size=0&sort_by=sort_by&sort_order=asc"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/organizations?external_id=external_id&name=name&page_number=0&page_size=0&sort_by=sort_by&sort_order=asc"
+                ),
+                url
+            )
         );
     }
 

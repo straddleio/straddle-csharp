@@ -15,32 +15,43 @@ public class PaykeyListParamsTest : TestBase
     {
         var parameters = new PaykeyListParams
         {
+            CreatedFrom = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            CreatedTo = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PageNumber = 0,
             PageSize = 0,
+            SearchText = "search_text",
             SortBy = SortBy.InstitutionName,
             SortOrder = SortOrder.Asc,
             Source = [Source.BankAccount],
             Status = [Status.Pending],
+            UnblockEligible = true,
             CorrelationID = "Correlation-Id",
             RequestID = "Request-Id",
             StraddleAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
         };
 
+        DateTimeOffset expectedCreatedFrom = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
+        DateTimeOffset expectedCreatedTo = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedCustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         int expectedPageNumber = 0;
         int expectedPageSize = 0;
+        string expectedSearchText = "search_text";
         ApiEnum<string, SortBy> expectedSortBy = SortBy.InstitutionName;
         ApiEnum<string, SortOrder> expectedSortOrder = SortOrder.Asc;
         List<ApiEnum<string, Source>> expectedSource = [Source.BankAccount];
         List<ApiEnum<string, Status>> expectedStatus = [Status.Pending];
+        bool expectedUnblockEligible = true;
         string expectedCorrelationID = "Correlation-Id";
         string expectedRequestID = "Request-Id";
         string expectedStraddleAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
 
+        Assert.Equal(expectedCreatedFrom, parameters.CreatedFrom);
+        Assert.Equal(expectedCreatedTo, parameters.CreatedTo);
         Assert.Equal(expectedCustomerID, parameters.CustomerID);
         Assert.Equal(expectedPageNumber, parameters.PageNumber);
         Assert.Equal(expectedPageSize, parameters.PageSize);
+        Assert.Equal(expectedSearchText, parameters.SearchText);
         Assert.Equal(expectedSortBy, parameters.SortBy);
         Assert.Equal(expectedSortOrder, parameters.SortOrder);
         Assert.NotNull(parameters.Source);
@@ -55,6 +66,7 @@ public class PaykeyListParamsTest : TestBase
         {
             Assert.Equal(expectedStatus[i], parameters.Status[i]);
         }
+        Assert.Equal(expectedUnblockEligible, parameters.UnblockEligible);
         Assert.Equal(expectedCorrelationID, parameters.CorrelationID);
         Assert.Equal(expectedRequestID, parameters.RequestID);
         Assert.Equal(expectedStraddleAccountID, parameters.StraddleAccountID);
@@ -65,12 +77,18 @@ public class PaykeyListParamsTest : TestBase
     {
         var parameters = new PaykeyListParams { };
 
+        Assert.Null(parameters.CreatedFrom);
+        Assert.False(parameters.RawQueryData.ContainsKey("created_from"));
+        Assert.Null(parameters.CreatedTo);
+        Assert.False(parameters.RawQueryData.ContainsKey("created_to"));
         Assert.Null(parameters.CustomerID);
         Assert.False(parameters.RawQueryData.ContainsKey("customer_id"));
         Assert.Null(parameters.PageNumber);
         Assert.False(parameters.RawQueryData.ContainsKey("page_number"));
         Assert.Null(parameters.PageSize);
         Assert.False(parameters.RawQueryData.ContainsKey("page_size"));
+        Assert.Null(parameters.SearchText);
+        Assert.False(parameters.RawQueryData.ContainsKey("search_text"));
         Assert.Null(parameters.SortBy);
         Assert.False(parameters.RawQueryData.ContainsKey("sort_by"));
         Assert.Null(parameters.SortOrder);
@@ -79,6 +97,8 @@ public class PaykeyListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("source"));
         Assert.Null(parameters.Status);
         Assert.False(parameters.RawQueryData.ContainsKey("status"));
+        Assert.Null(parameters.UnblockEligible);
+        Assert.False(parameters.RawQueryData.ContainsKey("unblock_eligible"));
         Assert.Null(parameters.CorrelationID);
         Assert.False(parameters.RawHeaderData.ContainsKey("Correlation-Id"));
         Assert.Null(parameters.RequestID);
@@ -93,24 +113,34 @@ public class PaykeyListParamsTest : TestBase
         var parameters = new PaykeyListParams
         {
             // Null should be interpreted as omitted for these properties
+            CreatedFrom = null,
+            CreatedTo = null,
             CustomerID = null,
             PageNumber = null,
             PageSize = null,
+            SearchText = null,
             SortBy = null,
             SortOrder = null,
             Source = null,
             Status = null,
+            UnblockEligible = null,
             CorrelationID = null,
             RequestID = null,
             StraddleAccountID = null,
         };
 
+        Assert.Null(parameters.CreatedFrom);
+        Assert.False(parameters.RawQueryData.ContainsKey("created_from"));
+        Assert.Null(parameters.CreatedTo);
+        Assert.False(parameters.RawQueryData.ContainsKey("created_to"));
         Assert.Null(parameters.CustomerID);
         Assert.False(parameters.RawQueryData.ContainsKey("customer_id"));
         Assert.Null(parameters.PageNumber);
         Assert.False(parameters.RawQueryData.ContainsKey("page_number"));
         Assert.Null(parameters.PageSize);
         Assert.False(parameters.RawQueryData.ContainsKey("page_size"));
+        Assert.Null(parameters.SearchText);
+        Assert.False(parameters.RawQueryData.ContainsKey("search_text"));
         Assert.Null(parameters.SortBy);
         Assert.False(parameters.RawQueryData.ContainsKey("sort_by"));
         Assert.Null(parameters.SortOrder);
@@ -119,6 +149,8 @@ public class PaykeyListParamsTest : TestBase
         Assert.False(parameters.RawQueryData.ContainsKey("source"));
         Assert.Null(parameters.Status);
         Assert.False(parameters.RawQueryData.ContainsKey("status"));
+        Assert.Null(parameters.UnblockEligible);
+        Assert.False(parameters.RawQueryData.ContainsKey("unblock_eligible"));
         Assert.Null(parameters.CorrelationID);
         Assert.False(parameters.RawHeaderData.ContainsKey("Correlation-Id"));
         Assert.Null(parameters.RequestID);
@@ -132,22 +164,28 @@ public class PaykeyListParamsTest : TestBase
     {
         PaykeyListParams parameters = new()
         {
+            CreatedFrom = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
+            CreatedTo = DateTimeOffset.Parse("2019-12-27T18:11:19.117+00:00"),
             CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PageNumber = 0,
             PageSize = 0,
+            SearchText = "search_text",
             SortBy = SortBy.InstitutionName,
             SortOrder = SortOrder.Asc,
             Source = [Source.BankAccount],
             Status = [Status.Pending],
+            UnblockEligible = true,
         };
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://sandbox.straddle.com/v1/paykeys?customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_number=0&page_size=0&sort_by=institution_name&sort_order=asc&source=bank_account&status=pending"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://sandbox.straddle.com/v1/paykeys?created_from=2019-12-27T18%3a11%3a19.117%2b00%3a00&created_to=2019-12-27T18%3a11%3a19.117%2b00%3a00&customer_id=182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e&page_number=0&page_size=0&search_text=search_text&sort_by=institution_name&sort_order=asc&source=bank_account&status=pending&unblock_eligible=true"
+                ),
+                url
+            )
         );
     }
 
@@ -177,13 +215,17 @@ public class PaykeyListParamsTest : TestBase
     {
         var parameters = new PaykeyListParams
         {
+            CreatedFrom = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            CreatedTo = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             CustomerID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             PageNumber = 0,
             PageSize = 0,
+            SearchText = "search_text",
             SortBy = SortBy.InstitutionName,
             SortOrder = SortOrder.Asc,
             Source = [Source.BankAccount],
             Status = [Status.Pending],
+            UnblockEligible = true,
             CorrelationID = "Correlation-Id",
             RequestID = "Request-Id",
             StraddleAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",

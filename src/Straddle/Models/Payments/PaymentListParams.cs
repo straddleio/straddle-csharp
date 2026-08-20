@@ -146,6 +146,111 @@ public record class PaymentListParams : ParamsBase
     }
 
     /// <summary>
+    /// Has the payment been refunded by an associated payout (only applicable to charges).
+    /// </summary>
+    public bool? HasRefund
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("has_refund");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("has_refund", value);
+        }
+    }
+
+    /// <summary>
+    /// Has the payment been resubmitted.
+    /// </summary>
+    public bool? HasResubmit
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("has_resubmit");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("has_resubmit", value);
+        }
+    }
+
+    /// <summary>
+    /// Include the metadata for payments in the returned data.
+    /// </summary>
+    public bool? IncludeMetadata
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("include_metadata");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("include_metadata", value);
+        }
+    }
+
+    /// <summary>
+    /// Is the payment a refund of an original charge (only applicable to payouts).
+    /// </summary>
+    public bool? IsRefund
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("is_refund");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("is_refund", value);
+        }
+    }
+
+    /// <summary>
+    /// Is the payment a resubmit of an original payment.
+    /// </summary>
+    public bool? IsResubmit
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<bool>("is_resubmit");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("is_resubmit", value);
+        }
+    }
+
+    /// <summary>
     /// Search using a maximum `amount` of a `charge` or `payout`.
     /// </summary>
     public int? MaxAmount
@@ -230,6 +335,27 @@ public record class PaymentListParams : ParamsBase
     }
 
     /// <summary>
+    /// Filter to payments last updated on or before this timestamp.
+    /// </summary>
+    public DateTimeOffset? MaxUpdatedAt
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<DateTimeOffset>("max_updated_at");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("max_updated_at", value);
+        }
+    }
+
+    /// <summary>
     /// Search using the minimum `amount of a `charge` or `payout`.
     /// </summary>
     public int? MinAmount
@@ -310,6 +436,27 @@ public record class PaymentListParams : ParamsBase
             }
 
             this._rawQueryData.Set("min_payment_date", value);
+        }
+    }
+
+    /// <summary>
+    /// Filter to payments last updated on or after this timestamp.
+    /// </summary>
+    public DateTimeOffset? MinUpdatedAt
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<DateTimeOffset>("min_updated_at");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("min_updated_at", value);
         }
     }
 
@@ -665,7 +812,7 @@ public record class PaymentListParams : ParamsBase
     }
 #pragma warning restore CS8618
 
-    /// <inheritdoc cref="IFromRawJson.FromRawUnchecked"/>
+    /// <inheritdoc cref="IFromRawJson{T}.FromRawUnchecked"/>
     public static PaymentListParams FromRawUnchecked(
         IReadOnlyDictionary<string, JsonElement> rawHeaderData,
         IReadOnlyDictionary<string, JsonElement> rawQueryData
@@ -679,11 +826,17 @@ public record class PaymentListParams : ParamsBase
 
     public override string ToString() =>
         JsonSerializer.Serialize(
-            new Dictionary<string, object?>()
-            {
-                ["HeaderData"] = this._rawHeaderData.Freeze(),
-                ["QueryData"] = this._rawQueryData.Freeze(),
-            },
+            FriendlyJsonPrinter.PrintValue(
+                new Dictionary<string, JsonElement>()
+                {
+                    ["HeaderData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawHeaderData.Freeze())
+                    ),
+                    ["QueryData"] = FriendlyJsonPrinter.PrintValue(
+                        JsonSerializer.SerializeToElement(this._rawQueryData.Freeze())
+                    ),
+                }
+            ),
             ModelBase.ToStringSerializerOptions
         );
 
@@ -731,6 +884,7 @@ public enum DefaultSort
     EffectiveAt,
     ID,
     Amount,
+    UpdatedAt,
 }
 
 sealed class DefaultSortConverter : JsonConverter<DefaultSort>
@@ -748,6 +902,7 @@ sealed class DefaultSortConverter : JsonConverter<DefaultSort>
             "effective_at" => DefaultSort.EffectiveAt,
             "id" => DefaultSort.ID,
             "amount" => DefaultSort.Amount,
+            "updated_at" => DefaultSort.UpdatedAt,
             _ => (DefaultSort)(-1),
         };
     }
@@ -767,6 +922,7 @@ sealed class DefaultSortConverter : JsonConverter<DefaultSort>
                 DefaultSort.EffectiveAt => "effective_at",
                 DefaultSort.ID => "id",
                 DefaultSort.Amount => "amount",
+                DefaultSort.UpdatedAt => "updated_at",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -834,6 +990,7 @@ public enum PaymentStatus
     Pending,
     Paid,
     Reversed,
+    Validating,
 }
 
 sealed class PaymentStatusConverter : JsonConverter<PaymentStatus>
@@ -854,6 +1011,7 @@ sealed class PaymentStatusConverter : JsonConverter<PaymentStatus>
             "pending" => PaymentStatus.Pending,
             "paid" => PaymentStatus.Paid,
             "reversed" => PaymentStatus.Reversed,
+            "validating" => PaymentStatus.Validating,
             _ => (PaymentStatus)(-1),
         };
     }
@@ -876,6 +1034,7 @@ sealed class PaymentStatusConverter : JsonConverter<PaymentStatus>
                 PaymentStatus.Pending => "pending",
                 PaymentStatus.Paid => "paid",
                 PaymentStatus.Reversed => "reversed",
+                PaymentStatus.Validating => "validating",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -943,6 +1102,7 @@ public enum SortBy
     EffectiveAt,
     ID,
     Amount,
+    UpdatedAt,
 }
 
 sealed class SortByConverter : JsonConverter<SortBy>
@@ -960,6 +1120,7 @@ sealed class SortByConverter : JsonConverter<SortBy>
             "effective_at" => SortBy.EffectiveAt,
             "id" => SortBy.ID,
             "amount" => SortBy.Amount,
+            "updated_at" => SortBy.UpdatedAt,
             _ => (SortBy)(-1),
         };
     }
@@ -975,6 +1136,7 @@ sealed class SortByConverter : JsonConverter<SortBy>
                 SortBy.EffectiveAt => "effective_at",
                 SortBy.ID => "id",
                 SortBy.Amount => "amount",
+                SortBy.UpdatedAt => "updated_at",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1056,6 +1218,8 @@ public enum StatusReason
     RequireReview,
     BlockedBySystem,
     WatchtowerReview,
+    Validating,
+    AutoHold,
 }
 
 sealed class StatusReasonConverter : JsonConverter<StatusReason>
@@ -1093,6 +1257,8 @@ sealed class StatusReasonConverter : JsonConverter<StatusReason>
             "require_review" => StatusReason.RequireReview,
             "blocked_by_system" => StatusReason.BlockedBySystem,
             "watchtower_review" => StatusReason.WatchtowerReview,
+            "validating" => StatusReason.Validating,
+            "auto_hold" => StatusReason.AutoHold,
             _ => (StatusReason)(-1),
         };
     }
@@ -1132,6 +1298,8 @@ sealed class StatusReasonConverter : JsonConverter<StatusReason>
                 StatusReason.RequireReview => "require_review",
                 StatusReason.BlockedBySystem => "blocked_by_system",
                 StatusReason.WatchtowerReview => "watchtower_review",
+                StatusReason.Validating => "validating",
+                StatusReason.AutoHold => "auto_hold",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

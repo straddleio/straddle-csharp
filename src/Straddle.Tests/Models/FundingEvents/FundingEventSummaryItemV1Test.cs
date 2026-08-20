@@ -242,6 +242,47 @@ public class FundingEventSummaryItemV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new FundingEventSummaryItemV1
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Amount = 100000,
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Direction = DataDirection.Deposit,
+                EventType = DataEventType.ChargeDeposit,
+                PaymentCount = 0,
+                TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+                TraceNumbers = ["string"],
+                TransferDate = "2019-12-27",
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Status = DataStatus.Created,
+                StatusDetails = new()
+                {
+                    ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    Message = "Bank account sucesfully validated",
+                    Reason = Reason.InsufficientFunds,
+                    Source = Source.Watchtower,
+                    Code = "code",
+                },
+                TraceNumber = "trace_number",
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = ResponseType.Object,
+        };
+
+        FundingEventSummaryItemV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataTest : TestBase
@@ -678,6 +719,38 @@ public class DataTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Amount = 100000,
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Direction = DataDirection.Deposit,
+            EventType = DataEventType.ChargeDeposit,
+            PaymentCount = 0,
+            TraceIds = new Dictionary<string, string>() { { "foo", "string" } },
+            TraceNumbers = ["string"],
+            TransferDate = "2019-12-27",
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Status = DataStatus.Created,
+            StatusDetails = new()
+            {
+                ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                Message = "Bank account sucesfully validated",
+                Reason = Reason.InsufficientFunds,
+                Source = Source.Watchtower,
+                Code = "code",
+            },
+            TraceNumber = "trace_number",
+        };
+
+        Data copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class DataDirectionTest : TestBase
@@ -811,6 +884,7 @@ public class DataStatusTest : TestBase
     [InlineData(DataStatus.Pending)]
     [InlineData(DataStatus.Paid)]
     [InlineData(DataStatus.Reversed)]
+    [InlineData(DataStatus.Validating)]
     public void Validation_Works(DataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -839,6 +913,7 @@ public class DataStatusTest : TestBase
     [InlineData(DataStatus.Pending)]
     [InlineData(DataStatus.Paid)]
     [InlineData(DataStatus.Reversed)]
+    [InlineData(DataStatus.Validating)]
     public void SerializationRoundtrip_Works(DataStatus rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1026,6 +1101,23 @@ public class StatusDetailsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new StatusDetails
+        {
+            ChangedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            Message = "Bank account sucesfully validated",
+            Reason = Reason.InsufficientFunds,
+            Source = Source.Watchtower,
+            Code = "code",
+        };
+
+        StatusDetails copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class ReasonTest : TestBase
@@ -1056,6 +1148,8 @@ public class ReasonTest : TestBase
     [InlineData(Reason.RequireReview)]
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
+    [InlineData(Reason.Validating)]
+    [InlineData(Reason.AutoHold)]
     public void Validation_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1101,6 +1195,8 @@ public class ReasonTest : TestBase
     [InlineData(Reason.RequireReview)]
     [InlineData(Reason.BlockedBySystem)]
     [InlineData(Reason.WatchtowerReview)]
+    [InlineData(Reason.Validating)]
+    [InlineData(Reason.AutoHold)]
     public void SerializationRoundtrip_Works(Reason rawValue)
     {
         // force implicit conversion because Theory can't do that for us

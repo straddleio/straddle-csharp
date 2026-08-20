@@ -253,7 +253,10 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Charges::Reason>(),
             new ApiEnumConverter<string, Charges::Source>(),
             new ApiEnumConverter<string, Charges::StatusHistoryStatus>(),
+            new ApiEnumConverter<string, Charges::DocumentType>(),
             new ApiEnumConverter<string, Charges::PaymentRail>(),
+            new ApiEnumConverter<string, Charges::PaymentType>(),
+            new ApiEnumConverter<string, Charges::Relationship>(),
             new ApiEnumConverter<string, Charges::ResponseType>(),
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataConfigBalanceCheck>(),
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataConfigSandboxOutcome>(),
@@ -262,7 +265,16 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataStatusHistoryReason>(),
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataStatusHistorySource>(),
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataStatusHistoryStatus>(),
+            new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataDocumentDocumentType>(),
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseDataPaymentRail>(),
+            new ApiEnumConverter<
+                string,
+                Charges::ChargeUnmaskResponseDataRelatedPaymentPaymentType
+            >(),
+            new ApiEnumConverter<
+                string,
+                Charges::ChargeUnmaskResponseDataRelatedPaymentRelationship
+            >(),
             new ApiEnumConverter<string, Charges::ChargeUnmaskResponseResponseType>(),
             new ApiEnumConverter<string, Charges::BalanceCheck>(),
             new ApiEnumConverter<string, Charges::SandboxOutcome>(),
@@ -295,6 +307,8 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, FundingEvents::StatusSource>(),
             new ApiEnumConverter<string, Payments::DataPaymentType>(),
             new ApiEnumConverter<string, Payments::Status>(),
+            new ApiEnumConverter<string, Payments::RelatedPaymentPaymentType>(),
+            new ApiEnumConverter<string, Payments::Relationship>(),
             new ApiEnumConverter<string, Payments::MetaSortOrder>(),
             new ApiEnumConverter<string, Payments::ResponseType>(),
             new ApiEnumConverter<string, Payments::DefaultSort>(),
@@ -310,14 +324,26 @@ public abstract record class ModelBase
             new ApiEnumConverter<string, Payouts::Reason>(),
             new ApiEnumConverter<string, Payouts::Source>(),
             new ApiEnumConverter<string, Payouts::StatusHistoryStatus>(),
+            new ApiEnumConverter<string, Payouts::DocumentType>(),
             new ApiEnumConverter<string, Payouts::PaymentRail>(),
+            new ApiEnumConverter<string, Payouts::PaymentType>(),
+            new ApiEnumConverter<string, Payouts::Relationship>(),
             new ApiEnumConverter<string, Payouts::ResponseType>(),
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataConfigSandboxOutcome>(),
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataStatus>(),
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataStatusHistoryReason>(),
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataStatusHistorySource>(),
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataStatusHistoryStatus>(),
+            new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataDocumentDocumentType>(),
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseDataPaymentRail>(),
+            new ApiEnumConverter<
+                string,
+                Payouts::PayoutUnmaskResponseDataRelatedPaymentPaymentType
+            >(),
+            new ApiEnumConverter<
+                string,
+                Payouts::PayoutUnmaskResponseDataRelatedPaymentRelationship
+            >(),
             new ApiEnumConverter<string, Payouts::PayoutUnmaskResponseResponseType>(),
             new ApiEnumConverter<string, Payouts::SandboxOutcome>(),
             new ApiEnumConverter<string, Reports::ResponseType>(),

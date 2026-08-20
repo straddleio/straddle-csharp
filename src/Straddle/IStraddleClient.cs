@@ -37,8 +37,8 @@ public interface IStraddleClient : IDisposable
     TimeSpan? Timeout { get; init; }
 
     /// <summary>
-    /// Use your Straddle API Key in the Authorization header as Bearer <token> to
-    /// authorize API requests.
+    /// Use your Straddle API Key in the Authorization header as Bearer &lt;token&gt;
+    /// to authorize API requests.
     /// </summary>
     string ApiKey { get; init; }
 
@@ -95,8 +95,8 @@ public interface IStraddleClientWithRawResponse : IDisposable
     TimeSpan? Timeout { get; init; }
 
     /// <summary>
-    /// Use your Straddle API Key in the Authorization header as Bearer <token> to
-    /// authorize API requests.
+    /// Use your Straddle API Key in the Authorization header as Bearer &lt;token&gt;
+    /// to authorize API requests.
     /// </summary>
     string ApiKey { get; init; }
 

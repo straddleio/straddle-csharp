@@ -18,7 +18,7 @@ public abstract record class ParamsBase
     static ParamsBase()
     {
         var runtime = GetRuntime();
-        defaultHeaders = new Dictionary<string, string>
+        var headers = new Dictionary<string, string>
         {
             ["User-Agent"] = GetUserAgent(),
             ["X-Stainless-Arch"] = GetOSArch(),
@@ -28,6 +28,21 @@ public abstract record class ParamsBase
             ["X-Stainless-Runtime"] = runtime.Name,
             ["X-Stainless-Runtime-Version"] = runtime.Version,
         };
+
+        var customHeadersEnv = Environment.GetEnvironmentVariable("STRADDLE_CUSTOM_HEADERS");
+        if (customHeadersEnv != null)
+        {
+            foreach (var line in customHeadersEnv.Split('\n'))
+            {
+                var colon = line.IndexOf(':');
+                if (colon >= 0)
+                {
+                    headers[line.Substring(0, colon).Trim()] = line.Substring(colon + 1).Trim();
+                }
+            }
+        }
+
+        defaultHeaders = headers;
     }
 
     private protected JsonDictionary _rawQueryData = new();
@@ -156,9 +171,9 @@ public abstract record class ParamsBase
         }
     }
 
-    protected string QueryString(ClientOptions options)
+    internal string QueryString(ClientOptions options)
     {
-        NameValueCollection collection = [];
+        NameValueCollection collection = new();
         foreach (var item in this.RawQueryData)
         {
             ParamsBase.AddQueryElementToCollection(collection, item.Key, item.Value);
@@ -189,7 +204,7 @@ public abstract record class ParamsBase
         return null;
     }
 
-    protected static void AddDefaultHeaders(HttpRequestMessage request, ClientOptions options)
+    internal static void AddDefaultHeaders(HttpRequestMessage request, ClientOptions options)
     {
         foreach (var header in defaultHeaders)
         {
@@ -207,6 +222,13 @@ public abstract record class ParamsBase
     }
 
     static string GetUserAgent() => $"{typeof(StraddleClient).Name}/C# {GetPackageVersion()}";
+
+    static string GetPackageVersion() =>
+        Assembly
+            .GetExecutingAssembly()
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+            ?.InformationalVersion
+        ?? "unknown";
 
     static string GetOSArch() =>
         RuntimeInformation.OSArchitecture switch
@@ -242,13 +264,6 @@ public abstract record class ParamsBase
         return $"Other:{RuntimeInformation.OSDescription}";
     }
 
-    static string GetPackageVersion() =>
-        Assembly
-            .GetExecutingAssembly()
-            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
-            ?.InformationalVersion
-        ?? "unknown";
-
     static Runtime GetRuntime()
     {
         var runtimeDescription = RuntimeInformation.FrameworkDescription;
@@ -267,5 +282,10 @@ public abstract record class ParamsBase
         };
     }
 
-    readonly record struct Runtime(string Name, string Version);
+    readonly record struct Runtime
+    {
+        public string Name { get; init; }
+
+        public string Version { get; init; }
+    }
 }

@@ -7,9 +7,15 @@ using Straddle.Models.FundingEvents;
 namespace Straddle.Services;
 
 /// <summary>
-/// NOTE: Do not inherit from this type outside the SDK unless you're okay with breaking
-/// changes in non-major versions. We may add new methods in the future that cause
-/// existing derived classes to break.
+/// Funding events represent all money movement between Straddle and an Account's
+/// external bank accounts. They are automatically generated when charges settle or
+/// payouts are initiated. Each event provides detailed tracking of settlement status,
+/// fee breakdowns, and reconciliation data across both incoming and outgoing transfers.
+/// Use funding events to monitor your platform's entire money movement lifecycle.
+///
+/// <para>NOTE: Do not inherit from this type outside the SDK unless you're okay with
+/// breaking changes in non-major versions. We may add new methods in the future that
+/// cause existing derived classes to break.</para>
 /// </summary>
 public interface IFundingEventService
 {
@@ -37,8 +43,8 @@ public interface IFundingEventService
 
     /// <summary>
     /// Retrieves the details of an existing funding event. Supply the unique funding
-    /// event `id`, and Straddle will return the individual transaction items that
-    /// make up the funding event.
+    /// event `id`, and Straddle will return the individual transaction items that make
+    /// up the funding event.
     /// </summary>
     Task<FundingEventSummaryItemV1> Get(
         FundingEventGetParams parameters,
@@ -67,7 +73,7 @@ public interface IFundingEventServiceWithRawResponse
     IFundingEventServiceWithRawResponse WithOptions(Func<ClientOptions, ClientOptions> modifier);
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/funding_events`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/funding_events</c>, but is otherwise the
     /// same as <see cref="IFundingEventService.List(FundingEventListParams?, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<FundingEventListPage>> List(
@@ -76,7 +82,7 @@ public interface IFundingEventServiceWithRawResponse
     );
 
     /// <summary>
-    /// Returns a raw HTTP response for `get /v1/funding_events/{id}`, but is otherwise the
+    /// Returns a raw HTTP response for <c>get /v1/funding_events/{id}</c>, but is otherwise the
     /// same as <see cref="IFundingEventService.Get(FundingEventGetParams, CancellationToken)"/>.
     /// </summary>
     Task<HttpResponse<FundingEventSummaryItemV1>> Get(

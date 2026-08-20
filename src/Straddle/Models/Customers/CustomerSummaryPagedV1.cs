@@ -65,8 +65,11 @@ public sealed record class CustomerSummaryPagedV1 : JsonModel
 
     public CustomerSummaryPagedV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerSummaryPagedV1(CustomerSummaryPagedV1 customerSummaryPagedV1)
         : base(customerSummaryPagedV1) { }
+#pragma warning restore CS8618
 
     public CustomerSummaryPagedV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -229,8 +232,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -482,8 +488,11 @@ public sealed record class Meta : JsonModel
 
     public Meta() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Meta(Meta meta)
         : base(meta) { }
+#pragma warning restore CS8618
 
     public Meta(IReadOnlyDictionary<string, JsonElement> rawData)
     {

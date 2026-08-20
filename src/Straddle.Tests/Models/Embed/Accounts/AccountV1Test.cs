@@ -35,15 +35,12 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
-                        Address1 = "address1",
                         City = "city",
-                        State = "SE",
-                        Zip = "zip",
-                        Address2 = "address2",
-                        Country = "country",
                         Line1 = "line1",
-                        Line2 = "line2",
                         PostalCode = "21029-1360",
+                        State = "SE",
+                        Country = "country",
+                        Line2 = "line2",
                     },
                     Description = "description",
                     Industry = new()
@@ -143,15 +140,12 @@ public class AccountV1Test : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -260,15 +254,12 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
-                        Address1 = "address1",
                         City = "city",
-                        State = "SE",
-                        Zip = "zip",
-                        Address2 = "address2",
-                        Country = "country",
                         Line1 = "line1",
-                        Line2 = "line2",
                         PostalCode = "21029-1360",
+                        State = "SE",
+                        Country = "country",
+                        Line2 = "line2",
                     },
                     Description = "description",
                     Industry = new()
@@ -379,15 +370,12 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
-                        Address1 = "address1",
                         City = "city",
-                        State = "SE",
-                        Zip = "zip",
-                        Address2 = "address2",
-                        Country = "country",
                         Line1 = "line1",
-                        Line2 = "line2",
                         PostalCode = "21029-1360",
+                        State = "SE",
+                        Country = "country",
+                        Line2 = "line2",
                     },
                     Description = "description",
                     Industry = new()
@@ -494,15 +482,12 @@ public class AccountV1Test : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -611,15 +596,12 @@ public class AccountV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
-                        Address1 = "address1",
                         City = "city",
-                        State = "SE",
-                        Zip = "zip",
-                        Address2 = "address2",
-                        Country = "country",
                         Line1 = "line1",
-                        Line2 = "line2",
                         PostalCode = "21029-1360",
+                        State = "SE",
+                        Country = "country",
+                        Line2 = "line2",
                     },
                     Description = "description",
                     Industry = new()
@@ -701,6 +683,121 @@ public class AccountV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountV1
+        {
+            Data = new()
+            {
+                ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                AccessLevel = AccountV1DataAccessLevel.Standard,
+                OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                Status = AccountV1DataStatus.Created,
+                StatusDetail = new()
+                {
+                    Code = "code",
+                    Message = "message",
+                    Reason = AccountV1DataStatusDetailReason.Unverified,
+                    Source = AccountV1DataStatusDetailSource.Watchtower,
+                },
+                Type = AccountV1DataType.Business,
+                BusinessProfile = new()
+                {
+                    Name = "name",
+                    Website = "https://example.com",
+                    Address = new()
+                    {
+                        City = "city",
+                        Line1 = "line1",
+                        PostalCode = "21029-1360",
+                        State = "SE",
+                        Country = "country",
+                        Line2 = "line2",
+                    },
+                    Description = "description",
+                    Industry = new()
+                    {
+                        Category = "category",
+                        Mcc = "mcc",
+                        Sector = "sector",
+                    },
+                    LegalName = "legal_name",
+                    Phone = "+46991022",
+                    SupportChannels = new()
+                    {
+                        Email = "dev@stainless.com",
+                        Phone = "+46991022",
+                        Url = "https://example.com",
+                    },
+                    TaxID = "210297980",
+                    UseCase = "use_case",
+                },
+                Capabilities = new()
+                {
+                    ConsentTypes = new()
+                    {
+                        Internet = new(CapabilityStatus.Active),
+                        SignedAgreement = new(CapabilityStatus.Active),
+                    },
+                    CustomerTypes = new()
+                    {
+                        Businesses = new(CapabilityStatus.Active),
+                        Individuals = new(CapabilityStatus.Active),
+                    },
+                    PaymentTypes = new()
+                    {
+                        Charges = new(CapabilityStatus.Active),
+                        Payouts = new(CapabilityStatus.Active),
+                    },
+                },
+                CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                ExternalID = "external_id",
+                Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                Settings = new()
+                {
+                    Charges = new()
+                    {
+                        DailyAmount = 0,
+                        FundingTime = AccountV1DataSettingsChargesFundingTime.Immediate,
+                        LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        MaxAmount = 0,
+                        MonthlyAmount = 0,
+                        MonthlyCount = 0,
+                    },
+                    Payouts = new()
+                    {
+                        DailyAmount = 0,
+                        FundingTime = AccountV1DataSettingsPayoutsFundingTime.Immediate,
+                        LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                        MaxAmount = 0,
+                        MonthlyAmount = 0,
+                        MonthlyCount = 0,
+                    },
+                },
+                TermsOfService = new()
+                {
+                    AcceptedDate = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                    AgreementType = AgreementType.Embedded,
+                    AgreementUrl = "agreement_url",
+                    AcceptedIP = "accepted_ip",
+                    AcceptedUserAgent = "accepted_user_agent",
+                },
+                UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            Meta = new()
+            {
+                ApiRequestID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                ApiRequestTimestamp = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            },
+            ResponseType = AccountV1ResponseType.Object,
+        };
+
+        AccountV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class AccountV1DataTest : TestBase
@@ -728,15 +825,12 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -828,15 +922,12 @@ public class AccountV1DataTest : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             Industry = new()
@@ -954,15 +1045,12 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -1067,15 +1155,12 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -1174,15 +1259,12 @@ public class AccountV1DataTest : TestBase
             Website = "https://example.com",
             Address = new()
             {
-                Address1 = "address1",
                 City = "city",
-                State = "SE",
-                Zip = "zip",
-                Address2 = "address2",
-                Country = "country",
                 Line1 = "line1",
-                Line2 = "line2",
                 PostalCode = "21029-1360",
+                State = "SE",
+                Country = "country",
+                Line2 = "line2",
             },
             Description = "description",
             Industry = new()
@@ -1300,15 +1382,12 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -1537,15 +1616,12 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -1647,15 +1723,12 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -1750,15 +1823,12 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -1865,15 +1935,12 @@ public class AccountV1DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
-                    Address1 = "address1",
                     City = "city",
-                    State = "SE",
-                    Zip = "zip",
-                    Address2 = "address2",
-                    Country = "country",
                     Line1 = "line1",
-                    Line2 = "line2",
                     PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
                 },
                 Description = "description",
                 Industry = new()
@@ -1948,6 +2015,112 @@ public class AccountV1DataTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountV1Data
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            AccessLevel = AccountV1DataAccessLevel.Standard,
+            OrganizationID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            Status = AccountV1DataStatus.Created,
+            StatusDetail = new()
+            {
+                Code = "code",
+                Message = "message",
+                Reason = AccountV1DataStatusDetailReason.Unverified,
+                Source = AccountV1DataStatusDetailSource.Watchtower,
+            },
+            Type = AccountV1DataType.Business,
+            BusinessProfile = new()
+            {
+                Name = "name",
+                Website = "https://example.com",
+                Address = new()
+                {
+                    City = "city",
+                    Line1 = "line1",
+                    PostalCode = "21029-1360",
+                    State = "SE",
+                    Country = "country",
+                    Line2 = "line2",
+                },
+                Description = "description",
+                Industry = new()
+                {
+                    Category = "category",
+                    Mcc = "mcc",
+                    Sector = "sector",
+                },
+                LegalName = "legal_name",
+                Phone = "+46991022",
+                SupportChannels = new()
+                {
+                    Email = "dev@stainless.com",
+                    Phone = "+46991022",
+                    Url = "https://example.com",
+                },
+                TaxID = "210297980",
+                UseCase = "use_case",
+            },
+            Capabilities = new()
+            {
+                ConsentTypes = new()
+                {
+                    Internet = new(CapabilityStatus.Active),
+                    SignedAgreement = new(CapabilityStatus.Active),
+                },
+                CustomerTypes = new()
+                {
+                    Businesses = new(CapabilityStatus.Active),
+                    Individuals = new(CapabilityStatus.Active),
+                },
+                PaymentTypes = new()
+                {
+                    Charges = new(CapabilityStatus.Active),
+                    Payouts = new(CapabilityStatus.Active),
+                },
+            },
+            CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+            ExternalID = "external_id",
+            Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            Settings = new()
+            {
+                Charges = new()
+                {
+                    DailyAmount = 0,
+                    FundingTime = AccountV1DataSettingsChargesFundingTime.Immediate,
+                    LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    MaxAmount = 0,
+                    MonthlyAmount = 0,
+                    MonthlyCount = 0,
+                },
+                Payouts = new()
+                {
+                    DailyAmount = 0,
+                    FundingTime = AccountV1DataSettingsPayoutsFundingTime.Immediate,
+                    LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                    MaxAmount = 0,
+                    MonthlyAmount = 0,
+                    MonthlyCount = 0,
+                },
+            },
+            TermsOfService = new()
+            {
+                AcceptedDate = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+                AgreementType = AgreementType.Embedded,
+                AgreementUrl = "agreement_url",
+                AcceptedIP = "accepted_ip",
+                AcceptedUserAgent = "accepted_user_agent",
+            },
+            UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
+        };
+
+        AccountV1Data copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -2162,6 +2335,22 @@ public class AccountV1DataStatusDetailTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountV1DataStatusDetail
+        {
+            Code = "code",
+            Message = "message",
+            Reason = AccountV1DataStatusDetailReason.Unverified,
+            Source = AccountV1DataStatusDetailSource.Watchtower,
+        };
+
+        AccountV1DataStatusDetail copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -2495,6 +2684,33 @@ public class AccountV1DataCapabilitiesTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountV1DataCapabilities
+        {
+            ConsentTypes = new()
+            {
+                Internet = new(CapabilityStatus.Active),
+                SignedAgreement = new(CapabilityStatus.Active),
+            },
+            CustomerTypes = new()
+            {
+                Businesses = new(CapabilityStatus.Active),
+                Individuals = new(CapabilityStatus.Active),
+            },
+            PaymentTypes = new()
+            {
+                Charges = new(CapabilityStatus.Active),
+                Payouts = new(CapabilityStatus.Active),
+            },
+        };
+
+        AccountV1DataCapabilities copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class AccountV1DataCapabilitiesConsentTypesTest : TestBase
@@ -2566,6 +2782,20 @@ public class AccountV1DataCapabilitiesConsentTypesTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountV1DataCapabilitiesConsentTypes
+        {
+            Internet = new(CapabilityStatus.Active),
+            SignedAgreement = new(CapabilityStatus.Active),
+        };
+
+        AccountV1DataCapabilitiesConsentTypes copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -2639,6 +2869,20 @@ public class AccountV1DataCapabilitiesCustomerTypesTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountV1DataCapabilitiesCustomerTypes
+        {
+            Businesses = new(CapabilityStatus.Active),
+            Individuals = new(CapabilityStatus.Active),
+        };
+
+        AccountV1DataCapabilitiesCustomerTypes copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class AccountV1DataCapabilitiesPaymentTypesTest : TestBase
@@ -2710,6 +2954,20 @@ public class AccountV1DataCapabilitiesPaymentTypesTest : TestBase
         };
 
         model.Validate();
+    }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountV1DataCapabilitiesPaymentTypes
+        {
+            Charges = new(CapabilityStatus.Active),
+            Payouts = new(CapabilityStatus.Active),
+        };
+
+        AccountV1DataCapabilitiesPaymentTypes copied = new(model);
+
+        Assert.Equal(model, copied);
     }
 }
 
@@ -2879,6 +3137,36 @@ public class AccountV1DataSettingsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountV1DataSettings
+        {
+            Charges = new()
+            {
+                DailyAmount = 0,
+                FundingTime = AccountV1DataSettingsChargesFundingTime.Immediate,
+                LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                MaxAmount = 0,
+                MonthlyAmount = 0,
+                MonthlyCount = 0,
+            },
+            Payouts = new()
+            {
+                DailyAmount = 0,
+                FundingTime = AccountV1DataSettingsPayoutsFundingTime.Immediate,
+                LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+                MaxAmount = 0,
+                MonthlyAmount = 0,
+                MonthlyCount = 0,
+            },
+        };
+
+        AccountV1DataSettings copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class AccountV1DataSettingsChargesTest : TestBase
@@ -2985,6 +3273,24 @@ public class AccountV1DataSettingsChargesTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountV1DataSettingsCharges
+        {
+            DailyAmount = 0,
+            FundingTime = AccountV1DataSettingsChargesFundingTime.Immediate,
+            LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            MaxAmount = 0,
+            MonthlyAmount = 0,
+            MonthlyCount = 0,
+        };
+
+        AccountV1DataSettingsCharges copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class AccountV1DataSettingsChargesFundingTimeTest : TestBase
@@ -2995,6 +3301,8 @@ public class AccountV1DataSettingsChargesFundingTimeTest : TestBase
     [InlineData(AccountV1DataSettingsChargesFundingTime.OneDay)]
     [InlineData(AccountV1DataSettingsChargesFundingTime.TwoDay)]
     [InlineData(AccountV1DataSettingsChargesFundingTime.ThreeDay)]
+    [InlineData(AccountV1DataSettingsChargesFundingTime.FourDay)]
+    [InlineData(AccountV1DataSettingsChargesFundingTime.FiveDay)]
     public void Validation_Works(AccountV1DataSettingsChargesFundingTime rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -3019,6 +3327,8 @@ public class AccountV1DataSettingsChargesFundingTimeTest : TestBase
     [InlineData(AccountV1DataSettingsChargesFundingTime.OneDay)]
     [InlineData(AccountV1DataSettingsChargesFundingTime.TwoDay)]
     [InlineData(AccountV1DataSettingsChargesFundingTime.ThreeDay)]
+    [InlineData(AccountV1DataSettingsChargesFundingTime.FourDay)]
+    [InlineData(AccountV1DataSettingsChargesFundingTime.FiveDay)]
     public void SerializationRoundtrip_Works(AccountV1DataSettingsChargesFundingTime rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -3151,6 +3461,24 @@ public class AccountV1DataSettingsPayoutsTest : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new AccountV1DataSettingsPayouts
+        {
+            DailyAmount = 0,
+            FundingTime = AccountV1DataSettingsPayoutsFundingTime.Immediate,
+            LinkedBankAccountID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            MaxAmount = 0,
+            MonthlyAmount = 0,
+            MonthlyCount = 0,
+        };
+
+        AccountV1DataSettingsPayouts copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class AccountV1DataSettingsPayoutsFundingTimeTest : TestBase
@@ -3161,6 +3489,8 @@ public class AccountV1DataSettingsPayoutsFundingTimeTest : TestBase
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.OneDay)]
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.TwoDay)]
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.ThreeDay)]
+    [InlineData(AccountV1DataSettingsPayoutsFundingTime.FourDay)]
+    [InlineData(AccountV1DataSettingsPayoutsFundingTime.FiveDay)]
     public void Validation_Works(AccountV1DataSettingsPayoutsFundingTime rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -3185,6 +3515,8 @@ public class AccountV1DataSettingsPayoutsFundingTimeTest : TestBase
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.OneDay)]
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.TwoDay)]
     [InlineData(AccountV1DataSettingsPayoutsFundingTime.ThreeDay)]
+    [InlineData(AccountV1DataSettingsPayoutsFundingTime.FourDay)]
+    [InlineData(AccountV1DataSettingsPayoutsFundingTime.FiveDay)]
     public void SerializationRoundtrip_Works(AccountV1DataSettingsPayoutsFundingTime rawValue)
     {
         // force implicit conversion because Theory can't do that for us

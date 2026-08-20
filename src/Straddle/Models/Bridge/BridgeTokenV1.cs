@@ -61,8 +61,11 @@ public sealed record class BridgeTokenV1 : JsonModel
 
     public BridgeTokenV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public BridgeTokenV1(BridgeTokenV1 bridgeTokenV1)
         : base(bridgeTokenV1) { }
+#pragma warning restore CS8618
 
     public BridgeTokenV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -115,8 +118,11 @@ public sealed record class Data : JsonModel
 
     public Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Data(Data data)
         : base(data) { }
+#pragma warning restore CS8618
 
     public Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {

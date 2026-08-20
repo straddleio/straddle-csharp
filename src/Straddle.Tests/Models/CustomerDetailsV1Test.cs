@@ -99,6 +99,23 @@ public class CustomerDetailsV1Test : TestBase
 
         model.Validate();
     }
+
+    [Fact]
+    public void CopyConstructor_Works()
+    {
+        var model = new CustomerDetailsV1
+        {
+            ID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
+            CustomerType = CustomerType.Individual,
+            Email = "ron@swanson.com",
+            Name = "Ron Swanson",
+            Phone = "+1234567890",
+        };
+
+        CustomerDetailsV1 copied = new(model);
+
+        Assert.Equal(model, copied);
+    }
 }
 
 public class CustomerTypeTest : TestBase

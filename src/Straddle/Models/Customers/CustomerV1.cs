@@ -64,8 +64,11 @@ public sealed record class CustomerV1 : JsonModel
 
     public CustomerV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1(CustomerV1 customerV1)
         : base(customerV1) { }
+#pragma warning restore CS8618
 
     public CustomerV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -315,8 +318,11 @@ public sealed record class CustomerV1Data : JsonModel
 
     public CustomerV1Data() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1Data(CustomerV1Data customerV1Data)
         : base(customerV1Data) { }
+#pragma warning restore CS8618
 
     public CustomerV1Data(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -490,7 +496,7 @@ public record class CustomerV1DataComplianceProfile : ModelBase
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
     /// type <see cref="CustomerV1DataComplianceProfileIndividualComplianceProfile"/>.
     ///
-    /// <para>Consider using <see cref="Switch"> or <see cref="Match"> if you need to handle every variant.</para>
+    /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
@@ -513,7 +519,7 @@ public record class CustomerV1DataComplianceProfile : ModelBase
     /// Returns true and sets the <c>out</c> parameter if the instance was constructed with a variant of
     /// type <see cref="CustomerV1DataComplianceProfileBusinessComplianceProfile"/>.
     ///
-    /// <para>Consider using <see cref="Switch"> or <see cref="Match"> if you need to handle every variant.</para>
+    /// <para>Consider using <see cref="Switch"/> or <see cref="Match"/> if you need to handle every variant.</para>
     ///
     /// <example>
     /// <code>
@@ -535,7 +541,7 @@ public record class CustomerV1DataComplianceProfile : ModelBase
     /// <summary>
     /// Calls the function parameter corresponding to the variant the instance was constructed with.
     ///
-    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Match">
+    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Match"/>
     /// if you need your function parameters to return something.</para>
     ///
     /// <exception cref="StraddleInvalidDataException">
@@ -546,8 +552,8 @@ public record class CustomerV1DataComplianceProfile : ModelBase
     /// <example>
     /// <code>
     /// instance.Switch(
-    ///     (CustomerV1DataComplianceProfileIndividualComplianceProfile value) => {...},
-    ///     (CustomerV1DataComplianceProfileBusinessComplianceProfile value) => {...}
+    ///     (CustomerV1DataComplianceProfileIndividualComplianceProfile value) =&gt; {...},
+    ///     (CustomerV1DataComplianceProfileBusinessComplianceProfile value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -576,7 +582,7 @@ public record class CustomerV1DataComplianceProfile : ModelBase
     /// Calls the function parameter corresponding to the variant the instance was constructed with and
     /// returns its result.
     ///
-    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Switch">
+    /// <para>Use the <c>TryPick</c> method(s) if you don't need to handle every variant, or <see cref="Switch"/>
     /// if you don't need your function parameters to return a value.</para>
     ///
     /// <exception cref="StraddleInvalidDataException">
@@ -587,8 +593,8 @@ public record class CustomerV1DataComplianceProfile : ModelBase
     /// <example>
     /// <code>
     /// var result = instance.Match(
-    ///     (CustomerV1DataComplianceProfileIndividualComplianceProfile value) => {...},
-    ///     (CustomerV1DataComplianceProfileBusinessComplianceProfile value) => {...}
+    ///     (CustomerV1DataComplianceProfileIndividualComplianceProfile value) =&gt; {...},
+    ///     (CustomerV1DataComplianceProfileBusinessComplianceProfile value) =&gt; {...}
     /// );
     /// </code>
     /// </example>
@@ -637,10 +643,10 @@ public record class CustomerV1DataComplianceProfile : ModelBase
         this.Switch((individual) => individual.Validate(), (business) => business.Validate());
     }
 
-    public virtual bool Equals(CustomerV1DataComplianceProfile? other)
-    {
-        return other != null && JsonElement.DeepEquals(this.Json, other.Json);
-    }
+    public virtual bool Equals(CustomerV1DataComplianceProfile? other) =>
+        other != null
+        && this.VariantIndex() == other.VariantIndex()
+        && JsonElement.DeepEquals(this.Json, other.Json);
 
     public override int GetHashCode()
     {
@@ -648,7 +654,20 @@ public record class CustomerV1DataComplianceProfile : ModelBase
     }
 
     public override string ToString() =>
-        JsonSerializer.Serialize(this._element, ModelBase.ToStringSerializerOptions);
+        JsonSerializer.Serialize(
+            FriendlyJsonPrinter.PrintValue(this.Json),
+            ModelBase.ToStringSerializerOptions
+        );
+
+    int VariantIndex()
+    {
+        return this.Value switch
+        {
+            CustomerV1DataComplianceProfileIndividualComplianceProfile _ => 0,
+            CustomerV1DataComplianceProfileBusinessComplianceProfile _ => 1,
+            _ => -1,
+        };
+    }
 }
 
 sealed class CustomerV1DataComplianceProfileConverter
@@ -756,10 +775,13 @@ public sealed record class CustomerV1DataComplianceProfileIndividualCompliancePr
 
     public CustomerV1DataComplianceProfileIndividualComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1DataComplianceProfileIndividualComplianceProfile(
         CustomerV1DataComplianceProfileIndividualComplianceProfile customerV1DataComplianceProfileIndividualComplianceProfile
     )
         : base(customerV1DataComplianceProfileIndividualComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerV1DataComplianceProfileIndividualComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -882,10 +904,13 @@ public sealed record class CustomerV1DataComplianceProfileBusinessComplianceProf
 
     public CustomerV1DataComplianceProfileBusinessComplianceProfile() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1DataComplianceProfileBusinessComplianceProfile(
         CustomerV1DataComplianceProfileBusinessComplianceProfile customerV1DataComplianceProfileBusinessComplianceProfile
     )
         : base(customerV1DataComplianceProfileBusinessComplianceProfile) { }
+#pragma warning restore CS8618
 
     public CustomerV1DataComplianceProfileBusinessComplianceProfile(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -971,10 +996,13 @@ public sealed record class CustomerV1DataComplianceProfileBusinessComplianceProf
 
     public CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentative() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentative(
         CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentative customerV1DataComplianceProfileBusinessComplianceProfileRepresentative
     )
         : base(customerV1DataComplianceProfileBusinessComplianceProfileRepresentative) { }
+#pragma warning restore CS8618
 
     public CustomerV1DataComplianceProfileBusinessComplianceProfileRepresentative(
         IReadOnlyDictionary<string, JsonElement> rawData
@@ -1073,8 +1101,11 @@ public sealed record class CustomerV1DataConfig : JsonModel
 
     public CustomerV1DataConfig() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public CustomerV1DataConfig(CustomerV1DataConfig customerV1DataConfig)
         : base(customerV1DataConfig) { }
+#pragma warning restore CS8618
 
     public CustomerV1DataConfig(IReadOnlyDictionary<string, JsonElement> rawData)
     {
@@ -1230,8 +1261,11 @@ public sealed record class Device : JsonModel
 
     public Device() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public Device(Device device)
         : base(device) { }
+#pragma warning restore CS8618
 
     public Device(IReadOnlyDictionary<string, JsonElement> rawData)
     {

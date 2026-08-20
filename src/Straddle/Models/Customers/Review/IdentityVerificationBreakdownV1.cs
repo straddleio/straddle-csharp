@@ -117,10 +117,13 @@ public sealed record class IdentityVerificationBreakdownV1 : JsonModel
 
     public IdentityVerificationBreakdownV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public IdentityVerificationBreakdownV1(
         IdentityVerificationBreakdownV1 identityVerificationBreakdownV1
     )
         : base(identityVerificationBreakdownV1) { }
+#pragma warning restore CS8618
 
     public IdentityVerificationBreakdownV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {

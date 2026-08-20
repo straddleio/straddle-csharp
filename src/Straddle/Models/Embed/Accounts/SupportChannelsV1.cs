@@ -59,8 +59,11 @@ public sealed record class SupportChannelsV1 : JsonModel
 
     public SupportChannelsV1() { }
 
+#pragma warning disable CS8618
+    [SetsRequiredMembers]
     public SupportChannelsV1(SupportChannelsV1 supportChannelsV1)
         : base(supportChannelsV1) { }
+#pragma warning restore CS8618
 
     public SupportChannelsV1(IReadOnlyDictionary<string, JsonElement> rawData)
     {
