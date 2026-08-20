@@ -263,6 +263,19 @@ public sealed record class Data : JsonModel
         }
     }
 
+    /// <summary>
+    /// The unique identifier of the pricing plan currently assigned to this account.
+    /// </summary>
+    public string? PlanID
+    {
+        get
+        {
+            this._rawData.Freeze();
+            return this._rawData.GetNullableClass<string>("plan_id");
+        }
+        init { this._rawData.Set("plan_id", value); }
+    }
+
     public Settings? Settings
     {
         get
@@ -326,6 +339,7 @@ public sealed record class Data : JsonModel
         _ = this.CreatedAt;
         _ = this.ExternalID;
         _ = this.Metadata;
+        _ = this.PlanID;
         this.Settings?.Validate();
         this.TermsOfService?.Validate();
         _ = this.UpdatedAt;
