@@ -451,6 +451,8 @@ public enum SandboxOutcome
     ReversedCustomerDispute,
     FailedClosedBankAccount,
     ReversedClosedBankAccount,
+    FailedNotAuthorized,
+    ReversedNotAuthorized,
 }
 
 sealed class SandboxOutcomeConverter : JsonConverter<SandboxOutcome>
@@ -474,6 +476,8 @@ sealed class SandboxOutcomeConverter : JsonConverter<SandboxOutcome>
             "reversed_customer_dispute" => SandboxOutcome.ReversedCustomerDispute,
             "failed_closed_bank_account" => SandboxOutcome.FailedClosedBankAccount,
             "reversed_closed_bank_account" => SandboxOutcome.ReversedClosedBankAccount,
+            "failed_not_authorized" => SandboxOutcome.FailedNotAuthorized,
+            "reversed_not_authorized" => SandboxOutcome.ReversedNotAuthorized,
             _ => (SandboxOutcome)(-1),
         };
     }
@@ -499,6 +503,8 @@ sealed class SandboxOutcomeConverter : JsonConverter<SandboxOutcome>
                 SandboxOutcome.ReversedCustomerDispute => "reversed_customer_dispute",
                 SandboxOutcome.FailedClosedBankAccount => "failed_closed_bank_account",
                 SandboxOutcome.ReversedClosedBankAccount => "reversed_closed_bank_account",
+                SandboxOutcome.FailedNotAuthorized => "failed_not_authorized",
+                SandboxOutcome.ReversedNotAuthorized => "reversed_not_authorized",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

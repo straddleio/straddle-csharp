@@ -335,6 +335,27 @@ public record class PaymentListParams : ParamsBase
     }
 
     /// <summary>
+    /// Filter to payments last updated on or before this timestamp.
+    /// </summary>
+    public DateTimeOffset? MaxUpdatedAt
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<DateTimeOffset>("max_updated_at");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("max_updated_at", value);
+        }
+    }
+
+    /// <summary>
     /// Search using the minimum `amount of a `charge` or `payout`.
     /// </summary>
     public int? MinAmount
@@ -415,6 +436,27 @@ public record class PaymentListParams : ParamsBase
             }
 
             this._rawQueryData.Set("min_payment_date", value);
+        }
+    }
+
+    /// <summary>
+    /// Filter to payments last updated on or after this timestamp.
+    /// </summary>
+    public DateTimeOffset? MinUpdatedAt
+    {
+        get
+        {
+            this._rawQueryData.Freeze();
+            return this._rawQueryData.GetNullableStruct<DateTimeOffset>("min_updated_at");
+        }
+        init
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            this._rawQueryData.Set("min_updated_at", value);
         }
     }
 
@@ -842,6 +884,7 @@ public enum DefaultSort
     EffectiveAt,
     ID,
     Amount,
+    UpdatedAt,
 }
 
 sealed class DefaultSortConverter : JsonConverter<DefaultSort>
@@ -859,6 +902,7 @@ sealed class DefaultSortConverter : JsonConverter<DefaultSort>
             "effective_at" => DefaultSort.EffectiveAt,
             "id" => DefaultSort.ID,
             "amount" => DefaultSort.Amount,
+            "updated_at" => DefaultSort.UpdatedAt,
             _ => (DefaultSort)(-1),
         };
     }
@@ -878,6 +922,7 @@ sealed class DefaultSortConverter : JsonConverter<DefaultSort>
                 DefaultSort.EffectiveAt => "effective_at",
                 DefaultSort.ID => "id",
                 DefaultSort.Amount => "amount",
+                DefaultSort.UpdatedAt => "updated_at",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
@@ -1057,6 +1102,7 @@ public enum SortBy
     EffectiveAt,
     ID,
     Amount,
+    UpdatedAt,
 }
 
 sealed class SortByConverter : JsonConverter<SortBy>
@@ -1074,6 +1120,7 @@ sealed class SortByConverter : JsonConverter<SortBy>
             "effective_at" => SortBy.EffectiveAt,
             "id" => SortBy.ID,
             "amount" => SortBy.Amount,
+            "updated_at" => SortBy.UpdatedAt,
             _ => (SortBy)(-1),
         };
     }
@@ -1089,6 +1136,7 @@ sealed class SortByConverter : JsonConverter<SortBy>
                 SortBy.EffectiveAt => "effective_at",
                 SortBy.ID => "id",
                 SortBy.Amount => "amount",
+                SortBy.UpdatedAt => "updated_at",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

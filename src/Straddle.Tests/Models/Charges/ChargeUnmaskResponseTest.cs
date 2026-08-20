@@ -2453,6 +2453,8 @@ public class ChargeUnmaskResponseDataConfigSandboxOutcomeTest : TestBase
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute)]
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount)]
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedNotAuthorized)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedNotAuthorized)]
     public void Validation_Works(ChargeUnmaskResponseDataConfigSandboxOutcome rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2483,6 +2485,8 @@ public class ChargeUnmaskResponseDataConfigSandboxOutcomeTest : TestBase
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedCustomerDispute)]
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount)]
     [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.FailedNotAuthorized)]
+    [InlineData(ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedNotAuthorized)]
     public void SerializationRoundtrip_Works(ChargeUnmaskResponseDataConfigSandboxOutcome rawValue)
     {
         // force implicit conversion because Theory can't do that for us
