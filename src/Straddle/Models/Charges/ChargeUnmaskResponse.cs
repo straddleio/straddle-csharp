@@ -810,8 +810,6 @@ public enum ChargeUnmaskResponseDataConfigSandboxOutcome
     ReversedCustomerDispute,
     FailedClosedBankAccount,
     ReversedClosedBankAccount,
-    FailedNotAuthorized,
-    ReversedNotAuthorized,
 }
 
 sealed class ChargeUnmaskResponseDataConfigSandboxOutcomeConverter
@@ -844,10 +842,6 @@ sealed class ChargeUnmaskResponseDataConfigSandboxOutcomeConverter
                 ChargeUnmaskResponseDataConfigSandboxOutcome.FailedClosedBankAccount,
             "reversed_closed_bank_account" =>
                 ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount,
-            "failed_not_authorized" =>
-                ChargeUnmaskResponseDataConfigSandboxOutcome.FailedNotAuthorized,
-            "reversed_not_authorized" =>
-                ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedNotAuthorized,
             _ => (ChargeUnmaskResponseDataConfigSandboxOutcome)(-1),
         };
     }
@@ -882,10 +876,6 @@ sealed class ChargeUnmaskResponseDataConfigSandboxOutcomeConverter
                     "failed_closed_bank_account",
                 ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedClosedBankAccount =>
                     "reversed_closed_bank_account",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.FailedNotAuthorized =>
-                    "failed_not_authorized",
-                ChargeUnmaskResponseDataConfigSandboxOutcome.ReversedNotAuthorized =>
-                    "reversed_not_authorized",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

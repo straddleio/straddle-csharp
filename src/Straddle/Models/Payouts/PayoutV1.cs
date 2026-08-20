@@ -707,8 +707,6 @@ public enum DataConfigSandboxOutcome
     ReversedCustomerDispute,
     FailedClosedBankAccount,
     ReversedClosedBankAccount,
-    FailedNotAuthorized,
-    ReversedNotAuthorized,
 }
 
 sealed class DataConfigSandboxOutcomeConverter : JsonConverter<DataConfigSandboxOutcome>
@@ -732,8 +730,6 @@ sealed class DataConfigSandboxOutcomeConverter : JsonConverter<DataConfigSandbox
             "reversed_customer_dispute" => DataConfigSandboxOutcome.ReversedCustomerDispute,
             "failed_closed_bank_account" => DataConfigSandboxOutcome.FailedClosedBankAccount,
             "reversed_closed_bank_account" => DataConfigSandboxOutcome.ReversedClosedBankAccount,
-            "failed_not_authorized" => DataConfigSandboxOutcome.FailedNotAuthorized,
-            "reversed_not_authorized" => DataConfigSandboxOutcome.ReversedNotAuthorized,
             _ => (DataConfigSandboxOutcome)(-1),
         };
     }
@@ -760,8 +756,6 @@ sealed class DataConfigSandboxOutcomeConverter : JsonConverter<DataConfigSandbox
                 DataConfigSandboxOutcome.FailedClosedBankAccount => "failed_closed_bank_account",
                 DataConfigSandboxOutcome.ReversedClosedBankAccount =>
                     "reversed_closed_bank_account",
-                DataConfigSandboxOutcome.FailedNotAuthorized => "failed_not_authorized",
-                DataConfigSandboxOutcome.ReversedNotAuthorized => "reversed_not_authorized",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
