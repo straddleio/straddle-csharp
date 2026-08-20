@@ -477,6 +477,8 @@ public class SandboxOutcomeTest : TestBase
     [InlineData(SandboxOutcome.ReversedCustomerDispute)]
     [InlineData(SandboxOutcome.FailedClosedBankAccount)]
     [InlineData(SandboxOutcome.ReversedClosedBankAccount)]
+    [InlineData(SandboxOutcome.FailedNotAuthorized)]
+    [InlineData(SandboxOutcome.ReversedNotAuthorized)]
     public void Validation_Works(SandboxOutcome rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -508,6 +510,8 @@ public class SandboxOutcomeTest : TestBase
     [InlineData(SandboxOutcome.ReversedCustomerDispute)]
     [InlineData(SandboxOutcome.FailedClosedBankAccount)]
     [InlineData(SandboxOutcome.ReversedClosedBankAccount)]
+    [InlineData(SandboxOutcome.FailedNotAuthorized)]
+    [InlineData(SandboxOutcome.ReversedNotAuthorized)]
     public void SerializationRoundtrip_Works(SandboxOutcome rawValue)
     {
         // force implicit conversion because Theory can't do that for us
