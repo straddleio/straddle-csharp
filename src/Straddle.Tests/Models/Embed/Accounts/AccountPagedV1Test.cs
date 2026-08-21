@@ -37,10 +37,13 @@ public class AccountPagedV1Test : TestBase
                         Website = "https://example.com",
                         Address = new()
                         {
+                            Address1 = "address1",
                             City = "city",
                             Line1 = "line1",
                             PostalCode = "21029-1360",
                             State = "SE",
+                            Zip = "zip",
+                            Address2 = "address2",
                             Country = "country",
                             Line2 = "line2",
                         },
@@ -83,6 +86,7 @@ public class AccountPagedV1Test : TestBase
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ExternalID = "external_id",
                     Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                    PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Settings = new()
                     {
                         Charges = new()
@@ -152,10 +156,13 @@ public class AccountPagedV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
+                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
+                        Zip = "zip",
+                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -198,6 +205,7 @@ public class AccountPagedV1Test : TestBase
                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 ExternalID = "external_id",
                 Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Settings = new()
                 {
                     Charges = new()
@@ -280,10 +288,13 @@ public class AccountPagedV1Test : TestBase
                         Website = "https://example.com",
                         Address = new()
                         {
+                            Address1 = "address1",
                             City = "city",
                             Line1 = "line1",
                             PostalCode = "21029-1360",
                             State = "SE",
+                            Zip = "zip",
+                            Address2 = "address2",
                             Country = "country",
                             Line2 = "line2",
                         },
@@ -326,6 +337,7 @@ public class AccountPagedV1Test : TestBase
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ExternalID = "external_id",
                     Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                    PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Settings = new()
                     {
                         Charges = new()
@@ -409,10 +421,13 @@ public class AccountPagedV1Test : TestBase
                         Website = "https://example.com",
                         Address = new()
                         {
+                            Address1 = "address1",
                             City = "city",
                             Line1 = "line1",
                             PostalCode = "21029-1360",
                             State = "SE",
+                            Zip = "zip",
+                            Address2 = "address2",
                             Country = "country",
                             Line2 = "line2",
                         },
@@ -455,6 +470,7 @@ public class AccountPagedV1Test : TestBase
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ExternalID = "external_id",
                     Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                    PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Settings = new()
                     {
                         Charges = new()
@@ -531,10 +547,13 @@ public class AccountPagedV1Test : TestBase
                     Website = "https://example.com",
                     Address = new()
                     {
+                        Address1 = "address1",
                         City = "city",
                         Line1 = "line1",
                         PostalCode = "21029-1360",
                         State = "SE",
+                        Zip = "zip",
+                        Address2 = "address2",
                         Country = "country",
                         Line2 = "line2",
                     },
@@ -577,6 +596,7 @@ public class AccountPagedV1Test : TestBase
                 CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                 ExternalID = "external_id",
                 Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                 Settings = new()
                 {
                     Charges = new()
@@ -659,10 +679,13 @@ public class AccountPagedV1Test : TestBase
                         Website = "https://example.com",
                         Address = new()
                         {
+                            Address1 = "address1",
                             City = "city",
                             Line1 = "line1",
                             PostalCode = "21029-1360",
                             State = "SE",
+                            Zip = "zip",
+                            Address2 = "address2",
                             Country = "country",
                             Line2 = "line2",
                         },
@@ -705,6 +728,7 @@ public class AccountPagedV1Test : TestBase
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ExternalID = "external_id",
                     Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                    PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Settings = new()
                     {
                         Charges = new()
@@ -782,10 +806,13 @@ public class AccountPagedV1Test : TestBase
                         Website = "https://example.com",
                         Address = new()
                         {
+                            Address1 = "address1",
                             City = "city",
                             Line1 = "line1",
                             PostalCode = "21029-1360",
                             State = "SE",
+                            Zip = "zip",
+                            Address2 = "address2",
                             Country = "country",
                             Line2 = "line2",
                         },
@@ -828,6 +855,7 @@ public class AccountPagedV1Test : TestBase
                     CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
                     ExternalID = "external_id",
                     Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+                    PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
                     Settings = new()
                     {
                         Charges = new()
@@ -906,10 +934,13 @@ public class DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -952,6 +983,7 @@ public class DataTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Settings = new()
             {
                 Charges = new()
@@ -1002,10 +1034,13 @@ public class DataTest : TestBase
             Website = "https://example.com",
             Address = new()
             {
+                Address1 = "address1",
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-1360",
                 State = "SE",
+                Zip = "zip",
+                Address2 = "address2",
                 Country = "country",
                 Line2 = "line2",
             },
@@ -1048,6 +1083,7 @@ public class DataTest : TestBase
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedExternalID = "external_id";
         Dictionary<string, string?> expectedMetadata = new() { { "foo", "string" } };
+        string expectedPlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         Settings expectedSettings = new()
         {
             Charges = new()
@@ -1097,6 +1133,7 @@ public class DataTest : TestBase
 
             Assert.Equal(value, model.Metadata[item.Key]);
         }
+        Assert.Equal(expectedPlanID, model.PlanID);
         Assert.Equal(expectedSettings, model.Settings);
         Assert.Equal(expectedTermsOfService, model.TermsOfService);
         Assert.Equal(expectedUpdatedAt, model.UpdatedAt);
@@ -1125,10 +1162,13 @@ public class DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1171,6 +1211,7 @@ public class DataTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Settings = new()
             {
                 Charges = new()
@@ -1232,10 +1273,13 @@ public class DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1278,6 +1322,7 @@ public class DataTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Settings = new()
             {
                 Charges = new()
@@ -1332,10 +1377,13 @@ public class DataTest : TestBase
             Website = "https://example.com",
             Address = new()
             {
+                Address1 = "address1",
                 City = "city",
                 Line1 = "line1",
                 PostalCode = "21029-1360",
                 State = "SE",
+                Zip = "zip",
+                Address2 = "address2",
                 Country = "country",
                 Line2 = "line2",
             },
@@ -1378,6 +1426,7 @@ public class DataTest : TestBase
         DateTimeOffset expectedCreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z");
         string expectedExternalID = "external_id";
         Dictionary<string, string?> expectedMetadata = new() { { "foo", "string" } };
+        string expectedPlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e";
         Settings expectedSettings = new()
         {
             Charges = new()
@@ -1427,6 +1476,7 @@ public class DataTest : TestBase
 
             Assert.Equal(value, deserialized.Metadata[item.Key]);
         }
+        Assert.Equal(expectedPlanID, deserialized.PlanID);
         Assert.Equal(expectedSettings, deserialized.Settings);
         Assert.Equal(expectedTermsOfService, deserialized.TermsOfService);
         Assert.Equal(expectedUpdatedAt, deserialized.UpdatedAt);
@@ -1455,10 +1505,13 @@ public class DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1501,6 +1554,7 @@ public class DataTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Settings = new()
             {
                 Charges = new()
@@ -1556,6 +1610,7 @@ public class DataTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1589,6 +1644,7 @@ public class DataTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
         };
 
@@ -1615,6 +1671,7 @@ public class DataTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1654,6 +1711,7 @@ public class DataTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             UpdatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
 
             // Null should be interpreted as omitted for these properties
@@ -1689,10 +1747,13 @@ public class DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1769,6 +1830,8 @@ public class DataTest : TestBase
         Assert.False(model.RawData.ContainsKey("external_id"));
         Assert.Null(model.Metadata);
         Assert.False(model.RawData.ContainsKey("metadata"));
+        Assert.Null(model.PlanID);
+        Assert.False(model.RawData.ContainsKey("plan_id"));
         Assert.Null(model.UpdatedAt);
         Assert.False(model.RawData.ContainsKey("updated_at"));
     }
@@ -1796,10 +1859,13 @@ public class DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1896,10 +1962,13 @@ public class DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -1972,6 +2041,7 @@ public class DataTest : TestBase
             CreatedAt = null,
             ExternalID = null,
             Metadata = null,
+            PlanID = null,
             UpdatedAt = null,
         };
 
@@ -1981,6 +2051,8 @@ public class DataTest : TestBase
         Assert.True(model.RawData.ContainsKey("external_id"));
         Assert.Null(model.Metadata);
         Assert.True(model.RawData.ContainsKey("metadata"));
+        Assert.Null(model.PlanID);
+        Assert.True(model.RawData.ContainsKey("plan_id"));
         Assert.Null(model.UpdatedAt);
         Assert.True(model.RawData.ContainsKey("updated_at"));
     }
@@ -2008,10 +2080,13 @@ public class DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -2084,6 +2159,7 @@ public class DataTest : TestBase
             CreatedAt = null,
             ExternalID = null,
             Metadata = null,
+            PlanID = null,
             UpdatedAt = null,
         };
 
@@ -2113,10 +2189,13 @@ public class DataTest : TestBase
                 Website = "https://example.com",
                 Address = new()
                 {
+                    Address1 = "address1",
                     City = "city",
                     Line1 = "line1",
                     PostalCode = "21029-1360",
                     State = "SE",
+                    Zip = "zip",
+                    Address2 = "address2",
                     Country = "country",
                     Line2 = "line2",
                 },
@@ -2159,6 +2238,7 @@ public class DataTest : TestBase
             CreatedAt = DateTimeOffset.Parse("2019-12-27T18:11:19.117Z"),
             ExternalID = "external_id",
             Metadata = new Dictionary<string, string?>() { { "foo", "string" } },
+            PlanID = "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
             Settings = new()
             {
                 Charges = new()
