@@ -2352,6 +2352,7 @@ public class SourceTest : TestBase
     [InlineData(Source.Plaid)]
     [InlineData(Source.Tan)]
     [InlineData(Source.Quiltt)]
+    [InlineData(Source.Mastercard)]
     public void Validation_Works(Source rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -2378,6 +2379,7 @@ public class SourceTest : TestBase
     [InlineData(Source.Plaid)]
     [InlineData(Source.Tan)]
     [InlineData(Source.Quiltt)]
+    [InlineData(Source.Mastercard)]
     public void SerializationRoundtrip_Works(Source rawValue)
     {
         // force implicit conversion because Theory can't do that for us

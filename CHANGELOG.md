@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.0 (2026-08-31)
+
+Full Changelog: [v0.2.0...v0.3.0](https://github.com/straddleio/straddle-csharp/compare/v0.2.0...v0.3.0)
+
+### Features
+
+* **docs:** Preliminary update to SDK Spec ([5d44827](https://github.com/straddleio/straddle-csharp/commit/5d4482711b8d31ef05ea782b1c40211db6716c01))
+* **docs:** Preliminary update to SDK Spec ([89bc370](https://github.com/straddleio/straddle-csharp/commit/89bc370c5fb229ad69769b782875544e99b7a446))
+* **docs:** Preliminary update to SDK Spec ([3a6f7d3](https://github.com/straddleio/straddle-csharp/commit/3a6f7d345f32e24b72ceec9e744fb5755dd124ea))
+* **docs:** Preliminary update to SDK Spec ([3332581](https://github.com/straddleio/straddle-csharp/commit/33325812f8b838becdd6a2d280252ed2e46a6336))
+* **docs:** Release Updates to SDK based on Open API Spec (Final) ([dd0d891](https://github.com/straddleio/straddle-csharp/commit/dd0d891a06c4d17f5c16f325c548b466288a9ea9))
+* **docs:** Release Updates to SDK based on Open API Spec (Final) ([e3a1e04](https://github.com/straddleio/straddle-csharp/commit/e3a1e045d332194694214efd7f172bdd02856954))
+* **docs:** Release Updates to SDK based on Open API Spec (Final) ([0b57036](https://github.com/straddleio/straddle-csharp/commit/0b57036e34f4c3a4ec1e7e404ac5edd7b5abaeda))
+
 ## 0.2.0 (2026-08-20)
 
 Full Changelog: [v0.1.0...v0.2.0](https://github.com/straddleio/straddle-csharp/compare/v0.1.0...v0.2.0)

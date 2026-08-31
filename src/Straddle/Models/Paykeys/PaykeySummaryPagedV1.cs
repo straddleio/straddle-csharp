@@ -551,6 +551,7 @@ public enum DataSource
     Plaid,
     Tan,
     Quiltt,
+    Mastercard,
 }
 
 sealed class DataSourceConverter : JsonConverter<DataSource>
@@ -569,6 +570,7 @@ sealed class DataSourceConverter : JsonConverter<DataSource>
             "plaid" => DataSource.Plaid,
             "tan" => DataSource.Tan,
             "quiltt" => DataSource.Quiltt,
+            "mastercard" => DataSource.Mastercard,
             _ => (DataSource)(-1),
         };
     }
@@ -589,6 +591,7 @@ sealed class DataSourceConverter : JsonConverter<DataSource>
                 DataSource.Plaid => "plaid",
                 DataSource.Tan => "tan",
                 DataSource.Quiltt => "quiltt",
+                DataSource.Mastercard => "mastercard",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),
