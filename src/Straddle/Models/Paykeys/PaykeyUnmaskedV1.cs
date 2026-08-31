@@ -587,6 +587,7 @@ public enum PaykeyUnmaskedV1DataSource
     Plaid,
     Tan,
     Quiltt,
+    Mastercard,
 }
 
 sealed class PaykeyUnmaskedV1DataSourceConverter : JsonConverter<PaykeyUnmaskedV1DataSource>
@@ -605,6 +606,7 @@ sealed class PaykeyUnmaskedV1DataSourceConverter : JsonConverter<PaykeyUnmaskedV
             "plaid" => PaykeyUnmaskedV1DataSource.Plaid,
             "tan" => PaykeyUnmaskedV1DataSource.Tan,
             "quiltt" => PaykeyUnmaskedV1DataSource.Quiltt,
+            "mastercard" => PaykeyUnmaskedV1DataSource.Mastercard,
             _ => (PaykeyUnmaskedV1DataSource)(-1),
         };
     }
@@ -625,6 +627,7 @@ sealed class PaykeyUnmaskedV1DataSourceConverter : JsonConverter<PaykeyUnmaskedV
                 PaykeyUnmaskedV1DataSource.Plaid => "plaid",
                 PaykeyUnmaskedV1DataSource.Tan => "tan",
                 PaykeyUnmaskedV1DataSource.Quiltt => "quiltt",
+                PaykeyUnmaskedV1DataSource.Mastercard => "mastercard",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

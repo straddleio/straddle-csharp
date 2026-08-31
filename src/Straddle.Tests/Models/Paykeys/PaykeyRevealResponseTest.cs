@@ -1372,6 +1372,7 @@ public class PaykeyRevealResponseDataSourceTest : TestBase
     [InlineData(PaykeyRevealResponseDataSource.Plaid)]
     [InlineData(PaykeyRevealResponseDataSource.Tan)]
     [InlineData(PaykeyRevealResponseDataSource.Quiltt)]
+    [InlineData(PaykeyRevealResponseDataSource.Mastercard)]
     public void Validation_Works(PaykeyRevealResponseDataSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1398,6 +1399,7 @@ public class PaykeyRevealResponseDataSourceTest : TestBase
     [InlineData(PaykeyRevealResponseDataSource.Plaid)]
     [InlineData(PaykeyRevealResponseDataSource.Tan)]
     [InlineData(PaykeyRevealResponseDataSource.Quiltt)]
+    [InlineData(PaykeyRevealResponseDataSource.Mastercard)]
     public void SerializationRoundtrip_Works(PaykeyRevealResponseDataSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us

@@ -596,6 +596,7 @@ public enum PaykeyRevealResponseDataSource
     Plaid,
     Tan,
     Quiltt,
+    Mastercard,
 }
 
 sealed class PaykeyRevealResponseDataSourceConverter : JsonConverter<PaykeyRevealResponseDataSource>
@@ -614,6 +615,7 @@ sealed class PaykeyRevealResponseDataSourceConverter : JsonConverter<PaykeyRevea
             "plaid" => PaykeyRevealResponseDataSource.Plaid,
             "tan" => PaykeyRevealResponseDataSource.Tan,
             "quiltt" => PaykeyRevealResponseDataSource.Quiltt,
+            "mastercard" => PaykeyRevealResponseDataSource.Mastercard,
             _ => (PaykeyRevealResponseDataSource)(-1),
         };
     }
@@ -634,6 +636,7 @@ sealed class PaykeyRevealResponseDataSourceConverter : JsonConverter<PaykeyRevea
                 PaykeyRevealResponseDataSource.Plaid => "plaid",
                 PaykeyRevealResponseDataSource.Tan => "tan",
                 PaykeyRevealResponseDataSource.Quiltt => "quiltt",
+                PaykeyRevealResponseDataSource.Mastercard => "mastercard",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

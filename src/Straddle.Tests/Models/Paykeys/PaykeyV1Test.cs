@@ -1391,6 +1391,7 @@ public class PaykeyV1DataSourceTest : TestBase
     [InlineData(PaykeyV1DataSource.Plaid)]
     [InlineData(PaykeyV1DataSource.Tan)]
     [InlineData(PaykeyV1DataSource.Quiltt)]
+    [InlineData(PaykeyV1DataSource.Mastercard)]
     public void Validation_Works(PaykeyV1DataSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1417,6 +1418,7 @@ public class PaykeyV1DataSourceTest : TestBase
     [InlineData(PaykeyV1DataSource.Plaid)]
     [InlineData(PaykeyV1DataSource.Tan)]
     [InlineData(PaykeyV1DataSource.Quiltt)]
+    [InlineData(PaykeyV1DataSource.Mastercard)]
     public void SerializationRoundtrip_Works(PaykeyV1DataSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
