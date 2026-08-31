@@ -666,6 +666,7 @@ public enum Source
     Plaid,
     Tan,
     Quiltt,
+    Mastercard,
 }
 
 sealed class SourceConverter : JsonConverter<Source>
@@ -684,6 +685,7 @@ sealed class SourceConverter : JsonConverter<Source>
             "plaid" => Source.Plaid,
             "tan" => Source.Tan,
             "quiltt" => Source.Quiltt,
+            "mastercard" => Source.Mastercard,
             _ => (Source)(-1),
         };
     }
@@ -700,6 +702,7 @@ sealed class SourceConverter : JsonConverter<Source>
                 Source.Plaid => "plaid",
                 Source.Tan => "tan",
                 Source.Quiltt => "quiltt",
+                Source.Mastercard => "mastercard",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

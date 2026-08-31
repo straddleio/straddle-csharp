@@ -1303,6 +1303,7 @@ public class DataSourceTest : TestBase
     [InlineData(DataSource.Plaid)]
     [InlineData(DataSource.Tan)]
     [InlineData(DataSource.Quiltt)]
+    [InlineData(DataSource.Mastercard)]
     public void Validation_Works(DataSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1329,6 +1330,7 @@ public class DataSourceTest : TestBase
     [InlineData(DataSource.Plaid)]
     [InlineData(DataSource.Tan)]
     [InlineData(DataSource.Quiltt)]
+    [InlineData(DataSource.Mastercard)]
     public void SerializationRoundtrip_Works(DataSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us

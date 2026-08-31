@@ -596,6 +596,7 @@ public enum LinkCreateTanResponseDataSource
     Plaid,
     Tan,
     Quiltt,
+    Mastercard,
 }
 
 sealed class LinkCreateTanResponseDataSourceConverter
@@ -615,6 +616,7 @@ sealed class LinkCreateTanResponseDataSourceConverter
             "plaid" => LinkCreateTanResponseDataSource.Plaid,
             "tan" => LinkCreateTanResponseDataSource.Tan,
             "quiltt" => LinkCreateTanResponseDataSource.Quiltt,
+            "mastercard" => LinkCreateTanResponseDataSource.Mastercard,
             _ => (LinkCreateTanResponseDataSource)(-1),
         };
     }
@@ -635,6 +637,7 @@ sealed class LinkCreateTanResponseDataSourceConverter
                 LinkCreateTanResponseDataSource.Plaid => "plaid",
                 LinkCreateTanResponseDataSource.Tan => "tan",
                 LinkCreateTanResponseDataSource.Quiltt => "quiltt",
+                LinkCreateTanResponseDataSource.Mastercard => "mastercard",
                 _ => throw new StraddleInvalidDataException(
                     string.Format("Invalid value '{0}' in {1}", value, nameof(value))
                 ),

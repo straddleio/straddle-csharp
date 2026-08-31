@@ -1372,6 +1372,7 @@ public class LinkCreateTanResponseDataSourceTest : TestBase
     [InlineData(LinkCreateTanResponseDataSource.Plaid)]
     [InlineData(LinkCreateTanResponseDataSource.Tan)]
     [InlineData(LinkCreateTanResponseDataSource.Quiltt)]
+    [InlineData(LinkCreateTanResponseDataSource.Mastercard)]
     public void Validation_Works(LinkCreateTanResponseDataSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
@@ -1398,6 +1399,7 @@ public class LinkCreateTanResponseDataSourceTest : TestBase
     [InlineData(LinkCreateTanResponseDataSource.Plaid)]
     [InlineData(LinkCreateTanResponseDataSource.Tan)]
     [InlineData(LinkCreateTanResponseDataSource.Quiltt)]
+    [InlineData(LinkCreateTanResponseDataSource.Mastercard)]
     public void SerializationRoundtrip_Works(LinkCreateTanResponseDataSource rawValue)
     {
         // force implicit conversion because Theory can't do that for us
