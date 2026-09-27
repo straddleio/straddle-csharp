@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This SDK has moved to [straddle-build/straddle-dotnet](https://github.com/straddle-build/straddle-dotnet). New development and releases happen there. The NuGet package ID is unchanged, [`Straddle`](https://www.nuget.org/packages/Straddle), and versions 1.0.0 and later are published from the new repository. The rest of this README describes the SDK as released from this repository and has not been updated for the new one.
+
 # Straddle C# API Library
 
 The Straddle C# SDK provides convenient access to the [Straddle REST API](https://docs.straddle.com) from applications written in C#.
